@@ -2,85 +2,297 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 
-/* ─── Animated flowing dots along a path ─── */
-function FlowingDots({ delay = 0 }: { delay?: number }) {
+/* ═══════════════════════════════════════════════
+   TRADITIONAL SIDE — Blocked, Slow, Locked
+   ═══════════════════════════════════════════════ */
+
+/* Particles flow left→right then pile up at the barrier wall */
+function BlockedParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {[0, 1, 2, 3, 4].map((i) => (
+      {Array.from({ length: 8 }).map((_, i) => {
+        const y = 20 + (i % 3) * 25;
+        return (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-red-400/80"
+            style={{ top: `${y}%`, boxShadow: "0 0 4px rgba(248,113,113,0.6)" }}
+            animate={{
+              left: ["0%", "68%", "66%", "68%"],
+              opacity: [0, 0.9, 0.7, 0.5],
+              scale: [0.6, 1, 0.9, 0.8],
+            }}
+            transition={{
+              duration: 2.5,
+              delay: i * 0.3,
+              repeat: Infinity,
+              ease: "easeOut",
+            }}
+          />
+        );
+      })}
+      {/* Barrier wall */}
+      <motion.div
+        className="absolute right-[28%] top-[5%] bottom-[5%] w-[3px] bg-gradient-to-b from-red-500/80 via-red-400 to-red-500/80 rounded-full"
+        style={{ boxShadow: "0 0 12px rgba(248,113,113,0.4), 2px 0 20px rgba(248,113,113,0.2)" }}
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      />
+      {/* X symbol on barrier */}
+      <div className="absolute right-[28%] top-1/2 -translate-y-1/2 translate-x-[150%] text-red-400 text-lg font-bold">
+        ✕
+      </div>
+      {/* Piled-up particles at barrier */}
+      {Array.from({ length: 5 }).map((_, i) => (
         <motion.div
-          key={i}
-          className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-accent"
-          style={{ boxShadow: "0 0 6px 2px rgba(245,166,35,0.5)" }}
-          initial={{ left: "-5%", opacity: 0 }}
-          animate={{
-            left: ["−5%", "105%"],
-            opacity: [0, 1, 1, 0],
+          key={`pile-${i}`}
+          className="absolute w-2 h-2 rounded-full bg-red-400/40"
+          style={{
+            right: `${29 + (i % 3) * 2}%`,
+            top: `${15 + i * 15}%`,
           }}
-          transition={{
-            duration: 2,
-            delay: delay + i * 0.4,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.8, 1, 0.8] }}
+          transition={{ duration: 2, delay: i * 0.4, repeat: Infinity }}
         />
       ))}
     </div>
   );
 }
 
-/* ─── Blocked dots that pile up ─── */
-function BlockedDots() {
+/* Slow creeping dot — takes forever to cross */
+function SlowDot() {
   return (
-    <div className="absolute right-[18%] top-1/2 -translate-y-1/2 flex flex-wrap gap-0.5 w-6 justify-center">
-      {[0, 1, 2, 3, 4, 5].map((i) => (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Dashed track */}
+      <div
+        className="absolute top-1/2 left-[5%] right-[5%] h-px -translate-y-1/2"
+        style={{
+          background:
+            "repeating-linear-gradient(90deg, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.12) 6px, transparent 6px, transparent 16px)",
+        }}
+      />
+      {/* The painfully slow dot */}
+      <motion.div
+        className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white/30"
+        style={{ boxShadow: "0 0 6px rgba(255,255,255,0.15)" }}
+        animate={{ left: ["5%", "35%", "36%", "50%", "51%", "60%"] }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+          times: [0, 0.3, 0.5, 0.7, 0.85, 1],
+        }}
+      />
+      {/* Waiting indicator */}
+      <motion.div
+        className="absolute right-[15%] top-1/2 -translate-y-1/2 text-white/20 text-sm"
+        animate={{ opacity: [0.2, 0.5, 0.2] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        ⏳
+      </motion.div>
+    </div>
+  );
+}
+
+/* Locked cage/box */
+function LockedBox() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Cage */}
+      <motion.div
+        className="absolute left-[10%] right-[10%] top-[10%] bottom-[10%] border border-white/15 rounded"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Lock bars */}
+        {[25, 50, 75].map((x) => (
+          <div
+            key={x}
+            className="absolute top-0 bottom-0 w-px bg-white/8"
+            style={{ left: `${x}%` }}
+          />
+        ))}
+        {/* Inner trapped dot */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white/15"
+          animate={{
+            x: [-8, 8, -6, 4, -8],
+            y: [-4, 6, -6, 2, -4],
+          }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+      {/* Lock icon */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-[4px] text-white/25 text-xs">
+        🔒
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════
+   NANOTRANS SIDE — Flowing, Fast, Free
+   ═══════════════════════════════════════════════ */
+
+/* Smooth flowing particles that breeze across */
+function FlowingParticles() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Glowing track */}
+      <div
+        className="absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 bg-accent/20"
+        style={{ boxShadow: "0 0 12px rgba(245,166,35,0.15)" }}
+      />
+      {/* Flowing dots — varied sizes, staggered */}
+      {Array.from({ length: 7 }).map((_, i) => {
+        const size = 4 + (i % 3) * 2;
+        const y = 40 + (i % 3) * 10;
+        return (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-accent"
+            style={{
+              width: size,
+              height: size,
+              top: `${y}%`,
+              boxShadow: `0 0 ${size * 2}px rgba(245,166,35,0.6)`,
+            }}
+            animate={{
+              left: ["-5%", "110%"],
+              opacity: [0, 1, 1, 0],
+            }}
+            transition={{
+              duration: 1.8 + (i % 3) * 0.3,
+              delay: i * 0.35,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+/* Bullet-fast streak across the full width */
+function SpeedStreak() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Multiple speed lines with trail */}
+      {[0, 1, 2].map((i) => (
         <motion.div
           key={i}
-          className="w-1.5 h-1.5 rounded-full bg-red-400/60"
-          initial={{ opacity: 0, x: 10 }}
-          animate={{ opacity: [0, 0.7, 0.5], x: [10, 0, -1] }}
+          className="absolute h-px bg-gradient-to-r from-transparent via-accent to-transparent"
+          style={{ top: `${35 + i * 15}%`, left: 0, right: 0 }}
+          animate={{ opacity: [0, 0.5 - i * 0.1, 0] }}
           transition={{
             duration: 1.5,
-            delay: i * 0.2,
+            delay: i * 0.15,
             repeat: Infinity,
-            repeatType: "reverse",
+            repeatDelay: 0.5,
           }}
         />
       ))}
+      {/* Main bullet dot with comet trail */}
+      <motion.div
+        className="absolute top-1/2 -translate-y-1/2"
+        animate={{ left: ["-10%", "110%"] }}
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          repeatDelay: 1.2,
+          ease: [0.2, 0, 0, 1],
+        }}
+      >
+        {/* Trail */}
+        <div
+          className="absolute right-full top-1/2 -translate-y-1/2 w-20 h-[2px]"
+          style={{
+            background:
+              "linear-gradient(to left, rgba(245,166,35,0.8), transparent)",
+          }}
+        />
+        {/* Dot */}
+        <div
+          className="w-3 h-3 rounded-full bg-accent"
+          style={{
+            boxShadow:
+              "0 0 12px 4px rgba(245,166,35,0.7), 0 0 30px 8px rgba(245,166,35,0.3)",
+          }}
+        />
+      </motion.div>
     </div>
   );
 }
 
-/* ─── Branching lines for pay-per-use ─── */
-function BranchLines({ inView }: { inView: boolean }) {
+/* Branching free-flowing paths */
+function FreeBranching() {
   return (
-    <svg
-      viewBox="0 0 60 40"
-      className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-8"
-      fill="none"
-    >
-      {[
-        "M0,20 Q20,20 50,5",
-        "M0,20 Q20,20 55,20",
-        "M0,20 Q20,20 50,35",
-      ].map((d, i) => (
+    <div className="absolute inset-0 overflow-hidden">
+      <svg viewBox="0 0 400 80" className="absolute inset-0 w-full h-full" fill="none">
+        {/* Main trunk */}
         <motion.path
-          key={i}
-          d={d}
+          d="M0,40 L250,40"
           stroke="#F5A623"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={inView ? { pathLength: 1, opacity: 0.8 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 + i * 0.15 }}
+          strokeWidth="2"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 0.8 }}
+          style={{ filter: "drop-shadow(0 0 4px rgba(245,166,35,0.4))" }}
         />
-      ))}
-    </svg>
+        {/* Branches */}
+        {[
+          { d: "M250,40 Q310,40 380,10", delay: 0.8 },
+          { d: "M250,40 Q310,38 390,40", delay: 0.9 },
+          { d: "M250,40 Q310,40 380,70", delay: 1.0 },
+          { d: "M250,40 Q280,25 350,5", delay: 1.1 },
+          { d: "M250,40 Q280,55 350,75", delay: 1.15 },
+        ].map(({ d, delay }, i) => (
+          <motion.path
+            key={i}
+            d={d}
+            stroke="#F5A623"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            opacity={1 - i * 0.12}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 - i * 0.12 }}
+            transition={{ duration: 0.6, delay }}
+            style={{ filter: "drop-shadow(0 0 3px rgba(245,166,35,0.3))" }}
+          />
+        ))}
+        {/* Flowing dots on branches */}
+        {[
+          { cx: 380, cy: 10, delay: 1.6 },
+          { cx: 390, cy: 40, delay: 1.7 },
+          { cx: 380, cy: 70, delay: 1.8 },
+        ].map(({ cx, cy, delay }, i) => (
+          <motion.circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r="3"
+            fill="#F5A623"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: [0, 1, 0.6], scale: [0, 1.2, 1] }}
+            transition={{ duration: 0.5, delay, repeat: Infinity, repeatDelay: 2 }}
+            style={{ filter: "drop-shadow(0 0 6px rgba(245,166,35,0.8))" }}
+          />
+        ))}
+      </svg>
+    </div>
   );
 }
 
-/* ─── Single comparison row ─── */
+/* ═══════════════════════════════════════════════
+   ROW COMPONENT
+   ═══════════════════════════════════════════════ */
+
 function ComparisonRow({
   side,
   label,
@@ -97,160 +309,60 @@ function ComparisonRow({
   type: "blocked" | "slow" | "locked" | "flowing" | "fast" | "branching";
 }) {
   const isNano = side === "nanotrans";
-  const baseDelay = index * 0.2;
+  const baseDelay = index * 0.25;
+
+  const renderVisualization = () => {
+    switch (type) {
+      case "blocked":
+        return <BlockedParticles />;
+      case "slow":
+        return <SlowDot />;
+      case "locked":
+        return <LockedBox />;
+      case "flowing":
+        return <FlowingParticles />;
+      case "fast":
+        return <SpeedStreak />;
+      case "branching":
+        return <FreeBranching />;
+    }
+  };
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isNano ? 30 : -30 }}
+      initial={{ opacity: 0, x: isNano ? 40 : -40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: baseDelay }}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-3"
     >
       {/* Label */}
       <span
-        className={`text-xs tracking-wider uppercase ${
-          isNano ? "text-accent" : "text-red-400/70"
+        className={`text-xs tracking-widest uppercase font-medium ${
+          isNano ? "text-accent" : "text-red-400/80"
         }`}
       >
         {label}
       </span>
 
-      {/* Line visualization */}
-      <div className="relative h-8 flex items-center">
-        {/* Base line */}
-        <motion.div
-          className={`h-px w-full ${
-            isNano ? "bg-accent/40" : "bg-white/10"
-          }`}
-          initial={{ scaleX: 0 }}
-          animate={inView ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.8, delay: baseDelay + 0.3 }}
-          style={{ transformOrigin: isNano ? "left" : "left" }}
-        />
-
-        {/* Type-specific effects */}
-        {type === "blocked" && (
-          <>
-            {/* Barrier */}
-            <motion.div
-              className="absolute right-[20%] top-0 bottom-0 w-px bg-red-400/50"
-              initial={{ scaleY: 0 }}
-              animate={inView ? { scaleY: 1 } : {}}
-              transition={{ duration: 0.3, delay: baseDelay + 0.6 }}
-            />
-            <motion.div
-              className="absolute right-[20%] top-1/2 -translate-y-1/2 -translate-x-1/2 text-red-400/70 text-[10px]"
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: baseDelay + 0.8 }}
-            >
-              ✕
-            </motion.div>
-            <BlockedDots />
-          </>
-        )}
-
-        {type === "slow" && (
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: baseDelay + 0.5 }}
-          >
-            {/* Dashed overlay showing slowness */}
-            <div
-              className="h-px w-full"
-              style={{
-                background:
-                  "repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0px, rgba(255,255,255,0.15) 4px, transparent 4px, transparent 12px)",
-              }}
-            />
-          </motion.div>
-        )}
-
-        {type === "locked" && (
-          <motion.div
-            className="absolute inset-y-0 left-[10%] right-[10%] border border-white/10 rounded-sm flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: baseDelay + 0.5 }}
-          >
-            <span className="text-[9px] text-white/20">🔒</span>
-          </motion.div>
-        )}
-
-        {type === "flowing" && (
-          <>
-            {/* Glowing line */}
-            <motion.div
-              className="absolute inset-y-[calc(50%-1px)] left-0 right-0 h-0.5 bg-gradient-to-r from-accent/60 via-accent to-accent/60 rounded-full"
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={inView ? { scaleX: 1, opacity: 1 } : {}}
-              transition={{ duration: 1, delay: baseDelay + 0.4 }}
-              style={{
-                transformOrigin: "left",
-                boxShadow: "0 0 8px rgba(245,166,35,0.4)",
-              }}
-            />
-            <FlowingDots delay={baseDelay + 1} />
-          </>
-        )}
-
-        {type === "fast" && (
-          <>
-            {/* Speed streaks */}
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="absolute h-px bg-gradient-to-r from-transparent via-accent to-accent/20"
-                style={{ top: `${40 + i * 10}%`, left: "0%", right: "0%" }}
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={inView ? { scaleX: 1, opacity: 0.7 - i * 0.15 } : {}}
-                transition={{ duration: 0.6, delay: baseDelay + 0.5 + i * 0.1 }}
-                layoutId={undefined}
-              />
-            ))}
-            {/* Leading bright dot */}
-            <motion.div
-              className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent"
-              style={{ boxShadow: "0 0 10px 3px rgba(245,166,35,0.6)" }}
-              initial={{ left: "0%", opacity: 0 }}
-              animate={
-                inView
-                  ? { left: ["0%", "95%"], opacity: [0, 1, 1] }
-                  : {}
-              }
-              transition={{
-                duration: 0.8,
-                delay: baseDelay + 0.6,
-                ease: "easeOut",
-              }}
-            />
-          </>
-        )}
-
-        {type === "branching" && (
-          <>
-            <motion.div
-              className="absolute inset-y-[calc(50%-1px)] left-0 right-12 h-0.5 bg-accent/50 rounded-full"
-              initial={{ scaleX: 0 }}
-              animate={inView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.8, delay: baseDelay + 0.4 }}
-              style={{ transformOrigin: "left" }}
-            />
-            <BranchLines inView={inView} />
-          </>
-        )}
+      {/* Visualization area — much taller now */}
+      <div
+        className={`relative h-20 rounded-xl overflow-hidden ${
+          isNano
+            ? "bg-accent/[0.04] border border-accent/10"
+            : "bg-white/[0.02] border border-white/5"
+        }`}
+      >
+        {inView && renderVisualization()}
       </div>
 
       {/* Value */}
       <motion.span
-        className={`text-sm font-semibold ${
-          isNano ? "text-white" : "text-text-secondary"
+        className={`text-base font-semibold ${
+          isNano ? "text-white" : "text-text-secondary/70"
         }`}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ delay: baseDelay + 0.8 }}
+        transition={{ delay: baseDelay + 0.6 }}
       >
         {value}
       </motion.span>
@@ -258,7 +370,10 @@ function ComparisonRow({
   );
 }
 
-/* ─── Counter animation ─── */
+/* ═══════════════════════════════════════════════
+   STAT COUNTER
+   ═══════════════════════════════════════════════ */
+
 function AnimatedValue({
   value,
   inView,
@@ -271,22 +386,20 @@ function AnimatedValue({
   const [display, setDisplay] = useState(value);
   const numMatch = value.match(/[\d.]+/);
 
-  useEffect(() => {
-    if (!inView || !numMatch) return;
+  const animate = useCallback(() => {
+    if (!numMatch) return;
     const target = parseFloat(numMatch[0]);
     const prefix = value.slice(0, value.indexOf(numMatch[0]));
-    const suffix = value.slice(
-      value.indexOf(numMatch[0]) + numMatch[0].length
-    );
+    const suffix = value.slice(value.indexOf(numMatch[0]) + numMatch[0].length);
     const isDecimal = numMatch[0].includes(".");
     const steps = 20;
-    const stepDuration = 40;
     let step = 0;
 
     const timer = setInterval(() => {
       step++;
       const progress = step / steps;
-      const current = target * progress;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = target * eased;
       setDisplay(
         `${prefix}${isDecimal ? current.toFixed(1) : Math.round(current)}${suffix}`
       );
@@ -294,10 +407,16 @@ function AnimatedValue({
         clearInterval(timer);
         setDisplay(value);
       }
-    }, stepDuration);
+    }, 40);
 
     return () => clearInterval(timer);
-  }, [inView, value, numMatch]);
+  }, [value, numMatch]);
+
+  useEffect(() => {
+    if (!inView) return;
+    const timeout = setTimeout(animate, delay * 1000);
+    return () => clearTimeout(timeout);
+  }, [inView, delay, animate]);
 
   return (
     <motion.span
@@ -310,11 +429,14 @@ function AnimatedValue({
   );
 }
 
-/* ─── Main Component ─── */
+/* ═══════════════════════════════════════════════
+   MAIN COMPONENT
+   ═══════════════════════════════════════════════ */
+
 export function NanoTransComparison() {
   const t = useTranslations("ntComparison");
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   const rows = [
     {
@@ -333,24 +455,30 @@ export function NanoTransComparison() {
 
   return (
     <div ref={ref} className="mt-20 mb-8">
-      {/* Header */}
+      {/* Section header */}
       <motion.div
-        className="flex justify-between items-center mb-10 px-2"
+        className="flex justify-between items-end mb-8 px-1"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-text-secondary text-sm tracking-widest uppercase">
-          {t("headerTraditional")}
-        </span>
-        <div className="flex-1 mx-6 h-px bg-gradient-to-r from-white/5 via-accent/20 to-white/5" />
-        <span className="text-accent text-sm font-semibold tracking-widest uppercase">
-          NanoTrans
-        </span>
+        <div>
+          <span className="text-red-400/60 text-xs tracking-widest uppercase block mb-1">
+            {t("headerTraditional")}
+          </span>
+          <div className="w-8 h-px bg-red-400/30" />
+        </div>
+        <div className="flex-1 mx-8 h-px bg-gradient-to-r from-red-400/10 via-white/5 to-accent/10" />
+        <div className="text-right">
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase block mb-1">
+            NanoTrans
+          </span>
+          <div className="w-8 h-px bg-accent/50 ml-auto" />
+        </div>
       </motion.div>
 
-      {/* Comparison rows */}
-      <div className="grid md:grid-cols-2 gap-x-10 gap-y-12">
+      {/* Comparison grid */}
+      <div className="grid md:grid-cols-2 gap-x-8 gap-y-10">
         {rows.map((row, i) => (
           <div key={i} className="contents">
             <ComparisonRow
@@ -373,9 +501,9 @@ export function NanoTransComparison() {
         ))}
       </div>
 
-      {/* Bottom stats */}
+      {/* Bottom stat highlights */}
       <motion.div
-        className="mt-16 grid grid-cols-3 gap-6 glass rounded-2xl p-8"
+        className="mt-14 grid grid-cols-3 gap-4 glass rounded-2xl p-6 sm:p-8"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -389,7 +517,7 @@ export function NanoTransComparison() {
             <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">
               <AnimatedValue value={stat.value} inView={inView} delay={1.4 + i * 0.2} />
             </div>
-            <div className="text-xs text-text-secondary">{stat.sub}</div>
+            <div className="text-[11px] sm:text-xs text-text-secondary">{stat.sub}</div>
           </div>
         ))}
       </motion.div>
