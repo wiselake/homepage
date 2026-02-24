@@ -25,7 +25,7 @@
   },
   "vision": {
     "visionLabel": "Vision",
-    "visionTitle1": "The Micro-Capillaries of the AI Economy",
+    "visionTitle1": "The Payment Rails of the AI Economy",
     "visionTitle2": "The Global Standard for Value Exchange",
     "visionDesc": "In a world where AI agents transact autonomously, even a fraction of a cent worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
     "missionLabel": "Mission",
@@ -261,7 +261,7 @@
       "description": "WiseLake builds micropayment infrastructure for the AI economy — the global standard for nano-value exchange.",
       "heroLabel": "About",
       "heroTitle": "About WiseLake",
-      "heroSubtitle": "The capillaries of the AI economy, the global standard for value exchange"
+      "heroSubtitle": "The payment rails of the AI economy — the global standard for value exchange"
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
@@ -354,7 +354,7 @@
     }
   },
   "footer": {
-    "tagline": "The capillaries of the AI economy — the global standard for value exchange",
+    "tagline": "The payment rails of the AI economy — the global standard for value exchange",
     "companyName": "WiseLake, Inc.",
     "ceo": "CEO: Jin Gyomoon",
     "businessNumber": "Business Reg. No.: 768-87-02255",
