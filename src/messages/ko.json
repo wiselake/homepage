@@ -97,6 +97,24 @@
       }
     }
   },
+  "ntComparison": {
+    "headerTraditional": "기존 결제",
+    "trad": {
+      "amount": { "label": "최소 거래금액", "value": "₩1,000 이상" },
+      "speed": { "label": "정산 속도", "value": "1초 ~ 수 일" },
+      "model": { "label": "과금 모델", "value": "구독 / 광고" }
+    },
+    "nano": {
+      "amount": { "label": "최소 거래금액", "value": "₩10" },
+      "speed": { "label": "정산 속도", "value": "0.1초" },
+      "model": { "label": "과금 모델", "value": "Pay-per-Use" }
+    },
+    "stat": {
+      "minTx": "최소 거래 단위",
+      "settlement": "글로벌 정산",
+      "protocol": "결제 프로토콜"
+    }
+  },
   "pigplan": {
     "title": "대한민국 양돈 ERP 시장점유율 1위",
     "desc": "피그플랜은 도드람, 다비육종, 우성사료 등 대한민국 대표 양돈조합과 기업이 사용하는 시장점유율 1위 양돈 ERP 솔루션입니다.",

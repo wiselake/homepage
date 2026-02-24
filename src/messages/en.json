@@ -97,6 +97,24 @@
       }
     }
   },
+  "ntComparison": {
+    "headerTraditional": "Traditional",
+    "trad": {
+      "amount": { "label": "Min. Transaction", "value": "₩1,000+" },
+      "speed": { "label": "Settlement Speed", "value": "1 sec – days" },
+      "model": { "label": "Billing Model", "value": "Subscription / Ads" }
+    },
+    "nano": {
+      "amount": { "label": "Min. Transaction", "value": "₩10" },
+      "speed": { "label": "Settlement Speed", "value": "0.1 sec" },
+      "model": { "label": "Billing Model", "value": "Pay-per-Use" }
+    },
+    "stat": {
+      "minTx": "Minimum Transaction",
+      "settlement": "Global Settlement",
+      "protocol": "Payment Protocol"
+    }
+  },
   "pigplan": {
     "title": "#1 Market Share in Korean Swine ERP",
     "desc": "PigPlan is the market-leading swine ERP solution used by Korea's top livestock cooperatives and enterprises including Dodram, Dabi Genetics, and Woosung Feed.",
