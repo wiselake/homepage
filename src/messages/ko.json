@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "title": "(주)와이즈레이크 | Nano Start, Mega Impact",
+    "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준. 나노 단위 마이크로페이먼트 인프라 나노트랜스(NanoTrans)를 만드는 와이즈레이크입니다."
+  },
+  "nav": {
+    "home": "홈",
+    "about": "회사소개",
+    "nanotrans": "나노트랜스",
+    "pigplan": "피그플랜",
+    "services": "서비스",
+    "roadmap": "로드맵",
+    "contact": "문의하기",
+    "language": "EN",
+    "skipToContent": "메인 콘텐츠로 건너뛰기"
+  },
+  "hero": {
+    "badge": "AI Micropayment Infrastructure",
+    "tagline1": "Nano Start",
+    "tagline2": "Mega Impact",
+    "subtitle1": "AI가 스스로 거래하는 세상, 그 결제 인프라를 만듭니다",
+    "subtitle2": "700+ 농가 실사용 · 20년 데이터 · 양돈 ERP 시장점유율 1위",
+    "cta": "NanoTrans 살펴보기",
+    "ctaSecondary": "회사소개"
+  },
+  "vision": {
+    "visionLabel": "비전",
+    "visionTitle1": "AI 경제의 미세 혈관",
+    "visionTitle2": "글로벌 가치 교환의 표준",
+    "visionDesc": "AI 에이전트가 스스로 거래하는 세상에서, 10원짜리 데이터도 0.1초 만에 전 세계 어디든 도달해야 합니다. 와이즈레이크는 그 통로를 만듭니다.",
+    "missionLabel": "미션",
+    "missionTitle1": "모든 데이터와 콘텐츠에",
+    "missionTitle2": "공정한 가치를 부여한다",
+    "missionDesc": "콘텐츠 하나, 데이터 하나가 제값을 받는 생태계. X.402 프로토콜 기반 NanoTrans가 이미 그 첫 걸음을 내딛고 있습니다."
+  },
+  "problem": {
+    "label": "문제 제기",
+    "title": "AI 에이전트는 준비됐는데, 결제 인프라가 없다",
+    "subtitle1": "2026년, AI 에이전트는 매 초 수천 건의 소액 거래를 요구합니다.",
+    "subtitle2": "기존 결제 인프라는 이 현실을 감당하지 못합니다.",
+    "minAmount": {
+      "title": "거래 불가능한 소액",
+      "desc": "10원짜리 데이터 쿼리, 1원짜리 뉴스 문장 — 기존 결제 시스템에서는 수수료가 원금을 초과합니다. AI 에이전트 간 나노 거래는 아예 성립하지 않습니다."
+    },
+    "latency": {
+      "title": "느린 정산 속도",
+      "desc": "AI 에이전트는 0.01초 안에 다음 행동을 결정합니다. 1초에서 수 일이 걸리는 기존 정산 구조는 AI 경제의 속도와 호환되지 않습니다."
+    },
+    "model": {
+      "title": "무거운 과금 모델",
+      "desc": "구독은 쓰지 않는 것에도 과금됩니다. 광고는 사용자의 주의력을 팝니다. AI 에이전트에게 두 모델 모두 존재하지 않는 개념입니다."
+    },
+    "conclusion": "AI 경제는 이미 시작됐습니다. 결제 인프라만 아직 과거에 머물러 있습니다."
+  },
+  "nanotrans": {
+    "title": "나노트랜스",
+    "subtitle": "HTTP가 정보 전송의 표준이 된 것처럼, X.402 프로토콜은 AI 에이전트 결제의 표준이 됩니다.",
+    "features": {
+      "microPayment": {
+        "title": "단돈 10원도 결제 가능",
+        "desc": "10원짜리 AI 데이터 쿼리, 1원짜리 뉴스 한 문장도 거래됩니다. 기존 시스템이 포기한 나노 단위 가치를 회수합니다."
+      },
+      "settlement": {
+        "title": "0.1초 글로벌 정산",
+        "desc": "서울에서 요청한 AI 에이전트가 도쿄 데이터센터의 응답에 즉시 대금을 지불합니다. 0.1초 안에, 전 세계 어디서든."
+      },
+      "payPerContent": {
+        "title": "Pay-per-Content",
+        "desc": "아티클 하나에 50원, 리포트 한 페이지에 10원. 구독 없이, 광고 없이, 실제로 소비한 콘텐츠에만 지불합니다."
+      },
+      "payPerUse": {
+        "title": "Pay-per-Use",
+        "desc": "API 호출 1회에 5원, 1,000회 호출하면 5,000원. 쓰는 만큼만, 정확하게. AI 에이전트 간 거래의 기본 원칙입니다."
+      }
+    }
+  },
+  "comparison": {
+    "header": {
+      "category": "구분",
+      "traditional": "기존 결제"
+    },
+    "rows": {
+      "minAmount": {
+        "label": "최소 결제금액",
+        "traditional": "₩1,000 이상",
+        "nanotrans": "₩10"
+      },
+      "speed": {
+        "label": "정산 속도",
+        "traditional": "1초 ~ 수 일",
+        "nanotrans": "0.1초"
+      },
+      "fees": {
+        "label": "수수료 구조",
+        "traditional": "복잡 / 가변",
+        "nanotrans": "극소 / 고정"
+      }
+    }
+  },
+  "pigplan": {
+    "title": "대한민국 양돈 ERP 시장점유율 1위",
+    "desc": "피그플랜은 도드람, 다비육종, 우성사료 등 대한민국 대표 양돈조합과 기업이 사용하는 시장점유율 1위 양돈 ERP 솔루션입니다.",
+    "psy": "PSY(모돈당 연간 출하 두수)는 양돈농장의 수익성을 결정하는 핵심 지표입니다. 피그플랜에 데이터를 제때 입력하는 농가는 그렇지 않은 농가 대비 PSY가 유의미하게 높습니다. 20여 년간의 데이터가 이를 증명합니다.",
+    "stats": {
+      "farms": "사용 농가 수",
+      "years": "년간 축적된 데이터",
+      "market": "시장점유율"
+    },
+    "clients": "주요 고객: 도드람, 다비육종, 우성사료",
+    "cta": "서비스 문의"
+  },
+  "partners": {
+    "label": "Trusted by Industry Leaders",
+    "mafra": "농림축산식품부",
+    "kape": "축산물품질평가원",
+    "dodram": "도드람",
+    "dabi": "다비육종",
+    "woosung": "우성사료",
+    "chunha": "천하제일사료",
+    "pickorea": "피코리아"
+  },
+  "insightPigplan": {
+    "label": "구독 서비스",
+    "title": "인사이트 피그플랜",
+    "desc": "임신·이유·분만·출하 — 어느 하나라도 일정보다 1주만 지연되면 PSY가 떨어집니다. 인사이트 피그플랜은 매주 월요일 아침, 농장주의 스마트폰으로 '이번 주 놓치면 안 되는 작업 목록'을 발송합니다.",
+    "benefit": "적시 알림 하나가 모돈 1두당 수십만 원의 차이를 만듭니다.",
+    "cta": "서비스 바로가기",
+    "ctaInquiry": "서비스 신청 문의"
+  },
+  "pigSignal": {
+    "title": "양돈 데이터를 API로, 사용한 만큼만 과금",
+    "desc": "20년간 축적된 피그플랜 데이터, ICT 장비 센서 데이터, 공공 축산 데이터를 결합한 데이터셋을 REST API로 제공합니다. 양돈 유통·가공업체, 사료회사, 축산 연구기관이 타겟 고객입니다.",
+    "nanotransIntegration": "PigPlan 20년 데이터 자산 × NanoTrans Pay-per-Use. 국내 최초로 양돈 데이터를 글로벌 API 마켓으로 가져갑니다."
+  },
+  "cre8Series1": {
+    "title": "cre8 시리즈 AI 서비스",
+    "subtitle": "와이즈레이크가 직접 만들고 직접 운영하는 서비스들. NanoTrans 인프라의 실증 실험장이자 독립 사업입니다.",
+    "cre8contents": {
+      "desc": "NanoTrans 최초 실증 서비스. K-Culture 블로그에 마이크로페이먼트를 적용하여 '구독 없이 콘텐츠에 직접 지불하는' 모델을 증명합니다.",
+      "f1": "K-Culture 콘텐츠 직접 운영",
+      "f2": "NanoTrans Pay-per-Content 실증",
+      "link": "서비스 바로가기"
+    },
+    "cre8block": {
+      "desc": "법적 효력이 아닌 기록의 영구성을 팝니다. BNB Chain에 저장된 약속은 삭제되지 않습니다.",
+      "f1": "BNB Chain 블록체인 영구 보관",
+      "f2": "웹·안드로이드 글로벌 서비스"
+    }
+  },
+  "cre8Series2": {
+    "cre8pet": {
+      "desc": "GPS 기반으로 반려견과의 산책을 기록하고 소중한 추억을 보관하는 글로벌 서비스입니다.",
+      "f1": "GPS 기반 산책 경로 기록",
+      "f2": "반려견과의 추억 타임라인",
+      "f3": "6개 언어 지원 · 무료 · Android"
+    },
+    "cre8song": {
+      "desc": "AI가 작사·작곡하고, 전문 프로듀서가 완성합니다. 세상에 하나뿐인 곡과 뮤직비디오, 가장 특별한 선물.",
+      "f1": "AI 작곡 + 전문 프로듀서 큐레이션",
+      "f2": "맞춤곡 + 뮤직비디오 제작"
+    }
+  },
+  "b2bSaas": {
+    "title": "B2B SaaS 솔루션",
+    "sectionDesc": "10명으로 100명의 속도를 만드는 조직 경험에서 탄생한 B2B 생산성 도구입니다.",
+    "flow9": {
+      "desc": "'우리 통장에 실제로 쓸 수 있는 돈이 얼마인가?' — 매일 아침 스마트폰으로 실제가용현금 리포트를 받습니다. 회계 프로그램 로그인 없이, CFO가 없어도.",
+      "f1": "매일 아침 실제가용현금 보고서 발송",
+      "f2": "매일 예상 재무제표 자동 업데이트",
+      "status": "2026 출시 예정"
+    },
+    "qbridge": {
+      "name": "Q브릿지",
+      "desc": "단골 고객이 떠나는 이유 1위: 연락이 늦다. Q브릿지는 소상공인의 고객 응대 채널을 하나로 모아 24시간 내 응답률을 높이는 고객관리 서비스입니다.",
+      "f1": "고객 연결 채널 통합",
+      "f2": "소상공인·중소기업 최적화",
+      "status": "2026 출시 예정"
+    }
+  },
+  "roadmap": {
+    "label": "로드맵",
+    "title": "나노에서 시작해, 글로벌 인프라로",
+    "years": {
+      "2025": [
+        "cre8pet 출시 완료 (Android · 6개 언어)",
+        "cre8block 출시 완료 (Web · Android)",
+        "cre8song 출시 완료",
+        "cre8contents 출시 완료 (NanoTrans 실증 시작)"
+      ],
+      "2026": [
+        "NanoTrans 서비스 정식 출시",
+        "인사이트 피그플랜 출시",
+        "피그플랜 글로벌 버전 출시",
+        "PigSignal API 서비스 출시",
+        "Flow9 · Q브릿지 출시"
+      ],
+      "2027": [
+        "NanoTrans 누적 1,000만 거래 달성",
+        "피그플랜 글로벌 3개국 이상 진출",
+        "PigSignal API 파트너사 10개 이상 확보"
+      ],
+      "2028": [
+        "NanoTrans: AI 에이전트 결제 표준 프로토콜 채택",
+        "연간 거래 처리액 목표 $100M"
+      ]
+    }
+  },
+  "contact": {
+    "label": "문의하기",
+    "title": "함께 만들어 갑니다",
+    "subtitle": "파트너십, 투자, 서비스 도입 문의 모두 환영합니다. 영업일 기준 24시간 이내에 담당자가 직접 회신합니다.",
+    "types": {
+      "general": "일반 문의",
+      "service": "서비스 신청",
+      "partnership": "제휴 문의"
+    },
+    "form": {
+      "type": "문의 유형",
+      "name": "이름",
+      "namePlaceholder": "이름을 입력해 주세요",
+      "email": "이메일",
+      "emailPlaceholder": "이메일 주소를 입력해 주세요",
+      "company": "회사명 (선택)",
+      "companyPlaceholder": "회사명을 입력해 주세요",
+      "message": "문의 내용",
+      "messagePlaceholder": "문의하실 내용을 입력해 주세요",
+      "submit": "문의 보내기",
+      "sending": "전송 중...",
+      "individual": "개인",
+      "errorGeneric": "전송에 실패했습니다. 다시 시도해 주세요."
+    },
+    "success": {
+      "title": "문의가 전송되었습니다",
+      "desc": "영업일 기준 1일 이내에 담당자가 직접 답변 드립니다."
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "회사소개 | 와이즈레이크",
+      "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준을 만드는 와이즈레이크입니다.",
+      "heroLabel": "About",
+      "heroTitle": "와이즈레이크를 소개합니다",
+      "heroSubtitle": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준"
+    },
+    "nanotrans": {
+      "title": "NanoTrans | 와이즈레이크",
+      "description": "X.402 프로토콜 기반 마이크로페이먼트 인프라. 10원도 0.1초 만에 글로벌 정산.",
+      "heroLabel": "NanoTrans",
+      "heroTitle": "나노 단위 마이크로페이먼트 인프라",
+      "heroSubtitle": "X.402 프로토콜 기반, AI 에이전트 경제에 최적화된 결제 솔루션"
+    },
+    "pigplan": {
+      "title": "PigPlan | 와이즈레이크",
+      "description": "대한민국 양돈 ERP 시장점유율 1위. 데이터 기반 스마트 양돈 솔루션.",
+      "heroLabel": "PigPlan",
+      "heroTitle": "대한민국 1위 양돈 ERP 솔루션",
+      "heroSubtitle": "데이터 기반 스마트 양돈 관리 플랫폼"
+    },
+    "services": {
+      "title": "cre8 시리즈 | 와이즈레이크",
+      "description": "AI와 블록체인을 활용한 혁신적인 서비스 라인업. cre8pet, cre8block, cre8song, cre8contents.",
+      "heroLabel": "cre8 Series",
+      "heroTitle": "cre8 시리즈 AI 서비스",
+      "heroSubtitle": "AI와 블록체인을 활용한 혁신적인 서비스 라인업"
+    },
+    "b2b": {
+      "title": "B2B SaaS | 와이즈레이크",
+      "description": "Flow9, Q브릿지 등 중소기업을 위한 B2B SaaS 솔루션.",
+      "heroLabel": "B2B SaaS",
+      "heroTitle": "B2B SaaS 솔루션",
+      "heroSubtitle": "중소기업과 소상공인을 위한 스마트 비즈니스 도구"
+    },
+    "roadmap": {
+      "title": "로드맵 | 와이즈레이크",
+      "description": "와이즈레이크의 미래를 향한 여정. 2025년부터 2028년까지의 성장 계획.",
+      "heroLabel": "Roadmap",
+      "heroTitle": "와이즈레이크의 미래를 향한 여정",
+      "heroSubtitle": "나노에서 시작해, 글로벌 인프라로 완성합니다"
+    }
+  },
+  "ecosystemArch": {
+    "label": "생태계 구조",
+    "title": "모든 서비스는 NanoTrans로 수렴한다",
+    "desc": "PigPlan이 700개 농가의 신뢰를 쌓고, cre8 시리즈가 실제 사용자를 확보하는 동안 — 데이터와 콘텐츠 자산이 축적됩니다. 그 위에서 NanoTrans가 AI 경제의 결제 인프라로 완성됩니다.",
+    "imageAlt": "WiseLake 사업 생태계 아키텍처 다이어그램: Layer 1 Interaction(Human·AI Agent) → Layer 2 Application(cre8 시리즈·PigPlan·B2B SaaS) → Layer 3 Asset(콘텐츠·데이터 자산) → Layer 4 Infrastructure(NanoTrans)",
+    "mobileNote": "전체 다이어그램은 가로 방향 화면에서 더 잘 보입니다.",
+    "layers": {
+      "layer1": {
+        "label": "Layer 1 · Interaction",
+        "title": "사용자 접점",
+        "desc": "반려견 산책, 계약 기록, 맞춤 작곡 — 실제 사람이 매일 사용하는 서비스에서 시작합니다."
+      },
+      "layer2": {
+        "label": "Layer 2 · Application",
+        "title": "다양한 서비스 운영",
+        "desc": "PigPlan, cre8pet, cre8song, cre8contents, cre8block. 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
+      },
+      "layer3": {
+        "label": "Layer 3 · Asset",
+        "title": "데이터·콘텐츠 자산 축적",
+        "desc": "20년치 양돈 데이터, K-Culture 콘텐츠, 반려견 산책 기록. 서비스를 운영할수록 자산이 쌓입니다."
+      },
+      "layer4": {
+        "label": "Layer 4 · Infrastructure",
+        "title": "NanoTrans 결제 인프라 완성",
+        "desc": "축적된 자산이 API로 거래되고, 콘텐츠가 단위 과금될 때 — NanoTrans가 그 흐름의 기준이 됩니다."
+      }
+    }
+  },
+  "serviceOverview": {
+    "label": "사업 영역",
+    "title": "와이즈레이크의 서비스",
+    "subtitle": "각 서비스는 독립적으로 작동하면서, NanoTrans를 중심으로 하나의 생태계로 연결됩니다.",
+    "nanotrans": {
+      "title": "NanoTrans",
+      "summary": "AI 에이전트 경제의 결제 인프라. X.402 프로토콜 기반, 10원부터 0.1초 글로벌 정산. 모든 WiseLake 서비스의 결제 엔진.",
+      "cta": "자세히 보기"
+    },
+    "pigplan": {
+      "title": "PigPlan",
+      "summary": "20년 데이터, 700+ 농가, 시장점유율 1위. 한국 1위의 양돈 ERP가 글로벌 데이터 API로 진화합니다.",
+      "cta": "자세히 보기"
+    },
+    "services": {
+      "title": "cre8 시리즈",
+      "summary": "NanoTrans 실증 서비스이자 독립 사업. AI 콘텐츠, 블록체인 약속, 반려견 산책, AI 작곡까지.",
+      "cta": "자세히 보기"
+    },
+    "b2b": {
+      "title": "B2B SaaS",
+      "summary": "실제가용현금 리포트(Flow9)와 고객관리(Q브릿지). 10명이 100명의 속도를 내는 도구.",
+      "cta": "자세히 보기"
+    }
+  },
+  "footer": {
+    "tagline": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준",
+    "companyName": "(주)와이즈레이크",
+    "ceo": "대표이사: 진교문",
+    "businessNumber": "사업자등록번호: 768-87-02255",
+    "email": "wiselake@wiselake.co.kr",
+    "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  }
+}

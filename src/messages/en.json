@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "title": "WiseLake – Nano Start, Mega Impact",
+    "description": "WiseLake builds micropayment infrastructure for the AI agent economy. NanoTrans enables instant global settlement of nano-scale transactions."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "nanotrans": "NanoTrans",
+    "pigplan": "PigPlan",
+    "services": "Services",
+    "roadmap": "Roadmap",
+    "contact": "Contact",
+    "language": "한국어",
+    "skipToContent": "Skip to main content"
+  },
+  "hero": {
+    "badge": "AI Micropayment Infrastructure",
+    "tagline1": "Nano Start",
+    "tagline2": "Mega Impact",
+    "subtitle1": "Building the payment infrastructure for a world where AI transacts autonomously",
+    "subtitle2": "700+ farms · 20 years of data · #1 swine ERP market share",
+    "cta": "Explore NanoTrans",
+    "ctaSecondary": "About Us"
+  },
+  "vision": {
+    "visionLabel": "Vision",
+    "visionTitle1": "The Micro-Capillaries of the AI Economy",
+    "visionTitle2": "The Global Standard for Value Exchange",
+    "visionDesc": "In a world where AI agents transact autonomously, even ₩10 worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
+    "missionLabel": "Mission",
+    "missionTitle1": "Fair Value for Every Data",
+    "missionTitle2": "and Every Piece of Content",
+    "missionDesc": "An ecosystem where every piece of content and every data point is paid its fair value. NanoTrans, built on the X.402 Protocol, is already taking that first step."
+  },
+  "problem": {
+    "label": "Problem",
+    "title": "AI Agents Are Ready. Payment Infrastructure Is Not.",
+    "subtitle1": "In 2026, AI agents demand thousands of micro-transactions per second.",
+    "subtitle2": "Legacy payment systems cannot keep up.",
+    "minAmount": {
+      "title": "Minimum Transaction Too High",
+      "desc": "A ₩10 data query, a ₩1 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
+    },
+    "latency": {
+      "title": "Slow Settlement",
+      "desc": "AI agents decide their next action in 0.01 seconds. Settlement that takes 1 second to several days is incompatible with the speed of the AI economy."
+    },
+    "model": {
+      "title": "Heavy Billing Models",
+      "desc": "Subscriptions charge for what you don't use. Ads sell user attention. Neither concept exists for AI agents."
+    },
+    "conclusion": "The AI economy has already begun. Only the payment infrastructure is still stuck in the past."
+  },
+  "nanotrans": {
+    "title": "NanoTrans",
+    "subtitle": "Just as HTTP became the standard for information transfer, the X.402 Protocol becomes the standard for AI agent payments.",
+    "features": {
+      "microPayment": {
+        "title": "Micro Transactions from ₩10",
+        "desc": "A ₩10 AI data query, a ₩1 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
+      },
+      "settlement": {
+        "title": "0.1s Global Settlement",
+        "desc": "An AI agent in Seoul pays instantly for a response from a Tokyo data center. In 0.1 seconds, anywhere in the world."
+      },
+      "payPerContent": {
+        "title": "Pay-per-Content",
+        "desc": "₩50 for an article, ₩10 for a report page. No subscriptions, no ads — pay only for what you actually consume."
+      },
+      "payPerUse": {
+        "title": "Pay-per-Use",
+        "desc": "₩5 per API call. 1,000 calls = ₩5,000. Pay exactly for what you use. The fundamental principle of AI agent transactions."
+      }
+    }
+  },
+  "comparison": {
+    "header": {
+      "category": "Category",
+      "traditional": "Legacy Payments"
+    },
+    "rows": {
+      "minAmount": {
+        "label": "Minimum Transaction",
+        "traditional": "₩1,000+",
+        "nanotrans": "₩10"
+      },
+      "speed": {
+        "label": "Settlement Speed",
+        "traditional": "1 sec – several days",
+        "nanotrans": "0.1 sec"
+      },
+      "fees": {
+        "label": "Fee Structure",
+        "traditional": "Complex / Variable",
+        "nanotrans": "Ultra-low / Fixed"
+      }
+    }
+  },
+  "pigplan": {
+    "title": "#1 Market Share in Korean Swine ERP",
+    "desc": "PigPlan is the market-leading swine ERP solution used by Korea's top livestock cooperatives and enterprises including Dodram, Dabi Genetics, and Woosung Feed.",
+    "psy": "PSY (Pigs per Sow per Year) is the key metric determining farm profitability. Farms that consistently log data in PigPlan show meaningfully higher PSY compared to those that don't. Over 20 years of data proves it.",
+    "stats": {
+      "farms": "Farms Using PigPlan",
+      "years": "Years of Data",
+      "market": "Market Share"
+    },
+    "clients": "Key Clients: Dodram, Dabi Genetics, Woosung Feed",
+    "cta": "Inquire About Service"
+  },
+  "partners": {
+    "label": "Trusted by Industry Leaders",
+    "mafra": "Ministry of Agriculture, Food and Rural Affairs",
+    "kape": "Korea Institute for Animal Products Quality Evaluation",
+    "dodram": "Dodram",
+    "dabi": "Dabi Genetics",
+    "woosung": "Woosung Feed",
+    "chunha": "Chunha Jeil Feed",
+    "pickorea": "Pickorea"
+  },
+  "insightPigplan": {
+    "label": "Subscription Report",
+    "title": "Insight PigPlan",
+    "desc": "Gestation, weaning, farrowing, shipment — if any of these slip by just one week, PSY drops. Insight PigPlan sends a 'must-do tasks this week' checklist to the farmer's smartphone every Monday morning.",
+    "benefit": "One timely alert can make a difference of hundreds of thousands of won per sow.",
+    "cta": "Visit Service",
+    "ctaInquiry": "Inquire About Subscription"
+  },
+  "pigSignal": {
+    "title": "Swine Data via Pay-per-Use API",
+    "desc": "Combining 20 years of PigPlan data, ICT sensor data, and public livestock data into datasets delivered via REST API. Target customers: swine distributors, processors, feed companies, and livestock research institutions.",
+    "nanotransIntegration": "PigPlan's 20-year data asset × NanoTrans Pay-per-Use. Taking Korean swine data to the global API market for the first time."
+  },
+  "cre8Series1": {
+    "title": "cre8 AI Services",
+    "subtitle": "Built and operated directly by WiseLake. Both a proving ground for NanoTrans infrastructure and independent businesses.",
+    "cre8contents": {
+      "desc": "The first live proof-of-concept for NanoTrans. Applying micropayments to a K-Culture blog, proving the 'pay directly for content without subscriptions' model.",
+      "f1": "K-Culture content, self-operated",
+      "f2": "NanoTrans Pay-per-Content proof-of-concept",
+      "link": "Visit Service"
+    },
+    "cre8block": {
+      "desc": "We sell permanence, not legal authority. Promises stored on BNB Chain cannot be deleted.",
+      "f1": "BNB Chain permanent storage",
+      "f2": "Web & Android global service"
+    }
+  },
+  "cre8Series2": {
+    "cre8pet": {
+      "desc": "A global service that records GPS-based dog walks and preserves memories with your pet.",
+      "f1": "GPS-based walk route tracking",
+      "f2": "Pet memory timeline",
+      "f3": "6 languages · Free · Android"
+    },
+    "cre8song": {
+      "desc": "AI writes the lyrics and composes the music. Professional producers finish it. A one-of-a-kind song and music video — the most special gift.",
+      "f1": "AI composition + professional producer curation",
+      "f2": "Custom song + music video production"
+    }
+  },
+  "b2bSaas": {
+    "title": "B2B SaaS Solutions",
+    "sectionDesc": "Born from a team of 10 that moves at the speed of 100. B2B productivity tools from real operational experience.",
+    "flow9": {
+      "desc": "'How much cash can we actually spend today?' — Get your available-cash report on your smartphone every morning. No accounting software login needed. No CFO required.",
+      "f1": "Daily available-cash report every morning",
+      "f2": "Daily auto-updated projected financial statements",
+      "status": "Launching 2026"
+    },
+    "qbridge": {
+      "name": "Q-Bridge",
+      "desc": "The #1 reason loyal customers leave: slow response times. Q-Bridge unifies your customer channels and helps small businesses achieve better response rates within 24 hours.",
+      "f1": "Unified customer communication channels",
+      "f2": "SME-optimized solution",
+      "status": "Launching 2026"
+    }
+  },
+  "roadmap": {
+    "label": "Roadmap",
+    "title": "From Nano to Global Infrastructure",
+    "years": {
+      "2025": [
+        "cre8pet launched (Android · 6 languages)",
+        "cre8block launched (Web · Android)",
+        "cre8song launched",
+        "cre8contents launched (NanoTrans proof-of-concept begins)"
+      ],
+      "2026": [
+        "NanoTrans official launch",
+        "Insight PigPlan launch",
+        "PigPlan Global version launch",
+        "PigSignal API service launch",
+        "Flow9 · Q-Bridge launch"
+      ],
+      "2027": [
+        "NanoTrans cumulative 10M transactions",
+        "PigPlan Global expansion to 3+ countries",
+        "PigSignal API partners: 10+"
+      ],
+      "2028": [
+        "NanoTrans: adopted as AI agent payment standard protocol",
+        "Annual transaction volume target: $100M"
+      ]
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's Build Together",
+    "subtitle": "Partnerships, investment inquiries, and service adoption — all welcome. Our team responds within 24 business hours.",
+    "types": {
+      "general": "General Inquiry",
+      "service": "Service Application",
+      "partnership": "Partnership Inquiry"
+    },
+    "form": {
+      "type": "Inquiry Type",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "company": "Company (optional)",
+      "companyPlaceholder": "Company name",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "individual": "Individual",
+      "errorGeneric": "Failed to send. Please try again."
+    },
+    "success": {
+      "title": "Message Sent",
+      "desc": "A member of our team will reach out within 1 business day."
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About | WiseLake",
+      "description": "WiseLake builds micropayment infrastructure for the AI economy — the global standard for nano-value exchange.",
+      "heroLabel": "About",
+      "heroTitle": "About WiseLake",
+      "heroSubtitle": "The capillaries of the AI economy, the global standard for value exchange"
+    },
+    "nanotrans": {
+      "title": "NanoTrans | WiseLake",
+      "description": "Micropayment infrastructure built on X.402 Protocol. Settle even ₩10 globally in 0.1 seconds.",
+      "heroLabel": "NanoTrans",
+      "heroTitle": "Nano-scale Micropayment Infrastructure",
+      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on X.402 Protocol"
+    },
+    "pigplan": {
+      "title": "PigPlan | WiseLake",
+      "description": "#1 market share in Korean swine ERP. Data-driven smart swine management solution.",
+      "heroLabel": "PigPlan",
+      "heroTitle": "#1 Swine ERP Solution in Korea",
+      "heroSubtitle": "Data-driven smart swine management platform"
+    },
+    "services": {
+      "title": "cre8 Series | WiseLake",
+      "description": "NanoTrans proving ground and independent AI services: cre8pet, cre8block, cre8song, cre8contents.",
+      "heroLabel": "cre8 Series",
+      "heroTitle": "cre8 AI Service Series",
+      "heroSubtitle": "NanoTrans proving ground and independent AI service businesses"
+    },
+    "b2b": {
+      "title": "B2B SaaS | WiseLake",
+      "description": "Flow9 available-cash reports, Q-Bridge customer management — B2B SaaS for SMEs.",
+      "heroLabel": "B2B SaaS",
+      "heroTitle": "B2B SaaS Solutions",
+      "heroSubtitle": "Smart business tools for SMEs and entrepreneurs"
+    },
+    "roadmap": {
+      "title": "Roadmap | WiseLake",
+      "description": "From nano to global infrastructure. WiseLake's growth plan from 2025 to 2028.",
+      "heroLabel": "Roadmap",
+      "heroTitle": "From Nano to Global Infrastructure",
+      "heroSubtitle": "Starting from nano, completing as global infrastructure"
+    }
+  },
+  "ecosystemArch": {
+    "label": "Ecosystem Architecture",
+    "title": "Every Service Converges on NanoTrans",
+    "desc": "While PigPlan earns trust across 700+ farms and cre8 series builds a real user base — data and content assets accumulate. On top of that foundation, NanoTrans completes itself as the payment infrastructure of the AI economy.",
+    "imageAlt": "WiseLake business ecosystem architecture diagram: Layer 1 Interaction (Human · AI Agent) → Layer 2 Application (cre8 series · PigPlan · B2B SaaS) → Layer 3 Asset (Content & Data Assets) → Layer 4 Infrastructure (NanoTrans)",
+    "mobileNote": "Rotate to landscape for the best view of this diagram.",
+    "layers": {
+      "layer1": {
+        "label": "Layer 1 · Interaction",
+        "title": "User Touch Points",
+        "desc": "Dog walks, contract records, custom songs — it starts with services real people use every day."
+      },
+      "layer2": {
+        "label": "Layer 2 · Application",
+        "title": "A Diverse Service Portfolio",
+        "desc": "PigPlan, cre8pet, cre8song, cre8contents, cre8block. Each operates independently and is validated in real markets."
+      },
+      "layer3": {
+        "label": "Layer 3 · Asset",
+        "title": "Data and Content Assets Accumulate",
+        "desc": "20 years of swine data, K-Culture content, dog walk records. The longer we operate, the deeper the asset base grows."
+      },
+      "layer4": {
+        "label": "Layer 4 · Infrastructure",
+        "title": "NanoTrans Infrastructure Is Realized",
+        "desc": "When accumulated assets are traded via API and content is charged per unit — NanoTrans becomes the standard that governs that flow."
+      }
+    }
+  },
+  "serviceOverview": {
+    "label": "Services",
+    "title": "What We Build",
+    "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
+    "nanotrans": {
+      "title": "NanoTrans",
+      "summary": "Payment infrastructure for the AI agent economy. X.402 Protocol, ₩10 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "cta": "Learn More"
+    },
+    "pigplan": {
+      "title": "PigPlan",
+      "summary": "20 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
+      "cta": "Learn More"
+    },
+    "services": {
+      "title": "cre8 Series",
+      "summary": "NanoTrans proving ground and independent businesses. AI content, blockchain promises, pet walks, AI songwriting.",
+      "cta": "Learn More"
+    },
+    "b2b": {
+      "title": "B2B SaaS",
+      "summary": "Available-cash reports (Flow9) and customer management (Q-Bridge). Tools for a team of 10 to move at the speed of 100.",
+      "cta": "Learn More"
+    }
+  },
+  "footer": {
+    "tagline": "The capillaries of the AI economy — the global standard for value exchange",
+    "companyName": "WiseLake, Inc.",
+    "ceo": "CEO: Jin Gyomoon",
+    "businessNumber": "Business Reg. No.: 768-87-02255",
+    "email": "wiselake@wiselake.co.kr",
+    "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  }
+}
