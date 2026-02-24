@@ -40,7 +40,7 @@
     "subtitle2": "Legacy payment systems cannot keep up.",
     "minAmount": {
       "title": "Minimum Transaction Too High",
-      "desc": "A $0.007 data query, a $0.001 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
+      "desc": "A $0.01 data query, a $0.001 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
     },
     "latency": {
       "title": "Slow Settlement",
@@ -57,8 +57,8 @@
     "subtitle": "Just as HTTP became the standard for information transfer, the x402 Protocol becomes the standard for AI agent payments.",
     "features": {
       "microPayment": {
-        "title": "Micro Transactions from $0.007",
-        "desc": "A $0.007 AI data query, a $0.001 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
+        "title": "Micro Transactions from $0.01",
+        "desc": "A $0.01 AI data query, a $0.001 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
       },
       "settlement": {
         "title": "0.1s Global Settlement",
@@ -66,11 +66,11 @@
       },
       "payPerContent": {
         "title": "Pay-per-Content",
-        "desc": "$0.04 for an article, $0.007 for a report page. No subscriptions, no ads — pay only for what you actually consume."
+        "desc": "$0.05 for an article, $0.01 for a report page. No subscriptions, no ads — pay only for what you actually consume."
       },
       "payPerUse": {
         "title": "Pay-per-Use",
-        "desc": "$0.004 per API call. 1,000 calls = $4. Pay exactly for what you use. The fundamental principle of AI agent transactions."
+        "desc": "$0.005 per API call. 1,000 calls = $5. Pay exactly for what you use. The fundamental principle of AI agent transactions."
       }
     }
   },
@@ -82,8 +82,8 @@
     "rows": {
       "minAmount": {
         "label": "Minimum Transaction",
-        "traditional": "$0.70+",
-        "nanotrans": "$0.007"
+        "traditional": "$1+",
+        "nanotrans": "$0.01"
       },
       "speed": {
         "label": "Settlement Speed",
@@ -100,18 +100,18 @@
   "ntComparison": {
     "headerTraditional": "Traditional",
     "trad": {
-      "amount": { "label": "Min. Transaction", "value": "$0.70+" },
+      "amount": { "label": "Min. Transaction", "value": "$1+" },
       "speed": { "label": "Settlement Speed", "value": "1 sec – days" },
       "model": { "label": "Billing Model", "value": "Subscription / Ads" }
     },
     "nano": {
-      "amount": { "label": "Min. Transaction", "value": "$0.007" },
+      "amount": { "label": "Min. Transaction", "value": "$0.01" },
       "speed": { "label": "Settlement Speed", "value": "0.1 sec" },
       "model": { "label": "Billing Model", "value": "Pay-per-Use" }
     },
     "stat": {
       "minTx": "Minimum Transaction",
-      "minTxValue": "$0.007",
+      "minTxValue": "$0.01",
       "settlement": "Global Settlement",
       "settlementValue": "0.1s",
       "protocol": "Payment Protocol",
@@ -265,7 +265,7 @@
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
-      "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.007 globally in 0.1 seconds.",
+      "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.01 globally in 0.1 seconds.",
       "heroLabel": "NanoTrans",
       "heroTitle": "Nano-scale Micropayment Infrastructure",
       "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol"
@@ -334,7 +334,7 @@
     "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "Payment infrastructure for the AI agent economy. x402 Protocol, $0.007 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "summary": "Payment infrastructure for the AI agent economy. x402 Protocol, $0.01 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
       "cta": "Learn More"
     },
     "pigplan": {
