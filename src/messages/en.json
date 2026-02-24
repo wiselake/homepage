@@ -27,7 +27,7 @@
     "visionLabel": "Vision",
     "visionTitle1": "The Micro-Capillaries of the AI Economy",
     "visionTitle2": "The Global Standard for Value Exchange",
-    "visionDesc": "In a world where AI agents transact autonomously, even ₩10 worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
+    "visionDesc": "In a world where AI agents transact autonomously, even a fraction of a cent worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
     "missionLabel": "Mission",
     "missionTitle1": "Fair Value for Every Data",
     "missionTitle2": "and Every Piece of Content",
@@ -40,7 +40,7 @@
     "subtitle2": "Legacy payment systems cannot keep up.",
     "minAmount": {
       "title": "Minimum Transaction Too High",
-      "desc": "A ₩10 data query, a ₩1 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
+      "desc": "A $0.007 data query, a $0.001 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
     },
     "latency": {
       "title": "Slow Settlement",
@@ -57,8 +57,8 @@
     "subtitle": "Just as HTTP became the standard for information transfer, the X.402 Protocol becomes the standard for AI agent payments.",
     "features": {
       "microPayment": {
-        "title": "Micro Transactions from ₩10",
-        "desc": "A ₩10 AI data query, a ₩1 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
+        "title": "Micro Transactions from $0.007",
+        "desc": "A $0.007 AI data query, a $0.001 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
       },
       "settlement": {
         "title": "0.1s Global Settlement",
@@ -66,11 +66,11 @@
       },
       "payPerContent": {
         "title": "Pay-per-Content",
-        "desc": "₩50 for an article, ₩10 for a report page. No subscriptions, no ads — pay only for what you actually consume."
+        "desc": "$0.04 for an article, $0.007 for a report page. No subscriptions, no ads — pay only for what you actually consume."
       },
       "payPerUse": {
         "title": "Pay-per-Use",
-        "desc": "₩5 per API call. 1,000 calls = ₩5,000. Pay exactly for what you use. The fundamental principle of AI agent transactions."
+        "desc": "$0.004 per API call. 1,000 calls = $4. Pay exactly for what you use. The fundamental principle of AI agent transactions."
       }
     }
   },
@@ -82,8 +82,8 @@
     "rows": {
       "minAmount": {
         "label": "Minimum Transaction",
-        "traditional": "₩1,000+",
-        "nanotrans": "₩10"
+        "traditional": "$0.70+",
+        "nanotrans": "$0.007"
       },
       "speed": {
         "label": "Settlement Speed",
@@ -100,19 +100,22 @@
   "ntComparison": {
     "headerTraditional": "Traditional",
     "trad": {
-      "amount": { "label": "Min. Transaction", "value": "₩1,000+" },
+      "amount": { "label": "Min. Transaction", "value": "$0.70+" },
       "speed": { "label": "Settlement Speed", "value": "1 sec – days" },
       "model": { "label": "Billing Model", "value": "Subscription / Ads" }
     },
     "nano": {
-      "amount": { "label": "Min. Transaction", "value": "₩10" },
+      "amount": { "label": "Min. Transaction", "value": "$0.007" },
       "speed": { "label": "Settlement Speed", "value": "0.1 sec" },
       "model": { "label": "Billing Model", "value": "Pay-per-Use" }
     },
     "stat": {
       "minTx": "Minimum Transaction",
+      "minTxValue": "$0.007",
       "settlement": "Global Settlement",
-      "protocol": "Payment Protocol"
+      "settlementValue": "0.1s",
+      "protocol": "Payment Protocol",
+      "protocolValue": "X.402"
     }
   },
   "pigplan": {
@@ -262,7 +265,7 @@
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
-      "description": "Micropayment infrastructure built on X.402 Protocol. Settle even ₩10 globally in 0.1 seconds.",
+      "description": "Micropayment infrastructure built on X.402 Protocol. Settle even $0.007 globally in 0.1 seconds.",
       "heroLabel": "NanoTrans",
       "heroTitle": "Nano-scale Micropayment Infrastructure",
       "heroSubtitle": "Payment solution optimized for the AI agent economy, built on X.402 Protocol"
@@ -331,7 +334,7 @@
     "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "Payment infrastructure for the AI agent economy. X.402 Protocol, ₩10 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "summary": "Payment infrastructure for the AI agent economy. X.402 Protocol, $0.007 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
       "cta": "Learn More"
     },
     "pigplan": {

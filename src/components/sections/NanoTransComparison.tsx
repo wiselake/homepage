@@ -509,9 +509,9 @@ export function NanoTransComparison() {
         transition={{ delay: 1.2, duration: 0.6 }}
       >
         {[
-          { value: "₩10", sub: t("stat.minTx") },
-          { value: "0.1s", sub: t("stat.settlement") },
-          { value: "X.402", sub: t("stat.protocol") },
+          { value: t("stat.minTxValue"), sub: t("stat.minTx") },
+          { value: t("stat.settlementValue"), sub: t("stat.settlement") },
+          { value: t("stat.protocolValue"), sub: t("stat.protocol") },
         ].map((stat, i) => (
           <div key={i} className="text-center">
             <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">

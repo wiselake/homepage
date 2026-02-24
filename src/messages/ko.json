@@ -111,8 +111,11 @@
     },
     "stat": {
       "minTx": "최소 거래 단위",
+      "minTxValue": "₩10",
       "settlement": "글로벌 정산",
-      "protocol": "결제 프로토콜"
+      "settlementValue": "0.1s",
+      "protocol": "결제 프로토콜",
+      "protocolValue": "X.402"
     }
   },
   "pigplan": {
