@@ -31,7 +31,7 @@
     "missionLabel": "Mission",
     "missionTitle1": "Fair Value for Every Data",
     "missionTitle2": "and Every Piece of Content",
-    "missionDesc": "An ecosystem where every piece of content and every data point is paid its fair value. NanoTrans, built on the X.402 Protocol, is already taking that first step."
+    "missionDesc": "An ecosystem where every piece of content and every data point is paid its fair value. NanoTrans, built on the x402 Protocol, is already taking that first step."
   },
   "problem": {
     "label": "Problem",
@@ -54,7 +54,7 @@
   },
   "nanotrans": {
     "title": "NanoTrans",
-    "subtitle": "Just as HTTP became the standard for information transfer, the X.402 Protocol becomes the standard for AI agent payments.",
+    "subtitle": "Just as HTTP became the standard for information transfer, the x402 Protocol becomes the standard for AI agent payments.",
     "features": {
       "microPayment": {
         "title": "Micro Transactions from $0.007",
@@ -115,7 +115,7 @@
       "settlement": "Global Settlement",
       "settlementValue": "0.1s",
       "protocol": "Payment Protocol",
-      "protocolValue": "X.402"
+      "protocolValue": "x402"
     }
   },
   "pigplan": {
@@ -265,10 +265,10 @@
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
-      "description": "Micropayment infrastructure built on X.402 Protocol. Settle even $0.007 globally in 0.1 seconds.",
+      "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.007 globally in 0.1 seconds.",
       "heroLabel": "NanoTrans",
       "heroTitle": "Nano-scale Micropayment Infrastructure",
-      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on X.402 Protocol"
+      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol"
     },
     "pigplan": {
       "title": "PigPlan | WiseLake",
@@ -334,7 +334,7 @@
     "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "Payment infrastructure for the AI agent economy. X.402 Protocol, $0.007 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "summary": "Payment infrastructure for the AI agent economy. x402 Protocol, $0.007 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
       "cta": "Learn More"
     },
     "pigplan": {

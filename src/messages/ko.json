@@ -31,7 +31,7 @@
     "missionLabel": "미션",
     "missionTitle1": "모든 데이터와 콘텐츠에",
     "missionTitle2": "공정한 가치를 부여한다",
-    "missionDesc": "콘텐츠 하나, 데이터 하나가 제값을 받는 생태계. X.402 프로토콜 기반 NanoTrans가 이미 그 첫 걸음을 내딛고 있습니다."
+    "missionDesc": "콘텐츠 하나, 데이터 하나가 제값을 받는 생태계. x402 프로토콜 기반 NanoTrans가 이미 그 첫 걸음을 내딛고 있습니다."
   },
   "problem": {
     "label": "문제 제기",
@@ -54,7 +54,7 @@
   },
   "nanotrans": {
     "title": "나노트랜스",
-    "subtitle": "HTTP가 정보 전송의 표준이 된 것처럼, X.402 프로토콜은 AI 에이전트 결제의 표준이 됩니다.",
+    "subtitle": "HTTP가 정보 전송의 표준이 된 것처럼, x402 프로토콜은 AI 에이전트 결제의 표준이 됩니다.",
     "features": {
       "microPayment": {
         "title": "단돈 10원도 결제 가능",
@@ -115,7 +115,7 @@
       "settlement": "글로벌 정산",
       "settlementValue": "0.1s",
       "protocol": "결제 프로토콜",
-      "protocolValue": "X.402"
+      "protocolValue": "x402"
     }
   },
   "pigplan": {
@@ -265,10 +265,10 @@
     },
     "nanotrans": {
       "title": "NanoTrans | 와이즈레이크",
-      "description": "X.402 프로토콜 기반 마이크로페이먼트 인프라. 10원도 0.1초 만에 글로벌 정산.",
+      "description": "x402 프로토콜 기반 마이크로페이먼트 인프라. 10원도 0.1초 만에 글로벌 정산.",
       "heroLabel": "NanoTrans",
       "heroTitle": "나노 단위 마이크로페이먼트 인프라",
-      "heroSubtitle": "X.402 프로토콜 기반, AI 에이전트 경제에 최적화된 결제 솔루션"
+      "heroSubtitle": "x402 프로토콜 기반, AI 에이전트 경제에 최적화된 결제 솔루션"
     },
     "pigplan": {
       "title": "PigPlan | 와이즈레이크",
@@ -334,7 +334,7 @@
     "subtitle": "각 서비스는 독립적으로 작동하면서, NanoTrans를 중심으로 하나의 생태계로 연결됩니다.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "AI 에이전트 경제의 결제 인프라. X.402 프로토콜 기반, 10원부터 0.1초 글로벌 정산. 모든 WiseLake 서비스의 결제 엔진.",
+      "summary": "AI 에이전트 경제의 결제 인프라. x402 프로토콜 기반, 10원부터 0.1초 글로벌 정산. 모든 WiseLake 서비스의 결제 엔진.",
       "cta": "자세히 보기"
     },
     "pigplan": {

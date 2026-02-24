@@ -98,39 +98,33 @@ function SlowDot() {
   );
 }
 
-/* Locked cage/box */
-function LockedBox() {
+/* Subscription — big chunk leaves at once, then nothing until next cycle */
+function SubscriptionChunk() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Cage */}
+      {/* Flat baseline */}
+      <div className="absolute top-1/2 left-[5%] right-[5%] h-px -translate-y-1/2 bg-white/8" />
+      {/* Big expensive block that moves periodically */}
       <motion.div
-        className="absolute left-[10%] right-[10%] top-[10%] bottom-[10%] border border-white/15 rounded"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="absolute top-1/2 -translate-y-1/2 w-16 h-8 rounded bg-red-400/20 border border-red-400/30 flex items-center justify-center"
+        animate={{ left: ["8%", "70%", "70%", "8%"] }}
+        transition={{
+          duration: 5,
+          times: [0, 0.3, 0.8, 1],
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       >
-        {/* Lock bars */}
-        {[25, 50, 75].map((x) => (
-          <div
-            key={x}
-            className="absolute top-0 bottom-0 w-px bg-white/8"
-            style={{ left: `${x}%` }}
-          />
-        ))}
-        {/* Inner trapped dot */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white/15"
-          animate={{
-            x: [-8, 8, -6, 4, -8],
-            y: [-4, 6, -6, 2, -4],
-          }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <span className="text-[9px] text-red-400/70 font-mono">$29/mo</span>
       </motion.div>
-      {/* Lock icon */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[4px] text-white/25 text-xs">
-        🔒
-      </div>
+      {/* "Not using" periods — dimmed empty zones */}
+      <motion.div
+        className="absolute top-[15%] right-[8%] text-[9px] text-white/15"
+        animate={{ opacity: [0, 0.3, 0] }}
+        transition={{ duration: 5, repeat: Infinity }}
+      >
+        idle...
+      </motion.div>
     </div>
   );
 }
@@ -230,61 +224,50 @@ function SpeedStreak() {
   );
 }
 
-/* Branching free-flowing paths */
-function FreeBranching() {
+/* Pay-per-use — small individual particles depart one at a time on demand */
+function PayPerUseDots() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <svg viewBox="0 0 400 80" className="absolute inset-0 w-full h-full" fill="none">
-        {/* Main trunk */}
-        <motion.path
-          d="M0,40 L250,40"
-          stroke="#F5A623"
-          strokeWidth="2"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 0.8 }}
-          style={{ filter: "drop-shadow(0 0 4px rgba(245,166,35,0.4))" }}
-        />
-        {/* Branches */}
-        {[
-          { d: "M250,40 Q310,40 380,10", delay: 0.8 },
-          { d: "M250,40 Q310,38 390,40", delay: 0.9 },
-          { d: "M250,40 Q310,40 380,70", delay: 1.0 },
-          { d: "M250,40 Q280,25 350,5", delay: 1.1 },
-          { d: "M250,40 Q280,55 350,75", delay: 1.15 },
-        ].map(({ d, delay }, i) => (
-          <motion.path
-            key={i}
-            d={d}
-            stroke="#F5A623"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            opacity={1 - i * 0.12}
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 - i * 0.12 }}
-            transition={{ duration: 0.6, delay }}
-            style={{ filter: "drop-shadow(0 0 3px rgba(245,166,35,0.3))" }}
+      {/* Track */}
+      <div
+        className="absolute top-1/2 left-[5%] right-[5%] h-px -translate-y-1/2 bg-accent/15"
+        style={{ boxShadow: "0 0 8px rgba(245,166,35,0.1)" }}
+      />
+      {/* Individual small particles — each one is a micro-transaction */}
+      {Array.from({ length: 6 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute top-1/2 -translate-y-1/2 flex items-center gap-1"
+          animate={{ left: ["5%", "90%"] }}
+          transition={{
+            duration: 1.2,
+            delay: i * 0.7,
+            repeat: Infinity,
+            repeatDelay: 3.5,
+            ease: "easeOut",
+          }}
+        >
+          <div
+            className="w-2 h-2 rounded-full bg-accent"
+            style={{
+              boxShadow: "0 0 6px 2px rgba(245,166,35,0.5)",
+            }}
           />
-        ))}
-        {/* Flowing dots on branches */}
-        {[
-          { cx: 380, cy: 10, delay: 1.6 },
-          { cx: 390, cy: 40, delay: 1.7 },
-          { cx: 380, cy: 70, delay: 1.8 },
-        ].map(({ cx, cy, delay }, i) => (
-          <motion.circle
-            key={i}
-            cx={cx}
-            cy={cy}
-            r="3"
-            fill="#F5A623"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: [0, 1, 0.6], scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay, repeat: Infinity, repeatDelay: 2 }}
-            style={{ filter: "drop-shadow(0 0 6px rgba(245,166,35,0.8))" }}
-          />
-        ))}
-      </svg>
+          <motion.span
+            className="text-[8px] text-accent/60 font-mono whitespace-nowrap"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.7, 0] }}
+            transition={{
+              duration: 1.2,
+              delay: i * 0.7,
+              repeat: Infinity,
+              repeatDelay: 3.5,
+            }}
+          >
+            {["$0.007", "$0.004", "$0.01", "$0.002", "$0.007", "$0.004"][i]}
+          </motion.span>
+        </motion.div>
+      ))}
     </div>
   );
 }
@@ -318,13 +301,13 @@ function ComparisonRow({
       case "slow":
         return <SlowDot />;
       case "locked":
-        return <LockedBox />;
+        return <SubscriptionChunk />;
       case "flowing":
         return <FlowingParticles />;
       case "fast":
         return <SpeedStreak />;
       case "branching":
-        return <FreeBranching />;
+        return <PayPerUseDots />;
     }
   };
 
