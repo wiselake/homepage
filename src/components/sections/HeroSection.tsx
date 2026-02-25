@@ -83,7 +83,12 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]"
         >
-          <span className="block">{t("subtitle1")}</span>
+          <span className="block">
+            {t("subtitle1_line1")}
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            {t("subtitle1_line2")}
+          </span>
           <span className="block mt-2">{t("subtitle2")}</span>
         </motion.p>
 

@@ -18,7 +18,8 @@
     "badge": "AI Micropayment Infrastructure",
     "tagline1": "Nano Start",
     "tagline2": "Mega Impact",
-    "subtitle1": "AI가 스스로 거래하는 세상, 그 결제 인프라를 만듭니다",
+    "subtitle1_line1": "AI가 스스로 거래하는 세상,",
+    "subtitle1_line2": "그 결제 인프라를 만듭니다",
     "subtitle2": "700+ 농가 실사용 · 20년 데이터 · 양돈 ERP 시장점유율 1위",
     "cta": "NanoTrans 살펴보기",
     "ctaSecondary": "회사소개"
