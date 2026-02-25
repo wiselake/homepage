@@ -52,7 +52,8 @@
       "title": "Heavy Billing Models",
       "desc": "Subscriptions charge for what you don't use. Ads sell user attention. Neither concept exists for AI agents."
     },
-    "conclusion": "The AI economy has already begun. Only the payment infrastructure is still stuck in the past."
+    "conclusion_line1": "The AI economy has already begun.",
+    "conclusion_line2": "Only the payment infrastructure is still stuck in the past."
   },
   "nanotrans": {
     "title": "NanoTrans",

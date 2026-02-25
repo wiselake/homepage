@@ -86,8 +86,11 @@ export function ProblemSection() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-lg font-medium text-text-dark">
-          → {t("conclusion")}
+        <p className="text-lg font-medium text-text-dark break-keep">
+          → {t("conclusion_line1")}
+          <br className="sm:hidden" />
+          <span className="hidden sm:inline"> </span>
+          {t("conclusion_line2")}
         </p>
       </div>
     </Section>
