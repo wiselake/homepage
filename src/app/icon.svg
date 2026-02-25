@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#000000"/>
+  <!-- W mark: 3 diagonal strokes, matching WiseLake logo -->
+  <!-- Stroke 1 (left) -->
+  <polygon points="80,100 140,100 220,400 160,400" fill="#FFFFFF"/>
+  <!-- Stroke 2 (center) -->
+  <polygon points="180,100 240,100 320,400 260,400" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Stroke 3 (right, lighter) -->
+  <polygon points="280,100 340,100 420,400 360,400" fill="#FFFFFF" opacity="0.65"/>
+  <!-- Connector: center V shape -->
+  <polygon points="220,400 256,280 290,400" fill="#000000"/>
+</svg>
