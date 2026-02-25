@@ -81,11 +81,10 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]"
+          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]"
         >
-          {t("subtitle1")}
-            <br />
-            {t("subtitle2")}
+          <span className="block">{t("subtitle1")}</span>
+          <span className="block mt-2">{t("subtitle2")}</span>
         </motion.p>
 
         <motion.div

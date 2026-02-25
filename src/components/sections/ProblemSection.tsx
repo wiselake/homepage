@@ -68,10 +68,9 @@ export function ProblemSection() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
           {t("title")}
         </h2>
-        <p className="text-text-muted text-lg max-w-2xl mx-auto">
-          {t("subtitle1")}
-          <br />
-          {t("subtitle2")}
+        <p className="text-text-muted text-lg max-w-2xl mx-auto break-keep">
+          <span className="block">{t("subtitle1")}</span>
+          <span className="block mt-1">{t("subtitle2")}</span>
         </p>
       </div>
 
