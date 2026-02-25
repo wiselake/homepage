@@ -20,6 +20,9 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    icons: {
+      icon: "/icon.svg",
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
