@@ -41,6 +41,9 @@ next-env.d.ts
 # local resources (not for git)
 /img/
 /video/
+/logo/
+/screenshots/
+/test-results/
 .claude/
 
 # internal docs
