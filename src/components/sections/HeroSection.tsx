@@ -85,8 +85,8 @@ export function HeroSection() {
         >
           <span className="block">
             {t("subtitle1_line1")}
-            <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>
+            <br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>
             {t("subtitle1_line2")}
           </span>
           <span className="block mt-2">{t("subtitle2")}</span>
