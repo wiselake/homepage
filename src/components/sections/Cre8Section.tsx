@@ -76,7 +76,7 @@ export function Cre8Section({ showHeader = true }: { showHeader?: boolean }) {
       description: t("cre8block.desc"),
       features: [t("cre8block.f1"), t("cre8block.f2")],
       links: [
-        { label: "Web", url: "https://cre8block.com/" },
+        { label: "Web", url: locale === "en" ? "https://cre8block.com/?lang=en" : "https://cre8block.com/" },
         {
           label: "Android",
           url: "https://play.google.com/store/apps/details?id=com.cre8block.app",
