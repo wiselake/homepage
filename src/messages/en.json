@@ -37,7 +37,8 @@
   "problem": {
     "label": "Problem",
     "title": "AI Agents Are Ready. Payment Infrastructure Is Not.",
-    "subtitle1": "In 2026, AI agents demand thousands of micro-transactions per second.",
+    "subtitle1_line1": "In 2026, AI agents demand",
+    "subtitle1_line2": "thousands of micro-transactions per second.",
     "subtitle2": "Legacy payment systems cannot keep up.",
     "minAmount": {
       "title": "Minimum Transaction Too High",
