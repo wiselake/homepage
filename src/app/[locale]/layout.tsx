@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import "@/app/globals.css";
 
-const baseUrl = "https://wiselake.co.kr";
+const baseUrl = "https://wiselake.ai";
 
 export async function generateMetadata({
   params,
@@ -29,7 +29,7 @@ export async function generateMetadata({
       siteName: "WiseLake",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${baseUrl}/opengraph-image.png`,
           width: 1200,
           height: 630,
           alt: "WiseLake - Nano Start, Mega Impact",
@@ -38,7 +38,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image" as const,
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${baseUrl}/opengraph-image.png`],
     },
     alternates: {
       canonical: `${baseUrl}/${locale}`,
