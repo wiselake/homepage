@@ -18,8 +18,11 @@ export function RoadmapSection({ showHeader = true }: { showHeader?: boolean }) 
       {showHeader && (
         <div className="text-center mb-16">
           <SectionLabel>{t("label")}</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            {t("title")}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 break-keep">
+            {t("title_line1")}
+            <br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>
+            {t("title_line2")}
           </h2>
         </div>
       )}

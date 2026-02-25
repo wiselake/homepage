@@ -78,7 +78,7 @@ export default async function LocaleLayout({
     logo: `${baseUrl}/wiselake_logo.png`,
     contactPoint: {
       "@type": "ContactPoint",
-      email: "wiselake@wiselake.co.kr",
+      email: "wiselake@wiselake.ai",
       contactType: "customer service",
     },
   };

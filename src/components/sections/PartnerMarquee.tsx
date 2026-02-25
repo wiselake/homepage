@@ -9,7 +9,7 @@ const PARTNERS = [
   { key: "dodram", logo: "/partners/dodram.png" },
   { key: "dabi", logo: "/partners/dabi.png" },
   { key: "woosung", logo: "/partners/woosung.png" },
-  { key: "chunha", logo: "/partners/chunha.jfif" },
+  { key: "chunha", logo: "/partners/chunha.jpg" },
   { key: "pickorea", logo: "/partners/pickorea.png" },
 ] as const;
 

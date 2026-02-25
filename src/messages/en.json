@@ -203,7 +203,8 @@
   },
   "roadmap": {
     "label": "Roadmap",
-    "title": "From Nano to Global Infrastructure",
+    "title_line1": "From Nano",
+    "title_line2": "to Global Infrastructure",
     "years": {
       "2025": [
         "cre8pet launched (Android · 6 languages)",
@@ -361,7 +362,7 @@
     "companyName": "WiseLake, Inc.",
     "ceo": "CEO: Jin Gyomoon",
     "businessNumber": "Business Reg. No.: 768-87-02255",
-    "email": "wiselake@wiselake.co.kr",
+    "email": "wiselake@wiselake.ai",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
   }
 }

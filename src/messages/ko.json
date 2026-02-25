@@ -203,7 +203,8 @@
   },
   "roadmap": {
     "label": "로드맵",
-    "title": "나노에서 시작해, 글로벌 인프라로",
+    "title_line1": "나노에서 시작해,",
+    "title_line2": "글로벌 인프라로",
     "years": {
       "2025": [
         "cre8pet 출시 완료 (Android · 6개 언어)",
@@ -361,7 +362,7 @@
     "companyName": "(주)와이즈레이크",
     "ceo": "대표이사: 진교문",
     "businessNumber": "사업자등록번호: 768-87-02255",
-    "email": "wiselake@wiselake.co.kr",
+    "email": "wiselake@wiselake.ai",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
   }
 }

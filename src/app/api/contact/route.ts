@@ -46,7 +46,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "WiseLake Homepage <onboarding@resend.dev>",
-      to: "wiselake@wiselake.co.kr",
+      to: "wiselake@wiselake.ai",
       subject: `[홈페이지 문의] ${typeLabels[type] || type} - ${name}`,
       html: `
         <h2>홈페이지 문의가 접수되었습니다</h2>
