@@ -164,11 +164,6 @@
       "f1": "K-Culture 콘텐츠 직접 운영",
       "f2": "NanoTrans Pay-per-Content 실증",
       "link": "서비스 바로가기"
-    },
-    "cre8block": {
-      "desc": "법적 효력이 아닌 기록의 영구성을 팝니다. BNB Chain에 저장된 약속은 삭제되지 않습니다.",
-      "f1": "BNB Chain 블록체인 영구 보관",
-      "f2": "웹·안드로이드 글로벌 서비스"
     }
   },
   "cre8Series2": {
@@ -177,11 +172,6 @@
       "f1": "GPS 기반 산책 경로 기록",
       "f2": "반려견과의 추억 타임라인",
       "f3": "6개 언어 지원 · 무료 · Android"
-    },
-    "cre8song": {
-      "desc": "AI가 작사·작곡하고, 전문 프로듀서가 완성합니다. 세상에 하나뿐인 곡과 뮤직비디오, 가장 특별한 선물.",
-      "f1": "AI 작곡 + 전문 프로듀서 큐레이션",
-      "f2": "맞춤곡 + 뮤직비디오 제작"
     }
   },
   "b2bSaas": {
@@ -208,20 +198,18 @@
     "years": {
       "2025": [
         "cre8pet 출시 완료 (Android · 6개 언어)",
-        "cre8block 출시 완료 (Web · Android)",
-        "cre8song 출시 완료",
         "cre8contents 출시 완료 (NanoTrans 실증 시작)"
       ],
       "2026": [
         "NanoTrans 서비스 정식 출시",
         "인사이트 피그플랜 출시",
-        "피그플랜 글로벌 버전 출시",
+        "Pigplan Core 출시",
         "PigSignal API 서비스 출시",
         "Flow9 · Q브릿지 출시"
       ],
       "2027": [
         "NanoTrans 누적 1,000만 거래 달성",
-        "피그플랜 글로벌 3개국 이상 진출",
+        "Pigplan Core 3개국 이상 진출",
         "PigSignal API 파트너사 10개 이상 확보"
       ],
       "2028": [
@@ -283,10 +271,10 @@
     },
     "services": {
       "title": "cre8 시리즈 | 와이즈레이크",
-      "description": "AI와 블록체인을 활용한 혁신적인 서비스 라인업. cre8pet, cre8block, cre8song, cre8contents.",
+      "description": "AI를 활용한 혁신적인 서비스 라인업. cre8pet, cre8contents.",
       "heroLabel": "cre8 Series",
       "heroTitle": "cre8 시리즈 AI 서비스",
-      "heroSubtitle": "AI와 블록체인을 활용한 혁신적인 서비스 라인업"
+      "heroSubtitle": "AI를 활용한 혁신적인 서비스 라인업"
     },
     "b2b": {
       "title": "B2B SaaS | 와이즈레이크",
@@ -313,12 +301,12 @@
       "layer1": {
         "label": "Layer 1 · Interaction",
         "title": "사용자 접점",
-        "desc": "반려견 산책, 계약 기록, 맞춤 작곡. 실제 사람이 매일 사용하는 서비스에서 시작합니다."
+        "desc": "반려견 산책, K-Culture 콘텐츠. 실제 사람이 매일 사용하는 서비스에서 시작합니다."
       },
       "layer2": {
         "label": "Layer 2 · Application",
         "title": "다양한 서비스 운영",
-        "desc": "PigPlan, cre8pet, cre8song, cre8contents, cre8block. 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
+        "desc": "PigPlan, cre8pet, cre8contents. 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
       },
       "layer3": {
         "label": "Layer 3 · Asset",
@@ -348,7 +336,7 @@
     },
     "services": {
       "title": "cre8 시리즈",
-      "summary": "NanoTrans 실증 서비스이자 독립 사업. AI 콘텐츠, 블록체인 약속, 반려견 산책, AI 작곡까지.",
+      "summary": "NanoTrans 실증 서비스이자 독립 사업. AI 콘텐츠, 반려견 산책 기록 서비스.",
       "cta": "자세히 보기"
     },
     "b2b": {

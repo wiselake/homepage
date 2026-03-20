@@ -164,11 +164,6 @@
       "f1": "K-Culture content, self-operated",
       "f2": "NanoTrans Pay-per-Content proof-of-concept",
       "link": "Visit Service"
-    },
-    "cre8block": {
-      "desc": "We sell permanence, not legal authority. Promises stored on BNB Chain cannot be deleted.",
-      "f1": "BNB Chain permanent storage",
-      "f2": "Web & Android global service"
     }
   },
   "cre8Series2": {
@@ -177,11 +172,6 @@
       "f1": "GPS-based walk route tracking",
       "f2": "Pet memory timeline",
       "f3": "6 languages · Free · Android"
-    },
-    "cre8song": {
-      "desc": "AI writes the lyrics and composes the music. Professional producers finish it. A one-of-a-kind song and music video — the most special gift.",
-      "f1": "AI composition + professional producer curation",
-      "f2": "Custom song + music video production"
     }
   },
   "b2bSaas": {
@@ -208,20 +198,18 @@
     "years": {
       "2025": [
         "cre8pet launched (Android · 6 languages)",
-        "cre8block launched (Web · Android)",
-        "cre8song launched",
         "cre8contents launched (NanoTrans proof-of-concept begins)"
       ],
       "2026": [
         "NanoTrans official launch",
         "Insight PigPlan launch",
-        "PigPlan Global version launch",
+        "Pigplan Core launch",
         "PigSignal API service launch",
         "Flow9 · Q-Bridge launch"
       ],
       "2027": [
         "NanoTrans cumulative 10M transactions",
-        "PigPlan Global expansion to 3+ countries",
+        "Pigplan Core expansion to 3+ countries",
         "PigSignal API partners: 10+"
       ],
       "2028": [
@@ -283,7 +271,7 @@
     },
     "services": {
       "title": "cre8 Series | WiseLake",
-      "description": "NanoTrans proving ground and independent AI services: cre8pet, cre8block, cre8song, cre8contents.",
+      "description": "NanoTrans proving ground and independent AI services: cre8pet, cre8contents.",
       "heroLabel": "cre8 Series",
       "heroTitle": "cre8 AI Service Series",
       "heroSubtitle": "NanoTrans proving ground and independent AI service businesses"
@@ -313,12 +301,12 @@
       "layer1": {
         "label": "Layer 1 · Interaction",
         "title": "User Touch Points",
-        "desc": "Dog walks, contract records, custom songs — it starts with services real people use every day."
+        "desc": "Dog walks, K-Culture content — it starts with services real people use every day."
       },
       "layer2": {
         "label": "Layer 2 · Application",
         "title": "A Diverse Service Portfolio",
-        "desc": "PigPlan, cre8pet, cre8song, cre8contents, cre8block. Each operates independently and is validated in real markets."
+        "desc": "PigPlan, cre8pet, cre8contents. Each operates independently and is validated in real markets."
       },
       "layer3": {
         "label": "Layer 3 · Asset",
@@ -348,7 +336,7 @@
     },
     "services": {
       "title": "cre8 Series",
-      "summary": "NanoTrans proving ground and independent businesses. AI content, blockchain promises, pet walks, AI songwriting.",
+      "summary": "NanoTrans proving ground and independent businesses. AI content and pet walk recording services.",
       "cta": "Learn More"
     },
     "b2b": {

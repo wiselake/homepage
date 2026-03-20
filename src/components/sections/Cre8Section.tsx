@@ -72,18 +72,6 @@ export function Cre8Section({ showHeader = true }: { showHeader?: boolean }) {
       links: [{ label: t("cre8contents.link"), url: "https://wzlhenry.com/" }],
     },
     {
-      name: "cre8block",
-      description: t("cre8block.desc"),
-      features: [t("cre8block.f1"), t("cre8block.f2")],
-      links: [
-        { label: "Web", url: locale === "en" ? "https://cre8block.com/?lang=en" : "https://cre8block.com/" },
-        {
-          label: "Android",
-          url: "https://play.google.com/store/apps/details?id=com.cre8block.app",
-        },
-      ],
-    },
-    {
       name: "cre8pet",
       description: t2("cre8pet.desc"),
       features: [t2("cre8pet.f1"), t2("cre8pet.f2"), t2("cre8pet.f3")],
@@ -97,12 +85,6 @@ export function Cre8Section({ showHeader = true }: { showHeader?: boolean }) {
           url: "https://play.google.com/store/apps/details?id=com.cre8pet",
         },
       ],
-    },
-    {
-      name: "cre8song",
-      description: t2("cre8song.desc"),
-      features: [t2("cre8song.f1"), t2("cre8song.f2")],
-      links: [{ label: "Web", url: "https://www.cre8song.com/" }],
     },
   ];
 
