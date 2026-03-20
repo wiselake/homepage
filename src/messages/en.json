@@ -197,10 +197,11 @@
     "title_line2": "to Global Infrastructure",
     "years": {
       "2025": [
-        "cre8pet launched (Android · iOS · 6 languages)",
+        "cre8pet Android launched (6 languages)",
         "cre8contents launched (NanoTrans proof-of-concept begins)"
       ],
       "2026": [
+        "cre8pet iOS launched",
         "NanoTrans official launch",
         "Insight PigPlan launch",
         "Pigplan Core launch",
