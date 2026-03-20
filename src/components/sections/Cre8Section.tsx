@@ -84,6 +84,10 @@ export function Cre8Section({ showHeader = true }: { showHeader?: boolean }) {
           label: "Android",
           url: "https://play.google.com/store/apps/details?id=com.cre8pet",
         },
+        {
+          label: "iOS",
+          url: "https://apps.apple.com/kr/app/cre8pet/id6758755636",
+        },
       ],
     },
   ];

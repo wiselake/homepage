@@ -171,7 +171,7 @@
       "desc": "A global service that records GPS-based dog walks and preserves memories with your pet.",
       "f1": "GPS-based walk route tracking",
       "f2": "Pet memory timeline",
-      "f3": "6 languages · Free · Android"
+      "f3": "6 languages · Free · Android · iOS"
     }
   },
   "b2bSaas": {
@@ -197,7 +197,7 @@
     "title_line2": "to Global Infrastructure",
     "years": {
       "2025": [
-        "cre8pet launched (Android · 6 languages)",
+        "cre8pet launched (Android · iOS · 6 languages)",
         "cre8contents launched (NanoTrans proof-of-concept begins)"
       ],
       "2026": [
