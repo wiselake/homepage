@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/layout/PageHero";
 import { Cre8Section } from "@/components/sections/Cre8Section";
+import { Cre8petBanner } from "@/components/sections/Cre8petBanner";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -14,6 +15,7 @@ export default function ServicesPage() {
     <>
       <PageHero namespace="pages.services" />
       <Cre8Section showHeader={false} />
+      <Cre8petBanner />
     </>
   );
 }

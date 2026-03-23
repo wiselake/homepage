@@ -156,23 +156,16 @@
     "desc": "20년간 축적된 피그플랜 데이터, ICT 장비 센서 데이터, 공공 축산 데이터를 결합한 데이터셋을 REST API로 제공합니다. 양돈 유통·가공업체, 사료회사, 축산 연구기관이 타겟 고객입니다.",
     "nanotransIntegration": "PigPlan 20년 데이터 자산 × NanoTrans Pay-per-Use. 국내 최초로 양돈 데이터를 글로벌 API 마켓으로 가져갑니다."
   },
-  "cre8Series1": {
-    "title": "cre8 시리즈 AI 서비스",
-    "subtitle": "와이즈레이크가 직접 만들고 직접 운영하는 서비스들. NanoTrans 인프라의 실증 실험장이자 독립 사업입니다.",
-    "cre8contents": {
-      "desc": "NanoTrans 최초 실증 서비스. K-Culture 블로그에 마이크로페이먼트를 적용하여 '구독 없이 콘텐츠에 직접 지불하는' 모델을 증명합니다.",
-      "f1": "K-Culture 콘텐츠 직접 운영",
-      "f2": "NanoTrans Pay-per-Content 실증",
-      "link": "서비스 바로가기"
-    }
-  },
-  "cre8Series2": {
-    "cre8pet": {
-      "desc": "GPS 기반으로 반려견과의 산책을 기록하고 소중한 추억을 보관하는 글로벌 서비스입니다.",
-      "f1": "GPS 기반 산책 경로 기록",
-      "f2": "반려견과의 추억 타임라인",
-      "f3": "6개 언어 지원 · 무료 · Android · iOS"
-    }
+  "cre8pet": {
+    "title": "반려견과 함께하는 똑똑한 산책",
+    "subtitle": "GPS 기반으로 산책을 기록하고, 반려견과의 소중한 순간을 보관하세요.",
+    "desc": "cre8pet은 반려견과의 산책을 GPS로 기록하고, 사진과 함께 추억을 타임라인으로 보관하는 글로벌 반려동물 서비스입니다. 매일의 산책이 데이터가 되고, 소중한 기록이 됩니다.",
+    "platform": "Android · iOS · 6개 언어 지원 · 무료",
+    "f1": "GPS 기반 실시간 산책 경로 기록 및 거리/시간 측정",
+    "f2": "반려견별 산책 히스토리와 사진 타임라인",
+    "f3": "일일 미션과 챌린지로 즐거운 산책 습관",
+    "f4": "6개 언어 지원 (한/영/일/중/스페인어/포르투갈어)",
+    "imageAlt": "cre8pet 앱 산책 화면"
   },
   "b2bSaas": {
     "title": "B2B SaaS 솔루션",
@@ -198,7 +191,7 @@
     "years": {
       "2025": [
         "cre8pet Android 출시 완료 (6개 언어)",
-        "cre8contents 출시 완료 (NanoTrans 실증 시작)"
+        "NanoTrans 실증 시작"
       ],
       "2026": [
         "cre8pet iOS 출시 완료",
@@ -271,11 +264,11 @@
       "heroSubtitle": "데이터 기반 스마트 양돈 관리 플랫폼"
     },
     "services": {
-      "title": "cre8 시리즈 | 와이즈레이크",
-      "description": "AI를 활용한 혁신적인 서비스 라인업. cre8pet, cre8contents.",
-      "heroLabel": "cre8 Series",
-      "heroTitle": "cre8 시리즈 AI 서비스",
-      "heroSubtitle": "AI를 활용한 혁신적인 서비스 라인업"
+      "title": "cre8pet | 와이즈레이크",
+      "description": "반려견과 함께하는 똑똑한 산책. GPS 기반 산책 기록 서비스.",
+      "heroLabel": "cre8pet",
+      "heroTitle": "반려견과 함께하는 똑똑한 산책",
+      "heroSubtitle": "GPS 기반 산책 기록 서비스"
     },
     "b2b": {
       "title": "B2B SaaS | 와이즈레이크",
@@ -307,7 +300,7 @@
       "layer2": {
         "label": "Layer 2 · Application",
         "title": "다양한 서비스 운영",
-        "desc": "PigPlan, cre8pet, cre8contents. 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
+        "desc": "PigPlan, cre8pet 등 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
       },
       "layer3": {
         "label": "Layer 3 · Asset",
@@ -336,8 +329,8 @@
       "cta": "자세히 보기"
     },
     "services": {
-      "title": "cre8 시리즈",
-      "summary": "NanoTrans 실증 서비스이자 독립 사업. AI 콘텐츠, 반려견 산책 기록 서비스.",
+      "title": "cre8pet",
+      "summary": "반려견과 함께하는 똑똑한 산책. GPS 기반 산책 기록 서비스. Android · iOS 출시.",
       "cta": "자세히 보기"
     },
     "b2b": {

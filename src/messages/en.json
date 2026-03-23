@@ -156,23 +156,16 @@
     "desc": "Combining 20 years of PigPlan data, ICT sensor data, and public livestock data into datasets delivered via REST API. Target customers: swine distributors, processors, feed companies, and livestock research institutions.",
     "nanotransIntegration": "PigPlan's 20-year data asset × NanoTrans Pay-per-Use. Taking Korean swine data to the global API market for the first time."
   },
-  "cre8Series1": {
-    "title": "cre8 AI Services",
-    "subtitle": "Built and operated directly by WiseLake. Both a proving ground for NanoTrans infrastructure and independent businesses.",
-    "cre8contents": {
-      "desc": "The first live proof-of-concept for NanoTrans. Applying micropayments to a K-Culture blog, proving the 'pay directly for content without subscriptions' model.",
-      "f1": "K-Culture content, self-operated",
-      "f2": "NanoTrans Pay-per-Content proof-of-concept",
-      "link": "Visit Service"
-    }
-  },
-  "cre8Series2": {
-    "cre8pet": {
-      "desc": "A global service that records GPS-based dog walks and preserves memories with your pet.",
-      "f1": "GPS-based walk route tracking",
-      "f2": "Pet memory timeline",
-      "f3": "6 languages · Free · Android · iOS"
-    }
+  "cre8pet": {
+    "title": "Smart Walks with Your Dog",
+    "subtitle": "Record GPS-based walks and preserve every precious moment with your pet.",
+    "desc": "cre8pet records your dog walks via GPS and preserves memories with photos in a timeline. Every daily walk becomes data, and every moment becomes a lasting record.",
+    "platform": "Android · iOS · 6 Languages · Free",
+    "f1": "Real-time GPS walk tracking with distance and time",
+    "f2": "Per-pet walk history and photo timeline",
+    "f3": "Daily missions and challenges for fun walk habits",
+    "f4": "6 languages (KR/EN/JP/ZH/ES/PT)",
+    "imageAlt": "cre8pet app walk screen"
   },
   "b2bSaas": {
     "title": "B2B SaaS Solutions",
@@ -198,7 +191,7 @@
     "years": {
       "2025": [
         "cre8pet Android launched (6 languages)",
-        "cre8contents launched (NanoTrans proof-of-concept begins)"
+        "NanoTrans proof-of-concept begins"
       ],
       "2026": [
         "cre8pet iOS launched",
@@ -271,10 +264,10 @@
       "heroSubtitle": "Data-driven smart swine management platform"
     },
     "services": {
-      "title": "cre8 Series | WiseLake",
-      "description": "NanoTrans proving ground and independent AI services: cre8pet, cre8contents.",
-      "heroLabel": "cre8 Series",
-      "heroTitle": "cre8 AI Service Series",
+      "title": "cre8pet | WiseLake",
+      "description": "Smart walks with your dog. GPS-based walk tracking service.",
+      "heroLabel": "cre8pet",
+      "heroTitle": "Smart Walks with Your Dog",
       "heroSubtitle": "NanoTrans proving ground and independent AI service businesses"
     },
     "b2b": {
@@ -307,7 +300,7 @@
       "layer2": {
         "label": "Layer 2 · Application",
         "title": "A Diverse Service Portfolio",
-        "desc": "PigPlan, cre8pet, cre8contents. Each operates independently and is validated in real markets."
+        "desc": "PigPlan, cre8pet, and more. Each operates independently and is validated in real markets."
       },
       "layer3": {
         "label": "Layer 3 · Asset",
@@ -336,8 +329,8 @@
       "cta": "Learn More"
     },
     "services": {
-      "title": "cre8 Series",
-      "summary": "NanoTrans proving ground and independent businesses. AI content and pet walk recording services.",
+      "title": "cre8pet",
+      "summary": "Smart walks with your dog. GPS-based walk tracking service. Available on Android & iOS.",
       "cta": "Learn More"
     },
     "b2b": {
