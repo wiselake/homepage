@@ -31,7 +31,7 @@ export function PageHero({ namespace }: PageHeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+          className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6"
         >
           {t("heroTitle")}
         </motion.h1>

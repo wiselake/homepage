@@ -66,7 +66,8 @@ export function ProblemSection() {
       <div className="text-center mb-16">
         <SectionLabel>{t("label")}</SectionLabel>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-          {t("title")}
+          {t("title_line1")}<br />
+          {t("title_line2")}
         </h2>
         <p className="text-text-muted text-lg max-w-2xl mx-auto break-keep">
           <span className="block">
