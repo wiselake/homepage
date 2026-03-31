@@ -59,6 +59,7 @@
   "nanotrans": {
     "title": "NanoTrans",
     "subtitle": "Just as HTTP became the standard for information transfer, the x402 Protocol becomes the standard for AI agent payments.",
+    "cta": "Get Started",
     "features": {
       "microPayment": {
         "title": "Micro Transactions from $0.01",
@@ -384,7 +385,8 @@
       "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.01 globally in 0.1 seconds.",
       "heroLabel": "NanoTrans",
       "heroTitle": "Nano-scale Micropayment Infrastructure",
-      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol"
+      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol",
+      "heroCta": "Get Started"
     },
     "pigplan": {
       "title": "PigPlan | WiseLake",

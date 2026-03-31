@@ -6,9 +6,11 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 
 interface PageHeroProps {
   namespace: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
-export function PageHero({ namespace }: PageHeroProps) {
+export function PageHero({ namespace, ctaLabel, ctaHref }: PageHeroProps) {
   const t = useTranslations(namespace);
 
   return (
@@ -44,6 +46,24 @@ export function PageHero({ namespace }: PageHeroProps) {
         >
           {t("heroSubtitle")}
         </motion.p>
+
+        {ctaLabel && ctaHref && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8"
+          >
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-accent text-accent text-sm font-medium hover:shadow-[0_0_20px_rgba(245,166,35,0.15)] transition-all duration-300"
+            >
+              {ctaLabel}
+            </a>
+          </motion.div>
+        )}
       </div>
     </section>
   );

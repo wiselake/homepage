@@ -128,6 +128,18 @@ export function NanoTransSection({ showHeader = true }: { showHeader?: boolean }
       <NanoTransCoreTech />
       <NanoTransComparison />
       <ComparisonTable />
+
+      {/* Bottom CTA */}
+      <div className="mt-16 flex justify-center">
+        <a
+          href="https://www.nanotrans.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-accent text-accent text-base font-semibold hover:shadow-[0_0_24px_rgba(245,166,35,0.2)] transition-all duration-300"
+        >
+          {t("cta")}
+        </a>
+      </div>
     </Section>
   );
 }
