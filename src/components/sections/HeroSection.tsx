@@ -98,12 +98,14 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
-            href="/nanotrans"
+          <a
+            href="https://www.nanotrans.io/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full glass-accent text-white font-medium text-sm hover:shadow-[0_0_25px_rgba(245,166,35,0.3)] hover:bg-accent/20 transition-all duration-300"
           >
             {t("cta")}
-          </Link>
+          </a>
           <Link
             href="/about"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full glass text-text-secondary font-medium text-sm hover:border-accent/40 hover:text-accent transition-all duration-300"
