@@ -85,6 +85,19 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-70NWVV9D0S" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-70NWVV9D0S');
+            `,
+          }}
+        />
+      </head>
       <body className="bg-bg-primary text-text-primary antialiased">
         <script
           type="application/ld+json"
