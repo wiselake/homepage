@@ -19,10 +19,6 @@ const INTERVAL = 4000;
 
 export function Cre8petBanner() {
   const locale = useLocale();
-
-  // 영어 페이지에서는 가로형 광고 이미지가 없으므로 표시하지 않음
-  if (locale === "en") return null;
-
   const ads = ADS_KR;
 
   const [current, setCurrent] = useState(0);
@@ -43,6 +39,8 @@ export function Cre8petBanner() {
     }, INTERVAL);
     return () => clearInterval(timer);
   }, [ads.length]);
+
+  if (locale === "en") return null;
 
   return (
     <Section dark className="!pt-0 !pb-24">

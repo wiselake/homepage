@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Line } from "@react-three/drei";
 import * as THREE from "three";
@@ -8,7 +8,7 @@ import * as THREE from "three";
 function ParticleField() {
   const ref = useRef<THREE.Points>(null);
 
-  const particles = useMemo(() => {
+  const [particles] = useState(() => {
     const count = 2000;
     const positions = new Float32Array(count * 3);
 
@@ -19,7 +19,7 @@ function ParticleField() {
     }
 
     return positions;
-  }, []);
+  });
 
   useFrame((state) => {
     if (!ref.current) return;
@@ -44,7 +44,7 @@ function ParticleField() {
 function FloatingLines() {
   const ref = useRef<THREE.Group>(null);
 
-  const lines = useMemo(() => {
+  const [lines] = useState(() => {
     const lineData: { points: [number, number, number][]; opacity: number }[] = [];
     for (let i = 0; i < 15; i++) {
       const sx = (Math.random() - 0.5) * 16;
@@ -59,7 +59,7 @@ function FloatingLines() {
       });
     }
     return lineData;
-  }, []);
+  });
 
   useFrame((state) => {
     if (!ref.current) return;
