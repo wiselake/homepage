@@ -18,6 +18,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
+    metadataBase: new URL(baseUrl),
     title: t("title"),
     description: t("description"),
     icons: {
@@ -28,11 +29,11 @@ export async function generateMetadata({
       description: t("description"),
       locale: locale === "ko" ? "ko_KR" : "en_US",
       type: "website",
-      url: `${baseUrl}/${locale}`,
+      url: `/${locale}`,
       siteName: "WiseLake",
       images: [
         {
-          url: `${baseUrl}/opengraph-image.png`,
+          url: "/opengraph-image.png",
           width: 1200,
           height: 630,
           alt: "WiseLake - Nano Start, Mega Impact",
@@ -41,14 +42,14 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image" as const,
-      images: [`${baseUrl}/opengraph-image.png`],
+      images: ["/opengraph-image.png"],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: `/${locale}`,
       languages: {
-        ko: `${baseUrl}/ko`,
-        en: `${baseUrl}/en`,
-        "x-default": `${baseUrl}/ko`,
+        ko: "/ko",
+        en: "/en",
+        "x-default": "/ko",
       },
     },
   };
