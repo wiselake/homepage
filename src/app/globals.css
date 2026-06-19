@@ -129,17 +129,6 @@ body {
   overflow: hidden;
 }
 
-/* Shimmer animation for buttons */
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes glass-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(245, 166, 35, 0.08); }
-  50% { box-shadow: 0 0 30px rgba(245, 166, 35, 0.15); }
-}
-
 @keyframes amber-line-pulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.7; }

@@ -4,17 +4,44 @@ import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { NanoTransComparison } from "./NanoTransComparison";
 import { NanoTransCoreTech } from "./NanoTransCoreTech";
 
 const FEATURES = ["microPayment", "settlement", "payPerContent", "payPerUse"] as const;
 
-const FEATURE_ICONS = {
-  microPayment: "₩10",
-  settlement: "0.1s",
-  payPerContent: "📄",
-  payPerUse: "📊",
+const FEATURE_ICONS: Record<(typeof FEATURES)[number], ReactNode> = {
+  // 코인 스택 — 마이크로페이먼트
+  microPayment: (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+      <ellipse cx="12" cy="6" rx="8" ry="3" />
+      <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" strokeLinecap="round" />
+      <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" strokeLinecap="round" />
+    </svg>
+  ),
+  // 글로브 — 0.1초 글로벌 정산
+  settlement: (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" strokeLinecap="round" />
+    </svg>
+  ),
+  // 문서 — Pay-per-Content
+  payPerContent: (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+      <path d="M6 2h8l4 4v16H6z" strokeLinejoin="round" />
+      <path d="M14 2v4h4M9 13h6M9 17h4" strokeLinecap="round" />
+    </svg>
+  ),
+  // 바 차트 — Pay-per-Use
+  payPerUse: (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+      <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="7" y="12" width="3" height="6" rx=".5" />
+      <rect x="12" y="8" width="3" height="10" rx=".5" />
+      <rect x="17" y="5" width="3" height="13" rx=".5" />
+    </svg>
+  ),
 };
 
 function FeatureCard({
@@ -37,7 +64,7 @@ function FeatureCard({
       className="group relative overflow-hidden p-8 rounded-2xl glass hover:border-accent/30 hover:shadow-[0_0_20px_rgba(245,166,35,0.08)] transition-all duration-500"
     >
       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl pointer-events-none" />
-      <div className="text-3xl font-bold text-accent mb-4">
+      <div className="text-accent mb-4">
         {FEATURE_ICONS[featureKey]}
       </div>
       <h3 className="text-lg font-semibold mb-2">

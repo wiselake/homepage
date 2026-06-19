@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const baseUrl = "https://wiselake.co.kr";
+const baseUrl = "https://wiselake.ai";
 const locales = ["ko", "en"];
 const pages = ["", "/about", "/nanotrans", "/pigplan", "/services", "/b2b", "/roadmap"];
 

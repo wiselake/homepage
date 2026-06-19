@@ -8,37 +8,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-function StatCard({
-  value,
-  label,
-  index,
-}: {
-  value: string;
-  label: string;
-  index: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="text-center p-6"
-    >
-      <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-accent mb-2 whitespace-nowrap">{value}</div>
-      <div className="text-xs sm:text-sm text-text-secondary whitespace-nowrap">{label}</div>
-    </motion.div>
-  );
-}
-
 export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigplan");
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
-  const stats = [
-    { value: "700+", label: t("stats.farms") },
+  const heroStat = { value: "700+", label: t("stats.farms") };
+  const supportStats = [
     { value: "20+", label: t("stats.years") },
     { value: "#1", label: t("stats.market") },
   ];
@@ -73,13 +49,38 @@ export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) 
           </Button>
         </div>
 
-        {/* Right - Stats */}
-        <div className="relative overflow-hidden grid grid-cols-3 gap-4 p-8 rounded-2xl glass">
+        {/* Right - Stats (oversize moment) */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden p-8 sm:p-10 rounded-2xl glass"
+        >
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl pointer-events-none" />
-          {stats.map((stat, i) => (
-            <StatCard key={i} value={stat.value} label={stat.label} index={i} />
-          ))}
-        </div>
+          {/* Top-right radial gold glow for visual rhythm */}
+          <div className="absolute inset-0 bg-[radial-gradient(110%_120%_at_100%_0%,rgba(245,166,35,0.14),transparent_55%)] pointer-events-none" />
+          <div className="relative flex flex-col sm:flex-row sm:items-center gap-8">
+            {/* Hero stat — oversize */}
+            <div className="shrink-0">
+              <div className="text-7xl lg:text-8xl font-bold text-accent leading-none tracking-tight">
+                {heroStat.value}
+              </div>
+              <div className="mt-3 text-sm text-text-secondary">{heroStat.label}</div>
+            </div>
+            {/* Supporting stats — compact */}
+            <div className="flex-1 space-y-4 sm:border-l sm:border-white/10 sm:pl-8">
+              {supportStats.map((stat, i) => (
+                <div key={i} className="flex items-baseline gap-3">
+                  <span className="text-2xl sm:text-3xl font-bold text-accent whitespace-nowrap">
+                    {stat.value}
+                  </span>
+                  <span className="text-sm text-text-secondary">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </Section>
   );
@@ -468,7 +469,7 @@ export function PigSignalSection() {
         {/* Status badge */}
         <div className="flex justify-center mt-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent text-xs font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             {t("status")}
           </span>
         </div>
@@ -559,7 +560,7 @@ export function PigPlanCoreSection() {
         {/* Status badge */}
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-accent-dark text-xs font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             {t("status")}
           </span>
         </div>

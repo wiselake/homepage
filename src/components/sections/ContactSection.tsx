@@ -90,7 +90,7 @@ export function ContactSection() {
                     }
                     className={`px-4 py-2 rounded-full text-sm transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                       formState.type === type
-                        ? "bg-accent/90 text-white backdrop-blur-sm border border-accent/30"
+                        ? "bg-accent text-bg-primary font-medium border border-accent/30"
                         : "border border-black/[0.06] bg-white/60 backdrop-blur-sm text-text-muted hover:border-accent/40"
                     }`}
                   >

@@ -42,7 +42,7 @@ export function HeroSection() {
         )}
 
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/5" />
 
         {/* Particles fallback while video loads or if it fails */}
         <div
@@ -71,7 +71,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 drop-shadow-[0_1px_12px_rgba(0,0,0,0.4)]"
         >
           <span className="block">{t("tagline1")}</span>
           <span className="block text-accent">{t("tagline2")}</span>
@@ -81,7 +81,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]"
+          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
         >
           <span className="block">
             {t("subtitle1_line1")}

@@ -105,10 +105,10 @@ export function Flow9Section() {
         <div className="space-y-6">
           <div className="flex items-center gap-4 mb-2">
             <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-              <span className="text-xl font-bold text-accent">F9</span>
+              <span className="text-xl font-bold text-accent-dark">F9</span>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-accent">Flow9</h3>
+              <h3 className="text-2xl font-bold text-accent-dark">Flow9</h3>
               <p className="text-text-muted text-sm">{t("platform")}</p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export function Flow9Section() {
           <ul className="space-y-3">
             {[t("f1"), t("f2"), t("f3"), t("f4"), t("f5"), t("f6")].map((feature, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-text-muted">
-                <span className="text-accent mt-0.5 text-lg">•</span>
+                <span className="text-accent-dark mt-0.5 text-lg">•</span>
                 {feature}
               </li>
             ))}
@@ -128,7 +128,7 @@ export function Flow9Section() {
 
           <div className="pt-2">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent text-xs font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               {t("status")}
             </span>
           </div>

@@ -32,10 +32,10 @@ export function Footer() {
             <p>{t("businessNumber")}</p>
             <p>
               <a
-                href="mailto:wiselake@wiselake.ai"
+                href={`mailto:${t("email")}`}
                 className="text-accent hover:text-accent-light transition-colors"
               >
-                wiselake@wiselake.ai
+                {t("email")}
               </a>
             </p>
           </div>
