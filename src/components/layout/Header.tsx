@@ -28,6 +28,7 @@ export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [ppOpen, setPpOpen] = useState(false);
   const mobileNavRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -35,6 +36,13 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the desktop PigPlan dropdown whenever the route changes — otherwise
+  // client-side navigation leaves it open (the clicked item keeps :focus-within
+  // and the cursor stays over the menu).
+  useEffect(() => {
+    setPpOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -113,9 +121,20 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
           {NAV_ITEMS.map((item) =>
             "children" in item && item.children ? (
-              <div key={item.key} className="relative group/pp">
+              <div
+                key={item.key}
+                className="relative"
+                onMouseEnter={() => setPpOpen(true)}
+                onMouseLeave={() => setPpOpen(false)}
+                onFocus={() => setPpOpen(true)}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) setPpOpen(false);
+                }}
+              >
                 <Link
                   href={item.href}
+                  aria-haspopup="menu"
+                  aria-expanded={ppOpen}
                   className={`flex items-center gap-1 text-sm transition-colors duration-300 ${
                     isActive(item.href)
                       ? onDark ? "text-white" : "text-text-primary"
@@ -131,19 +150,28 @@ export function Header() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
-                    className="w-3.5 h-3.5 mt-px transition-transform duration-300 group-hover/pp:rotate-180"
+                    className={`w-3.5 h-3.5 mt-px transition-transform duration-300 ${
+                      ppOpen ? "rotate-180" : ""
+                    }`}
                   >
                     <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
                 {/* Dropdown */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover/pp:opacity-100 group-hover/pp:visible group-hover/pp:translate-y-0 group-focus-within/pp:opacity-100 group-focus-within/pp:visible group-focus-within/pp:translate-y-0">
+                <div
+                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-all duration-200 ${
+                    ppOpen
+                      ? "opacity-100 visible translate-y-0"
+                      : "opacity-0 invisible translate-y-1"
+                  }`}
+                >
                   <div className="min-w-[208px] rounded-xl glass-strong border border-border p-2 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
                         aria-current={pathname === child.href ? "page" : undefined}
+                        onClick={() => setPpOpen(false)}
                         className={`block px-4 py-2.5 rounded-lg text-sm transition-colors duration-200 ${
                           pathname === child.href
                             ? "text-accent"
