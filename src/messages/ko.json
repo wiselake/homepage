@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "(주)와이즈레이크 | Nano Start, Mega Impact",
-    "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준. 나노 단위 마이크로페이먼트 인프라 나노트랜스(NanoTrans)를 만드는 와이즈레이크입니다."
+    "description": "AI가 읽는 콘텐츠가 곧 수익이 되는 x402 기반 결제 인프라 NanoTrans를 만드는 와이즈레이크. 콘텐츠가 제값을 받는 AI 시대의 표준을 만듭니다."
   },
   "nav": {
     "home": "홈",
@@ -15,20 +15,20 @@
     "skipToContent": "메인 콘텐츠로 건너뛰기"
   },
   "hero": {
-    "badge": "AI 마이크로페이먼트 인프라",
+    "badge": "AI 콘텐츠 수익화 인프라",
     "tagline1": "Nano Start",
     "tagline2": "Mega Impact",
-    "subtitle1_line1": "AI가 스스로 거래하는 세상,",
-    "subtitle1_line2": "그 결제 인프라를 만듭니다",
+    "subtitle1_line1": "AI가 콘텐츠를 읽는 시대,",
+    "subtitle1_line2": "제작자가 수익을 얻는 길을 만듭니다",
     "subtitle2": "700+ 농가 실사용 · 20년 데이터 · 양돈 ERP 시장점유율 1위",
     "cta": "NanoTrans 시작하기",
     "ctaSecondary": "회사소개"
   },
   "vision": {
     "visionLabel": "비전",
-    "visionTitle1": "AI 경제의 미세 혈관",
-    "visionTitle2": "글로벌 가치 교환의 표준",
-    "visionDesc": "AI 에이전트가 스스로 거래하는 세상에서, 10원짜리 데이터도 0.1초 만에 전 세계 어디든 도달해야 합니다. 와이즈레이크는 그 통로를 만듭니다.",
+    "visionTitle1": "AI가 읽는 모든 콘텐츠가",
+    "visionTitle2": "제값을 받는 세상",
+    "visionDesc": "AI 에이전트가 웹의 콘텐츠를 읽고, 답하고, 학습하는 시대. 그 콘텐츠를 만든 사람에게도 가치가 돌아가야 합니다. 와이즈레이크는 콘텐츠가 곧 수익이 되는 길을 만듭니다.",
     "missionLabel": "미션",
     "missionTitle1": "모든 데이터와 콘텐츠에",
     "missionTitle2": "공정한 가치를 부여한다",
@@ -36,25 +36,25 @@
   },
   "problem": {
     "label": "문제 제기",
-    "title_line1": "AI 에이전트는 준비됐는데,",
-    "title_line2": "결제 인프라가 없다",
+    "title_line1": "AI는 콘텐츠로 답하는데,",
+    "title_line2": "제작자에게 돌아오는 건 없다",
     "subtitle1_line1": "2026년, AI 에이전트는",
-    "subtitle1_line2": "매 초 수천 건의 소액 거래를 요구합니다.",
-    "subtitle2": "기존 결제 인프라는 이 현실을 감당하지 못합니다.",
+    "subtitle1_line2": "웹의 콘텐츠를 읽어 답하고 학습합니다.",
+    "subtitle2": "그러나 그 콘텐츠를 만든 사람에게 돌아오는 보상은 없습니다.",
     "minAmount": {
-      "title": "거래 불가능한 소액",
-      "desc": "10원짜리 데이터 쿼리, 1원짜리 뉴스 문장. 기존 결제 시스템에서는 수수료가 원금을 초과합니다. AI 에이전트 간 나노 거래는 아예 성립하지 않습니다."
+      "title": "값을 치르지 않는 읽기",
+      "desc": "AI 에이전트는 콘텐츠를 자유롭게 긁어가 답변과 학습에 씁니다. 제작자는 트래픽도, 광고 수익도, 한 푼의 대가도 받지 못합니다."
     },
     "latency": {
-      "title": "느린 정산 속도",
-      "desc": "AI 에이전트는 0.01초 안에 다음 행동을 결정합니다. 1초에서 수 일이 걸리는 기존 정산 구조는 AI 경제의 속도와 호환되지 않습니다."
+      "title": "정산 불가능한 소액",
+      "desc": "글 한 편의 가치는 10원, 100원 단위입니다. 기존 결제망에서는 수수료가 원금을 넘어, 콘텐츠 단위 과금은 아예 성립하지 않습니다."
     },
     "model": {
-      "title": "무거운 과금 모델",
-      "desc": "구독은 쓰지 않는 것에도 과금됩니다. 광고는 사용자의 주의력을 팝니다. AI 에이전트에게 두 모델 모두 존재하지 않는 개념입니다."
+      "title": "맞지 않는 과금 모델",
+      "desc": "구독은 읽지 않은 글에도 과금하고, 광고는 사람의 주의력을 팝니다. 콘텐츠를 읽는 주체가 AI 에이전트라면 두 모델 모두 작동하지 않습니다."
     },
-    "conclusion_line1": "AI 경제는 이미 시작됐습니다.",
-    "conclusion_line2": "결제 인프라만 아직 과거에 머물러 있습니다."
+    "conclusion_line1": "AI는 이미 콘텐츠로 답하고 있습니다.",
+    "conclusion_line2": "그 가치를 제작자에게 돌려줄 길만 없었을 뿐입니다."
   },
   "nanotrans": {
     "title": "AI 에이전트가 콘텐츠를 읽으면 수익이 됩니다",
@@ -283,11 +283,9 @@
     "title_line2": "글로벌 인프라로",
     "years": {
       "2025": [
-        "cre8pet Android 출시 완료 (6개 언어)",
         "NanoTrans 실증 시작"
       ],
       "2026": [
-        "cre8pet iOS 출시 완료",
         "NanoTrans 서비스 정식 출시",
         "인사이트 피그플랜 출시",
         "PigOS 출시",
@@ -337,10 +335,10 @@
   "pages": {
     "about": {
       "title": "회사소개 | 와이즈레이크",
-      "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준을 만드는 와이즈레이크입니다.",
+      "description": "AI가 읽는 콘텐츠가 제값을 받는 세상을 만드는 와이즈레이크입니다.",
       "heroLabel": "회사소개",
       "heroTitle": "와이즈레이크를 소개합니다",
-      "heroSubtitle": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준"
+      "heroSubtitle": "AI가 읽는 콘텐츠가 제값을 받는 세상"
     },
     "nanotrans": {
       "title": "NanoTrans | 와이즈레이크",
@@ -436,7 +434,7 @@
     }
   },
   "footer": {
-    "tagline": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준",
+    "tagline": "AI가 읽는 콘텐츠가 제값을 받는 세상",
     "companyName": "(주)와이즈레이크",
     "ceo": "대표이사: 진교문",
     "businessNumber": "사업자등록번호: 768-87-02255",

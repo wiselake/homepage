@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "WiseLake – Nano Start, Mega Impact",
-    "description": "WiseLake builds micropayment infrastructure for the AI agent economy. NanoTrans enables instant global settlement of nano-scale transactions."
+    "description": "WiseLake builds NanoTrans — x402-based infrastructure that turns the content AI reads into revenue for its creators, building the standard for fair content value in the AI era."
   },
   "nav": {
     "home": "Home",
@@ -15,20 +15,20 @@
     "skipToContent": "Skip to main content"
   },
   "hero": {
-    "badge": "AI Micropayment Infrastructure",
+    "badge": "AI Content Monetization Infrastructure",
     "tagline1": "Nano Start",
     "tagline2": "Mega Impact",
-    "subtitle1_line1": "Building the payment infrastructure",
-    "subtitle1_line2": "for a world where AI transacts autonomously",
+    "subtitle1_line1": "When AI reads your content,",
+    "subtitle1_line2": "we make sure the creator gets paid",
     "subtitle2": "700+ farms · 20 years of data · #1 swine ERP market share",
     "cta": "Get Started with NanoTrans",
     "ctaSecondary": "About Us"
   },
   "vision": {
     "visionLabel": "Vision",
-    "visionTitle1": "The Payment Rails of the AI Economy",
-    "visionTitle2": "The Global Standard for Value Exchange",
-    "visionDesc": "In a world where AI agents transact autonomously, even a fraction of a cent worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
+    "visionTitle1": "Every Piece of Content AI Reads,",
+    "visionTitle2": "Paid Its Fair Value",
+    "visionDesc": "AI agents now read, answer with, and learn from the web's content. The people who created it deserve a share of that value. WiseLake builds the path where content becomes revenue.",
     "missionLabel": "Mission",
     "missionTitle1": "Fair Value for Every Data",
     "missionTitle2": "and Every Piece of Content",
@@ -36,25 +36,25 @@
   },
   "problem": {
     "label": "Problem",
-    "title_line1": "AI Agents Are Ready.",
-    "title_line2": "Payment Infrastructure Is Not.",
-    "subtitle1_line1": "In 2026, AI agents demand",
-    "subtitle1_line2": "thousands of micro-transactions per second.",
-    "subtitle2": "Legacy payment systems cannot keep up.",
+    "title_line1": "AI Answers With Your Content.",
+    "title_line2": "Creators Get Nothing Back.",
+    "subtitle1_line1": "In 2026, AI agents read the web's content",
+    "subtitle1_line2": "to answer questions and train models.",
+    "subtitle2": "Yet the people who created it are paid nothing.",
     "minAmount": {
-      "title": "Minimum Transaction Too High",
-      "desc": "A $0.01 data query, a $0.001 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
+      "title": "Reading Without Paying",
+      "desc": "AI agents freely scrape content to answer and to train. Creators receive no traffic, no ad revenue, not a cent in return."
     },
     "latency": {
-      "title": "Slow Settlement",
-      "desc": "AI agents decide their next action in 0.01 seconds. Settlement that takes 1 second to several days is incompatible with the speed of the AI economy."
+      "title": "Amounts Too Small to Settle",
+      "desc": "A single article is worth pennies. On legacy payment rails the fee exceeds the principal, so per-content billing simply cannot happen."
     },
     "model": {
-      "title": "Heavy Billing Models",
-      "desc": "Subscriptions charge for what you don't use. Ads sell user attention. Neither concept exists for AI agents."
+      "title": "Billing Models That Don't Fit",
+      "desc": "Subscriptions charge for unread articles; ads sell human attention. When the reader is an AI agent, neither model works."
     },
-    "conclusion_line1": "The AI economy has already begun.",
-    "conclusion_line2": "Only the payment infrastructure is still stuck in the past."
+    "conclusion_line1": "AI already answers with your content.",
+    "conclusion_line2": "There was just no way to pay the creator — until now."
   },
   "nanotrans": {
     "title": "Get Paid When AI Agents Read Your Content",
@@ -283,11 +283,9 @@
     "title_line2": "to Global Infrastructure",
     "years": {
       "2025": [
-        "cre8pet Android launched (6 languages)",
         "NanoTrans proof-of-concept begins"
       ],
       "2026": [
-        "cre8pet iOS launched",
         "NanoTrans official launch",
         "Insight PigPlan launch",
         "PigOS launch",
@@ -337,10 +335,10 @@
   "pages": {
     "about": {
       "title": "About | WiseLake",
-      "description": "WiseLake builds micropayment infrastructure for the AI economy — the global standard for nano-value exchange.",
+      "description": "WiseLake builds a world where the content AI reads is paid its fair value.",
       "heroLabel": "About",
       "heroTitle": "About WiseLake",
-      "heroSubtitle": "The payment rails of the AI economy — the global standard for value exchange"
+      "heroSubtitle": "A world where the content AI reads is paid its fair value"
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
@@ -436,7 +434,7 @@
     }
   },
   "footer": {
-    "tagline": "The payment rails of the AI economy — the global standard for value exchange",
+    "tagline": "A world where the content AI reads is paid its fair value",
     "companyName": "WiseLake, Inc.",
     "ceo": "CEO: Jin Gyomoon",
     "businessNumber": "Business Reg. No.: 768-87-02255",
