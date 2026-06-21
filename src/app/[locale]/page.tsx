@@ -1,8 +1,8 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { VisionSection } from "@/components/sections/VisionSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
+import { PigPlanProof } from "@/components/sections/PigPlanProof";
 import { ServiceOverview } from "@/components/sections/ServiceOverview";
-import { EcosystemSection } from "@/components/sections/EcosystemSection";
 import { RoadmapSection } from "@/components/sections/RoadmapSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -12,8 +12,8 @@ export default function HomePage() {
       <HeroSection />
       <VisionSection />
       <ProblemSection />
+      <PigPlanProof />
       <ServiceOverview />
-      <EcosystemSection />
       <RoadmapSection />
       <ContactSection />
     </>

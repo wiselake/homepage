@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://wiselake.ai"),
   title: "WiseLake - Nano Start, Mega Impact",
-  description: "AI 경제를 위한 마이크로페이먼트 인프라 | Micro-payment Infrastructure for AI Economy",
+  description: "AI가 읽는 콘텐츠가 수익이 되는 인프라 | Content Monetization Infrastructure for the AI Era",
   icons: { icon: "/favicon.ico" },
 };
 

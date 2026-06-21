@@ -20,7 +20,7 @@ export function Button({
 
   const variants = {
     primary:
-      "relative bg-accent/90 text-bg-primary backdrop-blur-sm border border-accent/30 hover:bg-accent hover:shadow-[0_0_30px_rgba(245,166,35,0.4)] hover:border-accent/50 overflow-hidden",
+      "relative bg-accent text-bg-ink border border-accent/30 hover:bg-accent-light hover:shadow-[0_6px_18px_rgba(245,166,35,0.3)] hover:border-accent overflow-hidden",
     secondary:
       "glass text-text-primary hover:border-accent/40 hover:text-accent hover:shadow-[0_0_20px_rgba(245,166,35,0.1)]",
     ghost:

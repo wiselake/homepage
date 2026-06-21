@@ -12,7 +12,7 @@ interface SectionProps {
 
 export function Section({ id, children, className = "", dark = true }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <section
@@ -20,7 +20,7 @@ export function Section({ id, children, className = "", dark = true }: SectionPr
       ref={ref}
       data-in-view={isInView}
       className={`relative py-[var(--section-padding-y)] px-[var(--section-padding-x)] overflow-hidden ${
-        dark ? "bg-bg-primary text-text-primary" : "bg-bg-white text-text-dark"
+        dark ? "bg-bg-secondary text-text-primary" : "bg-bg-white text-text-dark"
       } ${className}`}
     >
       <div className="mx-auto max-w-[var(--container-max)]">

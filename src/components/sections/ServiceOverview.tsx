@@ -28,16 +28,6 @@ const SERVICES = [
     ),
   },
   {
-    key: "services",
-    href: "/services" as const,
-    icon: (
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
     key: "b2b",
     href: "/b2b" as const,
     icon: (
@@ -62,7 +52,7 @@ function ServiceCard({
 }) {
   const t = useTranslations("serviceOverview");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <motion.div
@@ -86,7 +76,7 @@ function ServiceCard({
 
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all duration-300"
+        className="inline-flex items-center gap-2 text-accent-dark text-sm font-medium group-hover:gap-3 transition-all duration-300"
       >
         {t(`${serviceKey}.cta`)}
         <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -112,7 +102,7 @@ export function ServiceOverview() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {SERVICES.map((service, i) => (
           <ServiceCard
             key={service.key}

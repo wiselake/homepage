@@ -302,7 +302,7 @@ function TechCard({
 }) {
   const t = useTranslations("coreTech");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <motion.div
@@ -312,7 +312,7 @@ function TechCard({
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className="group relative"
     >
-      <div className="relative overflow-hidden rounded-2xl glass hover:border-accent/30 hover:shadow-[0_0_24px_rgba(245,166,35,0.1)] transition-all duration-500 h-full flex flex-col">
+      <div className="relative overflow-hidden rounded-2xl bg-bg-ink border border-white/10 hover:border-accent/40 hover:shadow-[0_0_24px_rgba(245,166,35,0.15)] transition-all duration-500 h-full flex flex-col">
         {/* Top gradient highlight */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/[0.04] to-transparent rounded-t-2xl pointer-events-none" />
 
@@ -363,7 +363,7 @@ function TechCard({
 export function NanoTransCoreTech() {
   const t = useTranslations("coreTech");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <div ref={ref} className="mt-24 mb-8">

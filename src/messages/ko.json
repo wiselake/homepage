@@ -1,165 +1,257 @@
 {
   "meta": {
     "title": "(주)와이즈레이크 | Nano Start, Mega Impact",
-    "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준. 나노 단위 마이크로페이먼트 인프라 나노트랜스(NanoTrans)를 만드는 와이즈레이크입니다."
+    "description": "AI가 읽는 콘텐츠가 곧 수익이 되는 x402 기반 결제 인프라 NanoTrans를 만드는 와이즈레이크. 콘텐츠가 제값을 받는 AI 시대의 표준을 만듭니다."
   },
   "nav": {
     "home": "홈",
     "about": "회사소개",
     "nanotrans": "나노트랜스",
     "pigplan": "피그플랜",
-    "services": "인큐베이팅 허브",
+    "b2b": "B2B SaaS",
     "roadmap": "로드맵",
     "contact": "문의하기",
     "language": "EN",
     "skipToContent": "메인 콘텐츠로 건너뛰기"
   },
   "hero": {
-    "badge": "AI 마이크로페이먼트 인프라",
+    "badge": "AI 콘텐츠 수익화 인프라",
     "tagline1": "Nano Start",
     "tagline2": "Mega Impact",
-    "subtitle1_line1": "AI가 스스로 거래하는 세상,",
-    "subtitle1_line2": "그 결제 인프라를 만듭니다",
-    "subtitle2": "700+ 농가 실사용 · 20년 데이터 · 양돈 ERP 시장점유율 1위",
+    "subtitle1_line1": "AI가 콘텐츠를 읽는 시대,",
+    "subtitle1_line2": "그 가치를 제작자에게 돌려줍니다",
+    "subtitle2": "27년 양돈 데이터·시장점유율 1위로 검증된 와이즈레이크가 만듭니다",
     "cta": "NanoTrans 시작하기",
     "ctaSecondary": "회사소개"
   },
   "vision": {
     "visionLabel": "비전",
-    "visionTitle1": "AI 경제의 미세 혈관",
-    "visionTitle2": "글로벌 가치 교환의 표준",
-    "visionDesc": "AI 에이전트가 스스로 거래하는 세상에서, 10원짜리 데이터도 0.1초 만에 전 세계 어디든 도달해야 합니다. 와이즈레이크는 그 통로를 만듭니다.",
+    "visionTitle1": "AI가 읽는 모든 콘텐츠가",
+    "visionTitle2": "제값을 받는 세상",
+    "visionDesc": "AI 에이전트가 웹의 콘텐츠를 읽고, 답하고, 학습하는 시대. 그 콘텐츠를 만든 사람에게도 가치가 돌아가야 합니다. 와이즈레이크는 콘텐츠가 곧 수익이 되는 길을 만듭니다.",
     "missionLabel": "미션",
     "missionTitle1": "모든 데이터와 콘텐츠에",
     "missionTitle2": "공정한 가치를 부여한다",
     "missionDesc": "콘텐츠 하나, 데이터 하나가 제값을 받는 생태계. x402 프로토콜 기반 NanoTrans가 이미 그 첫 걸음을 내딛고 있습니다."
   },
+  "about": {
+    "stats": {
+      "label": "숫자로 보는 와이즈레이크",
+      "title": "검증으로 쌓은 신뢰",
+      "subtitle": "27년간 현장에서 쌓은 데이터가 와이즈레이크의 출발점입니다.",
+      "items": {
+        "years": { "value": "27년", "label": "양돈 현장 데이터" },
+        "farms": { "value": "700+", "label": "실사용 농가" },
+        "share": { "value": "5년 연속", "label": "ERP 시장점유율 1위" },
+        "records": { "value": "150M+", "label": "익명화 데이터 레코드" },
+        "partners": { "value": "7곳", "label": "정부·산업 파트너" }
+      }
+    },
+    "story": {
+      "label": "와이즈레이크의 길",
+      "title": "검증된 27년 위에서, 다음을 만듭니다",
+      "subtitle": "현장에서 쌓은 데이터로 신뢰를 증명했고, 이제 AI가 읽는 콘텐츠가 제값을 받는 시대를 만듭니다.",
+      "proven": {
+        "step": "검증",
+        "title": "데이터로 실적을 증명하다",
+        "desc": "27년간 700+ 농가의 현장 데이터를 쌓으며 양돈 ERP 시장점유율 1위를 5년 연속 지켰습니다. 제때 기록한 데이터가 더 높은 성적으로 이어진다는 것을 현장에서 증명했습니다."
+      },
+      "expand": {
+        "step": "확장",
+        "title": "데이터 역량을 AI 시대로",
+        "desc": "축적한 데이터 역량을 AI 경제로 넓혔습니다. NanoTrans는 AI 에이전트가 읽는 콘텐츠가 USDC 수익이 되는 x402 기반 결제 인프라입니다."
+      },
+      "vision": {
+        "step": "비전",
+        "title": "가치가 제값을 받는 표준으로",
+        "desc": "데이터와 콘텐츠가 제값을 받는 생태계. 나노에서 시작해, 글로벌 가치 교환의 표준으로 나아갑니다."
+      }
+    },
+    "company": {
+      "label": "회사 정보",
+      "title": "(주)와이즈레이크",
+      "subtitle": "검증된 데이터 위에 신뢰를 쌓고, 그 신뢰로 다음 시대의 인프라를 만듭니다.",
+      "items": {
+        "name": { "label": "법인명", "value": "(주)와이즈레이크 · WiseLake, Inc." },
+        "ceo": { "label": "대표이사", "value": "진교문" },
+        "biz": { "label": "사업자등록번호", "value": "768-87-02255" },
+        "email": { "label": "이메일", "value": "wiselake@wiselake.co.kr" },
+        "tel": { "label": "문의", "value": "031-421-3418" }
+      },
+      "cta": "문의하기"
+    }
+  },
+  "pigplanProof": {
+    "label": "검증된 실적",
+    "title": "27년 데이터가 증명한 양돈 ERP 1위",
+    "subtitle": "와이즈레이크의 비전은 검증된 실적 위에 있습니다. 전국 700+ 농가가 매일 쓰는 PigPlan이 그 출발점입니다.",
+    "items": {
+      "years": { "value": "27년", "label": "양돈 현장 데이터" },
+      "farms": { "value": "700+", "label": "실사용 농가" },
+      "share": { "value": "5년 연속", "label": "시장점유율 1위" },
+      "psy": { "value": "25.2", "label": "사용농가 평균 PSY (국내 22.4)" }
+    },
+    "cta": "PigPlan 살펴보기"
+  },
   "problem": {
     "label": "문제 제기",
-    "title_line1": "AI 에이전트는 준비됐는데,",
-    "title_line2": "결제 인프라가 없다",
+    "title_line1": "AI는 콘텐츠로 답하는데,",
+    "title_line2": "제작자에게 돌아오는 건 없다",
     "subtitle1_line1": "2026년, AI 에이전트는",
-    "subtitle1_line2": "매 초 수천 건의 소액 거래를 요구합니다.",
-    "subtitle2": "기존 결제 인프라는 이 현실을 감당하지 못합니다.",
+    "subtitle1_line2": "웹의 콘텐츠를 읽어 답하고 학습합니다.",
+    "subtitle2": "그러나 그 콘텐츠를 만든 사람에게 돌아오는 보상은 없습니다.",
     "minAmount": {
-      "title": "거래 불가능한 소액",
-      "desc": "10원짜리 데이터 쿼리, 1원짜리 뉴스 문장. 기존 결제 시스템에서는 수수료가 원금을 초과합니다. AI 에이전트 간 나노 거래는 아예 성립하지 않습니다."
+      "title": "값을 치르지 않는 읽기",
+      "desc": "AI 에이전트는 콘텐츠를 자유롭게 긁어가 답변과 학습에 씁니다. 제작자는 트래픽도, 광고 수익도, 한 푼의 대가도 받지 못합니다."
     },
     "latency": {
-      "title": "느린 정산 속도",
-      "desc": "AI 에이전트는 0.01초 안에 다음 행동을 결정합니다. 1초에서 수 일이 걸리는 기존 정산 구조는 AI 경제의 속도와 호환되지 않습니다."
+      "title": "정산 불가능한 소액",
+      "desc": "글 한 편의 가치는 10원, 100원 단위입니다. 기존 결제망에서는 수수료가 원금을 넘어, 콘텐츠 단위 과금은 아예 성립하지 않습니다."
     },
     "model": {
-      "title": "무거운 과금 모델",
-      "desc": "구독은 쓰지 않는 것에도 과금됩니다. 광고는 사용자의 주의력을 팝니다. AI 에이전트에게 두 모델 모두 존재하지 않는 개념입니다."
+      "title": "맞지 않는 과금 모델",
+      "desc": "구독은 읽지 않은 글에도 과금하고, 광고는 사람의 주의력을 팝니다. 콘텐츠를 읽는 주체가 AI 에이전트라면 두 모델 모두 작동하지 않습니다."
     },
-    "conclusion_line1": "AI 경제는 이미 시작됐습니다.",
-    "conclusion_line2": "결제 인프라만 아직 과거에 머물러 있습니다."
+    "conclusion_line1": "AI는 이미 콘텐츠로 답하고 있습니다.",
+    "conclusion_line2": "그 가치를 제작자에게 돌려줄 길만 없었을 뿐입니다."
   },
   "nanotrans": {
-    "title": "나노트랜스",
-    "subtitle": "HTTP가 정보 전송의 표준이 된 것처럼, x402 프로토콜은 AI 에이전트 결제의 표준이 됩니다.",
-    "cta": "NanoTrans 시작하기",
+    "title": "AI 에이전트가 콘텐츠를 읽으면 수익이 됩니다",
+    "subtitle": "HTTP 402와 x402 프로토콜로 AI 에이전트가 당신의 콘텐츠를 발견하고 결제합니다. 정산은 Base L2 위 USDC로, 신뢰 없이 온체인에서.",
+    "cta": "NanoTrans 플러그인 보기",
     "features": {
       "microPayment": {
-        "title": "단돈 10원도 결제 가능",
-        "desc": "10원짜리 AI 데이터 쿼리, 1원짜리 뉴스 한 문장도 거래됩니다. 기존 시스템이 포기한 나노 단위 가치를 회수합니다."
+        "title": "x402 페이월",
+        "desc": "각 글이 에이전트 요청에 HTTP 402와 온체인 결제 조건으로 응답합니다. 글 단위·사이트 단위로 USDC 가격을 설정하세요."
       },
       "settlement": {
-        "title": "0.1초 글로벌 정산",
-        "desc": "서울에서 요청한 AI 에이전트가 도쿄 데이터센터의 응답에 즉시 대금을 지불합니다. 0.1초 안에, 전 세계 어디서든."
+        "title": "Bazaar 발견",
+        "desc": "구조화된 Bazaar 메타데이터가 콘텐츠를 Coinbase CDP 카탈로그와 에이전트 마켓플레이스에 등재해, AI 에이전트가 실제로 찾을 수 있게 합니다."
       },
       "payPerContent": {
-        "title": "Pay-per-Content",
-        "desc": "아티클 하나에 50원, 리포트 한 페이지에 10원. 구독 없이, 광고 없이, 실제로 소비한 콘텐츠에만 지불합니다."
+        "title": "워드프레스 네이티브",
+        "desc": "페이월 메타박스와 구텐베르크 사이드바를 갖춘 표준 플러그인. 지갑 주소만 설정하면 끝 — 블록체인 코드는 필요 없습니다."
       },
       "payPerUse": {
-        "title": "Pay-per-Use",
-        "desc": "API 호출 1회에 5원, 1,000회 호출하면 5,000원. 쓰는 만큼만, 정확하게. AI 에이전트 간 거래의 기본 원칙입니다."
+        "title": "온체인 분배 · 90%+",
+        "desc": "불변 NanoTransSplitter 컨트랙트가 결제를 자동 분배합니다. 수탁도 수동 정산도 없이 제작자가 90% 이상 보유합니다."
       }
     }
   },
   "comparison": {
     "header": {
       "category": "구분",
-      "traditional": "기존 결제"
+      "traditional": "기존 방식"
     },
     "rows": {
       "minAmount": {
-        "label": "최소 결제금액",
-        "traditional": "₩1,000 이상",
-        "nanotrans": "₩10"
+        "label": "AI 에이전트 접근",
+        "traditional": "무료 스크래핑",
+        "nanotrans": "USDC 유료 읽기"
       },
       "speed": {
-        "label": "정산 속도",
-        "traditional": "1초 ~ 수 일",
-        "nanotrans": "0.1초"
+        "label": "정산",
+        "traditional": "중개·지연",
+        "nanotrans": "Base L2 즉시 온체인"
       },
       "fees": {
-        "label": "수수료 구조",
-        "traditional": "복잡 / 가변",
-        "nanotrans": "극소 / 고정"
+        "label": "제작자 수익",
+        "traditional": "0",
+        "nanotrans": "90%+"
       }
     }
   },
   "coreTech": {
-    "label": "핵심 기술",
-    "title": "NanoTrans 4가지 핵심 기술",
-    "subtitle": "발견부터 결제, 보안, 정산까지 — AI 에이전트 경제의 전체 흐름을 하나의 프로토콜로 완결합니다.",
-    "protocol": "모든 기술은 하나의 프로토콜 위에서 동작합니다",
+    "label": "작동 원리",
+    "title": "신뢰 없이 작동하는 4가지 기반",
+    "subtitle": "발견부터 결제, 비수탁 보안, 온체인 분배까지 — 모두 x402 표준과 Base L2 위에서 검증 가능하게 동작합니다.",
+    "protocol": "모두 x402 표준 위에서 동작합니다",
     "nanoSense": {
-      "name": "NanoSense\u2122",
-      "tagline": "Agent Auto-Discovery Protocol",
-      "desc": "AI 에이전트가 유료 콘텐츠를 사람의 개입 없이 **스스로 발견**하고 결제까지 완료합니다. **x402 표준 엔드포인트** 기반으로 발견·확인·결제·소비의 전체 흐름을 하나의 인터페이스로 완결합니다."
+      "name": "x402 프로토콜",
+      "tagline": "Agent-Native Payments",
+      "desc": "**HTTP 402** 표준 위에서 에이전트가 콘텐츠를 **발견·확인·결제·소비**합니다. **x402 v2** 응답에 결제 조건과 Bazaar 발견 메타데이터가 함께 담깁니다."
     },
     "nanoVault": {
-      "name": "NanoVault\u2122",
-      "tagline": "Built-in Financial Security Layer",
-      "desc": "**6단계 서명 검증**, 리플레이 공격 방지, **온·오프체인 교차 검증**, **서킷 브레이커**까지 — 금융 수준의 다층 보안이 설치 즉시 활성화됩니다. 추가 보안 모듈 구매가 필요 없습니다."
+      "name": "비수탁 설계",
+      "tagline": "Non-custodial by Design",
+      "desc": "NanoTrans는 **자금을 보관하지 않습니다.** 결제는 온체인에서 직접 분배되고, 결제 자격증명은 워드프레스가 아닌 **Cloudflare Worker**에만 저장됩니다."
     },
     "nanoPulse": {
-      "name": "NanoPulse\u2122",
-      "tagline": "Real-time Dynamic Pricing Engine",
-      "desc": "요청자 유형, 시간대, 수요량을 **실시간**으로 반영하여 콘텐츠별 **최적 가격**을 자동 산출합니다. 정적 가격표로는 불가능한 유연한 수익화 전략을 지원합니다."
+      "name": "USDC · Base L2",
+      "tagline": "Instant On-chain Settlement",
+      "desc": "정산은 **Base L2의 USDC**로 이뤄집니다. 중개자 없이, 에이전트가 결제하는 즉시 온체인에서 확정됩니다."
     },
     "nanoSplit": {
-      "name": "NanoSplit\u2122",
-      "tagline": "On-chain Instant Revenue Distribution",
-      "desc": "**스마트 컨트랙트**가 결제 즉시 수익을 사전 설정된 비율로 분배합니다. 정산 지연 없이 수익이 확정되며, 모든 분배 내역은 **블록체인에 영구 기록**됩니다."
-    }
-  },
-  "ntComparison": {
-    "headerTraditional": "기존 결제",
-    "trad": {
-      "amount": { "label": "최소 거래금액", "value": "₩1,000 이상" },
-      "speed": { "label": "정산 속도", "value": "1초 ~ 수 일" },
-      "model": { "label": "과금 모델", "value": "구독 / 광고" }
-    },
-    "nano": {
-      "amount": { "label": "최소 거래금액", "value": "₩10" },
-      "speed": { "label": "정산 속도", "value": "0.1초" },
-      "model": { "label": "과금 모델", "value": "Pay-per-Use" }
-    },
-    "stat": {
-      "minTx": "최소 거래 단위",
-      "minTxValue": "₩10",
-      "settlement": "글로벌 정산",
-      "settlementValue": "0.1s",
-      "protocol": "결제 프로토콜",
-      "protocolValue": "x402"
+      "name": "검증 가능한 Splitter",
+      "tagline": "Verifiable Revenue Splits",
+      "desc": "불변 **NanoTransSplitter**가 결제 즉시 수익을 분배합니다. **결정적 주소와 검증된 코드 해시**를 정산 전에 확인하며, 제작자가 **90% 이상** 보유합니다."
     }
   },
   "pigplan": {
     "title": "대한민국 양돈 ERP 시장점유율 1위",
     "desc": "피그플랜은 도드람, 다비육종, 우성사료 등 대한민국 대표 양돈조합과 기업이 사용하는 시장점유율 1위 양돈 ERP 솔루션입니다.",
-    "psy": "PSY(모돈당 연간 출하 두수)는 양돈농장의 수익성을 결정하는 핵심 지표입니다. 피그플랜에 데이터를 제때 입력하는 농가는 그렇지 않은 농가 대비 PSY가 유의미하게 높습니다. 20여 년간의 데이터가 이를 증명합니다.",
+    "psy": "PSY(모돈당 연간 출하 두수)는 양돈농장의 수익성을 결정하는 핵심 지표입니다. 피그플랜에 데이터를 제때 입력하는 농가는 그렇지 않은 농가 대비 PSY가 유의미하게 높습니다. 27년간의 데이터가 이를 증명합니다.",
     "stats": {
       "farms": "사용 농가 수",
       "years": "년간 축적된 데이터",
       "market": "시장점유율"
     },
     "clients": "주요 고객: 도드람, 다비육종, 우성사료",
-    "cta": "서비스 문의"
+    "cta": "서비스 문의",
+    "psyProof": {
+      "label": "검증된 성적",
+      "title": "성적으로 증명하는 피그플랜",
+      "subtitle": "PSY(모돈당 연간 출하 두수)는 농장 수익성을 가르는 핵심 생산 지표입니다. 2022년부터 2025년까지 4년 연속, 피그플랜 사용 농가의 평균 PSY는 국내평균을 앞섰습니다.",
+      "national": "국내평균",
+      "brand": "피그플랜",
+      "caption": "피그플랜 사용 농가, PSY 국내 최고 성적 달성"
+    },
+    "pillars": {
+      "label": "피그플랜 특장점",
+      "title": "검증된 솔루션이 농장 생산성을 높입니다",
+      "subtitle": "작업 누락을 막고, 생산성 저해요인을 짚고, 목표 대비 성과까지 — 돼지의 전 생애 주기를 한 곳에서 관리합니다.",
+      "lifecycle": {
+        "title": "양돈 전 생애 주기 사양 관리",
+        "desc": "번식돈·자돈·육성돈·검정돈·종돈의 사양 관리부터 사료업체·도축장 연계를 통한 사료거래·출하 내역, 검정돈·판매분양 및 종돈 성적 관리까지. 돼지의 전 생애 주기를 체계적으로 관리해 농가 생산성을 높입니다."
+      },
+      "productivity": {
+        "title": "생산성적 향상 및 경영개선 관리",
+        "desc": "분만부터 판매·경영까지 다양한 성적 관리, 가계도 기반 선대·후대 성적 추적, 타 농장과의 생산성 비교 분석. 27년간 현장에서 검증된 약 500여 종의 보고서를 제공합니다."
+      },
+      "ict": {
+        "title": "ICT 융합 및 맞춤형 컨설팅",
+        "desc": "작업지시서·사육일보 등 500여 종 보고서 기반 경영관리, 계열 농장 그룹 분석으로 취약 농가 중점 관리, ICT 장비 연계와 모바일 현장 지원. 관리 농가 수익 증가를 위한 컨설팅 분석 자료를 제공합니다."
+      }
+    },
+    "features": {
+      "label": "주요 기능",
+      "title": "피그플랜 주요 기능",
+      "subtitle": "농가와 업체, 웹과 모바일, 현장과 분석을 아우르는 기능을 제공합니다.",
+      "systems": {
+        "title": "농가용·업체용 시스템 (PS, GP)",
+        "desc": "농가와 업체 성격에 맞는 서비스를 제공하고, 농장주 외 작업자 계정과 메뉴 권한을 따로 부여합니다."
+      },
+      "app": {
+        "title": "모바일 앱 지원",
+        "desc": "현장에서 바로 모돈 정보를 조회·기록하고, QR 코드로 작업을 확인하고 입력합니다."
+      },
+      "insight": {
+        "title": "인사이트 피그플랜",
+        "desc": "주간·월간 농장 요약 분석 보고서와 분기별 컨설팅 진단·개선 KPI를 제공합니다."
+      },
+      "realtime": {
+        "title": "실시간 분석",
+        "desc": "빠른 성적 보고서 조회와 IoT 연계·데이터 융합 분석으로 현황을 즉시 파악합니다."
+      },
+      "decision": {
+        "title": "사용자 의사결정 시스템",
+        "desc": "취약 구간을 판독해 관리 대상 모돈을 제시하고, 작업 스케줄을 함께 관리합니다."
+      },
+      "optimize": {
+        "title": "사용 환경 최적화",
+        "desc": "사용자 정의 메뉴·항목 관리와 다국어 지원(영어·베트남어)으로 사용 환경에 맞춥니다."
+      }
+    }
   },
   "partners": {
     "label": "파트너사",
@@ -173,116 +265,99 @@
   },
   "insightPigplan": {
     "label": "Insight PigPlan",
-    "title": "매주 월요일, 놓치면 안 되는 작업목록",
-    "desc": "임신·이유·분만·출하, 어느 하나라도 일정보다 1주만 지연되면 PSY가 떨어집니다. 인사이트 피그플랜은 매주 월요일 아침, 농장주의 스마트폰으로 '이번 주 놓치면 안 되는 작업 목록'을 발송합니다.",
-    "benefit": "적시 알림 하나가 모돈 1두당 수십만 원의 차이를 만듭니다.",
+    "title": "주간 AI 경영 리포트",
+    "desc": "인사이트 피그플랜은 피그플랜 데이터를 AI가 분석해, 매주 월요일 농장의 한 주를 리포트 한 장으로 정리합니다. 종합·생산·출하·손실·진단 5개 탭과 GREEN·YELLOW·RED 종합 등급으로, 카카오톡에서 10분이면 파악됩니다.",
+    "benefit": "손실을 원 단위로 보여주고, 13주 추세 + 4주 전망으로 문제가 터지기 전에 알립니다.",
     "cta": "서비스 바로가기",
-    "ctaInquiry": "서비스 신청 문의",
+    "ctaInquiry": "도입 상담",
     "flow": {
       "title": "어떻게 동작하나요",
-      "s1": "데이터 입력",
-      "s1_desc": "농장주가 피그플랜에 일상 데이터를 기록",
-      "s2": "AI 분석",
-      "s2_desc": "27년 데이터 기반 이상 징후 감지",
-      "s3": "매주 알림",
-      "s3_desc": "월요일 아침, 핵심 작업 목록 발송"
+      "s1": "피그플랜 데이터",
+      "s1_desc": "농장이 평소 입력한 피그플랜 데이터를 그대로 활용합니다.",
+      "s2": "AI 분석 · 등급 산정",
+      "s2_desc": "실적·손실·원인을 분석하고 GREEN/YELLOW/RED 종합 등급을 매깁니다.",
+      "s3": "월요일 리포트",
+      "s3_desc": "매주 월요일 오전 8시 또는 오후 2시, 카카오톡·문자로 5개 탭 리포트를 발송합니다."
     },
     "features": {
-      "f1_title": "맞춤 작업 목록 자동 생성",
-      "f1_desc": "농장 상황에 맞는 이번 주 필수 작업을 AI가 선별하여 발송합니다",
-      "f2_title": "PSY 개선 추적",
-      "f2_desc": "주간·월간 PSY 변화를 추적하고, 개선 포인트를 알려줍니다",
-      "f3_title": "스마트폰 즉시 확인",
-      "f3_desc": "별도 앱 설치 없이 카카오톡·문자로 받아 현장에서 바로 확인합니다"
+      "f1_title": "손실·개선을 원 단위로",
+      "f1_desc": "5종 손실을 정량화하고, 개선 시 기대 수익을 원 단위로 보여줍니다.",
+      "f2_title": "문제 터지기 전 조기 경보",
+      "f2_desc": "13주 추세와 4주 전망으로 이상 징후를 미리 감지합니다.",
+      "f3_title": "전국 농가 중 내 위치",
+      "f3_desc": "비슷한 규모 농가 대비 내 농장의 전국 분위(상위·중위·하위)를 보여줍니다."
     }
   },
-  "pigplanTabs": {
-    "nav": "피그플랜 사업군 탐색"
-  },
   "pigplanCore": {
-    "label": "PigOS AI",
-    "title": "데이터가 말하고, AI가 행동한다",
-    "subtitle": "전 세계 양돈 농장의 수익을 올리는 AI 운영시스템",
-    "desc_line1": "PigOS AI는 전 세계 양돈 농장을 위한 AI Farm Management 플랫폼입니다.",
-    "desc_line2": "교배 최적 타이밍, 폐사 조기 경보, 사료 효율, 출하 수익까지 — AI가 분석하고, 지금 해야 할 행동을 제시합니다.",
-    "desc_line3": "알림이 아닙니다. Action입니다.",
-    "f1_title": "AI 의사결정",
-    "f1_desc": "폐사율·사료효율·출하수익을 수치로 증명",
-    "f2_title": "데이터에서 행동으로",
-    "f2_desc": "지금 무엇을 해야 하는가를 즉시 답변",
-    "f3_title": "글로벌 5개 시장",
-    "f3_desc": "미국 / 중국 / 동남아 / 남미 / 한국",
-    "f4_title": "7개 언어 지원",
-    "f4_desc": "현지 언어로, 현지 농장에",
-    "status": "2026 출시 예정"
+    "label": "PigOS",
+    "title": "양돈 농장을 위한 AI 조기경보 시스템",
+    "subtitle": "기록 입력 → AI 판단 → 손실 차단",
+    "desc_line1": "PigOS는 농장 기록·KPI 벤치마크·리스크 신호·리포트를 하나로 잇는 AI 네이티브 운영 시스템입니다.",
+    "desc_line2": "한국·미국·동남아·중남미 등 국가별로 보정된 지표와 규칙 기반 AI로, 월말 전에 손실을 먼저 감지합니다.",
+    "desc_line3": "신용카드 없이 무료로 시작하세요.",
+    "f1_title": "KPI 실시간 대시보드",
+    "f1_desc": "PSY·MSY·이유두수·폐사율·출하성적을 모바일에서 실시간으로. 오프라인도 지원합니다.",
+    "f2_title": "AI Insight",
+    "f2_desc": "손실 패턴과 이상치를 자동 감지하고, 이번 주 핵심 Top-3 액션을 제시합니다.",
+    "f3_title": "AI Advisor",
+    "f3_desc": "“왜 PSY가 떨어졌나?” 자연어로 물으면 데이터 기반으로 답하는 농장 컨설턴트.",
+    "f4_title": "Morning Brief",
+    "f4_desc": "밤사이 AI 모니터링을 바탕으로 매일 아침 오늘의 Top-3 액션을 전달합니다.",
+    "status": "신용카드 없이 무료 시작 · pigos.io",
+    "flow": {
+      "title": "제안 → 확인 → 실행",
+      "suggest": {
+        "title": "제안 (Suggest)",
+        "desc": "누락 기록·폐사 급증·교배 예정 모돈을 AI가 자동으로 먼저 띄웁니다."
+      },
+      "confirm": {
+        "title": "확인 (Confirm)",
+        "desc": "농장 팀이 검토·수정·승인한 뒤에 의사결정에 반영됩니다."
+      },
+      "act": {
+        "title": "실행 (Act)",
+        "desc": "확인된 기록이 손실 신호와 우선순위 액션으로 전환됩니다."
+      }
+    }
   },
   "pigSignal": {
     "label": "PigSignal",
-    "title": "양돈 데이터를 글로벌 API로",
-    "subtitle_line1": "27년간 축적된 1.5억 건의 데이터를 익명화하여 REST API로 제공합니다.",
-    "subtitle_line2": "AI 에이전트가 NanoTrans x402를 통해 자동으로 데이터를 조회하고 결제합니다.",
-    "ntIntegration_line1": "PigPlan 27년 데이터 자산 × NanoTrans Pay-per-Use.",
-    "ntIntegration_line2": "양돈 데이터를 글로벌 API 마켓으로 가져갑니다.",
-    "flowStages": {
-      "s1": "Farm Data",
-      "s1_sub": "27년 · 1.5억 건",
-      "s2": "Anonymize",
-      "s2_sub": "익명화 · 정제",
-      "s3": "API Market",
-      "s3_sub": "57개 REST API",
-      "s4": "Global",
-      "s4_sub": "x402 자동결제"
-    },
+    "title": "검증된 양돈 데이터, 실행 가능한 신호",
+    "subtitle_line1": "27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화·집계한 B2B 데이터 API 플랫폼.",
+    "subtitle_line2": "보험 손해율, 가축 대출 리스크, 사료 수요 변화를 개별 농장 노출 없이 더 빨리 판단합니다.",
+    "ntIntegration_line1": "N ≥ 10 익명화 · 프라이버시 바이 디자인 · 감사 가능한 데이터 계보.",
+    "ntIntegration_line2": "99.9% SLA · <200ms 응답 · pigsignal.com",
     "stats": {
-      "records": "1.5억+",
-      "recordsLabel": "축적 데이터",
-      "apis": "57",
-      "apisLabel": "API 라인업",
-      "industries": "12",
-      "industriesLabel": "타겟 산업군",
-      "daily": "37K+",
-      "dailyLabel": "일일 데이터 증가"
+      "records": "150M+",
+      "recordsLabel": "농장 레코드",
+      "apis": "18+",
+      "apisLabel": "데이터 수집 국가",
+      "industries": "47",
+      "industriesLabel": "리스크 신호 지역",
+      "daily": "26",
+      "dailyLabel": "벤치마크 엔드포인트"
     },
     "apis": {
       "supplyForecast": {
-        "title": "공급 예측 API",
-        "desc": "교배-분만-이유-출하 파이프라인 기반, 3~6개월 후 돼지고기 공급량을 예측합니다."
+        "title": "Supply Forecast API",
+        "desc": "30·60·90일 공급 예측을 신뢰구간과 함께. 90일 호라이즌, 매일 갱신.",
+        "price": "도축·유통·트레이더용"
       },
       "costIndex": {
-        "title": "비용 지수 API",
-        "desc": "사료효율(FCR), 폐사율, 출하일령을 종합한 생산비용 지수를 제공합니다."
+        "title": "Benchmark API",
+        "desc": "PSY·LSY·분만율·NPD 등 지역별 분포. 주간 갱신, 99.9% SLA.",
+        "price": "영양·사료·금융용"
       },
       "riskSignal": {
-        "title": "리스크 시그널 API",
-        "desc": "폐사율 이상 탐지, 질병 발생 조기 경보를 실시간으로 제공합니다."
+        "title": "Risk Signals API",
+        "desc": "사료비·질병·공급 집중 조기경보. 7~30일 선행, 47개 지역.",
+        "price": "보험·금융·리스크용"
       }
     },
-    "status": "2026 출시 예정",
-    "agents": {
-      "feed": "사료회사 Agent",
-      "feedQuery": "FCR 벤치마크 데이터?",
-      "processor": "도축·유통 Agent",
-      "processorQuery": "3분기 공급 예측?",
-      "finance": "금융·보험 Agent",
-      "financeQuery": "농장 리스크 스코어?",
-      "aitech": "AI·테크 Agent",
-      "aitechQuery": "시계열 데이터셋?"
-    }
+    "status": "B2B 데이터 API · pigsignal.com"
   },
   "incubationTabs": {
-    "nav": "인큐베이팅 허브 서비스 탐색",
-    "subtitle": "현장의 아이디어가 서비스가 되는 곳"
-  },
-  "cre8pet": {
-    "title": "반려견과 함께하는 똑똑한 산책",
-    "subtitle": "GPS 기반으로 산책을 기록하고, 반려견과의 소중한 순간을 보관하세요.",
-    "desc": "cre8pet은 반려견과의 산책을 GPS로 기록하고, 사진과 함께 추억을 타임라인으로 보관하는 글로벌 반려동물 서비스입니다. 매일의 산책이 데이터가 되고, 소중한 기록이 됩니다.",
-    "platform": "Android · iOS · 6개 언어 지원 · 무료",
-    "f1": "GPS 기반 실시간 산책 경로 기록 및 거리/시간 측정",
-    "f2": "반려견별 산책 히스토리와 사진 타임라인",
-    "f3": "일일 미션과 챌린지로 즐거운 산책 습관",
-    "f4": "6개 언어 지원 (한/영/일/중/스페인어/포르투갈어)",
-    "imageAlt": "cre8pet 앱 산책 화면"
+    "nav": "B2B SaaS 서비스 탐색"
   },
   "b2bSaas": {
     "title": "B2B SaaS 솔루션",
@@ -319,22 +394,29 @@
     "label": "로드맵",
     "title_line1": "나노에서 시작해,",
     "title_line2": "글로벌 인프라로",
+    "foundation": {
+      "label": "검증의 시간",
+      "tagline": "27년이 만든 출발점",
+      "items": [
+        "27년 양돈 현장 데이터",
+        "700+ 농가 실사용",
+        "양돈 ERP 시장점유율 1위 5년 연속"
+      ]
+    },
     "years": {
       "2025": [
-        "cre8pet Android 출시 완료 (6개 언어)",
         "NanoTrans 실증 시작"
       ],
       "2026": [
-        "cre8pet iOS 출시 완료",
         "NanoTrans 서비스 정식 출시",
         "인사이트 피그플랜 출시",
-        "PigOS AI 출시",
+        "PigOS 출시",
         "PigSignal API 서비스 출시",
         "Flow9 · QBridge 출시"
       ],
       "2027": [
         "NanoTrans 누적 1,000만 거래 달성",
-        "PigOS AI 3개국 이상 진출",
+        "PigOS 3개국 이상 진출",
         "PigSignal API 파트너사 10개 이상 확보"
       ],
       "2028": [
@@ -375,25 +457,49 @@
   "pages": {
     "about": {
       "title": "회사소개 | 와이즈레이크",
-      "description": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준을 만드는 와이즈레이크입니다.",
+      "description": "AI가 읽는 콘텐츠가 제값을 받는 세상을 만드는 와이즈레이크입니다.",
       "heroLabel": "회사소개",
       "heroTitle": "와이즈레이크를 소개합니다",
-      "heroSubtitle": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준"
+      "heroSubtitle": "AI가 읽는 콘텐츠가 제값을 받는 세상"
     },
     "nanotrans": {
       "title": "NanoTrans | 와이즈레이크",
-      "description": "x402 프로토콜 기반 마이크로페이먼트 인프라. 10원도 0.1초 만에 글로벌 정산.",
+      "description": "AI 에이전트가 콘텐츠를 읽으면 USDC로 수익이 되는 x402 기반 워드프레스 플러그인. Base L2 온체인 정산, 제작자 90%+ 보유.",
       "heroLabel": "NanoTrans",
-      "heroTitle": "나노 마이크로페이먼트 인프라",
-      "heroSubtitle": "x402 프로토콜 기반 AI 에이전트 결제 솔루션",
-      "heroCta": "NanoTrans 시작하기"
+      "heroTitle": "AI 에이전트가 콘텐츠를 읽으면 수익이 됩니다",
+      "heroSubtitle": "당신의 글을 에이전트가 발견하고 결제할 수 있는 리소스로 바꾸는 x402 기반 워드프레스 플러그인",
+      "heroCta": "플러그인 보기"
     },
     "pigplan": {
-      "title": "PigPlan | 와이즈레이크",
-      "description": "대한민국 양돈 ERP 시장점유율 1위. 데이터 기반 스마트 양돈 솔루션.",
-      "heroLabel": "PigPlan",
-      "heroTitle": "대한민국 1위 양돈 ERP",
-      "heroSubtitle": "데이터 기반 스마트 양돈 관리 플랫폼"
+      "title": "PigPlan Suite | 와이즈레이크",
+      "description": "27년 양돈 데이터 위에 선 4개의 주력 제품 — PigPlan·Insight PigPlan·PigOS·PigSignal. 양돈 산업의 경영·운영·리스크를 데이터로.",
+      "heroLabel": "PigPlan Suite",
+      "heroTitle": "27년 데이터 위에 선 4개의 주력 제품",
+      "heroSubtitle": "시장점유율 1위 ERP를 토대로, 양돈 산업의 경영·운영·리스크를 데이터로 책임집니다."
+    },
+    "pigplanInsight": {
+      "title": "Insight PigPlan | 와이즈레이크",
+      "description": "매주 월요일, 농장의 한 주를 리포트 한 장으로 압축하는 주간 AI 경영 리포트. 종합·생산·출하·손실·진단 5개 탭, 손실은 원 단위로, 전국 분위까지 — 10분이면 끝.",
+      "heroLabel": "Insight PigPlan",
+      "heroTitle": "매주 월요일, 농장의 한 주를 리포트 한 장으로",
+      "heroSubtitle": "피그플랜 데이터를 AI가 분석해 매주 월요일 카카오톡으로 — 실적·손실·원인·개선을 10분이면 파악합니다.",
+      "heroCta": "도입 상담"
+    },
+    "pigplanPigos": {
+      "title": "PigOS | 와이즈레이크",
+      "description": "기록을 입력하는 순간 AI가 손실 위험을 판단하는 양돈 농장 AI 조기경보 시스템. 27년 PigPlan 노하우 기반, 6개 언어·무료로 시작.",
+      "heroLabel": "PigOS",
+      "heroTitle": "기록을 입력하는 순간, AI가 손실 위험을 판단합니다",
+      "heroSubtitle": "양돈 농장을 위한 AI 조기경보 시스템 — 27년 PigPlan 노하우 위에서, 신용카드 없이 무료로 시작하세요.",
+      "heroCta": "무료로 시작하기"
+    },
+    "pigplanPigsignal": {
+      "title": "PigSignal | 와이즈레이크",
+      "description": "27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화한 B2B 양돈 데이터 API. 보험 손해율·대출 리스크·사료 수요를 더 빨리 판단하는 검증 데이터·신호.",
+      "heroLabel": "PigSignal",
+      "heroTitle": "보험·대출·사료 AI를 위한 양돈 리스크 데이터",
+      "heroSubtitle": "검증된 양돈 데이터, 실행 가능한 신호 · API-first — 27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화·집계한 B2B 데이터 API.",
+      "heroCta": "무료 데이터 샘플 요청"
     },
     "services": {
       "title": "인큐베이팅 허브 | 와이즈레이크",
@@ -417,52 +523,18 @@
       "heroSubtitle": "나노에서 시작해, 글로벌 인프라로 완성합니다"
     }
   },
-  "ecosystemArch": {
-    "label": "생태계 구조",
-    "title": "모든 서비스는 NanoTrans로 수렴한다",
-    "desc": "PigPlan이 700개 농가의 신뢰를 쌓고, cre8 시리즈가 실제 사용자를 확보하는 동안 데이터와 콘텐츠 자산이 축적됩니다. 그 위에서 NanoTrans가 AI 경제의 결제 인프라로 완성됩니다.",
-    "imageAlt": "WiseLake 사업 생태계 아키텍처 다이어그램: Layer 1 Interaction(Human·AI Agent) → Layer 2 Application(cre8 시리즈·PigPlan·B2B SaaS) → Layer 3 Asset(콘텐츠·데이터 자산) → Layer 4 Infrastructure(NanoTrans)",
-    "mobileNote": "전체 다이어그램은 가로 방향 화면에서 더 잘 보입니다.",
-    "layers": {
-      "layer1": {
-        "label": "Layer 1 · Interaction",
-        "title": "사용자 접점",
-        "desc": "반려견 산책, K-Culture 콘텐츠. 실제 사람이 매일 사용하는 서비스에서 시작합니다."
-      },
-      "layer2": {
-        "label": "Layer 2 · Application",
-        "title": "다양한 서비스 운영",
-        "desc": "PigPlan, cre8pet 등 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
-      },
-      "layer3": {
-        "label": "Layer 3 · Asset",
-        "title": "데이터·콘텐츠 자산 축적",
-        "desc": "20년치 양돈 데이터, K-Culture 콘텐츠, 반려견 산책 기록. 서비스를 운영할수록 자산이 쌓입니다."
-      },
-      "layer4": {
-        "label": "Layer 4 · Infrastructure",
-        "title": "NanoTrans 결제 인프라 완성",
-        "desc": "축적된 자산이 API로 거래되고, 콘텐츠가 단위 과금될 때 NanoTrans가 그 흐름의 기준이 됩니다."
-      }
-    }
-  },
   "serviceOverview": {
     "label": "사업 영역",
     "title": "와이즈레이크의 서비스",
     "subtitle": "각 서비스는 독립적으로 작동하면서, NanoTrans를 중심으로 하나의 생태계로 연결됩니다.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "AI 에이전트 경제의 결제 인프라. x402 프로토콜 기반, 10원부터 0.1초 글로벌 정산. 모든 WiseLake 서비스의 결제 엔진.",
+      "summary": "AI 에이전트가 콘텐츠를 읽으면 USDC로 수익이 되는 x402 워드프레스 플러그인. Base L2 온체인 정산, 제작자 90%+ 보유.",
       "cta": "자세히 보기"
     },
     "pigplan": {
-      "title": "PigPlan",
-      "summary": "20년 데이터, 700+ 농가, 시장점유율 1위. 한국 1위의 양돈 ERP가 글로벌 데이터 API로 진화합니다.",
-      "cta": "자세히 보기"
-    },
-    "services": {
-      "title": "cre8pet",
-      "summary": "반려견과 함께하는 똑똑한 산책. GPS 기반 산책 기록 서비스. Android · iOS 출시.",
+      "title": "PigPlan Suite",
+      "summary": "27년 데이터·700+ 농가·시장점유율 1위. 하나의 데이터 기반 위 양돈 ERP·AI 리포트·운영체제·리스크 API 4개 주력 제품.",
       "cta": "자세히 보기"
     },
     "b2b": {
@@ -471,12 +543,63 @@
       "cta": "자세히 보기"
     }
   },
+  "pigplanFamily": {
+    "label": "PigPlan Suite",
+    "title": "27년 데이터 위에 선 4개의 주력 제품",
+    "subtitle": "시장점유율 1위 ERP가 쌓은 27년·700+ 농가 데이터를 기반으로, 네 개의 제품이 양돈 산업의 경영·운영·리스크를 각각 책임집니다.",
+    "badge": "27년 양돈 데이터",
+    "current": "현재 보는 중",
+    "cta": "자세히 보기",
+    "ownDomain": "자체 도메인",
+    "members": {
+      "erp": "양돈 경영의 표준 · 시장점유율 1위",
+      "insight": "주간 AI 경영 리포트 · 매주 월요일",
+      "pigos": "글로벌 양돈 운영체제 · pigos.io",
+      "pigsignal": "양돈 리스크 데이터 API · 150M+ 레코드"
+    }
+  },
   "footer": {
-    "tagline": "AI 경제의 미세 혈관, 글로벌 가치 교환의 표준",
+    "tagline": "AI가 읽는 콘텐츠가 제값을 받는 세상",
     "companyName": "(주)와이즈레이크",
     "ceo": "대표이사: 진교문",
     "businessNumber": "사업자등록번호: 768-87-02255",
+    "address": "주소: 경기도 안양시 동안구 동편로 20번길 9, 스마트넷빌딩 3층",
     "email": "wiselake@wiselake.co.kr",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  },
+  "howItWorks": {
+    "label": "어떻게 동작하나",
+    "title": "글을 올리면, AI가 결제합니다",
+    "step1": {
+      "title": "콘텐츠 게시",
+      "desc": "워드프레스에 글을 쓰고 x402 페이월을 켜 가격을 설정합니다."
+    },
+    "step2": {
+      "title": "에이전트 발견",
+      "desc": "Bazaar 메타데이터로 AI 에이전트가 당신의 글을 찾아냅니다."
+    },
+    "step3": {
+      "title": "x402 결제",
+      "desc": "읽는 순간 USDC로 즉시 결제 — Base L2 위 온체인 정산."
+    },
+    "step4": {
+      "title": "90%+ 내 수익",
+      "desc": "Splitter가 온체인에서 자동 분배 — 제작자가 90% 이상 보유합니다."
+    },
+    "stats": {
+      "payments": {
+        "value": "165M+",
+        "label": "x402 누적 결제"
+      },
+      "volume": {
+        "value": "$50M+",
+        "label": "정산 거래액"
+      },
+      "agents": {
+        "value": "69K+",
+        "label": "활성 에이전트"
+      }
+    },
+    "statsNote": "x402 프로토콜 생태계 전체 지표"
   }
 }

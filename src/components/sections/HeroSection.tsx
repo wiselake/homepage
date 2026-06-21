@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
@@ -13,46 +12,24 @@ const HeroParticles = dynamic(
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
-  const [videoFailed, setVideoFailed] = useState(false);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-primary"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-ink"
     >
-      {/* Video background */}
+      {/* Clean ink background — subtle gold particle field */}
       <div className="absolute inset-0 z-[1]">
-        {!videoFailed && (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            onCanPlay={() => setVideoReady(true)}
-            onError={() => setVideoFailed(true)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoReady ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/5" />
-
-        {/* Particles fallback while video loads or if it fails */}
-        <div
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            videoReady ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-        >
-          <HeroParticles />
-        </div>
+        <HeroParticles />
       </div>
+
+      {/* Soft gold glow behind the headline (echoes the ink stat bands) */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(55%_45%_at_50%_40%,rgba(245,166,35,0.10),transparent_70%)] pointer-events-none" />
+      {/* Vignette — focus + edge depth */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(130%_120%_at_50%_45%,transparent_50%,rgba(6,11,19,0.7))] pointer-events-none" />
+
+      {/* Top scrim — keeps the transparent header legible */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-[2] pointer-events-none" />
 
       {/* Content overlay */}
       <div className="relative z-[3] text-center px-6 max-w-4xl mx-auto">
@@ -61,7 +38,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-accent text-accent text-xs font-medium tracking-wider uppercase mb-8 shadow-[0_0_15px_rgba(245,166,35,0.1)]">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] border border-white/15 text-accent-light text-xs font-medium tracking-wider uppercase mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             {t("badge")}
           </span>
@@ -71,7 +48,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 drop-shadow-[0_1px_12px_rgba(0,0,0,0.4)]"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.4)]"
         >
           <span className="block">{t("tagline1")}</span>
           <span className="block text-accent">{t("tagline2")}</span>
@@ -81,7 +58,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
+          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed break-keep drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
         >
           <span className="block">
             {t("subtitle1_line1")}
@@ -102,13 +79,13 @@ export function HeroSection() {
             href="https://www.nanotrans.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full glass-accent text-white font-medium text-sm hover:shadow-[0_0_25px_rgba(245,166,35,0.3)] hover:bg-accent/20 transition-all duration-300"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-accent text-[#0e1726] font-medium text-sm hover:bg-accent-light transition-all duration-300"
           >
             {t("cta")}
           </a>
           <Link
             href="/about"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full glass text-text-secondary font-medium text-sm hover:border-accent/40 hover:text-accent transition-all duration-300"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 hover:border-white/40 transition-all duration-300"
           >
             {t("ctaSecondary")}
           </Link>

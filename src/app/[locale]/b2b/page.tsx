@@ -1,19 +1,24 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/layout/PageHero";
-import { B2BSaaSSection } from "@/components/sections/B2BSaaSSection";
+import { IncubationTabs } from "@/components/sections/IncubationTabs";
+import { Flow9Section } from "@/components/sections/Flow9Section";
+import { QBridgeSection } from "@/components/sections/QBridgeSection";
+import { buildPageMetadata } from "@/lib/seo";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.b2b" });
-  return { title: t("title"), description: t("description") };
+  return buildPageMetadata({ locale, path: "/b2b", title: t("title"), description: t("description") });
 }
 
 export default function B2BPage() {
   return (
     <>
       <PageHero namespace="pages.b2b" />
-      <B2BSaaSSection showHeader={false} />
+      <IncubationTabs />
+      <Flow9Section />
+      <QBridgeSection />
     </>
   );
 }

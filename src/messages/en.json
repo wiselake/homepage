@@ -1,165 +1,257 @@
 {
   "meta": {
     "title": "WiseLake – Nano Start, Mega Impact",
-    "description": "WiseLake builds micropayment infrastructure for the AI agent economy. NanoTrans enables instant global settlement of nano-scale transactions."
+    "description": "WiseLake builds NanoTrans — x402-based infrastructure that turns the content AI reads into revenue for its creators, building the standard for fair content value in the AI era."
   },
   "nav": {
     "home": "Home",
     "about": "About",
     "nanotrans": "NanoTrans",
     "pigplan": "PigPlan",
-    "services": "Incubation Hub",
+    "b2b": "B2B SaaS",
     "roadmap": "Roadmap",
     "contact": "Contact",
     "language": "한국어",
     "skipToContent": "Skip to main content"
   },
   "hero": {
-    "badge": "AI Micropayment Infrastructure",
+    "badge": "AI Content Monetization Infrastructure",
     "tagline1": "Nano Start",
     "tagline2": "Mega Impact",
-    "subtitle1_line1": "Building the payment infrastructure",
-    "subtitle1_line2": "for a world where AI transacts autonomously",
-    "subtitle2": "700+ farms · 20 years of data · #1 swine ERP market share",
+    "subtitle1_line1": "When AI reads your content,",
+    "subtitle1_line2": "we return that value to its creator",
+    "subtitle2": "Built by WiseLake — proven by 27 years of swine data and #1 ERP market share",
     "cta": "Get Started with NanoTrans",
     "ctaSecondary": "About Us"
   },
   "vision": {
     "visionLabel": "Vision",
-    "visionTitle1": "The Payment Rails of the AI Economy",
-    "visionTitle2": "The Global Standard for Value Exchange",
-    "visionDesc": "In a world where AI agents transact autonomously, even a fraction of a cent worth of data must reach anywhere on the globe in 0.1 seconds. WiseLake builds that pathway.",
+    "visionTitle1": "Every Piece of Content AI Reads,",
+    "visionTitle2": "Paid Its Fair Value",
+    "visionDesc": "AI agents now read, answer with, and learn from the web's content. The people who created it deserve a share of that value. WiseLake builds the path where content becomes revenue.",
     "missionLabel": "Mission",
     "missionTitle1": "Fair Value for Every Data",
     "missionTitle2": "and Every Piece of Content",
     "missionDesc": "An ecosystem where every piece of content and every data point is paid its fair value. NanoTrans, built on the x402 Protocol, is already taking that first step."
   },
+  "about": {
+    "stats": {
+      "label": "WiseLake by the Numbers",
+      "title": "Trust, Built on Proof",
+      "subtitle": "27 years of field-proven data is where WiseLake begins.",
+      "items": {
+        "years": { "value": "27 yrs", "label": "Field data in swine farming" },
+        "farms": { "value": "700+", "label": "Farms actively using PigPlan" },
+        "share": { "value": "5 years", "label": "Running #1 in swine ERP share" },
+        "records": { "value": "150M+", "label": "Anonymized data records" },
+        "partners": { "value": "7", "label": "Government & industry partners" }
+      }
+    },
+    "story": {
+      "label": "Our Path",
+      "title": "On 27 proven years, we build what comes next",
+      "subtitle": "We proved trust with data from the field — now we are building an era where the content AI reads is paid its fair value.",
+      "proven": {
+        "step": "Proven",
+        "title": "Proving results with data",
+        "desc": "Over 27 years we built field data from 700+ farms and held #1 swine-ERP market share for five straight years — proving, on real farms, that timely data leads to stronger performance."
+      },
+      "expand": {
+        "step": "Expanding",
+        "title": "Data capability into the AI era",
+        "desc": "We extended that data capability into the AI economy. NanoTrans is x402-based payment infrastructure that turns the content AI agents read into USDC revenue."
+      },
+      "vision": {
+        "step": "Vision",
+        "title": "Toward a standard where value is paid",
+        "desc": "An ecosystem where data and content are paid their fair value — starting nano, growing into the global standard for value exchange."
+      }
+    },
+    "company": {
+      "label": "Company",
+      "title": "WiseLake, Inc.",
+      "subtitle": "We build trust on proven data, and on that trust we build the infrastructure of the next era.",
+      "items": {
+        "name": { "label": "Legal name", "value": "WiseLake, Inc. · (주)와이즈레이크" },
+        "ceo": { "label": "CEO", "value": "Jin Gyomoon" },
+        "biz": { "label": "Business reg. no.", "value": "768-87-02255" },
+        "email": { "label": "Email", "value": "wiselake@wiselake.co.kr" },
+        "tel": { "label": "Contact", "value": "+82-31-421-3418" }
+      },
+      "cta": "Get in Touch"
+    }
+  },
+  "pigplanProof": {
+    "label": "Proven Track Record",
+    "title": "27 years of data behind Korea's #1 swine ERP",
+    "subtitle": "Our vision stands on proven results. PigPlan — used every day by 700+ farms — is where it starts.",
+    "items": {
+      "years": { "value": "27 yrs", "label": "Field data in swine farming" },
+      "farms": { "value": "700+", "label": "Farms using PigPlan" },
+      "share": { "value": "5 years", "label": "Running #1 in market share" },
+      "psy": { "value": "25.2", "label": "Avg PSY of PigPlan farms (national 22.4)" }
+    },
+    "cta": "Explore PigPlan"
+  },
   "problem": {
     "label": "Problem",
-    "title_line1": "AI Agents Are Ready.",
-    "title_line2": "Payment Infrastructure Is Not.",
-    "subtitle1_line1": "In 2026, AI agents demand",
-    "subtitle1_line2": "thousands of micro-transactions per second.",
-    "subtitle2": "Legacy payment systems cannot keep up.",
+    "title_line1": "AI Answers With Your Content.",
+    "title_line2": "Creators Get Nothing Back.",
+    "subtitle1_line1": "In 2026, AI agents read the web's content",
+    "subtitle1_line2": "to answer questions and train models.",
+    "subtitle2": "Yet the people who created it are paid nothing.",
     "minAmount": {
-      "title": "Minimum Transaction Too High",
-      "desc": "A $0.01 data query, a $0.001 news sentence — in legacy payment systems, fees exceed the principal. Nano-scale transactions between AI agents simply cannot happen."
+      "title": "Reading Without Paying",
+      "desc": "AI agents freely scrape content to answer and to train. Creators receive no traffic, no ad revenue, not a cent in return."
     },
     "latency": {
-      "title": "Slow Settlement",
-      "desc": "AI agents decide their next action in 0.01 seconds. Settlement that takes 1 second to several days is incompatible with the speed of the AI economy."
+      "title": "Amounts Too Small to Settle",
+      "desc": "A single article is worth pennies. On legacy payment rails the fee exceeds the principal, so per-content billing simply cannot happen."
     },
     "model": {
-      "title": "Heavy Billing Models",
-      "desc": "Subscriptions charge for what you don't use. Ads sell user attention. Neither concept exists for AI agents."
+      "title": "Billing Models That Don't Fit",
+      "desc": "Subscriptions charge for unread articles; ads sell human attention. When the reader is an AI agent, neither model works."
     },
-    "conclusion_line1": "The AI economy has already begun.",
-    "conclusion_line2": "Only the payment infrastructure is still stuck in the past."
+    "conclusion_line1": "AI already answers with your content.",
+    "conclusion_line2": "There was just no way to pay the creator — until now."
   },
   "nanotrans": {
-    "title": "NanoTrans",
-    "subtitle": "Just as HTTP became the standard for information transfer, the x402 Protocol becomes the standard for AI agent payments.",
-    "cta": "Get Started",
+    "title": "Get Paid When AI Agents Read Your Content",
+    "subtitle": "With HTTP 402 and the x402 protocol, AI agents discover and pay for your content — settled trustlessly on-chain in USDC on Base L2.",
+    "cta": "View the NanoTrans plugin",
     "features": {
       "microPayment": {
-        "title": "Micro Transactions from $0.01",
-        "desc": "A $0.01 AI data query, a $0.001 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
+        "title": "x402 Paywall",
+        "desc": "Each article responds to agent requests with HTTP 402 and on-chain payment terms. Set per-article or sitewide pricing in USDC."
       },
       "settlement": {
-        "title": "0.1s Global Settlement",
-        "desc": "An AI agent in Seoul pays instantly for a response from a Tokyo data center. In 0.1 seconds, anywhere in the world."
+        "title": "Bazaar Discovery",
+        "desc": "Structured Bazaar metadata lists your content in the Coinbase CDP catalog and agent marketplaces, so AI agents can actually find it."
       },
       "payPerContent": {
-        "title": "Pay-per-Content",
-        "desc": "$0.05 for an article, $0.01 for a report page. No subscriptions, no ads — pay only for what you actually consume."
+        "title": "WordPress-Native",
+        "desc": "A standard plugin with a paywall metabox and a Gutenberg sidebar. Just set your wallet — no blockchain code required."
       },
       "payPerUse": {
-        "title": "Pay-per-Use",
-        "desc": "$0.005 per API call. 1,000 calls = $5. Pay exactly for what you use. The fundamental principle of AI agent transactions."
+        "title": "On-chain Splits · 90%+",
+        "desc": "The immutable NanoTransSplitter contract divides every payment automatically. No custody, no manual payouts — creators keep 90%+."
       }
     }
   },
   "comparison": {
     "header": {
       "category": "Category",
-      "traditional": "Legacy Payments"
+      "traditional": "Today"
     },
     "rows": {
       "minAmount": {
-        "label": "Minimum Transaction",
-        "traditional": "$1+",
-        "nanotrans": "$0.01"
+        "label": "AI agent access",
+        "traditional": "Scraped for free",
+        "nanotrans": "Paid per read in USDC"
       },
       "speed": {
-        "label": "Settlement Speed",
-        "traditional": "1 sec – several days",
-        "nanotrans": "0.1 sec"
+        "label": "Settlement",
+        "traditional": "Intermediated, delayed",
+        "nanotrans": "Instant on-chain (Base L2)"
       },
       "fees": {
-        "label": "Fee Structure",
-        "traditional": "Complex / Variable",
-        "nanotrans": "Ultra-low / Fixed"
+        "label": "Creator revenue",
+        "traditional": "0",
+        "nanotrans": "90%+"
       }
     }
   },
   "coreTech": {
-    "label": "Core Technology",
-    "title": "4 Core Technologies Powering NanoTrans",
-    "subtitle": "From discovery to payment, security, and settlement — completing the entire AI agent economy flow in a single protocol.",
-    "protocol": "All technologies operate on a single protocol",
+    "label": "How it works",
+    "title": "Four Trustless Foundations",
+    "subtitle": "From discovery to payment, non-custodial security, and on-chain splits — all verifiable on the x402 standard and Base L2.",
+    "protocol": "All built on the x402 standard",
     "nanoSense": {
-      "name": "NanoSense\u2122",
-      "tagline": "Agent Auto-Discovery Protocol",
-      "desc": "AI agents **autonomously discover** and purchase paid content — no human intervention needed. Built on the **x402 standard endpoint**, completing discovery, verification, payment, and consumption in a single interface."
+      "name": "x402 Protocol",
+      "tagline": "Agent-Native Payments",
+      "desc": "On the **HTTP 402** standard, agents **discover, verify, pay, and consume** content. Each **x402 v2** response carries the payment terms and Bazaar discovery metadata."
     },
     "nanoVault": {
-      "name": "NanoVault\u2122",
-      "tagline": "Built-in Financial Security Layer",
-      "desc": "**6-stage signature verification**, replay attack prevention, **on/off-chain cross-validation**, and **circuit breakers** — financial-grade multi-layer security, activated on install. No add-ons required."
+      "name": "Non-custodial",
+      "tagline": "Non-custodial by Design",
+      "desc": "NanoTrans **never holds your funds.** Payments split directly on-chain, and payment credentials live only in a **Cloudflare Worker** — never in WordPress."
     },
     "nanoPulse": {
-      "name": "NanoPulse\u2122",
-      "tagline": "Real-time Dynamic Pricing Engine",
-      "desc": "Automatically calculates **optimal pricing** per content based on requester type, time, and demand volume — in **real time**. Enables flexible monetization strategies that static pricing simply cannot deliver."
+      "name": "USDC · Base L2",
+      "tagline": "Instant On-chain Settlement",
+      "desc": "Settlement happens in **USDC on Base L2** — no intermediary, finalized on-chain the moment an agent pays."
     },
     "nanoSplit": {
-      "name": "NanoSplit\u2122",
-      "tagline": "On-chain Instant Revenue Distribution",
-      "desc": "**Smart contracts** distribute revenue instantly at pre-set ratios upon payment. No settlement delays — every distribution is **permanently recorded on the blockchain**."
-    }
-  },
-  "ntComparison": {
-    "headerTraditional": "Traditional",
-    "trad": {
-      "amount": { "label": "Min. Transaction", "value": "$1+" },
-      "speed": { "label": "Settlement Speed", "value": "1 sec – days" },
-      "model": { "label": "Billing Model", "value": "Subscription / Ads" }
-    },
-    "nano": {
-      "amount": { "label": "Min. Transaction", "value": "$0.01" },
-      "speed": { "label": "Settlement Speed", "value": "0.1 sec" },
-      "model": { "label": "Billing Model", "value": "Pay-per-Use" }
-    },
-    "stat": {
-      "minTx": "Minimum Transaction",
-      "minTxValue": "$0.01",
-      "settlement": "Global Settlement",
-      "settlementValue": "0.1s",
-      "protocol": "Payment Protocol",
-      "protocolValue": "x402"
+      "name": "Verifiable Splitter",
+      "tagline": "Verifiable Revenue Splits",
+      "desc": "The immutable **NanoTransSplitter** divides revenue instantly. Its **deterministic address and verified code hash** are checked before settlement, and creators keep **90%+**."
     }
   },
   "pigplan": {
     "title": "#1 Market Share in Korean Swine ERP",
     "desc": "PigPlan is the market-leading swine ERP solution used by Korea's top livestock cooperatives and enterprises including Dodram, Dabi Genetics, and Woosung Feed.",
-    "psy": "PSY (Pigs per Sow per Year) is the key metric determining farm profitability. Farms that consistently log data in PigPlan show meaningfully higher PSY compared to those that don't. Over 20 years of data proves it.",
+    "psy": "PSY (Pigs per Sow per Year) is the key metric determining farm profitability. Farms that consistently log data in PigPlan show meaningfully higher PSY compared to those that don't. Over 27 years of data proves it.",
     "stats": {
       "farms": "Farms Using PigPlan",
       "years": "Years of Data",
       "market": "Market Share"
     },
     "clients": "Key Clients: Dodram, Dabi Genetics, Woosung Feed",
-    "cta": "Inquire About Service"
+    "cta": "Inquire About Service",
+    "psyProof": {
+      "label": "Proven Performance",
+      "title": "Performance, Proven by PSY",
+      "subtitle": "PSY (Pigs per Sow per Year) is the key production metric that determines farm profitability. For four consecutive years from 2022 to 2025, farms using PigPlan recorded an average PSY above the national average.",
+      "national": "National avg",
+      "brand": "PigPlan",
+      "caption": "PigPlan farms achieve the top PSY performance in Korea"
+    },
+    "pillars": {
+      "label": "What Sets PigPlan Apart",
+      "title": "A proven solution that lifts farm productivity",
+      "subtitle": "Prevent missed tasks, pinpoint what holds productivity back, and measure results against goals — managing the whole lifecycle of every pig in one place.",
+      "lifecycle": {
+        "title": "Whole-Lifecycle Herd Management",
+        "desc": "From managing breeding pigs, piglets, growers, test pigs and seedstock to feed-transaction and shipment records via links with feed suppliers and slaughterhouses, plus test-pig, sales and seedstock performance. Systematic lifecycle management raises farm productivity."
+      },
+      "productivity": {
+        "title": "Productivity & Management Improvement",
+        "desc": "Performance management from farrowing to sales and operations, pedigree-based tracking of ancestors and offspring, and benchmarking against other farms — backed by around 500 report types proven in the field over more than 27 years."
+      },
+      "ict": {
+        "title": "ICT Integration & Tailored Consulting",
+        "desc": "Operations management built on 500+ reports such as work orders and daily logs, group analysis of affiliated farms to focus on at-risk operations, and ICT-device integration with on-site mobile support — delivering consulting insights that grow managed-farm profitability."
+      }
+    },
+    "features": {
+      "label": "Key Features",
+      "title": "Key Features of PigPlan",
+      "subtitle": "Capabilities that span farms and enterprises, web and mobile, the field and analytics.",
+      "systems": {
+        "title": "Farm & Enterprise Systems (PS, GP)",
+        "desc": "Service tailored to farms and enterprises, with worker accounts and menu permissions assigned beyond the farm owner."
+      },
+      "app": {
+        "title": "Mobile App Support",
+        "desc": "Look up and log sow details on-site, and check or enter work via QR codes."
+      },
+      "insight": {
+        "title": "Insight PigPlan",
+        "desc": "Weekly and monthly farm summary reports, plus quarterly consulting diagnostics and improvement KPIs."
+      },
+      "realtime": {
+        "title": "Real-Time Analysis",
+        "desc": "Fast performance-report lookups with IoT integration and fused data analysis for an instant read on status."
+      },
+      "decision": {
+        "title": "Decision-Support System",
+        "desc": "Reads weak points to flag sows needing attention, and manages work schedules alongside."
+      },
+      "optimize": {
+        "title": "Optimized Environment",
+        "desc": "User-defined menus and items with multilingual support (English, Vietnamese) to fit your working setup."
+      }
+    }
   },
   "partners": {
     "label": "Trusted by Industry Leaders",
@@ -173,116 +265,99 @@
   },
   "insightPigplan": {
     "label": "Insight PigPlan",
-    "title": "Every Monday, the Tasks You Can't Miss",
-    "desc": "Gestation, weaning, farrowing, shipment — if any of these slip by just one week, PSY drops. Insight PigPlan sends a 'must-do tasks this week' checklist to the farmer's smartphone every Monday morning.",
-    "benefit": "One timely alert can make a difference of hundreds of thousands of won per sow.",
-    "cta": "Visit Service",
-    "ctaInquiry": "Inquire About Subscription",
+    "title": "Weekly AI Management Report",
+    "desc": "Insight PigPlan uses AI to analyze your PigPlan data and condense your farm's whole week into one report every Monday — five tabs (summary, production, shipment, loss, diagnosis) with an overall GREEN/YELLOW/RED grade, readable in 10 minutes on KakaoTalk.",
+    "benefit": "It quantifies losses in won and warns you before problems hit, using a 13-week trend plus a 4-week forecast.",
+    "cta": "Open the service",
+    "ctaInquiry": "Talk to us",
     "flow": {
-      "title": "How It Works",
-      "s1": "Data Entry",
-      "s1_desc": "Farmers log daily operations in PigPlan",
-      "s2": "AI Analysis",
-      "s2_desc": "Detects anomalies by comparing against 27 years of data",
-      "s3": "Weekly Alert",
-      "s3_desc": "Monday morning, a prioritized task list is delivered"
+      "title": "How it works",
+      "s1": "Your PigPlan data",
+      "s1_desc": "It uses the PigPlan data your farm already enters every day.",
+      "s2": "AI analysis · grading",
+      "s2_desc": "It analyzes performance, loss, and cause, and assigns an overall GREEN/YELLOW/RED grade.",
+      "s3": "Monday report",
+      "s3_desc": "Every Monday at 8 AM or 2 PM, the five-tab report is delivered via KakaoTalk and SMS."
     },
     "features": {
-      "f1_title": "Auto-generated Task List",
-      "f1_desc": "AI selects this week's essential tasks tailored to your farm's current status",
-      "f2_title": "PSY Improvement Tracking",
-      "f2_desc": "Tracks weekly and monthly PSY changes and highlights improvement opportunities",
-      "f3_title": "Instant Mobile Access",
-      "f3_desc": "Delivered via KakaoTalk or SMS — check on-site without installing any app"
+      "f1_title": "Losses & gains in won",
+      "f1_desc": "Quantifies five loss categories and shows the expected return of each improvement in won.",
+      "f2_title": "Early warning",
+      "f2_desc": "Detects anomalies in advance with a 13-week trend and a 4-week forecast.",
+      "f3_title": "Your nationwide rank",
+      "f3_desc": "Shows where your farm ranks nationwide against similar-sized farms (top, mid, bottom)."
     }
   },
-  "pigplanTabs": {
-    "nav": "PigPlan business navigation"
-  },
   "pigplanCore": {
-    "label": "PigOS AI",
-    "title": "Data Speaks. AI Acts.",
-    "subtitle": "An AI operations system that directly increases revenue for pig farms worldwide.",
-    "desc_line1": "PigOS AI is an AI Farm Management platform for pig farms worldwide.",
-    "desc_line2": "Optimal breeding timing, early mortality alerts, feed efficiency, shipment revenue — AI analyzes and prescribes the action to take right now.",
-    "desc_line3": "Not alerts. Action.",
-    "f1_title": "AI Decisions",
-    "f1_desc": "Mortality, feed efficiency, shipment revenue — proven by numbers",
-    "f2_title": "Data to Action",
-    "f2_desc": "What should I do right now — answered instantly",
-    "f3_title": "5 Global Markets",
-    "f3_desc": "USA / China / Southeast Asia / Latin America / Korea",
-    "f4_title": "7 Languages",
-    "f4_desc": "In local language, for local farms",
-    "status": "Launching 2026"
+    "label": "PigOS",
+    "title": "An AI Early-Warning System for Pig Farms",
+    "subtitle": "Log a record → AI judges → loss prevented",
+    "desc_line1": "PigOS is an AI-native operating system that connects farm records, KPI benchmarks, risk signals, and reports into one platform.",
+    "desc_line2": "With country-calibrated metrics (Korea, US, SEA, Latin America) and rule-based AI, it detects losses before month-end.",
+    "desc_line3": "Start free — no credit card.",
+    "f1_title": "Real-time KPI dashboard",
+    "f1_desc": "PSY, MSY, wean count, mortality, and finishing performance on mobile in real time — works offline.",
+    "f2_title": "AI Insight",
+    "f2_desc": "Automatically detects loss patterns and anomalies, and surfaces this week's top-3 action priorities.",
+    "f3_title": "AI Advisor",
+    "f3_desc": "Ask in natural language — \"Why did PSY drop?\" — and get data-backed answers like a farm consultant.",
+    "f4_title": "Morning Brief",
+    "f4_desc": "Every morning, the day's top-3 actions delivered from overnight AI monitoring.",
+    "status": "Free to start — no credit card · pigos.io",
+    "flow": {
+      "title": "Suggest → Confirm → Act",
+      "suggest": {
+        "title": "Suggest",
+        "desc": "Missing records, mortality spikes, and sows due are surfaced automatically by AI."
+      },
+      "confirm": {
+        "title": "Confirm",
+        "desc": "Farm teams review, correct, or approve before any decision."
+      },
+      "act": {
+        "title": "Act",
+        "desc": "Confirmed records become loss signals and prioritized actions."
+      }
+    }
   },
   "pigSignal": {
     "label": "PigSignal",
-    "title": "Swine Data via Global API",
-    "subtitle_line1": "150M+ records accumulated over 27 years, anonymized and served via REST API.",
-    "subtitle_line2": "AI agents automatically query and pay through NanoTrans x402.",
-    "ntIntegration_line1": "PigPlan's 27-year data asset × NanoTrans Pay-per-Use.",
-    "ntIntegration_line2": "Taking swine data to the global API market.",
-    "flowStages": {
-      "s1": "Farm Data",
-      "s1_sub": "27 yrs · 150M+",
-      "s2": "Anonymize",
-      "s2_sub": "Privacy · Refine",
-      "s3": "API Market",
-      "s3_sub": "57 REST APIs",
-      "s4": "Global",
-      "s4_sub": "x402 Auto-pay"
-    },
+    "title": "Verified Swine Data. Actionable Signals.",
+    "subtitle_line1": "A B2B data API platform — 27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized and aggregated.",
+    "subtitle_line2": "Assess insurance loss ratios, livestock loan risk, and feed demand shifts faster — with no individual farm exposure.",
+    "ntIntegration_line1": "N ≥ 10 anonymity · privacy by design · audit-ready lineage.",
+    "ntIntegration_line2": "99.9% SLA · <200ms latency · pigsignal.com",
     "stats": {
       "records": "150M+",
-      "recordsLabel": "Accumulated Records",
-      "apis": "57",
-      "apisLabel": "API Lineup",
-      "industries": "12",
-      "industriesLabel": "Target Industries",
-      "daily": "37K+",
-      "dailyLabel": "Daily New Records"
+      "recordsLabel": "Farm records",
+      "apis": "18+",
+      "apisLabel": "Countries covered",
+      "industries": "47",
+      "industriesLabel": "Risk-signal regions",
+      "daily": "26",
+      "dailyLabel": "Benchmark endpoints"
     },
     "apis": {
       "supplyForecast": {
         "title": "Supply Forecast API",
-        "desc": "Predicts pork supply 3-6 months ahead based on the breeding-farrowing-weaning-shipment pipeline."
+        "desc": "30/60/90-day supply projections with confidence intervals. 90-day horizon, daily refresh.",
+        "price": "For processors, traders, retailers"
       },
       "costIndex": {
-        "title": "Cost Index API",
-        "desc": "A composite production cost index combining FCR, mortality rate, and days to market."
+        "title": "Benchmark API",
+        "desc": "Regional distributions for PSY, LSY, farrowing rate, NPD. Weekly refresh, 99.9% SLA.",
+        "price": "For nutritionists, feed, lenders"
       },
       "riskSignal": {
-        "title": "Risk Signal API",
-        "desc": "Anomaly detection for mortality spikes and early disease outbreak warnings in real time."
+        "title": "Risk Signals API",
+        "desc": "Early-warning signals for feed cost, disease, supply concentration. 7–30 day lead, 47 regions.",
+        "price": "For insurers, finance, risk"
       }
     },
-    "status": "Launching 2026",
-    "agents": {
-      "feed": "Feed Company Agent",
-      "feedQuery": "FCR benchmark data?",
-      "processor": "Processor Agent",
-      "processorQuery": "Supply forecast Q3?",
-      "finance": "Finance Agent",
-      "financeQuery": "Farm risk score?",
-      "aitech": "AI·Tech Agent",
-      "aitechQuery": "Time-series dataset?"
-    }
+    "status": "B2B data API · pigsignal.com"
   },
   "incubationTabs": {
-    "nav": "Incubation Hub service navigation",
-    "subtitle": "Where Field Ideas Become Real Services"
-  },
-  "cre8pet": {
-    "title": "Smart Walks with Your Dog",
-    "subtitle": "Record GPS-based walks and preserve every precious moment with your pet.",
-    "desc": "cre8pet records your dog walks via GPS and preserves memories with photos in a timeline. Every daily walk becomes data, and every moment becomes a lasting record.",
-    "platform": "Android · iOS · 6 Languages · Free",
-    "f1": "Real-time GPS walk tracking with distance and time",
-    "f2": "Per-pet walk history and photo timeline",
-    "f3": "Daily missions and challenges for fun walk habits",
-    "f4": "6 languages (KR/EN/JP/ZH/ES/PT)",
-    "imageAlt": "cre8pet app walk screen"
+    "nav": "B2B SaaS navigation"
   },
   "b2bSaas": {
     "title": "B2B SaaS Solutions",
@@ -319,22 +394,29 @@
     "label": "Roadmap",
     "title_line1": "From Nano",
     "title_line2": "to Global Infrastructure",
+    "foundation": {
+      "label": "Foundation",
+      "tagline": "A starting point built over 27 years",
+      "items": [
+        "27 years of field data in swine farming",
+        "700+ farms using PigPlan",
+        "#1 swine-ERP market share, 5 years running"
+      ]
+    },
     "years": {
       "2025": [
-        "cre8pet Android launched (6 languages)",
         "NanoTrans proof-of-concept begins"
       ],
       "2026": [
-        "cre8pet iOS launched",
         "NanoTrans official launch",
         "Insight PigPlan launch",
-        "PigOS AI launch",
+        "PigOS launch",
         "PigSignal API service launch",
         "Flow9 · QBridge launch"
       ],
       "2027": [
         "NanoTrans cumulative 10M transactions",
-        "PigOS AI expansion to 3+ countries",
+        "PigOS expansion to 3+ countries",
         "PigSignal API partners: 10+"
       ],
       "2028": [
@@ -375,25 +457,49 @@
   "pages": {
     "about": {
       "title": "About | WiseLake",
-      "description": "WiseLake builds micropayment infrastructure for the AI economy — the global standard for nano-value exchange.",
+      "description": "WiseLake builds a world where the content AI reads is paid its fair value.",
       "heroLabel": "About",
       "heroTitle": "About WiseLake",
-      "heroSubtitle": "The payment rails of the AI economy — the global standard for value exchange"
+      "heroSubtitle": "A world where the content AI reads is paid its fair value"
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
-      "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.01 globally in 0.1 seconds.",
+      "description": "An x402-based WordPress plugin that turns your content into a paid resource for AI agents — settled in USDC on Base L2, with creators keeping 90%+.",
       "heroLabel": "NanoTrans",
-      "heroTitle": "Nano-scale Micropayment Infrastructure",
-      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol",
-      "heroCta": "Get Started"
+      "heroTitle": "Get Paid When AI Agents Read Your Content",
+      "heroSubtitle": "An x402-based WordPress plugin that turns your articles into discoverable, agent-payable resources",
+      "heroCta": "View the plugin"
     },
     "pigplan": {
-      "title": "PigPlan | WiseLake",
-      "description": "#1 market share in Korean swine ERP. Data-driven smart swine management solution.",
-      "heroLabel": "PigPlan",
-      "heroTitle": "#1 Swine ERP Solution in Korea",
-      "heroSubtitle": "Data-driven smart swine management platform"
+      "title": "PigPlan Suite | WiseLake",
+      "description": "Four flagship products built on 27 years of swine data — PigPlan, Insight PigPlan, PigOS, and PigSignal — across management, operations, and risk.",
+      "heroLabel": "PigPlan Suite",
+      "heroTitle": "Four flagship products, built on 27 years of data",
+      "heroSubtitle": "Built on the #1 market-share ERP, the suite owns the management, operations, and risk layers of swine farming."
+    },
+    "pigplanInsight": {
+      "title": "Insight PigPlan | WiseLake",
+      "description": "A weekly AI management report that condenses your farm's entire week into one report every Monday — five tabs (summary, production, shipment, loss, diagnosis), losses quantified in won, nationwide percentile, in 10 minutes.",
+      "heroLabel": "Insight PigPlan",
+      "heroTitle": "Your Farm's Whole Week, in One Monday Report",
+      "heroSubtitle": "AI analyzes your PigPlan data and delivers a weekly report via KakaoTalk every Monday — performance, loss, cause, and improvement in 10 minutes.",
+      "heroCta": "Talk to us"
+    },
+    "pigplanPigos": {
+      "title": "PigOS | WiseLake",
+      "description": "An AI early-warning system for pig farms — the moment you enter a record, AI judges the loss risk. Built on 27 years of PigPlan expertise, 6 languages, free to start.",
+      "heroLabel": "PigOS",
+      "heroTitle": "The Moment You Log a Record, AI Judges the Loss Risk",
+      "heroSubtitle": "An AI early-warning system for pig farms, built on 27 years of PigPlan expertise. Start free — no credit card.",
+      "heroCta": "Start free"
+    },
+    "pigplanPigsignal": {
+      "title": "PigSignal | WiseLake",
+      "description": "27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized into a B2B swine data API. Verified data and actionable signals for insurance, lending, and feed.",
+      "heroLabel": "PigSignal",
+      "heroTitle": "Swine Risk Data for Insurance, Lending & Feed AI",
+      "heroSubtitle": "Verified swine data. Actionable signals. API-first — 27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized and aggregated as a B2B data API.",
+      "heroCta": "Request API demo"
     },
     "services": {
       "title": "Incubation Hub | WiseLake",
@@ -417,52 +523,18 @@
       "heroSubtitle": "Starting from nano, completing as global infrastructure"
     }
   },
-  "ecosystemArch": {
-    "label": "Ecosystem Architecture",
-    "title": "Every Service Converges on NanoTrans",
-    "desc": "While PigPlan earns trust across 700+ farms and cre8 series builds a real user base — data and content assets accumulate. On top of that foundation, NanoTrans completes itself as the payment infrastructure of the AI economy.",
-    "imageAlt": "WiseLake business ecosystem architecture diagram: Layer 1 Interaction (Human · AI Agent) → Layer 2 Application (cre8 series · PigPlan · B2B SaaS) → Layer 3 Asset (Content & Data Assets) → Layer 4 Infrastructure (NanoTrans)",
-    "mobileNote": "Rotate to landscape for the best view of this diagram.",
-    "layers": {
-      "layer1": {
-        "label": "Layer 1 · Interaction",
-        "title": "User Touch Points",
-        "desc": "Dog walks, K-Culture content — it starts with services real people use every day."
-      },
-      "layer2": {
-        "label": "Layer 2 · Application",
-        "title": "A Diverse Service Portfolio",
-        "desc": "PigPlan, cre8pet, and more. Each operates independently and is validated in real markets."
-      },
-      "layer3": {
-        "label": "Layer 3 · Asset",
-        "title": "Data and Content Assets Accumulate",
-        "desc": "20 years of swine data, K-Culture content, dog walk records. The longer we operate, the deeper the asset base grows."
-      },
-      "layer4": {
-        "label": "Layer 4 · Infrastructure",
-        "title": "NanoTrans Infrastructure Is Realized",
-        "desc": "When accumulated assets are traded via API and content is charged per unit — NanoTrans becomes the standard that governs that flow."
-      }
-    }
-  },
   "serviceOverview": {
     "label": "Services",
     "title": "What We Build",
     "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "Payment infrastructure for the AI agent economy. x402 Protocol, $0.01 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "summary": "An x402 WordPress plugin that pays you in USDC when AI agents read your content. On-chain settlement on Base L2, creators keep 90%+.",
       "cta": "Learn More"
     },
     "pigplan": {
-      "title": "PigPlan",
-      "summary": "20 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
-      "cta": "Learn More"
-    },
-    "services": {
-      "title": "cre8pet",
-      "summary": "Smart walks with your dog. GPS-based walk tracking service. Available on Android & iOS.",
+      "title": "PigPlan Suite",
+      "summary": "27 years of data, 700+ farms, #1 market share. Four flagship products on one data foundation — ERP, AI reports, an operating system, and a risk API.",
       "cta": "Learn More"
     },
     "b2b": {
@@ -471,12 +543,63 @@
       "cta": "Learn More"
     }
   },
+  "pigplanFamily": {
+    "label": "PigPlan Suite",
+    "title": "Four flagship products built on 27 years of data",
+    "subtitle": "Powered by 27 years and 700+ farms of data from the #1 market-share ERP, four products own the management, operations, and risk layers of swine farming.",
+    "badge": "27 Years of Swine Data",
+    "current": "You are here",
+    "cta": "Learn More",
+    "ownDomain": "Own domain",
+    "members": {
+      "erp": "The standard for swine management · #1 market share",
+      "insight": "Weekly AI management report · every Monday",
+      "pigos": "Global pig-farming OS · pigos.io",
+      "pigsignal": "Swine risk data API · 150M+ records"
+    }
+  },
   "footer": {
-    "tagline": "The payment rails of the AI economy — the global standard for value exchange",
+    "tagline": "A world where the content AI reads is paid its fair value",
     "companyName": "WiseLake, Inc.",
     "ceo": "CEO: Jin Gyomoon",
     "businessNumber": "Business Reg. No.: 768-87-02255",
+    "address": "Address: 3F, Smartnet Building, 9 Dongpyeon-ro 20beon-gil, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",
     "email": "wiselake@wiselake.co.kr",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  },
+  "howItWorks": {
+    "label": "How it works",
+    "title": "Publish content. AI agents pay you.",
+    "step1": {
+      "title": "Publish content",
+      "desc": "Write a post in WordPress, turn on the x402 paywall, and set a price."
+    },
+    "step2": {
+      "title": "Agents discover it",
+      "desc": "Bazaar metadata lets AI agents find your content."
+    },
+    "step3": {
+      "title": "x402 payment",
+      "desc": "The moment they read, they pay in USDC — settled on-chain on Base L2."
+    },
+    "step4": {
+      "title": "You keep 90%+",
+      "desc": "The Splitter divides revenue on-chain automatically — creators keep 90%+."
+    },
+    "stats": {
+      "payments": {
+        "value": "165M+",
+        "label": "x402 payments"
+      },
+      "volume": {
+        "value": "$50M+",
+        "label": "Settled volume"
+      },
+      "agents": {
+        "value": "69K+",
+        "label": "Active agents"
+      }
+    },
+    "statsNote": "Across the x402 protocol ecosystem"
   }
 }
