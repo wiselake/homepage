@@ -81,6 +81,18 @@
       "cta": "문의하기"
     }
   },
+  "pigplanProof": {
+    "label": "검증된 실적",
+    "title": "27년 데이터가 증명한 양돈 ERP 1위",
+    "subtitle": "와이즈레이크의 비전은 검증된 실적 위에 있습니다. 전국 700+ 농가가 매일 쓰는 PigPlan이 그 출발점입니다.",
+    "items": {
+      "years": { "value": "27년", "label": "양돈 현장 데이터" },
+      "farms": { "value": "700+", "label": "실사용 농가" },
+      "share": { "value": "5년 연속", "label": "시장점유율 1위" },
+      "psy": { "value": "25.2", "label": "사용농가 평균 PSY (국내 22.4)" }
+    },
+    "cta": "PigPlan 살펴보기"
+  },
   "problem": {
     "label": "문제 제기",
     "title_line1": "AI는 콘텐츠로 답하는데,",

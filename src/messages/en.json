@@ -81,6 +81,18 @@
       "cta": "Get in Touch"
     }
   },
+  "pigplanProof": {
+    "label": "Proven Track Record",
+    "title": "27 years of data behind Korea's #1 swine ERP",
+    "subtitle": "Our vision stands on proven results. PigPlan — used every day by 700+ farms — is where it starts.",
+    "items": {
+      "years": { "value": "27 yrs", "label": "Field data in swine farming" },
+      "farms": { "value": "700+", "label": "Farms using PigPlan" },
+      "share": { "value": "5 years", "label": "Running #1 in market share" },
+      "psy": { "value": "25.2", "label": "Avg PSY of PigPlan farms (national 22.4)" }
+    },
+    "cta": "Explore PigPlan"
+  },
   "problem": {
     "label": "Problem",
     "title_line1": "AI Answers With Your Content.",
