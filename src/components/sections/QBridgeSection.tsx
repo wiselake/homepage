@@ -27,7 +27,7 @@ export function QBridgeSection() {
   const screens = locale === "en" ? SCREENS_EN : SCREENS_KR;
 
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   const [current, setCurrent] = useState(0);
 

@@ -12,7 +12,7 @@ interface SectionProps {
 
 export function Section({ id, children, className = "", dark = true }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <section

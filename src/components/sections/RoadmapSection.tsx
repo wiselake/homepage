@@ -11,7 +11,7 @@ const YEARS = ["2025", "2026", "2027", "2028"] as const;
 export function RoadmapSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("roadmap");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   const milestones: { id: string; isFoundation: boolean; items: string[] }[] = [
     { id: "foundation", isFoundation: true, items: t.raw("foundation.items") as string[] },

@@ -302,7 +302,7 @@ function TechCard({
 }) {
   const t = useTranslations("coreTech");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <motion.div
@@ -363,7 +363,7 @@ function TechCard({
 export function NanoTransCoreTech() {
   const t = useTranslations("coreTech");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <div ref={ref} className="mt-24 mb-8">

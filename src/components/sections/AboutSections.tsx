@@ -16,7 +16,7 @@ const STAT_KEYS = ["years", "farms", "share", "records", "partners"] as const;
 export function AboutStats() {
   const t = useTranslations("about.stats");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <section
@@ -64,7 +64,7 @@ const STORY_KEYS = ["proven", "expand", "vision"] as const;
 export function AboutStory() {
   const t = useTranslations("about.story");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="about-story" dark={false}>

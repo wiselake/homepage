@@ -74,7 +74,7 @@ function StepCard({ step, index, inView }: { step: (typeof STEPS)[number]; index
 export function NanoTransHowItWorks() {
   const t = useTranslations("howItWorks");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <div className="mt-24">

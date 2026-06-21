@@ -53,7 +53,7 @@ function FeatureCard({
 }) {
   const t = useTranslations("nanotrans");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <motion.div
@@ -80,7 +80,7 @@ function FeatureCard({
 function ComparisonTable() {
   const t = useTranslations("comparison");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   const rows = ["minAmount", "speed", "fees"] as const;
 

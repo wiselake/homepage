@@ -52,7 +52,7 @@ function ServiceCard({
 }) {
   const t = useTranslations("serviceOverview");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <motion.div

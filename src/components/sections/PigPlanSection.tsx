@@ -10,11 +10,11 @@ import { useRef } from "react";
 export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigplan");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   const heroStat = { value: "700+", label: t("stats.farms") };
   const supportStats = [
-    { value: "20+", label: t("stats.years") },
+    { value: "27", label: t("stats.years") },
     { value: "#1", label: t("stats.market") },
   ];
 
@@ -187,7 +187,7 @@ const API_KEYS = ["supplyForecast", "costIndex", "riskSignal"] as const;
 export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigSignal");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="pigsignal" dark>
@@ -324,7 +324,7 @@ const FLOW_ICONS = [
 export function PigPlanCoreSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigplanCore");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="pigplan-core" dark={false}>
@@ -430,7 +430,7 @@ const PSY_MAX = 30;
 export function PigPlanPsyProof() {
   const t = useTranslations("pigplan.psyProof");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="pigplan-psy" dark={false}>
@@ -518,7 +518,7 @@ const PILLAR_ICONS = [
 export function PigPlanPillars() {
   const t = useTranslations("pigplan.pillars");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="pigplan-pillars" dark>
@@ -567,7 +567,7 @@ const PP_FEATURE_ICONS = [
 export function PigPlanFeatures() {
   const t = useTranslations("pigplan.features");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 20% 0px" });
 
   return (
     <Section id="pigplan-features" dark={false}>
