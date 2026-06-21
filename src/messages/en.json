@@ -20,7 +20,7 @@
     "tagline2": "Mega Impact",
     "subtitle1_line1": "When AI reads your content,",
     "subtitle1_line2": "we make sure the creator gets paid",
-    "subtitle2": "700+ farms · 20 years of data · #1 swine ERP market share",
+    "subtitle2": "700+ farms · 27 years of data · #1 swine ERP market share",
     "cta": "Get Started with NanoTrans",
     "ctaSecondary": "About Us"
   },
@@ -33,6 +33,53 @@
     "missionTitle1": "Fair Value for Every Data",
     "missionTitle2": "and Every Piece of Content",
     "missionDesc": "An ecosystem where every piece of content and every data point is paid its fair value. NanoTrans, built on the x402 Protocol, is already taking that first step."
+  },
+  "about": {
+    "stats": {
+      "label": "WiseLake by the Numbers",
+      "title": "Trust, Built on Proof",
+      "subtitle": "27 years of field-proven data is where WiseLake begins.",
+      "items": {
+        "years": { "value": "27 yrs", "label": "Field data in swine farming" },
+        "farms": { "value": "700+", "label": "Farms actively using PigPlan" },
+        "share": { "value": "5 years", "label": "Running #1 in swine ERP share" },
+        "records": { "value": "150M+", "label": "Anonymized data records" },
+        "partners": { "value": "7", "label": "Government & industry partners" }
+      }
+    },
+    "story": {
+      "label": "Our Path",
+      "title": "On 27 proven years, we build what comes next",
+      "subtitle": "We proved trust with data from the field — now we are building an era where the content AI reads is paid its fair value.",
+      "proven": {
+        "step": "Proven",
+        "title": "Proving results with data",
+        "desc": "Over 27 years we built field data from 700+ farms and held #1 swine-ERP market share for five straight years — proving, on real farms, that timely data leads to stronger performance."
+      },
+      "expand": {
+        "step": "Expanding",
+        "title": "Data capability into the AI era",
+        "desc": "We extended that data capability into the AI economy. NanoTrans is x402-based payment infrastructure that turns the content AI agents read into USDC revenue."
+      },
+      "vision": {
+        "step": "Vision",
+        "title": "Toward a standard where value is paid",
+        "desc": "An ecosystem where data and content are paid their fair value — starting nano, growing into the global standard for value exchange."
+      }
+    },
+    "company": {
+      "label": "Company",
+      "title": "WiseLake, Inc.",
+      "subtitle": "We build trust on proven data, and on that trust we build the infrastructure of the next era.",
+      "items": {
+        "name": { "label": "Legal name", "value": "WiseLake, Inc. · (주)와이즈레이크" },
+        "ceo": { "label": "CEO", "value": "Jin Gyo-moon" },
+        "biz": { "label": "Business reg. no.", "value": "768-87-02255" },
+        "email": { "label": "Email", "value": "wiselake@wiselake.co.kr" },
+        "tel": { "label": "Contact", "value": "+82-31-421-3418" }
+      },
+      "cta": "Get in Touch"
+    }
   },
   "problem": {
     "label": "Problem",
@@ -131,7 +178,7 @@
   "pigplan": {
     "title": "#1 Market Share in Korean Swine ERP",
     "desc": "PigPlan is the market-leading swine ERP solution used by Korea's top livestock cooperatives and enterprises including Dodram, Dabi Genetics, and Woosung Feed.",
-    "psy": "PSY (Pigs per Sow per Year) is the key metric determining farm profitability. Farms that consistently log data in PigPlan show meaningfully higher PSY compared to those that don't. Over 20 years of data proves it.",
+    "psy": "PSY (Pigs per Sow per Year) is the key metric determining farm profitability. Farms that consistently log data in PigPlan show meaningfully higher PSY compared to those that don't. Over 27 years of data proves it.",
     "stats": {
       "farms": "Farms Using PigPlan",
       "years": "Years of Data",
@@ -157,7 +204,7 @@
       },
       "productivity": {
         "title": "Productivity & Management Improvement",
-        "desc": "Performance management from farrowing to sales and operations, pedigree-based tracking of ancestors and offspring, and benchmarking against other farms — backed by around 500 report types proven in the field over more than 20 years."
+        "desc": "Performance management from farrowing to sales and operations, pedigree-based tracking of ancestors and offspring, and benchmarking against other farms — backed by around 500 report types proven in the field over more than 27 years."
       },
       "ict": {
         "title": "ICT Integration & Tailored Consulting",
@@ -466,7 +513,7 @@
     },
     "pigplan": {
       "title": "PigPlan",
-      "summary": "20 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
+      "summary": "27 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
       "cta": "Learn More"
     },
     "b2b": {

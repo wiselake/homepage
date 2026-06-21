@@ -1,6 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/layout/PageHero";
 import { VisionSection } from "@/components/sections/VisionSection";
+import { ServiceOverview } from "@/components/sections/ServiceOverview";
+import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
+import {
+  AboutStats,
+  AboutStory,
+  AboutCompanyInfo,
+} from "@/components/sections/AboutSections";
 import { buildPageMetadata } from "@/lib/seo";
 
 
@@ -14,7 +21,12 @@ export default function AboutPage() {
   return (
     <>
       <PageHero namespace="pages.about" />
+      <AboutStats />
+      <AboutStory />
       <VisionSection />
+      <ServiceOverview />
+      <PartnerMarquee />
+      <AboutCompanyInfo />
     </>
   );
 }
