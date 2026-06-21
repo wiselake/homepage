@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/layout/PageHero";
-import { B2BSaaSSection } from "@/components/sections/B2BSaaSSection";
+import { IncubationTabs } from "@/components/sections/IncubationTabs";
+import { Flow9Section } from "@/components/sections/Flow9Section";
+import { QBridgeSection } from "@/components/sections/QBridgeSection";
 import { buildPageMetadata } from "@/lib/seo";
 
 
@@ -14,7 +16,9 @@ export default function B2BPage() {
   return (
     <>
       <PageHero namespace="pages.b2b" />
-      <B2BSaaSSection showHeader={false} />
+      <IncubationTabs />
+      <Flow9Section />
+      <QBridgeSection />
     </>
   );
 }

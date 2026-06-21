@@ -8,7 +8,7 @@
     "about": "회사소개",
     "nanotrans": "나노트랜스",
     "pigplan": "피그플랜",
-    "services": "인큐베이팅 허브",
+    "b2b": "B2B SaaS",
     "roadmap": "로드맵",
     "contact": "문의하기",
     "language": "EN",
@@ -267,7 +267,7 @@
     }
   },
   "incubationTabs": {
-    "nav": "인큐베이팅 허브 서비스 탐색"
+    "nav": "B2B SaaS 서비스 탐색"
   },
   "b2bSaas": {
     "title": "B2B SaaS 솔루션",

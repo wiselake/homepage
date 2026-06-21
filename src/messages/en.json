@@ -8,7 +8,7 @@
     "about": "About",
     "nanotrans": "NanoTrans",
     "pigplan": "PigPlan",
-    "services": "Incubation Hub",
+    "b2b": "B2B SaaS",
     "roadmap": "Roadmap",
     "contact": "Contact",
     "language": "한국어",
@@ -267,7 +267,7 @@
     }
   },
   "incubationTabs": {
-    "nav": "Incubation Hub service navigation"
+    "nav": "B2B SaaS navigation"
   },
   "b2bSaas": {
     "title": "B2B SaaS Solutions",

@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { key: "about", href: "/about" },
   { key: "nanotrans", href: "/nanotrans" },
   { key: "pigplan", href: "/pigplan", children: PIGPLAN_CHILDREN },
-  { key: "services", href: "/services" },
+  { key: "b2b", href: "/b2b" },
   { key: "roadmap", href: "/roadmap" },
   { key: "contact", href: "/#contact" },
 ] as const;

@@ -367,7 +367,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
             </motion.div>
 
             {/* Label badge */}
-            <span className="text-[10px] sm:text-xs font-semibold text-white px-2 py-0.5 rounded-full glass-accent">
+            <span className="text-[10px] sm:text-xs font-semibold text-white px-2 py-0.5 rounded-full glass-on-ink">
               {agent.label}
             </span>
           </div>

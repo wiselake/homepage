@@ -10,7 +10,6 @@ const pages = [
   "/pigplan/insight",
   "/pigplan/pigos-ai",
   "/pigplan/pigsignal",
-  "/services",
   "/b2b",
   "/roadmap",
 ];
