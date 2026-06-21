@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const PIGPLAN_CHILDREN = [
-  { id: "erp", label: "PigPlan ERP", href: "/pigplan" },
+  { id: "erp", label: "PigPlan", href: "/pigplan" },
   { id: "insight", label: "Insight PigPlan", href: "/pigplan/insight" },
   { id: "pigos", label: "PigOS", href: "/pigplan/pigos-ai", domain: "pigos.io" },
   { id: "pigsignal", label: "PigSignal", href: "/pigplan/pigsignal", domain: "pigsignal.com" },

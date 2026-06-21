@@ -8,7 +8,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const MEMBERS = [
-  { id: "erp", name: "PigPlan ERP", href: "/pigplan" },
+  { id: "erp", name: "PigPlan", href: "/pigplan" },
   { id: "insight", name: "Insight PigPlan", href: "/pigplan/insight" },
   { id: "pigos", name: "PigOS", href: "/pigplan/pigos-ai", domain: "pigos.io" },
   { id: "pigsignal", name: "PigSignal", href: "/pigplan/pigsignal", domain: "pigsignal.com" },
