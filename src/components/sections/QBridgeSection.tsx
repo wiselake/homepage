@@ -123,7 +123,7 @@ export function QBridgeSection() {
           </ul>
 
           <div className="pt-2">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent text-xs font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent-dark text-xs font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               {t("status")}
             </span>

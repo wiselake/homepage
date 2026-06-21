@@ -210,7 +210,7 @@ export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }
         <p className="text-text-secondary text-sm max-w-2xl mx-auto mb-1">
           {t("ntIntegration_line1")}
         </p>
-        <p className="text-accent font-semibold text-base max-w-2xl mx-auto">
+        <p className="text-accent-dark font-semibold text-base max-w-2xl mx-auto">
           {t("ntIntegration_line2")}
         </p>
       </div>
@@ -292,7 +292,7 @@ export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }
 
         {/* Status badge */}
         <div className="flex justify-center mt-10">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent text-xs font-medium">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-accent text-accent-dark text-xs font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             {t("status")}
           </span>

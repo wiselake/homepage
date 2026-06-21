@@ -58,7 +58,7 @@ export function PageHero({ namespace, ctaLabel, ctaHref }: PageHeroProps) {
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-accent text-accent text-sm font-medium hover:shadow-[0_0_20px_rgba(245,166,35,0.15)] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-accent text-accent-dark text-sm font-medium hover:shadow-[0_0_20px_rgba(245,166,35,0.15)] transition-all duration-300"
             >
               {ctaLabel}
             </a>

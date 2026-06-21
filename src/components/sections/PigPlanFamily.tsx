@@ -50,7 +50,7 @@ export function PigPlanFamily() {
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-lg font-semibold">{m.name}</h3>
                     {isActive && (
-                      <span className="text-[11px] font-medium text-accent/90 rounded-full border border-accent/30 px-2 py-0.5">
+                      <span className="text-[11px] font-medium text-accent-dark rounded-full border border-accent/30 px-2 py-0.5">
                         {t("current")}
                       </span>
                     )}
@@ -59,7 +59,7 @@ export function PigPlanFamily() {
                     {t(`members.${m.id}`)}
                   </p>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all duration-300">
+                <span className="mt-6 inline-flex items-center gap-2 text-accent-dark text-sm font-medium group-hover:gap-3 transition-all duration-300">
                   {t("cta")}
                   <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                     <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />

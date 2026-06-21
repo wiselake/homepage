@@ -101,7 +101,7 @@ function ComparisonTable() {
             <th scope="col" className="px-6 py-4 text-center text-sm font-medium text-text-secondary">
               {t("header.traditional")}
             </th>
-            <th scope="col" className="px-6 py-4 text-center text-sm font-medium text-accent">
+            <th scope="col" className="px-6 py-4 text-center text-sm font-medium text-accent-dark">
               NanoTrans
             </th>
           </tr>
@@ -118,7 +118,7 @@ function ComparisonTable() {
               <td className="px-6 py-5 text-center text-sm text-text-secondary">
                 {t(`rows.${row}.traditional`)}
               </td>
-              <td className="px-6 py-5 text-center text-sm font-semibold text-accent">
+              <td className="px-6 py-5 text-center text-sm font-semibold text-accent-dark">
                 {t(`rows.${row}.nanotrans`)}
               </td>
             </tr>
@@ -162,7 +162,7 @@ export function NanoTransSection({ showHeader = true }: { showHeader?: boolean }
           href="https://www.nanotrans.io/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-accent text-accent text-base font-semibold hover:shadow-[0_0_24px_rgba(245,166,35,0.2)] transition-all duration-300"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-accent text-accent-dark text-base font-semibold hover:shadow-[0_0_24px_rgba(245,166,35,0.2)] transition-all duration-300"
         >
           {t("cta")}
         </a>

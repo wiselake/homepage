@@ -76,7 +76,7 @@ function ServiceCard({
 
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all duration-300"
+        className="inline-flex items-center gap-2 text-accent-dark text-sm font-medium group-hover:gap-3 transition-all duration-300"
       >
         {t(`${serviceKey}.cta`)}
         <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
