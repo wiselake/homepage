@@ -31,7 +31,7 @@ export function B2BSaaSSection({ showHeader = true }: { showHeader?: boolean }) 
         >
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl pointer-events-none" />
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold text-white">{t("qbridge.name")}</h3>
+            <h3 className="text-xl font-bold text-text-primary">{t("qbridge.name")}</h3>
             <span className="text-xs px-3 py-1 rounded-full glass-accent text-accent border border-accent/20">
               {t("qbridge.status")}
             </span>

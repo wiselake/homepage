@@ -341,7 +341,7 @@ function ComparisonRow({
       {/* Value */}
       <motion.span
         className={`text-base font-semibold ${
-          isNano ? "text-white" : "text-text-secondary/70"
+          isNano ? "text-white" : "text-on-ink-muted"
         }`}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
@@ -437,7 +437,7 @@ export function NanoTransComparison() {
   ];
 
   return (
-    <div ref={ref} className="mt-20 mb-8">
+    <div ref={ref} className="mt-20 mb-8 bg-bg-ink border border-white/10 rounded-2xl overflow-hidden p-6 sm:p-8 transition-shadow hover:shadow-[0_0_24px_rgba(245,166,35,0.15)] hover:border-accent/40">
       {/* Section header */}
       <motion.div
         className="flex justify-between items-end mb-8 px-1"
@@ -486,7 +486,7 @@ export function NanoTransComparison() {
 
       {/* Bottom stat highlights */}
       <motion.div
-        className="mt-14 grid grid-cols-3 gap-4 glass rounded-2xl p-6 sm:p-8"
+        className="mt-14 grid grid-cols-3 gap-4 glass-on-ink rounded-2xl p-6 sm:p-8"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -500,7 +500,7 @@ export function NanoTransComparison() {
             <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">
               <AnimatedValue value={stat.value} inView={inView} delay={1.4 + i * 0.2} />
             </div>
-            <div className="text-[11px] sm:text-xs text-text-secondary">{stat.sub}</div>
+            <div className="text-[11px] sm:text-xs text-on-ink-muted">{stat.sub}</div>
           </div>
         ))}
       </motion.div>

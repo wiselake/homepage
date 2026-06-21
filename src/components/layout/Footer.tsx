@@ -7,7 +7,7 @@ export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="relative bg-bg-secondary/80 backdrop-blur-xl border-t border-white/[0.06] py-12">
+    <footer className="relative bg-bg-ink border-t border-white/[0.08] py-12">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--section-padding-x)]">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           {/* Logo & Tagline */}
@@ -20,13 +20,13 @@ export function Footer() {
               className="h-7 w-auto"
               style={{ filter: "brightness(0) invert(1)" }}
             />
-            <p className="text-sm text-text-secondary max-w-xs">
+            <p className="text-sm text-white/70 max-w-xs">
               {t("tagline")}
             </p>
           </div>
 
           {/* Company Info */}
-          <div className="space-y-2 text-sm text-text-secondary">
+          <div className="space-y-2 text-sm text-white/70">
             <p>{t("companyName")}</p>
             <p>{t("ceo")}</p>
             <p>{t("businessNumber")}</p>
@@ -43,7 +43,7 @@ export function Footer() {
 
         {/* Divider */}
         <div className="border-t border-white/[0.06] mt-8 pt-8">
-          <p className="text-xs text-text-muted text-center">
+          <p className="text-xs text-white/45 text-center">
             {t("copyright")}
           </p>
         </div>

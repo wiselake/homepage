@@ -1,40 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-bg-primary: #000000;
-  --color-bg-secondary: #0a0a0f;
-  --color-bg-tertiary: #111118;
+  /* Colors — clean corporate (light-first: white + ink-navy + brand gold) */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f6f8;
+  --color-bg-tertiary: #eef0f3;
   --color-bg-white: #ffffff;
-  --color-bg-light: #f8f9fa;
+  --color-bg-light: #f5f6f8;
+  --color-bg-ink: #0e1726;
+  --color-bg-ink-soft: #16233a;
 
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #c8c8d4;
-  --color-text-dark: #111118;
-  --color-text-muted: #4b5563;
+  --color-text-primary: #15181e;
+  --color-text-secondary: #5b6573;
+  --color-text-dark: #15181e;
+  --color-text-muted: #6b7280;
+  --color-text-on-ink: #ffffff;
+  --color-text-on-ink-muted: #aeb8c6;
 
   --color-accent: #F5A623;
   --color-accent-light: #FFBE4F;
-  --color-accent-dark: #D4891A;
-  --color-accent-glow: rgba(245, 166, 35, 0.15);
+  --color-accent-dark: #C98A00;
+  --color-accent-deep: #B07A12;
+  --color-accent-glow: rgba(245, 166, 35, 0.12);
 
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(15, 23, 34, 0.08);
+  --color-border-strong: rgba(15, 23, 34, 0.14);
+  --color-border-ink: rgba(255, 255, 255, 0.10);
   --color-border-light: rgba(0, 0, 0, 0.08);
 
-  /* Glass Tokens */
-  --glass-blur: 20px;
-  --glass-blur-strong: 24px;
-  --glass-saturate: 180%;
-  --glass-bg-dark: rgba(255, 255, 255, 0.06);
-  --glass-bg-light: rgba(255, 255, 255, 0.65);
-  --glass-border-dark: rgba(255, 255, 255, 0.12);
-  --glass-border-light: rgba(0, 0, 0, 0.06);
-  --glass-highlight: rgba(255, 255, 255, 0.15);
-  --glass-highlight-subtle: rgba(255, 255, 255, 0.06);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --glass-tint-accent: rgba(245, 166, 35, 0.06);
-  --glass-tint-accent-border: rgba(245, 166, 35, 0.15);
+  /* Card surface tokens (clean corporate) */
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 34, 0.09);
+  --card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.05);
+  --card-shadow-hover: 0 2px 4px rgba(16, 24, 40, 0.05), 0 10px 28px rgba(16, 24, 40, 0.09);
+
+  /* Glass — retained for ink-context surfaces (cards on dark bands) */
+  --glass-blur: 18px;
+  --glass-blur-strong: 22px;
+  --glass-saturate: 160%;
+  --glass-ink-bg: rgba(255, 255, 255, 0.06);
+  --glass-ink-border: rgba(255, 255, 255, 0.12);
 
   /* Typography */
   --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -65,65 +70,70 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(245, 166, 35, 0.3);
-  color: #ffffff;
+  background: rgba(245, 166, 35, 0.25);
+  color: #15181e;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #f0f1f4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
+  background: #cdd2da;
+  border-radius: 5px;
+  border: 2px solid #f0f1f4;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #b3bac4;
 }
 
-/* ── Liquid Glass Utilities ── */
+/* ── Surface utilities (clean corporate) ──
+   `glass`/`glass-light`/`glass-strong` now render as solid white cards.
+   Class names are kept so existing components migrate without churn. */
 @utility glass {
-  background: var(--glass-bg-dark);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-border-dark);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
 }
 
 @utility glass-strong {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(var(--glass-blur-strong)) saturate(200%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--card-shadow);
 }
 
 @utility glass-light {
-  background: var(--glass-bg-light);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-border-light);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
 }
 
 @utility glass-accent {
-  background: var(--glass-tint-accent);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-tint-accent-border);
+  background: #fff9ef;
+  border: 1px solid rgba(245, 166, 35, 0.32);
 }
 
 @utility glass-nav {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(var(--glass-blur-strong)) saturate(200%) brightness(95%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(200%) brightness(95%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Glass highlight pseudo-element base */
+/* Translucent card for use ON ink/dark bands */
+@utility glass-on-ink {
+  background: var(--glass-ink-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-ink-border);
+}
+
 @utility glass-highlight {
   position: relative;
   overflow: hidden;
@@ -132,15 +142,6 @@ body {
 @keyframes amber-line-pulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.7; }
-}
-
-/* Backdrop-filter fallback */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .glass { background: rgba(10, 10, 15, 0.92) !important; }
-  .glass-strong { background: rgba(10, 10, 15, 0.95) !important; }
-  .glass-light { background: rgba(255, 255, 255, 0.92) !important; }
-  .glass-nav { background: rgba(0, 0, 0, 0.9) !important; }
-  .glass-accent { background: rgba(30, 20, 0, 0.9) !important; }
 }
 
 /* Hide Spline watermark */

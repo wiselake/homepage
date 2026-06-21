@@ -57,7 +57,7 @@ export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) 
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden p-8 sm:p-10 rounded-2xl glass"
         >
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/[0.03] to-transparent rounded-t-2xl pointer-events-none" />
           {/* Top-right radial gold glow for visual rhythm */}
           <div className="absolute inset-0 bg-[radial-gradient(110%_120%_at_100%_0%,rgba(245,166,35,0.14),transparent_55%)] pointer-events-none" />
           <div className="relative flex flex-col sm:flex-row sm:items-center gap-8">
@@ -69,7 +69,7 @@ export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) 
               <div className="mt-3 text-sm text-text-secondary">{heroStat.label}</div>
             </div>
             {/* Supporting stats — compact */}
-            <div className="flex-1 space-y-4 sm:border-l sm:border-white/10 sm:pl-8">
+            <div className="flex-1 space-y-4 sm:border-l sm:border-black/10 sm:pl-8">
               {supportStats.map((stat, i) => (
                 <div key={i} className="flex items-baseline gap-3">
                   <span className="text-2xl sm:text-3xl font-bold text-accent whitespace-nowrap">
@@ -225,7 +225,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl glass flex items-center justify-center"
+          className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl glass-on-ink flex items-center justify-center"
           animate={{ borderColor: ["rgba(245,166,35,0.1)", "rgba(245,166,35,0.3)", "rgba(245,166,35,0.1)"] }}
           transition={{ duration: 3, repeat: Infinity }}
         >
@@ -237,7 +237,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
           </svg>
         </motion.div>
         <span className="text-sm sm:text-base font-semibold text-white">Farm Data</span>
-        <span className="text-xs text-text-secondary">27 Years · 688 Farms · 150M+ Records</span>
+        <span className="text-xs text-on-ink-muted">27 Years · 688 Farms · 150M+ Records</span>
       </motion.div>
 
       {/* ── Particles: Farm → API ── */}
@@ -280,7 +280,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
           </svg>
         </motion.div>
         <span className="text-sm sm:text-base font-bold text-accent">API Market</span>
-        <span className="text-xs text-text-secondary">57 REST APIs · NanoTrans x402</span>
+        <span className="text-xs text-on-ink-muted">57 REST APIs · NanoTrans x402</span>
       </motion.div>
 
       {/* ── Connection lines + Particles: API → each Agent ── */}
@@ -359,7 +359,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
 
             {/* Agent node */}
             <motion.div
-              className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl glass flex items-center justify-center"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl glass-on-ink flex items-center justify-center"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, delay: i * 0.3, repeat: Infinity }}
             >
@@ -430,7 +430,7 @@ export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }
         transition={{ duration: 0.6 }}
       >
         {/* Marketplace animation */}
-        <div className="relative h-[520px] sm:h-[600px] lg:h-[660px] rounded-2xl glass overflow-hidden mb-12">
+        <div className="relative h-[520px] sm:h-[600px] lg:h-[660px] rounded-2xl bg-bg-ink border border-white/10 overflow-hidden mb-12 hover:shadow-[0_0_24px_rgba(245,166,35,0.15)] hover:border-accent/40 transition-all duration-500">
           {isInView && <PigSignalMarketplace inView={isInView} />}
         </div>
 
@@ -464,8 +464,8 @@ export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }
               transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
               className="group relative overflow-hidden p-6 rounded-2xl glass hover:border-accent/30 hover:shadow-[0_0_20px_rgba(245,166,35,0.08)] transition-all duration-500"
             >
-              <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl pointer-events-none" />
-              <h3 className="text-lg font-bold text-white mb-2">{t(`apis.${key}.title`)}</h3>
+              <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/[0.03] to-transparent rounded-t-2xl pointer-events-none" />
+              <h3 className="text-lg font-bold text-text-primary mb-2">{t(`apis.${key}.title`)}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">{t(`apis.${key}.desc`)}</p>
               <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/0 to-transparent group-hover:via-accent/40 transition-all duration-700" />
             </motion.div>

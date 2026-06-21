@@ -83,11 +83,15 @@ export function Header() {
     return pathname === href || pathname.startsWith(href + "/");
   };
 
+  // The header is over a dark band only on the home hero at the top of the page.
+  // Everywhere else (scrolled, or any sub-page whose PageHero is light) it sits on light.
+  const onDark = pathname === "/" && !scrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass-nav shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          ? "glass-nav shadow-[0_1px_0_rgba(15,23,34,0.06),0_8px_24px_rgba(16,24,40,0.06)]"
           : "bg-transparent"
       }`}
     >
@@ -95,13 +99,13 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src="/wiselake_logo.png"
+            src={onDark ? "/wiselake_logo_white.png" : "/wiselake_logo_black.png"}
             alt="WiseLake"
             width={140}
             height={32}
             priority
             className="h-7 w-auto"
-            style={{ filter: "brightness(0) invert(1) drop-shadow(0 1px 8px rgba(0,0,0,0.8))" }}
+            style={{ filter: onDark ? "drop-shadow(0 1px 6px rgba(0,0,0,0.35))" : "none" }}
           />
         </Link>
 
@@ -114,8 +118,10 @@ export function Header() {
                   href={item.href}
                   className={`flex items-center gap-1 text-sm transition-colors duration-300 ${
                     isActive(item.href)
-                      ? "text-text-primary"
-                      : "text-text-secondary hover:text-text-primary"
+                      ? onDark ? "text-white" : "text-text-primary"
+                      : onDark
+                        ? "text-white/75 hover:text-white"
+                        : "text-text-secondary hover:text-text-primary"
                   }`}
                 >
                   {t(item.key)}
@@ -156,8 +162,10 @@ export function Header() {
                 href={item.href}
                 className={`text-sm transition-colors duration-300 relative group ${
                   isActive(item.href)
-                    ? "text-text-primary"
-                    : "text-text-secondary hover:text-text-primary"
+                    ? onDark ? "text-white" : "text-text-primary"
+                    : onDark
+                      ? "text-white/75 hover:text-white"
+                      : "text-text-secondary hover:text-text-primary"
                 }`}
               >
                 {t(item.key)}
@@ -183,17 +191,17 @@ export function Header() {
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
+              className={`block w-5 h-px ${onDark && !mobileOpen ? "bg-white" : "bg-[#15181e]"} transition-all duration-300 ${
                 mobileOpen ? "rotate-45 translate-y-[4px]" : ""
               }`}
             />
             <span
-              className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
+              className={`block w-5 h-px ${onDark && !mobileOpen ? "bg-white" : "bg-[#15181e]"} transition-all duration-300 ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block w-5 h-px bg-text-primary transition-all duration-300 ${
+              className={`block w-5 h-px ${onDark && !mobileOpen ? "bg-white" : "bg-[#15181e]"} transition-all duration-300 ${
                 mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""
               }`}
             />
@@ -210,7 +218,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 z-40 bg-black"
+            className="lg:hidden fixed inset-0 z-40 bg-bg-white"
             aria-label="Mobile navigation"
           >
             {/* Close button */}

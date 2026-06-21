@@ -20,7 +20,7 @@ export function Section({ id, children, className = "", dark = true }: SectionPr
       ref={ref}
       data-in-view={isInView}
       className={`relative py-[var(--section-padding-y)] px-[var(--section-padding-x)] overflow-hidden ${
-        dark ? "bg-bg-primary text-text-primary" : "bg-bg-white text-text-dark"
+        dark ? "bg-bg-secondary text-text-primary" : "bg-bg-white text-text-dark"
       } ${className}`}
     >
       <div className="mx-auto max-w-[var(--container-max)]">
