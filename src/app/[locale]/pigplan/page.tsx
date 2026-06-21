@@ -1,6 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/layout/PageHero";
-import { PigPlanSection } from "@/components/sections/PigPlanSection";
+import {
+  PigPlanSection,
+  PigPlanPsyProof,
+  PigPlanPillars,
+  PigPlanFeatures,
+} from "@/components/sections/PigPlanSection";
 import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
 import { PigPlanFamily } from "@/components/sections/PigPlanFamily";
 import { buildPageMetadata } from "@/lib/seo";
@@ -17,6 +22,9 @@ export default function PigPlanPage() {
     <>
       <PageHero namespace="pages.pigplan" />
       <PigPlanSection showHeader={false} />
+      <PigPlanPsyProof />
+      <PigPlanPillars />
+      <PigPlanFeatures />
       <PartnerMarquee />
       <PigPlanFamily />
     </>

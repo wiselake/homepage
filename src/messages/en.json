@@ -138,7 +138,61 @@
       "market": "Market Share"
     },
     "clients": "Key Clients: Dodram, Dabi Genetics, Woosung Feed",
-    "cta": "Inquire About Service"
+    "cta": "Inquire About Service",
+    "psyProof": {
+      "label": "Proven Performance",
+      "title": "Performance, Proven by PSY",
+      "subtitle": "PSY (Pigs per Sow per Year) is the key production metric that determines farm profitability. For four consecutive years from 2022 to 2025, farms using PigPlan recorded an average PSY above the national average.",
+      "national": "National avg",
+      "brand": "PigPlan",
+      "caption": "PigPlan farms achieve the top PSY performance in Korea"
+    },
+    "pillars": {
+      "label": "What Sets PigPlan Apart",
+      "title": "A proven solution that lifts farm productivity",
+      "subtitle": "Prevent missed tasks, pinpoint what holds productivity back, and measure results against goals — managing the whole lifecycle of every pig in one place.",
+      "lifecycle": {
+        "title": "Whole-Lifecycle Herd Management",
+        "desc": "From managing breeding pigs, piglets, growers, test pigs and seedstock to feed-transaction and shipment records via links with feed suppliers and slaughterhouses, plus test-pig, sales and seedstock performance. Systematic lifecycle management raises farm productivity."
+      },
+      "productivity": {
+        "title": "Productivity & Management Improvement",
+        "desc": "Performance management from farrowing to sales and operations, pedigree-based tracking of ancestors and offspring, and benchmarking against other farms — backed by around 500 report types proven in the field over more than 20 years."
+      },
+      "ict": {
+        "title": "ICT Integration & Tailored Consulting",
+        "desc": "Operations management built on 500+ reports such as work orders and daily logs, group analysis of affiliated farms to focus on at-risk operations, and ICT-device integration with on-site mobile support — delivering consulting insights that grow managed-farm profitability."
+      }
+    },
+    "features": {
+      "label": "Key Features",
+      "title": "Key Features of PigPlan",
+      "subtitle": "Capabilities that span farms and enterprises, web and mobile, the field and analytics.",
+      "systems": {
+        "title": "Farm & Enterprise Systems (PS, GP)",
+        "desc": "Service tailored to farms and enterprises, with worker accounts and menu permissions assigned beyond the farm owner."
+      },
+      "app": {
+        "title": "Mobile App Support",
+        "desc": "Look up and log sow details on-site, and check or enter work via QR codes."
+      },
+      "insight": {
+        "title": "Insight PigPlan",
+        "desc": "Weekly and monthly farm summary reports, plus quarterly consulting diagnostics and improvement KPIs."
+      },
+      "realtime": {
+        "title": "Real-Time Analysis",
+        "desc": "Fast performance-report lookups with IoT integration and fused data analysis for an instant read on status."
+      },
+      "decision": {
+        "title": "Decision-Support System",
+        "desc": "Reads weak points to flag sows needing attention, and manages work schedules alongside."
+      },
+      "optimize": {
+        "title": "Optimized Environment",
+        "desc": "User-defined menus and items with multilingual support (English, Vietnamese) to fit your working setup."
+      }
+    }
   },
   "partners": {
     "label": "Trusted by Industry Leaders",
