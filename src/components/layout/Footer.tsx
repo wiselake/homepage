@@ -30,6 +30,7 @@ export function Footer() {
             <p>{t("companyName")}</p>
             <p>{t("ceo")}</p>
             <p>{t("businessNumber")}</p>
+            <p>{t("address")}</p>
             <p>
               <a
                 href={`mailto:${t("email")}`}
