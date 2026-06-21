@@ -394,6 +394,15 @@
     "label": "Roadmap",
     "title_line1": "From Nano",
     "title_line2": "to Global Infrastructure",
+    "foundation": {
+      "label": "Foundation",
+      "tagline": "A starting point built over 27 years",
+      "items": [
+        "27 years of field data in swine farming",
+        "700+ farms using PigPlan",
+        "#1 swine-ERP market share, 5 years running"
+      ]
+    },
     "years": {
       "2025": [
         "NanoTrans proof-of-concept begins"
