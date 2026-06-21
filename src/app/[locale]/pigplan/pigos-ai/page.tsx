@@ -10,10 +10,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({ locale, path: "/pigplan/pigos-ai", title: t("title"), description: t("description") });
 }
 
-export default function PigOSAIPage() {
+export default async function PigOSPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.pigplanPigos" });
+
   return (
     <>
-      <PageHero namespace="pages.pigplanPigos" />
+      <PageHero
+        namespace="pages.pigplanPigos"
+        ctaLabel={t("heroCta")}
+        ctaHref="https://app.pigos.io/onboarding"
+      />
       <PigPlanCoreSection showHeader={false} />
       <PigPlanFamily />
     </>

@@ -10,10 +10,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({ locale, path: "/pigplan/pigsignal", title: t("title"), description: t("description") });
 }
 
-export default function PigSignalPage() {
+export default async function PigSignalPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.pigplanPigsignal" });
+
   return (
     <>
-      <PageHero namespace="pages.pigplanPigsignal" />
+      <PageHero
+        namespace="pages.pigplanPigsignal"
+        ctaLabel={t("heroCta")}
+        ctaHref="https://pigsignal.com"
+      />
       <PigSignalSection showHeader={false} />
       <PigPlanFamily />
     </>

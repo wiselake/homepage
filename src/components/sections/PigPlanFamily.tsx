@@ -10,7 +10,7 @@ import { useRef } from "react";
 const MEMBERS = [
   { id: "erp", name: "PigPlan", href: "/pigplan" as const },
   { id: "insight", name: "Insight PigPlan", href: "/pigplan/insight" as const },
-  { id: "pigos", name: "PigOS AI", href: "/pigplan/pigos-ai" as const },
+  { id: "pigos", name: "PigOS", href: "/pigplan/pigos-ai" as const },
   { id: "pigsignal", name: "PigSignal", href: "/pigplan/pigsignal" as const },
 ] as const;
 

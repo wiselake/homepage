@@ -10,7 +10,7 @@ import Image from "next/image";
 const PIGPLAN_CHILDREN = [
   { label: "PigPlan", href: "/pigplan" },
   { label: "Insight PigPlan", href: "/pigplan/insight" },
-  { label: "PigOS AI", href: "/pigplan/pigos-ai" },
+  { label: "PigOS", href: "/pigplan/pigos-ai" },
   { label: "PigSignal", href: "/pigplan/pigsignal" },
 ] as const;
 

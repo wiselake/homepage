@@ -152,98 +152,96 @@
   },
   "insightPigplan": {
     "label": "Insight PigPlan",
-    "title": "매주 월요일, 놓치면 안 되는 작업목록",
-    "desc": "임신·이유·분만·출하, 어느 하나라도 일정보다 1주만 지연되면 PSY가 떨어집니다. 인사이트 피그플랜은 매주 월요일 아침, 농장주의 스마트폰으로 '이번 주 놓치면 안 되는 작업 목록'을 발송합니다.",
-    "benefit": "적시 알림 하나가 모돈 1두당 수십만 원의 차이를 만듭니다.",
+    "title": "주간 AI 경영 리포트",
+    "desc": "인사이트 피그플랜은 피그플랜 데이터를 AI가 분석해, 매주 월요일 농장의 한 주를 리포트 한 장으로 정리합니다. 종합·생산·출하·손실·진단 5개 탭과 GREEN·YELLOW·RED 종합 등급으로, 카카오톡에서 10분이면 파악됩니다.",
+    "benefit": "손실을 원 단위로 보여주고, 13주 추세 + 4주 전망으로 문제가 터지기 전에 알립니다.",
     "cta": "서비스 바로가기",
-    "ctaInquiry": "서비스 신청 문의",
+    "ctaInquiry": "도입 상담",
     "flow": {
       "title": "어떻게 동작하나요",
-      "s1": "데이터 입력",
-      "s1_desc": "농장주가 피그플랜에 일상 데이터를 기록",
-      "s2": "AI 분석",
-      "s2_desc": "27년 데이터 기반 이상 징후 감지",
-      "s3": "매주 알림",
-      "s3_desc": "월요일 아침, 핵심 작업 목록 발송"
+      "s1": "피그플랜 데이터",
+      "s1_desc": "농장이 평소 입력한 피그플랜 데이터를 그대로 활용합니다.",
+      "s2": "AI 분석 · 등급 산정",
+      "s2_desc": "실적·손실·원인을 분석하고 GREEN/YELLOW/RED 종합 등급을 매깁니다.",
+      "s3": "월요일 리포트",
+      "s3_desc": "매주 월요일 오전 8시 또는 오후 2시, 카카오톡·문자로 5개 탭 리포트를 발송합니다."
     },
     "features": {
-      "f1_title": "맞춤 작업 목록 자동 생성",
-      "f1_desc": "농장 상황에 맞는 이번 주 필수 작업을 AI가 선별하여 발송합니다",
-      "f2_title": "PSY 개선 추적",
-      "f2_desc": "주간·월간 PSY 변화를 추적하고, 개선 포인트를 알려줍니다",
-      "f3_title": "스마트폰 즉시 확인",
-      "f3_desc": "별도 앱 설치 없이 카카오톡·문자로 받아 현장에서 바로 확인합니다"
+      "f1_title": "손실·개선을 원 단위로",
+      "f1_desc": "5종 손실을 정량화하고, 개선 시 기대 수익을 원 단위로 보여줍니다.",
+      "f2_title": "문제 터지기 전 조기 경보",
+      "f2_desc": "13주 추세와 4주 전망으로 이상 징후를 미리 감지합니다.",
+      "f3_title": "전국 농가 중 내 위치",
+      "f3_desc": "비슷한 규모 농가 대비 내 농장의 전국 분위(상위·중위·하위)를 보여줍니다."
     }
   },
   "pigplanCore": {
-    "label": "PigOS AI",
-    "title": "데이터가 말하고, AI가 행동한다",
-    "subtitle": "전 세계 양돈 농장의 수익을 올리는 AI 운영시스템",
-    "desc_line1": "PigOS AI는 전 세계 양돈 농장을 위한 AI Farm Management 플랫폼입니다.",
-    "desc_line2": "교배 최적 타이밍, 폐사 조기 경보, 사료 효율, 출하 수익까지 — AI가 분석하고, 지금 해야 할 행동을 제시합니다.",
-    "desc_line3": "알림이 아닙니다. Action입니다.",
-    "f1_title": "AI 의사결정",
-    "f1_desc": "폐사율·사료효율·출하수익을 수치로 증명",
-    "f2_title": "데이터에서 행동으로",
-    "f2_desc": "지금 무엇을 해야 하는가를 즉시 답변",
-    "f3_title": "글로벌 5개 시장",
-    "f3_desc": "미국 / 중국 / 동남아 / 남미 / 한국",
-    "f4_title": "7개 언어 지원",
-    "f4_desc": "현지 언어로, 현지 농장에",
-    "status": "2026 출시 예정"
+    "label": "PigOS",
+    "title": "양돈 농장을 위한 AI 조기경보 시스템",
+    "subtitle": "기록 입력 → AI 판단 → 손실 차단",
+    "desc_line1": "PigOS는 농장 기록·KPI 벤치마크·리스크 신호·리포트를 하나로 잇는 AI 네이티브 운영 시스템입니다.",
+    "desc_line2": "한국·미국·동남아·중남미 등 국가별로 보정된 지표와 규칙 기반 AI로, 월말 전에 손실을 먼저 감지합니다.",
+    "desc_line3": "신용카드 없이 무료로 시작하세요.",
+    "f1_title": "KPI 실시간 대시보드",
+    "f1_desc": "PSY·MSY·이유두수·폐사율·출하성적을 모바일에서 실시간으로. 오프라인도 지원합니다.",
+    "f2_title": "AI Insight",
+    "f2_desc": "손실 패턴과 이상치를 자동 감지하고, 이번 주 핵심 Top-3 액션을 제시합니다.",
+    "f3_title": "AI Advisor",
+    "f3_desc": "“왜 PSY가 떨어졌나?” 자연어로 물으면 데이터 기반으로 답하는 농장 컨설턴트.",
+    "f4_title": "Morning Brief",
+    "f4_desc": "밤사이 AI 모니터링을 바탕으로 매일 아침 오늘의 Top-3 액션을 전달합니다.",
+    "status": "신용카드 없이 무료 시작 · pigos.io",
+    "flow": {
+      "title": "제안 → 확인 → 실행",
+      "suggest": {
+        "title": "제안 (Suggest)",
+        "desc": "누락 기록·폐사 급증·교배 예정 모돈을 AI가 자동으로 먼저 띄웁니다."
+      },
+      "confirm": {
+        "title": "확인 (Confirm)",
+        "desc": "농장 팀이 검토·수정·승인한 뒤에 의사결정에 반영됩니다."
+      },
+      "act": {
+        "title": "실행 (Act)",
+        "desc": "확인된 기록이 손실 신호와 우선순위 액션으로 전환됩니다."
+      }
+    }
   },
   "pigSignal": {
     "label": "PigSignal",
-    "title": "양돈 데이터를 글로벌 API로",
-    "subtitle_line1": "27년간 축적된 1.5억 건의 데이터를 익명화하여 REST API로 제공합니다.",
-    "subtitle_line2": "AI 에이전트가 NanoTrans x402를 통해 자동으로 데이터를 조회하고 결제합니다.",
-    "ntIntegration_line1": "PigPlan 27년 데이터 자산 × NanoTrans Pay-per-Use.",
-    "ntIntegration_line2": "양돈 데이터를 글로벌 API 마켓으로 가져갑니다.",
-    "flowStages": {
-      "s1": "Farm Data",
-      "s1_sub": "27년 · 1.5억 건",
-      "s2": "Anonymize",
-      "s2_sub": "익명화 · 정제",
-      "s3": "API Market",
-      "s3_sub": "57개 REST API",
-      "s4": "Global",
-      "s4_sub": "x402 자동결제"
-    },
+    "title": "검증된 양돈 데이터, 실행 가능한 신호",
+    "subtitle_line1": "27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화·집계한 B2B 데이터 API 플랫폼.",
+    "subtitle_line2": "보험 손해율, 가축 대출 리스크, 사료 수요 변화를 개별 농장 노출 없이 더 빨리 판단합니다.",
+    "ntIntegration_line1": "N ≥ 10 익명화 · 프라이버시 바이 디자인 · 감사 가능한 데이터 계보.",
+    "ntIntegration_line2": "99.9% SLA · <200ms 응답 · pigsignal.com",
     "stats": {
-      "records": "1.5억+",
-      "recordsLabel": "축적 데이터",
-      "apis": "57",
-      "apisLabel": "API 라인업",
-      "industries": "12",
-      "industriesLabel": "타겟 산업군",
-      "daily": "37K+",
-      "dailyLabel": "일일 데이터 증가"
+      "records": "150M+",
+      "recordsLabel": "농장 레코드",
+      "apis": "18+",
+      "apisLabel": "데이터 수집 국가",
+      "industries": "47",
+      "industriesLabel": "리스크 신호 지역",
+      "daily": "26",
+      "dailyLabel": "벤치마크 엔드포인트"
     },
     "apis": {
       "supplyForecast": {
-        "title": "공급 예측 API",
-        "desc": "교배-분만-이유-출하 파이프라인 기반, 3~6개월 후 돼지고기 공급량을 예측합니다."
+        "title": "Supply Forecast API",
+        "desc": "30·60·90일 공급 예측을 신뢰구간과 함께. 90일 호라이즌, 매일 갱신.",
+        "price": "도축·유통·트레이더용"
       },
       "costIndex": {
-        "title": "비용 지수 API",
-        "desc": "사료효율(FCR), 폐사율, 출하일령을 종합한 생산비용 지수를 제공합니다."
+        "title": "Benchmark API",
+        "desc": "PSY·LSY·분만율·NPD 등 지역별 분포. 주간 갱신, 99.9% SLA.",
+        "price": "영양·사료·금융용"
       },
       "riskSignal": {
-        "title": "리스크 시그널 API",
-        "desc": "폐사율 이상 탐지, 질병 발생 조기 경보를 실시간으로 제공합니다."
+        "title": "Risk Signals API",
+        "desc": "사료비·질병·공급 집중 조기경보. 7~30일 선행, 47개 지역.",
+        "price": "보험·금융·리스크용"
       }
     },
-    "status": "2026 출시 예정",
-    "agents": {
-      "feed": "사료회사 Agent",
-      "feedQuery": "FCR 벤치마크 데이터?",
-      "processor": "도축·유통 Agent",
-      "processorQuery": "3분기 공급 예측?",
-      "finance": "금융·보험 Agent",
-      "financeQuery": "농장 리스크 스코어?",
-      "aitech": "AI·테크 Agent",
-      "aitechQuery": "시계열 데이터셋?"
-    }
+    "status": "B2B 데이터 API · pigsignal.com"
   },
   "incubationTabs": {
     "nav": "B2B SaaS 서비스 탐색"
@@ -292,13 +290,13 @@
         "cre8pet iOS 출시 완료",
         "NanoTrans 서비스 정식 출시",
         "인사이트 피그플랜 출시",
-        "PigOS AI 출시",
+        "PigOS 출시",
         "PigSignal API 서비스 출시",
         "Flow9 · QBridge 출시"
       ],
       "2027": [
         "NanoTrans 누적 1,000만 거래 달성",
-        "PigOS AI 3개국 이상 진출",
+        "PigOS 3개국 이상 진출",
         "PigSignal API 파트너사 10개 이상 확보"
       ],
       "2028": [
@@ -361,24 +359,27 @@
     },
     "pigplanInsight": {
       "title": "Insight PigPlan | 와이즈레이크",
-      "description": "매주 월요일, 농장주에게 이번 주 핵심 작업을 알려주는 양돈 알림 서비스. 27년 데이터 기반 PSY 개선.",
+      "description": "매주 월요일, 농장의 한 주를 리포트 한 장으로 압축하는 주간 AI 경영 리포트. 종합·생산·출하·손실·진단 5개 탭, 손실은 원 단위로, 전국 분위까지 — 10분이면 끝.",
       "heroLabel": "Insight PigPlan",
-      "heroTitle": "매주 월요일, 놓치면 안 되는 작업목록",
-      "heroSubtitle": "27년 데이터가 분석한 이번 주 핵심 작업을 농장주 스마트폰으로"
+      "heroTitle": "매주 월요일, 농장의 한 주를 리포트 한 장으로",
+      "heroSubtitle": "피그플랜 데이터를 AI가 분석해 매주 월요일 카카오톡으로 — 실적·손실·원인·개선을 10분이면 파악합니다.",
+      "heroCta": "도입 상담"
     },
     "pigplanPigos": {
-      "title": "PigOS AI | 와이즈레이크",
-      "description": "전 세계 양돈 농장을 위한 AI Farm Management 플랫폼. 데이터가 분석하고, AI가 행동을 제시합니다. 2026 출시 예정.",
-      "heroLabel": "PigOS AI",
-      "heroTitle": "데이터가 말하고, AI가 행동한다",
-      "heroSubtitle": "전 세계 양돈 농장의 수익을 올리는 AI 운영시스템"
+      "title": "PigOS | 와이즈레이크",
+      "description": "기록을 입력하는 순간 AI가 손실 위험을 판단하는 양돈 농장 AI 조기경보 시스템. 27년 PigPlan 노하우 기반, 6개 언어·무료로 시작.",
+      "heroLabel": "PigOS",
+      "heroTitle": "기록을 입력하는 순간, AI가 손실 위험을 판단합니다",
+      "heroSubtitle": "양돈 농장을 위한 AI 조기경보 시스템 — 27년 PigPlan 노하우 위에서, 신용카드 없이 무료로 시작하세요.",
+      "heroCta": "무료로 시작하기"
     },
     "pigplanPigsignal": {
       "title": "PigSignal | 와이즈레이크",
-      "description": "27년·1.5억 건 양돈 데이터를 글로벌 REST API로. NanoTrans x402 자동결제 연동. 2026 출시 예정.",
+      "description": "27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화한 B2B 양돈 데이터 API. 보험 손해율·대출 리스크·사료 수요를 더 빨리 판단하는 검증 데이터·신호.",
       "heroLabel": "PigSignal",
-      "heroTitle": "양돈 데이터를 글로벌 API로",
-      "heroSubtitle": "27년간 축적된 1.5억 건 데이터를 REST API로 제공합니다"
+      "heroTitle": "보험·대출·사료 AI를 위한 양돈 리스크 데이터",
+      "heroSubtitle": "검증된 양돈 데이터, 실행 가능한 신호 · API-first — 27년·150M+ 농장 레코드(한국 사육두수 ~32%)를 익명화·집계한 B2B 데이터 API.",
+      "heroCta": "무료 데이터 샘플 요청"
     },
     "services": {
       "title": "인큐베이팅 허브 | 와이즈레이크",
@@ -429,9 +430,9 @@
     "cta": "자세히 보기",
     "members": {
       "erp": "양돈 ERP · 시장점유율 1위",
-      "insight": "주간 핵심 작업 알림 서비스",
-      "pigos": "AI 농장 운영 플랫폼 · 2026",
-      "pigsignal": "양돈 데이터 글로벌 API · 2026"
+      "insight": "주간 AI 경영 리포트 · 매주 월요일",
+      "pigos": "글로벌 양돈 운영체제 · pigos.io",
+      "pigsignal": "양돈 리스크 데이터 API · pigsignal.com"
     }
   },
   "footer": {

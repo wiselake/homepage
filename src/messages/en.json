@@ -152,98 +152,96 @@
   },
   "insightPigplan": {
     "label": "Insight PigPlan",
-    "title": "Every Monday, the Tasks You Can't Miss",
-    "desc": "Gestation, weaning, farrowing, shipment — if any of these slip by just one week, PSY drops. Insight PigPlan sends a 'must-do tasks this week' checklist to the farmer's smartphone every Monday morning.",
-    "benefit": "One timely alert can make a difference of hundreds of thousands of won per sow.",
-    "cta": "Visit Service",
-    "ctaInquiry": "Inquire About Subscription",
+    "title": "Weekly AI Management Report",
+    "desc": "Insight PigPlan uses AI to analyze your PigPlan data and condense your farm's whole week into one report every Monday — five tabs (summary, production, shipment, loss, diagnosis) with an overall GREEN/YELLOW/RED grade, readable in 10 minutes on KakaoTalk.",
+    "benefit": "It quantifies losses in won and warns you before problems hit, using a 13-week trend plus a 4-week forecast.",
+    "cta": "Open the service",
+    "ctaInquiry": "Talk to us",
     "flow": {
-      "title": "How It Works",
-      "s1": "Data Entry",
-      "s1_desc": "Farmers log daily operations in PigPlan",
-      "s2": "AI Analysis",
-      "s2_desc": "Detects anomalies by comparing against 27 years of data",
-      "s3": "Weekly Alert",
-      "s3_desc": "Monday morning, a prioritized task list is delivered"
+      "title": "How it works",
+      "s1": "Your PigPlan data",
+      "s1_desc": "It uses the PigPlan data your farm already enters every day.",
+      "s2": "AI analysis · grading",
+      "s2_desc": "It analyzes performance, loss, and cause, and assigns an overall GREEN/YELLOW/RED grade.",
+      "s3": "Monday report",
+      "s3_desc": "Every Monday at 8 AM or 2 PM, the five-tab report is delivered via KakaoTalk and SMS."
     },
     "features": {
-      "f1_title": "Auto-generated Task List",
-      "f1_desc": "AI selects this week's essential tasks tailored to your farm's current status",
-      "f2_title": "PSY Improvement Tracking",
-      "f2_desc": "Tracks weekly and monthly PSY changes and highlights improvement opportunities",
-      "f3_title": "Instant Mobile Access",
-      "f3_desc": "Delivered via KakaoTalk or SMS — check on-site without installing any app"
+      "f1_title": "Losses & gains in won",
+      "f1_desc": "Quantifies five loss categories and shows the expected return of each improvement in won.",
+      "f2_title": "Early warning",
+      "f2_desc": "Detects anomalies in advance with a 13-week trend and a 4-week forecast.",
+      "f3_title": "Your nationwide rank",
+      "f3_desc": "Shows where your farm ranks nationwide against similar-sized farms (top, mid, bottom)."
     }
   },
   "pigplanCore": {
-    "label": "PigOS AI",
-    "title": "Data Speaks. AI Acts.",
-    "subtitle": "An AI operations system that directly increases revenue for pig farms worldwide.",
-    "desc_line1": "PigOS AI is an AI Farm Management platform for pig farms worldwide.",
-    "desc_line2": "Optimal breeding timing, early mortality alerts, feed efficiency, shipment revenue — AI analyzes and prescribes the action to take right now.",
-    "desc_line3": "Not alerts. Action.",
-    "f1_title": "AI Decisions",
-    "f1_desc": "Mortality, feed efficiency, shipment revenue — proven by numbers",
-    "f2_title": "Data to Action",
-    "f2_desc": "What should I do right now — answered instantly",
-    "f3_title": "5 Global Markets",
-    "f3_desc": "USA / China / Southeast Asia / Latin America / Korea",
-    "f4_title": "7 Languages",
-    "f4_desc": "In local language, for local farms",
-    "status": "Launching 2026"
+    "label": "PigOS",
+    "title": "An AI Early-Warning System for Pig Farms",
+    "subtitle": "Log a record → AI judges → loss prevented",
+    "desc_line1": "PigOS is an AI-native operating system that connects farm records, KPI benchmarks, risk signals, and reports into one platform.",
+    "desc_line2": "With country-calibrated metrics (Korea, US, SEA, Latin America) and rule-based AI, it detects losses before month-end.",
+    "desc_line3": "Start free — no credit card.",
+    "f1_title": "Real-time KPI dashboard",
+    "f1_desc": "PSY, MSY, wean count, mortality, and finishing performance on mobile in real time — works offline.",
+    "f2_title": "AI Insight",
+    "f2_desc": "Automatically detects loss patterns and anomalies, and surfaces this week's top-3 action priorities.",
+    "f3_title": "AI Advisor",
+    "f3_desc": "Ask in natural language — \"Why did PSY drop?\" — and get data-backed answers like a farm consultant.",
+    "f4_title": "Morning Brief",
+    "f4_desc": "Every morning, the day's top-3 actions delivered from overnight AI monitoring.",
+    "status": "Free to start — no credit card · pigos.io",
+    "flow": {
+      "title": "Suggest → Confirm → Act",
+      "suggest": {
+        "title": "Suggest",
+        "desc": "Missing records, mortality spikes, and sows due are surfaced automatically by AI."
+      },
+      "confirm": {
+        "title": "Confirm",
+        "desc": "Farm teams review, correct, or approve before any decision."
+      },
+      "act": {
+        "title": "Act",
+        "desc": "Confirmed records become loss signals and prioritized actions."
+      }
+    }
   },
   "pigSignal": {
     "label": "PigSignal",
-    "title": "Swine Data via Global API",
-    "subtitle_line1": "150M+ records accumulated over 27 years, anonymized and served via REST API.",
-    "subtitle_line2": "AI agents automatically query and pay through NanoTrans x402.",
-    "ntIntegration_line1": "PigPlan's 27-year data asset × NanoTrans Pay-per-Use.",
-    "ntIntegration_line2": "Taking swine data to the global API market.",
-    "flowStages": {
-      "s1": "Farm Data",
-      "s1_sub": "27 yrs · 150M+",
-      "s2": "Anonymize",
-      "s2_sub": "Privacy · Refine",
-      "s3": "API Market",
-      "s3_sub": "57 REST APIs",
-      "s4": "Global",
-      "s4_sub": "x402 Auto-pay"
-    },
+    "title": "Verified Swine Data. Actionable Signals.",
+    "subtitle_line1": "A B2B data API platform — 27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized and aggregated.",
+    "subtitle_line2": "Assess insurance loss ratios, livestock loan risk, and feed demand shifts faster — with no individual farm exposure.",
+    "ntIntegration_line1": "N ≥ 10 anonymity · privacy by design · audit-ready lineage.",
+    "ntIntegration_line2": "99.9% SLA · <200ms latency · pigsignal.com",
     "stats": {
       "records": "150M+",
-      "recordsLabel": "Accumulated Records",
-      "apis": "57",
-      "apisLabel": "API Lineup",
-      "industries": "12",
-      "industriesLabel": "Target Industries",
-      "daily": "37K+",
-      "dailyLabel": "Daily New Records"
+      "recordsLabel": "Farm records",
+      "apis": "18+",
+      "apisLabel": "Countries covered",
+      "industries": "47",
+      "industriesLabel": "Risk-signal regions",
+      "daily": "26",
+      "dailyLabel": "Benchmark endpoints"
     },
     "apis": {
       "supplyForecast": {
         "title": "Supply Forecast API",
-        "desc": "Predicts pork supply 3-6 months ahead based on the breeding-farrowing-weaning-shipment pipeline."
+        "desc": "30/60/90-day supply projections with confidence intervals. 90-day horizon, daily refresh.",
+        "price": "For processors, traders, retailers"
       },
       "costIndex": {
-        "title": "Cost Index API",
-        "desc": "A composite production cost index combining FCR, mortality rate, and days to market."
+        "title": "Benchmark API",
+        "desc": "Regional distributions for PSY, LSY, farrowing rate, NPD. Weekly refresh, 99.9% SLA.",
+        "price": "For nutritionists, feed, lenders"
       },
       "riskSignal": {
-        "title": "Risk Signal API",
-        "desc": "Anomaly detection for mortality spikes and early disease outbreak warnings in real time."
+        "title": "Risk Signals API",
+        "desc": "Early-warning signals for feed cost, disease, supply concentration. 7–30 day lead, 47 regions.",
+        "price": "For insurers, finance, risk"
       }
     },
-    "status": "Launching 2026",
-    "agents": {
-      "feed": "Feed Company Agent",
-      "feedQuery": "FCR benchmark data?",
-      "processor": "Processor Agent",
-      "processorQuery": "Supply forecast Q3?",
-      "finance": "Finance Agent",
-      "financeQuery": "Farm risk score?",
-      "aitech": "AI·Tech Agent",
-      "aitechQuery": "Time-series dataset?"
-    }
+    "status": "B2B data API · pigsignal.com"
   },
   "incubationTabs": {
     "nav": "B2B SaaS navigation"
@@ -292,13 +290,13 @@
         "cre8pet iOS launched",
         "NanoTrans official launch",
         "Insight PigPlan launch",
-        "PigOS AI launch",
+        "PigOS launch",
         "PigSignal API service launch",
         "Flow9 · QBridge launch"
       ],
       "2027": [
         "NanoTrans cumulative 10M transactions",
-        "PigOS AI expansion to 3+ countries",
+        "PigOS expansion to 3+ countries",
         "PigSignal API partners: 10+"
       ],
       "2028": [
@@ -361,24 +359,27 @@
     },
     "pigplanInsight": {
       "title": "Insight PigPlan | WiseLake",
-      "description": "Every Monday, the swine alert service that tells farm owners this week's critical tasks. PSY improvement backed by 27 years of data.",
+      "description": "A weekly AI management report that condenses your farm's entire week into one report every Monday — five tabs (summary, production, shipment, loss, diagnosis), losses quantified in won, nationwide percentile, in 10 minutes.",
       "heroLabel": "Insight PigPlan",
-      "heroTitle": "Every Monday, the Tasks You Can't Afford to Miss",
-      "heroSubtitle": "This week's critical tasks, analyzed from 27 years of data, sent to the farm owner's phone"
+      "heroTitle": "Your Farm's Whole Week, in One Monday Report",
+      "heroSubtitle": "AI analyzes your PigPlan data and delivers a weekly report via KakaoTalk every Monday — performance, loss, cause, and improvement in 10 minutes.",
+      "heroCta": "Talk to us"
     },
     "pigplanPigos": {
-      "title": "PigOS AI | WiseLake",
-      "description": "An AI Farm Management platform for swine farms worldwide. Data analyzes, AI recommends the action. Launching 2026.",
-      "heroLabel": "PigOS AI",
-      "heroTitle": "Data Speaks, AI Acts",
-      "heroSubtitle": "The AI operating system that raises the profitability of swine farms worldwide"
+      "title": "PigOS | WiseLake",
+      "description": "An AI early-warning system for pig farms — the moment you enter a record, AI judges the loss risk. Built on 27 years of PigPlan expertise, 6 languages, free to start.",
+      "heroLabel": "PigOS",
+      "heroTitle": "The Moment You Log a Record, AI Judges the Loss Risk",
+      "heroSubtitle": "An AI early-warning system for pig farms, built on 27 years of PigPlan expertise. Start free — no credit card.",
+      "heroCta": "Start free"
     },
     "pigplanPigsignal": {
       "title": "PigSignal | WiseLake",
-      "description": "27 years and 150M records of swine data as a global REST API. Integrated with NanoTrans x402 auto-payment. Launching 2026.",
+      "description": "27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized into a B2B swine data API. Verified data and actionable signals for insurance, lending, and feed.",
       "heroLabel": "PigSignal",
-      "heroTitle": "Swine Data as a Global API",
-      "heroSubtitle": "150M records accumulated over 27 years, delivered as REST APIs"
+      "heroTitle": "Swine Risk Data for Insurance, Lending & Feed AI",
+      "heroSubtitle": "Verified swine data. Actionable signals. API-first — 27 years and 150M+ farm records (~32% of Korea's sow herd), anonymized and aggregated as a B2B data API.",
+      "heroCta": "Request API demo"
     },
     "services": {
       "title": "Incubation Hub | WiseLake",
@@ -429,9 +430,9 @@
     "cta": "Learn More",
     "members": {
       "erp": "Swine ERP · #1 Market Share",
-      "insight": "Weekly Critical-Task Alerts",
-      "pigos": "AI Farm Operations Platform · 2026",
-      "pigsignal": "Swine Data Global API · 2026"
+      "insight": "Weekly AI management report · every Monday",
+      "pigos": "Global pig-farming OS · pigos.io",
+      "pigsignal": "Swine risk data API · pigsignal.com"
     }
   },
   "footer": {
