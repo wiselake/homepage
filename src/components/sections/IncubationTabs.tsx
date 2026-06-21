@@ -5,14 +5,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const TABS = [
-  { id: "cre8pet", label: "cre8pet" },
   { id: "flow9", label: "Flow9" },
   { id: "qbridge", label: "QBridge" },
 ] as const;
 
 export function IncubationTabs() {
   const t = useTranslations("incubationTabs");
-  const [active, setActive] = useState<string>("cre8pet");
+  const [active, setActive] = useState<string>("flow9");
 
   useEffect(() => {
     const handleScroll = () => {

@@ -2,7 +2,18 @@ import { MetadataRoute } from "next";
 
 const baseUrl = "https://wiselake.ai";
 const locales = ["ko", "en"];
-const pages = ["", "/about", "/nanotrans", "/pigplan", "/services", "/b2b", "/roadmap"];
+const pages = [
+  "",
+  "/about",
+  "/nanotrans",
+  "/pigplan",
+  "/pigplan/insight",
+  "/pigplan/pigos-ai",
+  "/pigplan/pigsignal",
+  "/services",
+  "/b2b",
+  "/roadmap",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

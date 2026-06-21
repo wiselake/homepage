@@ -196,9 +196,6 @@
       "f3_desc": "별도 앱 설치 없이 카카오톡·문자로 받아 현장에서 바로 확인합니다"
     }
   },
-  "pigplanTabs": {
-    "nav": "피그플랜 사업군 탐색"
-  },
   "pigplanCore": {
     "label": "PigOS AI",
     "title": "데이터가 말하고, AI가 행동한다",
@@ -270,19 +267,7 @@
     }
   },
   "incubationTabs": {
-    "nav": "인큐베이팅 허브 서비스 탐색",
-    "subtitle": "현장의 아이디어가 서비스가 되는 곳"
-  },
-  "cre8pet": {
-    "title": "반려견과 함께하는 똑똑한 산책",
-    "subtitle": "GPS 기반으로 산책을 기록하고, 반려견과의 소중한 순간을 보관하세요.",
-    "desc": "cre8pet은 반려견과의 산책을 GPS로 기록하고, 사진과 함께 추억을 타임라인으로 보관하는 글로벌 반려동물 서비스입니다. 매일의 산책이 데이터가 되고, 소중한 기록이 됩니다.",
-    "platform": "Android · iOS · 6개 언어 지원 · 무료",
-    "f1": "GPS 기반 실시간 산책 경로 기록 및 거리/시간 측정",
-    "f2": "반려견별 산책 히스토리와 사진 타임라인",
-    "f3": "일일 미션과 챌린지로 즐거운 산책 습관",
-    "f4": "6개 언어 지원 (한/영/일/중/스페인어/포르투갈어)",
-    "imageAlt": "cre8pet 앱 산책 화면"
+    "nav": "인큐베이팅 허브 서비스 탐색"
   },
   "b2bSaas": {
     "title": "B2B SaaS 솔루션",
@@ -395,6 +380,27 @@
       "heroTitle": "대한민국 1위 양돈 ERP",
       "heroSubtitle": "데이터 기반 스마트 양돈 관리 플랫폼"
     },
+    "pigplanInsight": {
+      "title": "Insight PigPlan | 와이즈레이크",
+      "description": "매주 월요일, 농장주에게 이번 주 핵심 작업을 알려주는 양돈 알림 서비스. 27년 데이터 기반 PSY 개선.",
+      "heroLabel": "Insight PigPlan",
+      "heroTitle": "매주 월요일, 놓치면 안 되는 작업목록",
+      "heroSubtitle": "27년 데이터가 분석한 이번 주 핵심 작업을 농장주 스마트폰으로"
+    },
+    "pigplanPigos": {
+      "title": "PigOS AI | 와이즈레이크",
+      "description": "전 세계 양돈 농장을 위한 AI Farm Management 플랫폼. 데이터가 분석하고, AI가 행동을 제시합니다. 2026 출시 예정.",
+      "heroLabel": "PigOS AI",
+      "heroTitle": "데이터가 말하고, AI가 행동한다",
+      "heroSubtitle": "전 세계 양돈 농장의 수익을 올리는 AI 운영시스템"
+    },
+    "pigplanPigsignal": {
+      "title": "PigSignal | 와이즈레이크",
+      "description": "27년·1.5억 건 양돈 데이터를 글로벌 REST API로. NanoTrans x402 자동결제 연동. 2026 출시 예정.",
+      "heroLabel": "PigSignal",
+      "heroTitle": "양돈 데이터를 글로벌 API로",
+      "heroSubtitle": "27년간 축적된 1.5억 건 데이터를 REST API로 제공합니다"
+    },
     "services": {
       "title": "인큐베이팅 허브 | 와이즈레이크",
       "description": "현장의 아이디어가 서비스가 되는 곳. 와이즈레이크 인큐베이팅 프로젝트.",
@@ -417,35 +423,6 @@
       "heroSubtitle": "나노에서 시작해, 글로벌 인프라로 완성합니다"
     }
   },
-  "ecosystemArch": {
-    "label": "생태계 구조",
-    "title": "모든 서비스는 NanoTrans로 수렴한다",
-    "desc": "PigPlan이 700개 농가의 신뢰를 쌓고, cre8 시리즈가 실제 사용자를 확보하는 동안 데이터와 콘텐츠 자산이 축적됩니다. 그 위에서 NanoTrans가 AI 경제의 결제 인프라로 완성됩니다.",
-    "imageAlt": "WiseLake 사업 생태계 아키텍처 다이어그램: Layer 1 Interaction(Human·AI Agent) → Layer 2 Application(cre8 시리즈·PigPlan·B2B SaaS) → Layer 3 Asset(콘텐츠·데이터 자산) → Layer 4 Infrastructure(NanoTrans)",
-    "mobileNote": "전체 다이어그램은 가로 방향 화면에서 더 잘 보입니다.",
-    "layers": {
-      "layer1": {
-        "label": "Layer 1 · Interaction",
-        "title": "사용자 접점",
-        "desc": "반려견 산책, K-Culture 콘텐츠. 실제 사람이 매일 사용하는 서비스에서 시작합니다."
-      },
-      "layer2": {
-        "label": "Layer 2 · Application",
-        "title": "다양한 서비스 운영",
-        "desc": "PigPlan, cre8pet 등 각각 독립적으로 작동하며, 실제 시장에서 검증됩니다."
-      },
-      "layer3": {
-        "label": "Layer 3 · Asset",
-        "title": "데이터·콘텐츠 자산 축적",
-        "desc": "20년치 양돈 데이터, K-Culture 콘텐츠, 반려견 산책 기록. 서비스를 운영할수록 자산이 쌓입니다."
-      },
-      "layer4": {
-        "label": "Layer 4 · Infrastructure",
-        "title": "NanoTrans 결제 인프라 완성",
-        "desc": "축적된 자산이 API로 거래되고, 콘텐츠가 단위 과금될 때 NanoTrans가 그 흐름의 기준이 됩니다."
-      }
-    }
-  },
   "serviceOverview": {
     "label": "사업 영역",
     "title": "와이즈레이크의 서비스",
@@ -460,15 +437,22 @@
       "summary": "20년 데이터, 700+ 농가, 시장점유율 1위. 한국 1위의 양돈 ERP가 글로벌 데이터 API로 진화합니다.",
       "cta": "자세히 보기"
     },
-    "services": {
-      "title": "cre8pet",
-      "summary": "반려견과 함께하는 똑똑한 산책. GPS 기반 산책 기록 서비스. Android · iOS 출시.",
-      "cta": "자세히 보기"
-    },
     "b2b": {
       "title": "B2B SaaS",
       "summary": "실제가용현금 리포트(Flow9)와 고객관리(QBridge). 10명이 100명의 속도를 내는 도구.",
       "cta": "자세히 보기"
+    }
+  },
+  "pigplanFamily": {
+    "label": "PigPlan 제품군",
+    "title": "27년 데이터가 만든 양돈 솔루션 라인업",
+    "current": "현재 보는 중",
+    "cta": "자세히 보기",
+    "members": {
+      "erp": "양돈 ERP · 시장점유율 1위",
+      "insight": "주간 핵심 작업 알림 서비스",
+      "pigos": "AI 농장 운영 플랫폼 · 2026",
+      "pigsignal": "양돈 데이터 글로벌 API · 2026"
     }
   },
   "footer": {

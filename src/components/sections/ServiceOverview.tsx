@@ -28,16 +28,6 @@ const SERVICES = [
     ),
   },
   {
-    key: "services",
-    href: "/services" as const,
-    icon: (
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
     key: "b2b",
     href: "/b2b" as const,
     icon: (
@@ -112,7 +102,7 @@ export function ServiceOverview() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {SERVICES.map((service, i) => (
           <ServiceCard
             key={service.key}

@@ -7,10 +7,17 @@ import { LanguageToggle } from "@/components/common/LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
+const PIGPLAN_CHILDREN = [
+  { label: "PigPlan", href: "/pigplan" },
+  { label: "Insight PigPlan", href: "/pigplan/insight" },
+  { label: "PigOS AI", href: "/pigplan/pigos-ai" },
+  { label: "PigSignal", href: "/pigplan/pigsignal" },
+] as const;
+
 const NAV_ITEMS = [
   { key: "about", href: "/about" },
   { key: "nanotrans", href: "/nanotrans" },
-  { key: "pigplan", href: "/pigplan" },
+  { key: "pigplan", href: "/pigplan", children: PIGPLAN_CHILDREN },
   { key: "services", href: "/services" },
   { key: "roadmap", href: "/roadmap" },
   { key: "contact", href: "/#contact" },
@@ -100,24 +107,68 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
-          {NAV_ITEMS.map(({ key, href }) => (
-            <Link
-              key={key}
-              href={href}
-              className={`text-sm transition-colors duration-300 relative group ${
-                isActive(href)
-                  ? "text-text-primary"
-                  : "text-text-secondary hover:text-text-primary"
-              }`}
-            >
-              {t(key)}
-              <span
-                className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
-                  isActive(href) ? "w-full" : "w-0 group-hover:w-full"
+          {NAV_ITEMS.map((item) =>
+            "children" in item && item.children ? (
+              <div key={item.key} className="relative group/pp">
+                <Link
+                  href={item.href}
+                  className={`flex items-center gap-1 text-sm transition-colors duration-300 ${
+                    isActive(item.href)
+                      ? "text-text-primary"
+                      : "text-text-secondary hover:text-text-primary"
+                  }`}
+                >
+                  {t(item.key)}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    className="w-3.5 h-3.5 mt-px transition-transform duration-300 group-hover/pp:rotate-180"
+                  >
+                    <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+                {/* Dropdown */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover/pp:opacity-100 group-hover/pp:visible group-hover/pp:translate-y-0 group-focus-within/pp:opacity-100 group-focus-within/pp:visible group-focus-within/pp:translate-y-0">
+                  <div className="min-w-[208px] rounded-xl glass-strong border border-border p-2 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        aria-current={pathname === child.href ? "page" : undefined}
+                        className={`block px-4 py-2.5 rounded-lg text-sm transition-colors duration-200 ${
+                          pathname === child.href
+                            ? "text-accent"
+                            : "text-text-secondary hover:text-text-primary hover:bg-white/[0.04]"
+                        }`}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`text-sm transition-colors duration-300 relative group ${
+                  isActive(item.href)
+                    ? "text-text-primary"
+                    : "text-text-secondary hover:text-text-primary"
                 }`}
-              />
-            </Link>
-          ))}
+              >
+                {t(item.key)}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                    isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Right side */}
@@ -175,24 +226,47 @@ export function Header() {
             </div>
 
             <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)] gap-10">
-              {NAV_ITEMS.map(({ key, href }, i) => (
+              {NAV_ITEMS.map((item, i) => (
                 <motion.div
-                  key={key}
+                  key={item.key}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
+                  className="flex flex-col items-center gap-3"
                 >
                   <Link
-                    href={href}
+                    href={item.href}
                     className={`text-2xl font-light tracking-wide transition-colors ${
-                      isActive(href)
+                      ("children" in item && item.children
+                        ? pathname === item.href
+                        : isActive(item.href))
                         ? "text-accent"
                         : "text-text-secondary hover:text-text-primary"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
-                    {t(key)}
+                    {t(item.key)}
                   </Link>
+                  {"children" in item && item.children && (
+                    <div className="flex flex-col items-center gap-2.5">
+                      {item.children
+                        .filter((child) => child.href !== item.href)
+                        .map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`text-base tracking-wide transition-colors ${
+                              pathname === child.href
+                                ? "text-accent"
+                                : "text-text-secondary/80 hover:text-text-primary"
+                            }`}
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>

@@ -196,9 +196,6 @@
       "f3_desc": "Delivered via KakaoTalk or SMS — check on-site without installing any app"
     }
   },
-  "pigplanTabs": {
-    "nav": "PigPlan business navigation"
-  },
   "pigplanCore": {
     "label": "PigOS AI",
     "title": "Data Speaks. AI Acts.",
@@ -270,19 +267,7 @@
     }
   },
   "incubationTabs": {
-    "nav": "Incubation Hub service navigation",
-    "subtitle": "Where Field Ideas Become Real Services"
-  },
-  "cre8pet": {
-    "title": "Smart Walks with Your Dog",
-    "subtitle": "Record GPS-based walks and preserve every precious moment with your pet.",
-    "desc": "cre8pet records your dog walks via GPS and preserves memories with photos in a timeline. Every daily walk becomes data, and every moment becomes a lasting record.",
-    "platform": "Android · iOS · 6 Languages · Free",
-    "f1": "Real-time GPS walk tracking with distance and time",
-    "f2": "Per-pet walk history and photo timeline",
-    "f3": "Daily missions and challenges for fun walk habits",
-    "f4": "6 languages (KR/EN/JP/ZH/ES/PT)",
-    "imageAlt": "cre8pet app walk screen"
+    "nav": "Incubation Hub service navigation"
   },
   "b2bSaas": {
     "title": "B2B SaaS Solutions",
@@ -395,6 +380,27 @@
       "heroTitle": "#1 Swine ERP Solution in Korea",
       "heroSubtitle": "Data-driven smart swine management platform"
     },
+    "pigplanInsight": {
+      "title": "Insight PigPlan | WiseLake",
+      "description": "Every Monday, the swine alert service that tells farm owners this week's critical tasks. PSY improvement backed by 27 years of data.",
+      "heroLabel": "Insight PigPlan",
+      "heroTitle": "Every Monday, the Tasks You Can't Afford to Miss",
+      "heroSubtitle": "This week's critical tasks, analyzed from 27 years of data, sent to the farm owner's phone"
+    },
+    "pigplanPigos": {
+      "title": "PigOS AI | WiseLake",
+      "description": "An AI Farm Management platform for swine farms worldwide. Data analyzes, AI recommends the action. Launching 2026.",
+      "heroLabel": "PigOS AI",
+      "heroTitle": "Data Speaks, AI Acts",
+      "heroSubtitle": "The AI operating system that raises the profitability of swine farms worldwide"
+    },
+    "pigplanPigsignal": {
+      "title": "PigSignal | WiseLake",
+      "description": "27 years and 150M records of swine data as a global REST API. Integrated with NanoTrans x402 auto-payment. Launching 2026.",
+      "heroLabel": "PigSignal",
+      "heroTitle": "Swine Data as a Global API",
+      "heroSubtitle": "150M records accumulated over 27 years, delivered as REST APIs"
+    },
     "services": {
       "title": "Incubation Hub | WiseLake",
       "description": "Where field ideas become real services. WiseLake incubation projects.",
@@ -417,35 +423,6 @@
       "heroSubtitle": "Starting from nano, completing as global infrastructure"
     }
   },
-  "ecosystemArch": {
-    "label": "Ecosystem Architecture",
-    "title": "Every Service Converges on NanoTrans",
-    "desc": "While PigPlan earns trust across 700+ farms and cre8 series builds a real user base — data and content assets accumulate. On top of that foundation, NanoTrans completes itself as the payment infrastructure of the AI economy.",
-    "imageAlt": "WiseLake business ecosystem architecture diagram: Layer 1 Interaction (Human · AI Agent) → Layer 2 Application (cre8 series · PigPlan · B2B SaaS) → Layer 3 Asset (Content & Data Assets) → Layer 4 Infrastructure (NanoTrans)",
-    "mobileNote": "Rotate to landscape for the best view of this diagram.",
-    "layers": {
-      "layer1": {
-        "label": "Layer 1 · Interaction",
-        "title": "User Touch Points",
-        "desc": "Dog walks, K-Culture content — it starts with services real people use every day."
-      },
-      "layer2": {
-        "label": "Layer 2 · Application",
-        "title": "A Diverse Service Portfolio",
-        "desc": "PigPlan, cre8pet, and more. Each operates independently and is validated in real markets."
-      },
-      "layer3": {
-        "label": "Layer 3 · Asset",
-        "title": "Data and Content Assets Accumulate",
-        "desc": "20 years of swine data, K-Culture content, dog walk records. The longer we operate, the deeper the asset base grows."
-      },
-      "layer4": {
-        "label": "Layer 4 · Infrastructure",
-        "title": "NanoTrans Infrastructure Is Realized",
-        "desc": "When accumulated assets are traded via API and content is charged per unit — NanoTrans becomes the standard that governs that flow."
-      }
-    }
-  },
   "serviceOverview": {
     "label": "Services",
     "title": "What We Build",
@@ -460,15 +437,22 @@
       "summary": "20 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
       "cta": "Learn More"
     },
-    "services": {
-      "title": "cre8pet",
-      "summary": "Smart walks with your dog. GPS-based walk tracking service. Available on Android & iOS.",
-      "cta": "Learn More"
-    },
     "b2b": {
       "title": "B2B SaaS",
       "summary": "Available-cash reports (Flow9) and customer management (QBridge). Tools for a team of 10 to move at the speed of 100.",
       "cta": "Learn More"
+    }
+  },
+  "pigplanFamily": {
+    "label": "PigPlan Product Family",
+    "title": "A Swine Solution Lineup Built on 27 Years of Data",
+    "current": "You are here",
+    "cta": "Learn More",
+    "members": {
+      "erp": "Swine ERP · #1 Market Share",
+      "insight": "Weekly Critical-Task Alerts",
+      "pigos": "AI Farm Operations Platform · 2026",
+      "pigsignal": "Swine Data Global API · 2026"
     }
   },
   "footer": {

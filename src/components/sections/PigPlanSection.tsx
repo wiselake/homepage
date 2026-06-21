@@ -86,18 +86,20 @@ export function PigPlanSection({ showHeader = true }: { showHeader?: boolean }) 
   );
 }
 
-export function InsightPigPlanSection() {
+export function InsightPigPlanSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("insightPigplan");
 
   return (
     <Section id="insight-pigplan" dark={false}>
       {/* Section header */}
-      <div className="text-center mb-12">
-        <SectionLabel>{t("label")}</SectionLabel>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-text-dark">
-          {t("title")}
-        </h2>
-      </div>
+      {showHeader && (
+        <div className="text-center mb-12">
+          <SectionLabel>{t("label")}</SectionLabel>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-text-dark">
+            {t("title")}
+          </h2>
+        </div>
+      )}
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left - Video */}
@@ -390,7 +392,7 @@ function PigSignalMarketplace({ inView }: { inView: boolean }) {
 
 const API_KEYS = ["supplyForecast", "costIndex", "riskSignal"] as const;
 
-export function PigSignalSection() {
+export function PigSignalSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigSignal");
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -399,10 +401,14 @@ export function PigSignalSection() {
     <Section id="pigsignal" dark>
       {/* Header */}
       <div className="text-center mb-14">
-        <SectionLabel>{t("label")}</SectionLabel>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          {t("title")}
-        </h2>
+        {showHeader && (
+          <>
+            <SectionLabel>{t("label")}</SectionLabel>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              {t("title")}
+            </h2>
+          </>
+        )}
         <p className="text-text-secondary text-lg max-w-3xl mx-auto mb-1">
           {t("subtitle_line1")}
         </p>
@@ -491,7 +497,7 @@ const FEATURE_ICONS = [
   <svg key="f4" viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-accent"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" /><path d="M3 9h18M9 9v12M15 9v12" stroke="currentColor" strokeWidth="1" opacity="0.4" /><circle cx="6" cy="6" r="1" fill="currentColor" opacity="0.5" /><circle cx="12" cy="6" r="1" fill="currentColor" opacity="0.5" /></svg>,
 ];
 
-export function PigPlanCoreSection() {
+export function PigPlanCoreSection({ showHeader = true }: { showHeader?: boolean }) {
   const t = useTranslations("pigplanCore");
   const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
@@ -501,13 +507,17 @@ export function PigPlanCoreSection() {
     <Section id="pigplan-core" dark={false}>
       {/* Header */}
       <div className="text-center mb-14">
-        <SectionLabel>{t("label")}</SectionLabel>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-text-dark">
-          {t("title")}
-        </h2>
-        <p className="text-text-muted text-lg max-w-2xl mx-auto mb-6">
-          {t("subtitle")}
-        </p>
+        {showHeader && (
+          <>
+            <SectionLabel>{t("label")}</SectionLabel>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-text-dark">
+              {t("title")}
+            </h2>
+            <p className="text-text-muted text-lg max-w-2xl mx-auto mb-6">
+              {t("subtitle")}
+            </p>
+          </>
+        )}
         <div className="max-w-3xl mx-auto">
           <p className="text-text-muted text-base leading-relaxed mb-1">
             {t("desc_line1")}
