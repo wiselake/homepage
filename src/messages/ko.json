@@ -471,11 +471,11 @@
       "heroCta": "플러그인 보기"
     },
     "pigplan": {
-      "title": "PigPlan | 와이즈레이크",
-      "description": "대한민국 양돈 ERP 시장점유율 1위. 데이터 기반 스마트 양돈 솔루션.",
-      "heroLabel": "PigPlan",
-      "heroTitle": "대한민국 1위 양돈 ERP",
-      "heroSubtitle": "데이터 기반 스마트 양돈 관리 플랫폼"
+      "title": "PigPlan Suite | 와이즈레이크",
+      "description": "27년 양돈 데이터 위에 선 4개의 주력 제품 — PigPlan ERP·Insight PigPlan·PigOS·PigSignal. 양돈 산업의 경영·운영·리스크를 데이터로.",
+      "heroLabel": "PigPlan Suite",
+      "heroTitle": "27년 데이터 위에 선 4개의 주력 제품",
+      "heroSubtitle": "시장점유율 1위 ERP를 토대로, 양돈 산업의 경영·운영·리스크를 데이터로 책임집니다."
     },
     "pigplanInsight": {
       "title": "Insight PigPlan | 와이즈레이크",
@@ -533,8 +533,8 @@
       "cta": "자세히 보기"
     },
     "pigplan": {
-      "title": "PigPlan",
-      "summary": "27년 데이터, 700+ 농가, 시장점유율 1위. 한국 1위의 양돈 ERP가 글로벌 데이터 API로 진화합니다.",
+      "title": "PigPlan Suite",
+      "summary": "27년 데이터·700+ 농가·시장점유율 1위. 하나의 데이터 기반 위 양돈 ERP·AI 리포트·운영체제·리스크 API 4개 주력 제품.",
       "cta": "자세히 보기"
     },
     "b2b": {
@@ -544,15 +544,18 @@
     }
   },
   "pigplanFamily": {
-    "label": "PigPlan 제품군",
-    "title": "27년 데이터가 만든 양돈 솔루션 라인업",
+    "label": "PigPlan Suite",
+    "title": "27년 데이터 위에 선 4개의 주력 제품",
+    "subtitle": "시장점유율 1위 ERP가 쌓은 27년·700+ 농가 데이터를 기반으로, 네 개의 제품이 양돈 산업의 경영·운영·리스크를 각각 책임집니다.",
+    "badge": "27년 양돈 데이터",
     "current": "현재 보는 중",
     "cta": "자세히 보기",
+    "ownDomain": "자체 도메인",
     "members": {
-      "erp": "양돈 ERP · 시장점유율 1위",
+      "erp": "양돈 경영의 표준 · 시장점유율 1위",
       "insight": "주간 AI 경영 리포트 · 매주 월요일",
       "pigos": "글로벌 양돈 운영체제 · pigos.io",
-      "pigsignal": "양돈 리스크 데이터 API · pigsignal.com"
+      "pigsignal": "양돈 리스크 데이터 API · 150M+ 레코드"
     }
   },
   "footer": {

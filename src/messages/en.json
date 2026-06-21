@@ -471,11 +471,11 @@
       "heroCta": "View the plugin"
     },
     "pigplan": {
-      "title": "PigPlan | WiseLake",
-      "description": "#1 market share in Korean swine ERP. Data-driven smart swine management solution.",
-      "heroLabel": "PigPlan",
-      "heroTitle": "#1 Swine ERP Solution in Korea",
-      "heroSubtitle": "Data-driven smart swine management platform"
+      "title": "PigPlan Suite | WiseLake",
+      "description": "Four flagship products built on 27 years of swine data — PigPlan ERP, Insight PigPlan, PigOS, and PigSignal — across management, operations, and risk.",
+      "heroLabel": "PigPlan Suite",
+      "heroTitle": "Four flagship products, built on 27 years of data",
+      "heroSubtitle": "Built on the #1 market-share ERP, the suite owns the management, operations, and risk layers of swine farming."
     },
     "pigplanInsight": {
       "title": "Insight PigPlan | WiseLake",
@@ -533,8 +533,8 @@
       "cta": "Learn More"
     },
     "pigplan": {
-      "title": "PigPlan",
-      "summary": "27 years of data, 700+ farms, #1 market share. Korea's top vertical SaaS evolving into a global data API.",
+      "title": "PigPlan Suite",
+      "summary": "27 years of data, 700+ farms, #1 market share. Four flagship products on one data foundation — ERP, AI reports, an operating system, and a risk API.",
       "cta": "Learn More"
     },
     "b2b": {
@@ -544,15 +544,18 @@
     }
   },
   "pigplanFamily": {
-    "label": "PigPlan Product Family",
-    "title": "A Swine Solution Lineup Built on 27 Years of Data",
+    "label": "PigPlan Suite",
+    "title": "Four flagship products built on 27 years of data",
+    "subtitle": "Powered by 27 years and 700+ farms of data from the #1 market-share ERP, four products own the management, operations, and risk layers of swine farming.",
+    "badge": "27 Years of Swine Data",
     "current": "You are here",
     "cta": "Learn More",
+    "ownDomain": "Own domain",
     "members": {
-      "erp": "Swine ERP · #1 Market Share",
+      "erp": "The standard for swine management · #1 market share",
       "insight": "Weekly AI management report · every Monday",
       "pigos": "Global pig-farming OS · pigos.io",
-      "pigsignal": "Swine risk data API · pigsignal.com"
+      "pigsignal": "Swine risk data API · 150M+ records"
     }
   },
   "footer": {

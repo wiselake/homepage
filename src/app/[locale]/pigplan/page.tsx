@@ -21,12 +21,12 @@ export default function PigPlanPage() {
   return (
     <>
       <PageHero namespace="pages.pigplan" />
-      <PigPlanSection showHeader={false} />
+      <PigPlanFamily />
+      <PigPlanSection />
       <PigPlanPsyProof />
       <PigPlanPillars />
       <PigPlanFeatures />
       <PartnerMarquee />
-      <PigPlanFamily />
     </>
   );
 }

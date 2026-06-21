@@ -8,10 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const PIGPLAN_CHILDREN = [
-  { label: "PigPlan", href: "/pigplan" },
-  { label: "Insight PigPlan", href: "/pigplan/insight" },
-  { label: "PigOS", href: "/pigplan/pigos-ai" },
-  { label: "PigSignal", href: "/pigplan/pigsignal" },
+  { id: "erp", label: "PigPlan ERP", href: "/pigplan" },
+  { id: "insight", label: "Insight PigPlan", href: "/pigplan/insight" },
+  { id: "pigos", label: "PigOS", href: "/pigplan/pigos-ai", domain: "pigos.io" },
+  { id: "pigsignal", label: "PigSignal", href: "/pigplan/pigsignal", domain: "pigsignal.com" },
 ] as const;
 
 const NAV_ITEMS = [
@@ -25,6 +25,7 @@ const NAV_ITEMS = [
 
 export function Header() {
   const t = useTranslations("nav");
+  const tFam = useTranslations("pigplanFamily");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -165,22 +166,60 @@ export function Header() {
                       : "opacity-0 invisible translate-y-1"
                   }`}
                 >
-                  <div className="min-w-[208px] rounded-xl glass-strong border border-border p-2 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
-                    {item.children.map((child) => (
+                  <div className="w-[min(92vw,560px)] rounded-2xl glass-strong border border-border p-3 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+                    {/* Suite header */}
+                    <div className="flex items-center justify-between gap-4 px-3 pt-1.5 pb-3">
+                      <div>
+                        <p className="text-sm font-semibold text-text-primary">{tFam("label")}</p>
+                        <p className="text-xs text-text-muted">{tFam("badge")}</p>
+                      </div>
                       <Link
-                        key={child.href}
-                        href={child.href}
-                        aria-current={pathname === child.href ? "page" : undefined}
+                        href={item.href}
                         onClick={() => setPpOpen(false)}
-                        className={`block px-4 py-2.5 rounded-lg text-sm transition-colors duration-200 ${
-                          pathname === child.href
-                            ? "text-accent"
-                            : "text-text-secondary hover:text-text-primary hover:bg-white/[0.04]"
-                        }`}
+                        className="group/all inline-flex items-center gap-1 text-xs font-medium text-accent-dark whitespace-nowrap"
                       >
-                        {child.label}
+                        {tFam("cta")}
+                        <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 transition-transform duration-300 group-hover/all:translate-x-0.5">
+                          <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                       </Link>
-                    ))}
+                    </div>
+                    {/* 4 co-equal product cards */}
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {item.children.map((child) => {
+                        const active = pathname === child.href;
+                        const domain = "domain" in child ? child.domain : undefined;
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            aria-current={active ? "page" : undefined}
+                            onClick={() => setPpOpen(false)}
+                            className={`group/card relative rounded-xl p-3 transition-colors duration-200 ${
+                              active ? "bg-accent/10" : "hover:bg-black/[0.04]"
+                            }`}
+                          >
+                            {domain && (
+                              <span
+                                aria-label={tFam("ownDomain")}
+                                title={`${tFam("ownDomain")} · ${domain}`}
+                                className="absolute top-3 right-3 text-text-muted/45 group-hover/card:text-accent transition-colors"
+                              >
+                                <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3 h-3">
+                                  <path d="M5 11L11 5M6.5 5H11v4.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              </span>
+                            )}
+                            <span className={`block text-sm font-semibold ${active ? "text-accent-dark" : "text-text-primary"}`}>
+                              {child.label}
+                            </span>
+                            <span className="mt-1 block text-xs text-text-muted leading-snug pr-4">
+                              {tFam(`members.${child.id}`)}
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
