@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
@@ -13,49 +12,24 @@ const HeroParticles = dynamic(
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
-  const [videoFailed, setVideoFailed] = useState(false);
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-ink"
     >
-      {/* Video background */}
+      {/* Clean ink background — subtle gold particle field */}
       <div className="absolute inset-0 z-[1]">
-        {!videoFailed && (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            onCanPlay={() => setVideoReady(true)}
-            onError={() => setVideoFailed(true)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoReady ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/5" />
-
-        {/* Particles fallback while video loads or if it fails */}
-        <div
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            videoReady ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-        >
-          <HeroParticles />
-        </div>
+        <HeroParticles />
       </div>
 
-      {/* Top scrim — keeps the transparent header legible over bright video frames */}
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/45 to-transparent z-[2] pointer-events-none" />
+      {/* Soft gold glow behind the headline (echoes the ink stat bands) */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(55%_45%_at_50%_40%,rgba(245,166,35,0.10),transparent_70%)] pointer-events-none" />
+      {/* Vignette — focus + edge depth */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(130%_120%_at_50%_45%,transparent_50%,rgba(6,11,19,0.7))] pointer-events-none" />
+
+      {/* Top scrim — keeps the transparent header legible */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-[2] pointer-events-none" />
 
       {/* Content overlay */}
       <div className="relative z-[3] text-center px-6 max-w-4xl mx-auto">
