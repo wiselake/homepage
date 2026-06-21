@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { motion, useInView } from "framer-motion";
 import { useRef, type ReactNode } from "react";
-import { NanoTransComparison } from "./NanoTransComparison";
+import { NanoTransHowItWorks } from "./NanoTransHowItWorks";
 import { NanoTransCoreTech } from "./NanoTransCoreTech";
 
 const FEATURES = ["microPayment", "settlement", "payPerContent", "payPerUse"] as const;
@@ -153,7 +153,7 @@ export function NanoTransSection({ showHeader = true }: { showHeader?: boolean }
       </div>
 
       <NanoTransCoreTech />
-      <NanoTransComparison />
+      <NanoTransHowItWorks />
       <ComparisonTable />
 
       {/* Bottom CTA */}

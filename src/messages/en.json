@@ -57,96 +57,75 @@
     "conclusion_line2": "Only the payment infrastructure is still stuck in the past."
   },
   "nanotrans": {
-    "title": "NanoTrans",
-    "subtitle": "Just as HTTP became the standard for information transfer, the x402 Protocol becomes the standard for AI agent payments.",
-    "cta": "Get Started",
+    "title": "Get Paid When AI Agents Read Your Content",
+    "subtitle": "With HTTP 402 and the x402 protocol, AI agents discover and pay for your content — settled trustlessly on-chain in USDC on Base L2.",
+    "cta": "View the NanoTrans plugin",
     "features": {
       "microPayment": {
-        "title": "Micro Transactions from $0.01",
-        "desc": "A $0.01 AI data query, a $0.001 news sentence — all tradeable. Recovering nano-scale value that legacy systems gave up on."
+        "title": "x402 Paywall",
+        "desc": "Each article responds to agent requests with HTTP 402 and on-chain payment terms. Set per-article or sitewide pricing in USDC."
       },
       "settlement": {
-        "title": "0.1s Global Settlement",
-        "desc": "An AI agent in Seoul pays instantly for a response from a Tokyo data center. In 0.1 seconds, anywhere in the world."
+        "title": "Bazaar Discovery",
+        "desc": "Structured Bazaar metadata lists your content in the Coinbase CDP catalog and agent marketplaces, so AI agents can actually find it."
       },
       "payPerContent": {
-        "title": "Pay-per-Content",
-        "desc": "$0.05 for an article, $0.01 for a report page. No subscriptions, no ads — pay only for what you actually consume."
+        "title": "WordPress-Native",
+        "desc": "A standard plugin with a paywall metabox and a Gutenberg sidebar. Just set your wallet — no blockchain code required."
       },
       "payPerUse": {
-        "title": "Pay-per-Use",
-        "desc": "$0.005 per API call. 1,000 calls = $5. Pay exactly for what you use. The fundamental principle of AI agent transactions."
+        "title": "On-chain Splits · 90%+",
+        "desc": "The immutable NanoTransSplitter contract divides every payment automatically. No custody, no manual payouts — creators keep 90%+."
       }
     }
   },
   "comparison": {
     "header": {
       "category": "Category",
-      "traditional": "Legacy Payments"
+      "traditional": "Today"
     },
     "rows": {
       "minAmount": {
-        "label": "Minimum Transaction",
-        "traditional": "$1+",
-        "nanotrans": "$0.01"
+        "label": "AI agent access",
+        "traditional": "Scraped for free",
+        "nanotrans": "Paid per read in USDC"
       },
       "speed": {
-        "label": "Settlement Speed",
-        "traditional": "1 sec – several days",
-        "nanotrans": "0.1 sec"
+        "label": "Settlement",
+        "traditional": "Intermediated, delayed",
+        "nanotrans": "Instant on-chain (Base L2)"
       },
       "fees": {
-        "label": "Fee Structure",
-        "traditional": "Complex / Variable",
-        "nanotrans": "Ultra-low / Fixed"
+        "label": "Creator revenue",
+        "traditional": "0",
+        "nanotrans": "90%+"
       }
     }
   },
   "coreTech": {
-    "label": "Core Technology",
-    "title": "4 Core Technologies Powering NanoTrans",
-    "subtitle": "From discovery to payment, security, and settlement — completing the entire AI agent economy flow in a single protocol.",
-    "protocol": "All technologies operate on a single protocol",
+    "label": "How it works",
+    "title": "Four Trustless Foundations",
+    "subtitle": "From discovery to payment, non-custodial security, and on-chain splits — all verifiable on the x402 standard and Base L2.",
+    "protocol": "All built on the x402 standard",
     "nanoSense": {
-      "name": "NanoSense\u2122",
-      "tagline": "Agent Auto-Discovery Protocol",
-      "desc": "AI agents **autonomously discover** and purchase paid content — no human intervention needed. Built on the **x402 standard endpoint**, completing discovery, verification, payment, and consumption in a single interface."
+      "name": "x402 Protocol",
+      "tagline": "Agent-Native Payments",
+      "desc": "On the **HTTP 402** standard, agents **discover, verify, pay, and consume** content. Each **x402 v2** response carries the payment terms and Bazaar discovery metadata."
     },
     "nanoVault": {
-      "name": "NanoVault\u2122",
-      "tagline": "Built-in Financial Security Layer",
-      "desc": "**6-stage signature verification**, replay attack prevention, **on/off-chain cross-validation**, and **circuit breakers** — financial-grade multi-layer security, activated on install. No add-ons required."
+      "name": "Non-custodial",
+      "tagline": "Non-custodial by Design",
+      "desc": "NanoTrans **never holds your funds.** Payments split directly on-chain, and payment credentials live only in a **Cloudflare Worker** — never in WordPress."
     },
     "nanoPulse": {
-      "name": "NanoPulse\u2122",
-      "tagline": "Real-time Dynamic Pricing Engine",
-      "desc": "Automatically calculates **optimal pricing** per content based on requester type, time, and demand volume — in **real time**. Enables flexible monetization strategies that static pricing simply cannot deliver."
+      "name": "USDC · Base L2",
+      "tagline": "Instant On-chain Settlement",
+      "desc": "Settlement happens in **USDC on Base L2** — no intermediary, finalized on-chain the moment an agent pays."
     },
     "nanoSplit": {
-      "name": "NanoSplit\u2122",
-      "tagline": "On-chain Instant Revenue Distribution",
-      "desc": "**Smart contracts** distribute revenue instantly at pre-set ratios upon payment. No settlement delays — every distribution is **permanently recorded on the blockchain**."
-    }
-  },
-  "ntComparison": {
-    "headerTraditional": "Traditional",
-    "trad": {
-      "amount": { "label": "Min. Transaction", "value": "$1+" },
-      "speed": { "label": "Settlement Speed", "value": "1 sec – days" },
-      "model": { "label": "Billing Model", "value": "Subscription / Ads" }
-    },
-    "nano": {
-      "amount": { "label": "Min. Transaction", "value": "$0.01" },
-      "speed": { "label": "Settlement Speed", "value": "0.1 sec" },
-      "model": { "label": "Billing Model", "value": "Pay-per-Use" }
-    },
-    "stat": {
-      "minTx": "Minimum Transaction",
-      "minTxValue": "$0.01",
-      "settlement": "Global Settlement",
-      "settlementValue": "0.1s",
-      "protocol": "Payment Protocol",
-      "protocolValue": "x402"
+      "name": "Verifiable Splitter",
+      "tagline": "Verifiable Revenue Splits",
+      "desc": "The immutable **NanoTransSplitter** divides revenue instantly. Its **deterministic address and verified code hash** are checked before settlement, and creators keep **90%+**."
     }
   },
   "pigplan": {
@@ -367,11 +346,11 @@
     },
     "nanotrans": {
       "title": "NanoTrans | WiseLake",
-      "description": "Micropayment infrastructure built on x402 Protocol. Settle even $0.01 globally in 0.1 seconds.",
+      "description": "An x402-based WordPress plugin that turns your content into a paid resource for AI agents — settled in USDC on Base L2, with creators keeping 90%+.",
       "heroLabel": "NanoTrans",
-      "heroTitle": "Nano-scale Micropayment Infrastructure",
-      "heroSubtitle": "Payment solution optimized for the AI agent economy, built on x402 Protocol",
-      "heroCta": "Get Started"
+      "heroTitle": "Get Paid When AI Agents Read Your Content",
+      "heroSubtitle": "An x402-based WordPress plugin that turns your articles into discoverable, agent-payable resources",
+      "heroCta": "View the plugin"
     },
     "pigplan": {
       "title": "PigPlan | WiseLake",
@@ -429,7 +408,7 @@
     "subtitle": "Each service operates independently, connected as one ecosystem centered on NanoTrans.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "Payment infrastructure for the AI agent economy. x402 Protocol, $0.01 to global settlement in 0.1s. The payment engine behind all WiseLake services.",
+      "summary": "An x402 WordPress plugin that pays you in USDC when AI agents read your content. On-chain settlement on Base L2, creators keep 90%+.",
       "cta": "Learn More"
     },
     "pigplan": {
@@ -462,5 +441,40 @@
     "businessNumber": "Business Reg. No.: 768-87-02255",
     "email": "wiselake@wiselake.co.kr",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  },
+  "howItWorks": {
+    "label": "How it works",
+    "title": "Publish content. AI agents pay you.",
+    "step1": {
+      "title": "Publish content",
+      "desc": "Write a post in WordPress, turn on the x402 paywall, and set a price."
+    },
+    "step2": {
+      "title": "Agents discover it",
+      "desc": "Bazaar metadata lets AI agents find your content."
+    },
+    "step3": {
+      "title": "x402 payment",
+      "desc": "The moment they read, they pay in USDC — settled on-chain on Base L2."
+    },
+    "step4": {
+      "title": "You keep 90%+",
+      "desc": "The Splitter divides revenue on-chain automatically — creators keep 90%+."
+    },
+    "stats": {
+      "payments": {
+        "value": "165M+",
+        "label": "x402 payments"
+      },
+      "volume": {
+        "value": "$50M+",
+        "label": "Settled volume"
+      },
+      "agents": {
+        "value": "69K+",
+        "label": "Active agents"
+      }
+    },
+    "statsNote": "Across the x402 protocol ecosystem"
   }
 }

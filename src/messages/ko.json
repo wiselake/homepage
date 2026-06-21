@@ -57,96 +57,75 @@
     "conclusion_line2": "결제 인프라만 아직 과거에 머물러 있습니다."
   },
   "nanotrans": {
-    "title": "나노트랜스",
-    "subtitle": "HTTP가 정보 전송의 표준이 된 것처럼, x402 프로토콜은 AI 에이전트 결제의 표준이 됩니다.",
-    "cta": "NanoTrans 시작하기",
+    "title": "AI 에이전트가 콘텐츠를 읽으면 수익이 됩니다",
+    "subtitle": "HTTP 402와 x402 프로토콜로 AI 에이전트가 당신의 콘텐츠를 발견하고 결제합니다. 정산은 Base L2 위 USDC로, 신뢰 없이 온체인에서.",
+    "cta": "NanoTrans 플러그인 보기",
     "features": {
       "microPayment": {
-        "title": "단돈 10원도 결제 가능",
-        "desc": "10원짜리 AI 데이터 쿼리, 1원짜리 뉴스 한 문장도 거래됩니다. 기존 시스템이 포기한 나노 단위 가치를 회수합니다."
+        "title": "x402 페이월",
+        "desc": "각 글이 에이전트 요청에 HTTP 402와 온체인 결제 조건으로 응답합니다. 글 단위·사이트 단위로 USDC 가격을 설정하세요."
       },
       "settlement": {
-        "title": "0.1초 글로벌 정산",
-        "desc": "서울에서 요청한 AI 에이전트가 도쿄 데이터센터의 응답에 즉시 대금을 지불합니다. 0.1초 안에, 전 세계 어디서든."
+        "title": "Bazaar 발견",
+        "desc": "구조화된 Bazaar 메타데이터가 콘텐츠를 Coinbase CDP 카탈로그와 에이전트 마켓플레이스에 등재해, AI 에이전트가 실제로 찾을 수 있게 합니다."
       },
       "payPerContent": {
-        "title": "Pay-per-Content",
-        "desc": "아티클 하나에 50원, 리포트 한 페이지에 10원. 구독 없이, 광고 없이, 실제로 소비한 콘텐츠에만 지불합니다."
+        "title": "워드프레스 네이티브",
+        "desc": "페이월 메타박스와 구텐베르크 사이드바를 갖춘 표준 플러그인. 지갑 주소만 설정하면 끝 — 블록체인 코드는 필요 없습니다."
       },
       "payPerUse": {
-        "title": "Pay-per-Use",
-        "desc": "API 호출 1회에 5원, 1,000회 호출하면 5,000원. 쓰는 만큼만, 정확하게. AI 에이전트 간 거래의 기본 원칙입니다."
+        "title": "온체인 분배 · 90%+",
+        "desc": "불변 NanoTransSplitter 컨트랙트가 결제를 자동 분배합니다. 수탁도 수동 정산도 없이 제작자가 90% 이상 보유합니다."
       }
     }
   },
   "comparison": {
     "header": {
       "category": "구분",
-      "traditional": "기존 결제"
+      "traditional": "기존 방식"
     },
     "rows": {
       "minAmount": {
-        "label": "최소 결제금액",
-        "traditional": "₩1,000 이상",
-        "nanotrans": "₩10"
+        "label": "AI 에이전트 접근",
+        "traditional": "무료 스크래핑",
+        "nanotrans": "USDC 유료 읽기"
       },
       "speed": {
-        "label": "정산 속도",
-        "traditional": "1초 ~ 수 일",
-        "nanotrans": "0.1초"
+        "label": "정산",
+        "traditional": "중개·지연",
+        "nanotrans": "Base L2 즉시 온체인"
       },
       "fees": {
-        "label": "수수료 구조",
-        "traditional": "복잡 / 가변",
-        "nanotrans": "극소 / 고정"
+        "label": "제작자 수익",
+        "traditional": "0",
+        "nanotrans": "90%+"
       }
     }
   },
   "coreTech": {
-    "label": "핵심 기술",
-    "title": "NanoTrans 4가지 핵심 기술",
-    "subtitle": "발견부터 결제, 보안, 정산까지 — AI 에이전트 경제의 전체 흐름을 하나의 프로토콜로 완결합니다.",
-    "protocol": "모든 기술은 하나의 프로토콜 위에서 동작합니다",
+    "label": "작동 원리",
+    "title": "신뢰 없이 작동하는 4가지 기반",
+    "subtitle": "발견부터 결제, 비수탁 보안, 온체인 분배까지 — 모두 x402 표준과 Base L2 위에서 검증 가능하게 동작합니다.",
+    "protocol": "모두 x402 표준 위에서 동작합니다",
     "nanoSense": {
-      "name": "NanoSense\u2122",
-      "tagline": "Agent Auto-Discovery Protocol",
-      "desc": "AI 에이전트가 유료 콘텐츠를 사람의 개입 없이 **스스로 발견**하고 결제까지 완료합니다. **x402 표준 엔드포인트** 기반으로 발견·확인·결제·소비의 전체 흐름을 하나의 인터페이스로 완결합니다."
+      "name": "x402 프로토콜",
+      "tagline": "Agent-Native Payments",
+      "desc": "**HTTP 402** 표준 위에서 에이전트가 콘텐츠를 **발견·확인·결제·소비**합니다. **x402 v2** 응답에 결제 조건과 Bazaar 발견 메타데이터가 함께 담깁니다."
     },
     "nanoVault": {
-      "name": "NanoVault\u2122",
-      "tagline": "Built-in Financial Security Layer",
-      "desc": "**6단계 서명 검증**, 리플레이 공격 방지, **온·오프체인 교차 검증**, **서킷 브레이커**까지 — 금융 수준의 다층 보안이 설치 즉시 활성화됩니다. 추가 보안 모듈 구매가 필요 없습니다."
+      "name": "비수탁 설계",
+      "tagline": "Non-custodial by Design",
+      "desc": "NanoTrans는 **자금을 보관하지 않습니다.** 결제는 온체인에서 직접 분배되고, 결제 자격증명은 워드프레스가 아닌 **Cloudflare Worker**에만 저장됩니다."
     },
     "nanoPulse": {
-      "name": "NanoPulse\u2122",
-      "tagline": "Real-time Dynamic Pricing Engine",
-      "desc": "요청자 유형, 시간대, 수요량을 **실시간**으로 반영하여 콘텐츠별 **최적 가격**을 자동 산출합니다. 정적 가격표로는 불가능한 유연한 수익화 전략을 지원합니다."
+      "name": "USDC · Base L2",
+      "tagline": "Instant On-chain Settlement",
+      "desc": "정산은 **Base L2의 USDC**로 이뤄집니다. 중개자 없이, 에이전트가 결제하는 즉시 온체인에서 확정됩니다."
     },
     "nanoSplit": {
-      "name": "NanoSplit\u2122",
-      "tagline": "On-chain Instant Revenue Distribution",
-      "desc": "**스마트 컨트랙트**가 결제 즉시 수익을 사전 설정된 비율로 분배합니다. 정산 지연 없이 수익이 확정되며, 모든 분배 내역은 **블록체인에 영구 기록**됩니다."
-    }
-  },
-  "ntComparison": {
-    "headerTraditional": "기존 결제",
-    "trad": {
-      "amount": { "label": "최소 거래금액", "value": "₩1,000 이상" },
-      "speed": { "label": "정산 속도", "value": "1초 ~ 수 일" },
-      "model": { "label": "과금 모델", "value": "구독 / 광고" }
-    },
-    "nano": {
-      "amount": { "label": "최소 거래금액", "value": "₩10" },
-      "speed": { "label": "정산 속도", "value": "0.1초" },
-      "model": { "label": "과금 모델", "value": "Pay-per-Use" }
-    },
-    "stat": {
-      "minTx": "최소 거래 단위",
-      "minTxValue": "₩10",
-      "settlement": "글로벌 정산",
-      "settlementValue": "0.1s",
-      "protocol": "결제 프로토콜",
-      "protocolValue": "x402"
+      "name": "검증 가능한 Splitter",
+      "tagline": "Verifiable Revenue Splits",
+      "desc": "불변 **NanoTransSplitter**가 결제 즉시 수익을 분배합니다. **결정적 주소와 검증된 코드 해시**를 정산 전에 확인하며, 제작자가 **90% 이상** 보유합니다."
     }
   },
   "pigplan": {
@@ -367,11 +346,11 @@
     },
     "nanotrans": {
       "title": "NanoTrans | 와이즈레이크",
-      "description": "x402 프로토콜 기반 마이크로페이먼트 인프라. 10원도 0.1초 만에 글로벌 정산.",
+      "description": "AI 에이전트가 콘텐츠를 읽으면 USDC로 수익이 되는 x402 기반 워드프레스 플러그인. Base L2 온체인 정산, 제작자 90%+ 보유.",
       "heroLabel": "NanoTrans",
-      "heroTitle": "나노 마이크로페이먼트 인프라",
-      "heroSubtitle": "x402 프로토콜 기반 AI 에이전트 결제 솔루션",
-      "heroCta": "NanoTrans 시작하기"
+      "heroTitle": "AI 에이전트가 콘텐츠를 읽으면 수익이 됩니다",
+      "heroSubtitle": "당신의 글을 에이전트가 발견하고 결제할 수 있는 리소스로 바꾸는 x402 기반 워드프레스 플러그인",
+      "heroCta": "플러그인 보기"
     },
     "pigplan": {
       "title": "PigPlan | 와이즈레이크",
@@ -429,7 +408,7 @@
     "subtitle": "각 서비스는 독립적으로 작동하면서, NanoTrans를 중심으로 하나의 생태계로 연결됩니다.",
     "nanotrans": {
       "title": "NanoTrans",
-      "summary": "AI 에이전트 경제의 결제 인프라. x402 프로토콜 기반, 10원부터 0.1초 글로벌 정산. 모든 WiseLake 서비스의 결제 엔진.",
+      "summary": "AI 에이전트가 콘텐츠를 읽으면 USDC로 수익이 되는 x402 워드프레스 플러그인. Base L2 온체인 정산, 제작자 90%+ 보유.",
       "cta": "자세히 보기"
     },
     "pigplan": {
@@ -462,5 +441,40 @@
     "businessNumber": "사업자등록번호: 768-87-02255",
     "email": "wiselake@wiselake.co.kr",
     "copyright": "© 2026 WiseLake, Inc. All rights reserved."
+  },
+  "howItWorks": {
+    "label": "어떻게 동작하나",
+    "title": "글을 올리면, AI가 결제합니다",
+    "step1": {
+      "title": "콘텐츠 게시",
+      "desc": "워드프레스에 글을 쓰고 x402 페이월을 켜 가격을 설정합니다."
+    },
+    "step2": {
+      "title": "에이전트 발견",
+      "desc": "Bazaar 메타데이터로 AI 에이전트가 당신의 글을 찾아냅니다."
+    },
+    "step3": {
+      "title": "x402 결제",
+      "desc": "읽는 순간 USDC로 즉시 결제 — Base L2 위 온체인 정산."
+    },
+    "step4": {
+      "title": "90%+ 내 수익",
+      "desc": "Splitter가 온체인에서 자동 분배 — 제작자가 90% 이상 보유합니다."
+    },
+    "stats": {
+      "payments": {
+        "value": "165M+",
+        "label": "x402 누적 결제"
+      },
+      "volume": {
+        "value": "$50M+",
+        "label": "정산 거래액"
+      },
+      "agents": {
+        "value": "69K+",
+        "label": "활성 에이전트"
+      }
+    },
+    "statsNote": "x402 프로토콜 생태계 전체 지표"
   }
 }
