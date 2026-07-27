@@ -1,0 +1,3 @@
+/* Claude Design 커스텀 태그 → 표준 HTML 렌더링 보정 */
+x-dc { display: block; }
+helmet { display: none; }
