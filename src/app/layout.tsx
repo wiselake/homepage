@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wiselake.ai"),
@@ -12,5 +13,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <html lang="ko">
+      <body>{children}</body>
+    </html>
+  );
 }
