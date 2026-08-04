@@ -1,3 +1,284 @@
-/* Claude Design 커스텀 태그 → 표준 HTML 렌더링 보정 */
-x-dc { display: block; }
-helmet { display: none; }
+/* ==========================================================================
+   WiseLake v3 공유 스타일시트 — v2 아키텍처
+   모든 public/v3/*.html 페이지가 공유한다. 페이지 고유 인라인 style은
+   일회성 미세조정(페이지당 최대 ~20개)만 허용 — 레이아웃/타이포/색은 아래 클래스 사용.
+   ========================================================================== */
+
+:root {
+  --navy:#0f2740; --ink:#1e293b; --muted:#64748b; --line:#e2e8f0; --bg-soft:#f1f5f9;
+  --blue:#2563eb; --blue-soft:#eff6ff; --green:#16a34a; --green-soft:#f0fdf4;
+  --teal:#0d9488; --teal-soft:#f0fdfa; --purple:#7c3aed; --purple-soft:#f5f3ff;
+}
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: #1d4ed8; }
+img { max-width: 100%; }
+svg { display: block; max-width: 100%; height: auto; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; }
+b, strong { font-weight: 700; }
+
+/* 앵커 이동 시 sticky nav(62px)에 헤딩이 가리지 않도록 */
+section[id] { scroll-margin-top: 76px; }
+
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- layout primitives ---------- */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+@media (max-width: 720px) { .container { padding: 0 20px; } }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-xs { gap: 8px; }
+.gap-sm { gap: 14px; }
+.gap-md { gap: 20px; }
+.gap-lg { gap: 32px; }
+.text-center { text-align: center; }
+.mt-sm { margin-top: 12px; }
+.mt-md { margin-top: 20px; }
+.mt-lg { margin-top: 28px; }
+.max-w-sm { max-width: 440px; }
+.max-w-md { max-width: 620px; }
+.max-w-lg { max-width: 760px; }
+
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+.section-tight { padding: clamp(40px, 6vw, 72px) 0; }
+.section-alt { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-dark { background: var(--navy); color: #ffffff; }
+
+/* ---------- typography scale ---------- */
+.h1 { margin: 0; font-size: clamp(30px, 6vw, 56px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; }
+.h2 { margin: 0; font-size: clamp(24px, 4.5vw, 36px); font-weight: 800; letter-spacing: -.025em; line-height: 1.22; }
+.h3 { margin: 0; font-size: clamp(17px, 2.4vw, 20px); font-weight: 800; letter-spacing: -.01em; }
+.lede { margin: 14px 0 0; font-size: clamp(14.5px, 1.6vw, 16px); line-height: 1.7; color: var(--muted); max-width: 680px; }
+.kicker { display: block; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow-gloss { margin-left: 2px; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: 0; }
+
+/* ---------- nav ---------- */
+.site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-nav .container { position: relative; display: flex; align-items: center; gap: 28px; height: 62px; }
+.nav-brand { display: flex; align-items: center; }
+.nav-brand img { height: 28px; display: block; }
+.nav-spacer { flex: 1; }
+.nav-menu { display: flex; align-items: center; gap: 22px; font-size: 13.5px; font-weight: 600; }
+.nav-menu a { color: #475569; }
+.nav-menu a:hover { color: var(--blue); }
+.nav-menu a[aria-current="page"] { color: var(--green); }
+@media (min-width: 861px) {
+  .nav-menu a[aria-current="page"] { border-bottom: 2px solid var(--green); padding-bottom: 2px; }
+}
+.nav-cta { color: #ffffff !important; background: var(--navy); border-radius: 999px; padding: 8px 18px; }
+.nav-cta:hover { background: #1d4ed8 !important; color: #ffffff !important; }
+.nav-lang { color: var(--muted); font-size: 12px; font-weight: 700; border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; }
+.nav-lang:hover { color: var(--blue); }
+.nav-lang b { color: var(--navy); }
+
+/* CSS-only 햄버거 (≤860px) */
+.nav-toggle-wrap { display: none; position: relative; width: 34px; height: 34px; }
+.nav-burger { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; width: 34px; height: 34px; pointer-events: none; }
+.nav-burger span { display: block; width: 18px; height: 2px; background: var(--navy); border-radius: 2px; }
+/* ARIA 패턴 결정(스펙 문서 §2 문구와 의도적으로 다름, 전 페이지 공통 기준으로 확정):
+   input[checkbox]에 aria-label을 주고 label에는 aria-hidden을 준다 — 반대(input aria-hidden +
+   label role="button")는 네이티브 키 핸들러가 없는 label에 키보드 조작을 떠넘기게 되어 별도 JS
+   keydown 처리 없이는 Enter/Space로 열 수 없다. 여기서는 실제로 포커스·토글이 가능한 input을
+   스크린리더/키보드 인터페이스로 쓰고, 시각적 버거 아이콘(label)은 그 위에 겹친 장식으로만
+   둔다 — CSS만으로 완전히 접근 가능한 패턴. 스펙 문서 쪽 표기를 이 패턴에 맞춰 갱신할 것. */
+.nav-toggle {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  margin: 0; opacity: 0; cursor: pointer; z-index: 2;
+}
+.nav-toggle:focus-visible ~ .nav-burger,
+.nav-toggle:focus-visible + .nav-burger {
+  outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle-wrap { display: block; }
+  .nav-menu {
+    position: absolute; top: 62px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #ffffff; border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden;
+    box-shadow: 0 12px 24px rgba(15,39,64,.08);
+    transition: max-height .25s ease;
+  }
+  .nav-menu a { padding: 14px 20px; border-bottom: 1px solid var(--bg-soft); }
+  .nav-menu .nav-cta, .nav-menu .nav-lang { margin: 12px 20px; text-align: center; }
+  /* .nav-toggle는 .nav-toggle-wrap 안에 있어 .nav-menu와 형제가 아니므로 ~ 결합자가 닿지 않는다 —
+     :has()로 컨테이너 상태를 거슬러 올라가 확인한다. :has()는 모든 주요 브라우저가 2023년 말
+     (Firefox 121, 2023-12) 기준으로 지원 — 2026년 현재 베이스라인으로 간주하고 폴백은 두지 않음. */
+  .site-nav .container:has(.nav-toggle:checked) .nav-menu { max-height: 70vh; overflow-y: auto; }
+}
+
+/* ---------- hero ---------- */
+.hero { background: linear-gradient(160deg, var(--navy) 0%, #123056 55%, #17408f 130%); color: #ffffff; }
+.hero-inner { padding-top: clamp(56px, 9vw, 96px); padding-bottom: clamp(30px, 5vw, 48px); }
+.hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: #8fd3ff; border: 1px solid rgba(143,211,255,.4); border-radius: 999px; padding: 5px 14px; }
+.hero h1 { margin: 20px 0 0; }
+.hero-lede { margin-top: 16px; font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.82); max-width: 660px; }
+.hero-badges { margin-top: 22px; }
+/* .hero-copy: 히어로 좌측 텍스트 컬럼. .max-w-md(max-width:620px)만 쓰면 flex-basis가
+   max-width까지 벌어져 우측 .hero-media(SVG 3개 합 약 514px)와 합이 컨테이너 폭을 넘어서고,
+   flex-wrap 때문에 media가 다음 줄로 밀려나 데스크톱에서 우측이 비어 보인다.
+   flex-basis를 620px보다 좁게 잡아 같은 줄에서 우측 정렬되게 한다. */
+.hero-copy { flex: 1 1 380px; min-width: 0; max-width: 620px; }
+/* .hero-media 내 SVG는 반드시 width 속성을 가져야 한다 — viewBox만 있고 width가 없으면
+   flex 컨텍스트에서 flex-basis:auto가 0으로 해석되어 데스크톱에서도 0×0으로 붕괴한다. */
+.hero-media { flex: none; }
+.hero-quicknav { padding-bottom: clamp(22px, 4vw, 32px); }
+@media (max-width: 720px) {
+  /* 장식용 그림이며 본문에 없는 정보를 담지 않으므로(요약은 각 SVG의 aria-label로 스크린리더에
+     전달됨) 좁은 화면에서는 세로 공간을 아끼기 위해 감춘다. 폭 부족·가로 스크롤 문제는 아님 —
+     .hero-inner에 flex-wrap이 있어 공간이 부족하면 media가 다음 줄로 줄바꿈될 뿐이다. */
+  .hero-media { display: none; }
+}
+
+/* ---------- section header block ---------- */
+.section-head .kicker { margin-bottom: 0; }
+.section-head .h2 { margin-top: 12px; }
+
+/* ---------- badges / chips ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 13px; font-weight: 800; border-radius: 999px;
+  padding: 7px 18px; border: 1.5px solid var(--line); background: #ffffff; color: var(--ink);
+}
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+.badge-green { color: #15803d; background: #ffffff; border-color: #86efac; }
+.badge-blue { color: var(--blue); background: #ffffff; border-color: #bfdbfe; }
+
+.chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip { font-size: 12px; font-weight: 700; border-radius: 999px; padding: 7px 16px; border: 1.5px solid var(--line); background: #ffffff; color: #475569; }
+.chip-green { color: #15803d; background: var(--green-soft); border-color: #86efac; }
+.chip-blue { color: var(--blue); background: var(--blue-soft); border-color: #bfdbfe; }
+.chip-quicklink { font-weight: 700; color: #475569; }
+.chip-quicklink:hover { color: var(--blue); border-color: #bfd3f8; }
+
+/* ---------- stat line ---------- */
+.statline { text-align: center; font-size: 12.5px; color: var(--muted); }
+.statline b { color: var(--navy); font-weight: 800; }
+.stat-card { text-align: right; }
+.stat-card .stat-label { font-size: 11.5px; font-weight: 800; color: var(--blue); }
+.stat-card .stat-number { margin-top: 4px; font-size: 26px; font-weight: 800; letter-spacing: -.03em; color: var(--blue); }
+.stat-card .stat-note { margin-top: 3px; font-size: 11px; color: var(--muted); }
+
+/* ---------- art panel (SVG 인포그래픽 컨테이너) ---------- */
+.art-panel { margin-top: 28px; border: 1px solid var(--line); border-radius: 18px; background: #ffffff; padding: 24px 26px; }
+.art-panel-soft { background: var(--bg-soft); }
+
+/* 와이드 SVG 인포그래픽 — 뷰박스 760px 이상은 축소 대신 가로 스크롤 */
+.art-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.art-scroll > svg { min-width: 760px; }
+
+/* ---------- grids ---------- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.grid-2-keep { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 920px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ---------- card ---------- */
+.card { border: 1px solid var(--line); border-radius: 14px; background: #ffffff; padding: 16px 18px 14px; }
+.card-title { font-size: 14px; font-weight: 800; color: var(--navy); }
+.card-desc { margin-top: 6px; font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+.card-hl { background: var(--purple-soft); border-color: #ddd6fe; }
+.card-hl .card-title { color: var(--purple); }
+
+/* ---------- keymsg (컬러 보더 요약 박스) ---------- */
+.keymsg {
+  border-left: 3px solid var(--green); background: var(--green-soft);
+  border-radius: 0 12px 12px 0; padding: 16px 22px;
+  font-size: 14px; color: var(--ink); line-height: 1.7;
+}
+.keymsg b { color: var(--green); font-weight: 800; }
+.keymsg.kblue { border-color: var(--blue); background: var(--blue-soft); }
+.keymsg.kblue b { color: var(--blue); }
+.keymsg.kpurple { border-color: var(--purple); background: var(--purple-soft); }
+.keymsg.kpurple b { color: var(--purple); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 700; border-radius: 10px; padding: 12px 22px; border: none; cursor: pointer; }
+.btn-primary { background: var(--blue); color: #ffffff; }
+.btn-primary:hover { background: #1d4ed8; color: #ffffff; }
+.btn-ghost { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #ffffff; }
+.btn-ghost:hover { background: rgba(255,255,255,.18); color: #ffffff; }
+.btn-outline { background: #ffffff; border: 1px solid var(--line); color: var(--ink); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ---------- forms (문의 폼) ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12.5px; font-weight: 700; color: #475569; }
+.field input, .field textarea, .field select {
+  width: 100%; border: 1px solid var(--line); border-radius: 9px;
+  padding: 0 14px; height: 46px; font-family: inherit; font-size: 14px;
+  background: var(--bg-soft); color: var(--navy);
+}
+.field textarea { height: 120px; padding: 12px 14px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+.form-status { font-size: 13px; font-weight: 600; min-height: 1.2em; }
+.form-status[data-state="success"] { color: var(--green); }
+.form-status[data-state="error"] { color: #dc2626; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); }
+.site-footer .container { padding: 24px 0; }
+.footer-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--blue); }
+.footer-legal { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.footer-legal a { color: var(--muted); }
+.footer-legal b { color: #475569; }
+
+/* ---------- 강조 컬러 유틸리티 (인라인 color style 대체) ----------
+   유틸리티는 항상 마지막에 둔다 — .chip/.chip-quicklink 등 컴포넌트 색 규칙과
+   동일 특이도(0,1,0)일 때 소스 순서가 이겨야 하므로, 이 블록보다 앞에
+   컴포넌트 규칙이 먼저 와야 한다. */
+.t-navy { color: var(--navy); }
+.t-green { color: var(--green); }
+.t-blue { color: var(--blue); }
+.t-teal { color: var(--teal); }
+.t-purple { color: var(--purple); }
+.t-muted-lt { color: #64748b; } /* 흰 배경 WCAG AA 대비 확보(≈4.76:1, #94a3b8는 2.9:1로 미달) — 장식·큰 굵은 글씨 전용, 12px 이상 본문/캡션에는 금지 */
+/* 네이비/다크 배경 전용 파랑 — --blue(#2563eb)는 .hero 그라디언트 위에서 대형 텍스트 기준
+   3:1에도 못 미친다(≈2.6:1). hero-eyebrow와 동일한 색(#8fd3ff)을 재사용해 5.2~9.3:1 확보.
+   흰/밝은 배경에서는 쓰지 말 것(과다 대비로 튐) — .hero, .section-dark 등 다크 배경 전용. */
+.t-blue-on-dark { color: #8fd3ff; }
+
+/* ---------- accessibility & motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- print ---------- */
+@media print {
+  .site-nav, .nav-toggle-wrap, .btn, .hero-quicknav { display: none !important; }
+  .hero, .section-dark {
+    background: #ffffff !important; color: var(--ink) !important;
+  }
+  .hero *, .section-dark * { color: var(--ink) !important; }
+  a { color: var(--ink) !important; text-decoration: underline; }
+}
