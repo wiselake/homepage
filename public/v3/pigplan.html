@@ -1,115 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>피그플랜 AI 스위트 — 와이즈레이크</title>
-<meta name="description" content="양돈경영관리 표준 시스템 위에 인사이트·톡·비즈 3개의 AI가 농장의 결정을 함께합니다. 전국 700여 농장이 쓰는 피그플랜.">
+<meta name="description" content="양돈경영관리 표준 시스템 피그플랜 위에 인사이트·톡·비즈 3개의 AI가 농장의 결정을 함께합니다. 국내 점유율 60.9%, 전국 700여 농장이 쓰는 표준입니다.">
+<link rel="canonical" href="https://wiselake.ai/pigplan">
+<link rel="alternate" hreflang="ko" href="https://wiselake.ai/pigplan">
+<link rel="alternate" hreflang="en" href="https://wiselake.ai/en/pigplan">
+<link rel="alternate" hreflang="x-default" href="https://wiselake.ai/pigplan">
 <meta property="og:type" content="website">
 <meta property="og:title" content="피그플랜 AI 스위트 — 와이즈레이크">
-<meta property="og:description" content="28년의 기록이 데이터에서 인사이트로 — 이제 AI가 스스로 진단하고 답합니다.">
+<meta property="og:description" content="31년의 기록이 데이터에서 인사이트로 — 이제 AI가 스스로 진단하고 답합니다.">
 <meta property="og:locale" content="ko_KR">
-<meta name="robots" content="noindex, nofollow">
+<meta property="og:url" content="https://wiselake.ai/pigplan">
+<meta property="og:image" content="https://wiselake.ai/opengraph-image.png">
+<meta property="og:site_name" content="WiseLake">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/icon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-70NWVV9D0S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-70NWVV9D0S');
+</script>
 <link rel="stylesheet" href="assets/site.css">
 <script defer src="assets/site.js"></script>
+<style>
+/* pigplan.html 페이지 전용 스타일 — site.css(공유)에 없는 패턴만 정의.
+   details 마커 리셋: 레거시 전역 심 제거로 인해 이 페이지 자체에서 재선언 필요. */
+details summary { cursor: pointer; list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+
+/* ---------- hero (원본은 라이트 그라디언트 — 공유 .hero(다크 네이비)와 다른 페이지 고유 톤) ---------- */
+.pp-hero { background: linear-gradient(160deg, #f8fafc 0%, #eff6ff 100%); border-bottom: 1px solid var(--line); }
+.pp-hero-row1 { padding-top: 70px; padding-bottom: 40px; }
+.pp-hero-row2 { padding-bottom: 44px; }
+.pp-hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--blue); border-left: 2px solid var(--blue); padding-left: 12px; }
+.pp-hero-copy { max-width: 620px; }
+.pp-hero-copy .h1 { margin: 16px 0 0; color: var(--navy); }
+.pp-hero-lede { margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #475569; }
+.pp-hero-note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.pp-hero-note b { color: var(--navy); }
+.pp-hero-figure { flex: none; }
+.pp-orange { color: #ea580c; }
+
+/* ---------- section heading tag (예: "피그플랜 PIGPLAN") ---------- */
+.pp-tag-muted { font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: .08em; margin-left: 8px; }
+.pp-tag-on-dark { font-size: 15px; font-weight: 700; color: rgba(255,255,255,.55); margin-left: 8px; }
+
+/* ---------- 통계 카드 (숫자로 보는 피그플랜) ---------- */
+.pp-stat-card { text-align: center; }
+.pp-stat-icon { margin: 0 auto; }
+.pp-stat-value { margin-top: 14px; font-size: 48px; font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+.pp-stat-value small { font-size: 22px; }
+.pp-stat-title { margin-top: 10px; font-size: 14px; font-weight: 800; color: var(--navy); }
+.pp-stat-note { margin-top: 4px; font-size: 12px; color: var(--muted); }
+.pp-detail-toggle { margin-top: 16px; border-top: 1px solid var(--bg-soft); padding-top: 12px; text-align: left; }
+.pp-detail-toggle summary { font-size: 11.5px; font-weight: 800; text-align: center; }
+.pp-bar-rows, .pp-psy-rows { margin-top: 12px; display: flex; flex-direction: column; gap: 7px; }
+.pp-bar-row { display: flex; align-items: center; gap: 10px; }
+.pp-bar-label { width: 62px; flex: none; font-size: 11.5px; }
+.pp-bar-label.pp-strong { font-weight: 800; color: var(--navy); }
+.pp-bar-label.pp-emph { font-weight: 700; color: #475569; }
+.pp-bar-label.pp-dim { color: var(--muted); }
+.pp-bar-track { flex: 1; height: 12px; background: var(--bg-soft); border-radius: 3px; overflow: hidden; }
+.pp-bar-track.pp-thin { height: 11px; }
+.pp-bar-fill { height: 100%; }
+.pp-bar-value { width: 44px; flex: none; font-size: 11.5px; text-align: right; }
+.pp-bar-value.pp-strong { font-weight: 800; color: var(--navy); }
+.pp-bar-value.pp-emph { font-weight: 700; color: var(--navy); }
+.pp-bar-value.pp-dim { color: var(--muted); }
+.pp-source-note { margin-top: 12px; font-size: 10.5px; line-height: 1.6; color: var(--muted); }
+.pp-year-bars { margin-top: 14px; display: flex; align-items: flex-end; gap: 12px; height: 96px; }
+.pp-year-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; height: 100%; justify-content: flex-end; }
+.pp-year-value { font-size: 10.5px; font-weight: 700; color: var(--muted); }
+.pp-year-value.pp-strong { font-weight: 800; color: var(--navy); }
+.pp-year-bar { width: 100%; border-radius: 4px 4px 0 0; }
+.pp-year-tick { font-size: 10px; color: var(--muted); }
+.pp-year-tick.pp-strong { font-weight: 700; }
+
+/* ---------- 표준 시스템 3-업 요약 카드 ---------- */
+.pp-quickstat { border: 1px solid var(--line); border-radius: 14px; background: #ffffff; padding: 20px 22px; display: flex; align-items: center; gap: 16px; }
+.pp-quickstat-icon { flex: none; }
+.pp-quickstat-value { font-size: 26px; font-weight: 800; color: var(--navy); }
+.pp-quickstat-value span { font-size: 14px; color: var(--muted); }
+.pp-quickstat-label { font-size: 11.5px; color: var(--muted); }
+.pp-note { margin-top: 10px; font-size: 11px; color: var(--muted); }
+
+/* ---------- Since 1995 타임라인 박스 ---------- */
+.pp-timeline-box { margin-top: 26px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-soft); padding: 22px 26px; }
+.pp-timeline-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: .2em; color: var(--blue); text-transform: uppercase; }
+
+/* ---------- 6대 기능 details ---------- */
+.pp-details { margin-top: 16px; border: 1px solid var(--line); border-radius: 13px; padding: 14px 20px; }
+.pp-details summary { font-size: 13px; font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+.pp-func-grid { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+@media (max-width: 640px) { .pp-func-grid { grid-template-columns: 1fr; } }
+.pp-func-row { display: flex; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--bg-soft); }
+.pp-func-row.pp-last { border-bottom: none; }
+.pp-func-num { flex: none; font-size: 12px; font-weight: 800; color: var(--blue); }
+.pp-func-text { font-size: 14px; font-weight: 700; color: var(--ink); }
+
+/* ---------- AI 시스템 카드 (인사이트/톡/비즈) ---------- */
+.pp-sys-card { border-radius: 18px; overflow: hidden; background: #ffffff; display: flex; flex-direction: column; }
+.pp-sys-card.pp-sys-green { border: 2px solid var(--green); box-shadow: 0 12px 28px rgba(22,163,74,.1); }
+.pp-sys-card.pp-sys-orange { border: 2px solid #ea580c; box-shadow: 0 12px 28px rgba(234,88,12,.1); }
+.pp-sys-card.pp-sys-purple { border: 2px solid var(--purple); box-shadow: 0 12px 28px rgba(124,58,237,.1); }
+.pp-sys-head { color: #ffffff; padding: 14px 26px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.pp-sys-head.pp-sys-green { background: linear-gradient(90deg,#15803d,#16a34a 60%,#22a856); }
+.pp-sys-head.pp-sys-orange { background: linear-gradient(90deg,#c2410c,#ea580c 60%,#f2600f); }
+.pp-sys-head.pp-sys-purple { background: linear-gradient(90deg,#6d28d9,#7c3aed 60%,#8341f4); }
+.pp-sys-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.pp-sys-title { font-size: 17px; font-weight: 800; }
+.pp-sys-title-lg { font-size: 18px; font-weight: 800; }
+.pp-sys-tag { font-size: 11.5px; font-weight: 700; background: rgba(255,255,255,.2); border-radius: 999px; padding: 3px 12px; }
+.pp-sys-status-solid { margin-left: auto; background: #ffffff; border-radius: 999px; padding: 4px 13px; font-size: 11.5px; font-weight: 800; }
+.pp-sys-status-ghost { margin-left: auto; background: rgba(255,255,255,.22); border-radius: 999px; padding: 3px 11px; font-size: 11px; font-weight: 800; color: #ffffff; }
+.pp-sys-body { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+.pp-sys-subtitle { font-size: 13.5px; font-weight: 700; }
+.pp-sys-lede { margin: 0; font-size: 14.5px; line-height: 1.68; color: #475569; }
+.pp-sys-chips { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
+.pp-chip-orange { font-size: 11.5px; font-weight: 700; color: #ea580c; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 999px; padding: 4px 11px; }
+.pp-chip-purple { font-size: 11.5px; font-weight: 700; color: var(--purple); background: var(--purple-soft); border: 1px solid #ddd6fe; border-radius: 999px; padding: 4px 11px; }
+.pp-sys-price { margin-top: auto; padding-top: 14px; font-size: 12.5px; font-weight: 700; color: var(--navy); }
+.pp-price-note { font-weight: 500; color: var(--muted); }
+
+/* ---------- 주간/월간 리포트 샘플 ---------- */
+.pp-sample-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 20px; align-items: start; }
+@media (max-width: 780px) { .pp-sample-grid { grid-template-columns: 1fr; } }
+.pp-sample-card { border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; background: #ffffff; }
+.pp-sample-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.pp-sample-tag { font-size: 10.5px; font-weight: 800; letter-spacing: .16em; color: var(--green); text-transform: uppercase; }
+.pp-sample-meta { font-size: 12px; color: var(--muted); }
+.pp-sample-title { font-size: 14px; font-weight: 800; color: var(--navy); }
+.pp-sample-rows { margin-top: 14px; display: flex; flex-direction: column; gap: 9px; }
+.pp-sample-row { display: flex; gap: 10px; border-radius: 10px; padding: 11px 14px; border: 1px solid; }
+.pp-sample-row.pp-good { background: var(--green-soft); border-color: #bbf7d0; }
+.pp-sample-row.pp-bad { background: #fef2f2; border-color: #fecaca; }
+.pp-sample-row.pp-neutral { background: var(--bg-soft); border-color: var(--line); }
+.pp-sample-row.pp-info { background: var(--blue-soft); border-color: #bfd3f8; }
+.pp-sample-label { flex: none; font-size: 10.5px; font-weight: 800; }
+.pp-sample-text { font-size: 12.5px; color: var(--navy); }
+.pp-sample-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.pp-report-grid { margin-top: 16px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 14px; }
+@media (max-width: 480px) { .pp-report-grid { grid-template-columns: 1fr; } }
+.pp-report-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 13px; padding: 15px 17px; }
+.pp-report-label { font-size: 11px; font-weight: 700; color: var(--muted); }
+.pp-grade { margin-top: 6px; font-size: 34px; font-weight: 800; color: var(--navy); letter-spacing: -.02em; }
+.pp-grade-sub { font-size: 13px; color: var(--muted); font-weight: 700; }
+.pp-grade-rank { margin-top: 8px; font-size: 12.5px; color: #475569; }
+.pp-kpi-grid { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pp-kpi-item { display: flex; align-items: baseline; gap: 7px; }
+.pp-kpi-name { font-size: 11.5px; color: var(--muted); }
+.pp-kpi-value { font-size: 14px; color: var(--navy); }
+.pp-kpi-tag { font-size: 10px; font-weight: 800; border-radius: 999px; padding: 2px 7px; }
+.pp-kpi-tag.pp-watch { color: #d97706; background: #fffbeb; }
+.pp-kpi-tag.pp-improve { color: #dc2626; background: #fef2f2; }
+.pp-kpi-tag.pp-good { color: var(--green); background: var(--green-soft); }
+.pp-loss-box { margin-top: 14px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 13px; padding: 15px 17px; }
+.pp-loss-bar { margin-top: 10px; display: flex; height: 16px; border-radius: 5px; overflow: hidden; }
+.pp-loss-caption { margin-top: 9px; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
+.pp-improve-note { margin-top: 12px; background: var(--green-soft); border: 1px solid #bbf7d0; border-radius: 11px; padding: 12px 16px; font-size: 13px; color: var(--navy); }
+
+/* ---------- 외부 데이터 원천 바 ---------- */
+.pp-source-bar { margin-top: 20px; border: 1px solid var(--line); background: #ffffff; border-radius: 13px; padding: 16px 22px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 13px; color: #475569; }
+.pp-source-label { font-size: 10.5px; font-weight: 700; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; flex: none; }
+
+/* ---------- AXIO (다크 섹션) ---------- */
+.pp-teal-on-dark { color: #5eead4; }
+.pp-pill-outline-teal { font-size: 11px; font-weight: 700; color: #5eead4; border: 1px solid rgba(94,234,212,.4); border-radius: 999px; padding: 3px 11px; }
+.pp-dark-lede { margin: 14px 0 0; font-size: 15.5px; line-height: 1.7; color: rgba(255,255,255,.8); max-width: 780px; }
+.pp-dark-kicker { margin-top: 30px; font-size: 11px; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+.pp-dark-footer-row { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.14); padding-top: 20px; }
+.pp-muted-on-dark { font-size: 12.5px; color: rgba(255,255,255,.55); }
+.pp-muted-on-dark b { color: #ffffff; }
+.pp-muted-on-dark.pp-small { font-size: 12px; }
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<style>
-html,body{margin:0;padding:0;background:#ffffff;}
-html{scroll-behavior:smooth;}
-body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:#1e293b;word-break:keep-all;-webkit-font-smoothing:antialiased;}
-a{color:#2563eb;text-decoration:none;} a:hover{color:#1d4ed8;}
-svg{display:block;max-width:100%;height:auto;}
-details summary{cursor:pointer;list-style:none;}
-details summary::-webkit-details-marker{display:none;}
-</style>
-</helmet>
 
-<div style="min-height:100vh;background:#ffffff;">
-
-<nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;">
-  <div style="max-width:1160px;margin:0 auto;padding:0 28px;height:62px;display:flex;align-items:center;gap:28px;">
-    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/wiselake-logo.png" alt="WISELAKE" style="height:22px;display:block;"></a>
-    <div style="flex:1;"></div>
-    <div style="display:flex;align-items:center;gap:22px;font-size:13.5px;font-weight:600;">
-      <span style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:2px;">피그플랜 AI 스위트</span>
-      <a href="pigos-pigsignal.html" style="color:#475569;" style-hover="color:#16a34a;">PigOS · PigSignal</a>
-      <a href="nanotrans.html" style="color:#475569;" style-hover="color:#0d9488;">나노트랜스</a>
-      <a href="index.html#company" style="color:#ffffff;background:#0f2740;border-radius:999px;padding:8px 18px;" style-hover="background:#1d4ed8;color:#ffffff;">회사소개</a>
-      <a href="pigplan-en.html" style="color:#94a3b8;font-size:12px;font-weight:700;border:1px solid #e2e8f0;border-radius:999px;padding:6px 13px;" style-hover="color:#2563eb;"><b style="color:#0f2740;">KR</b> · EN</a>
+<nav class="site-nav" aria-label="주 메뉴">
+  <div class="container">
+    <a class="nav-brand" href="/"><img src="assets/wiselake-logo.png" alt="WISELAKE"></a>
+    <div class="nav-spacer"></div>
+    <div class="nav-toggle-wrap">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="메뉴 열기">
+      <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+    </div>
+    <div class="nav-menu">
+      <a href="/pigplan" aria-current="page">피그플랜 AI 스위트</a>
+      <a href="/pigos-pigsignal">PigOS · PigSignal</a>
+      <a href="/nanotrans">NanoTrans</a>
+      <a href="/#company">회사소개</a>
+      <a href="/#contact" class="nav-cta">문의하기</a>
+      <a href="/en/pigplan" class="nav-lang" data-lang-switch="en"><b>KR</b> · EN</a>
     </div>
   </div>
 </nav>
 
-<header style="background:linear-gradient(160deg,#f8fafc 0%,#eff6ff 100%);border-bottom:1px solid #e2e8f0;">
-  <div style="max-width:1160px;margin:0 auto;padding:70px 28px 58px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-    <div style="max-width:600px;">
-      <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;color:#2563eb;border-left:2px solid #2563eb;padding-left:12px;">피그플랜, AI로 진화하다</span>
-      <h1 style="margin:16px 0 0;font-size:48px;font-weight:800;letter-spacing:-.028em;color:#0f2740;line-height:1.14;">피그플랜 AI 스위트</h1>
-      <p style="margin:16px 0 0;font-size:17px;line-height:1.7;color:#475569;">양돈경영관리 표준 시스템 위에, <b style="color:#16a34a;">인사이트</b> · <b style="color:#ea580c;">톡</b> · <b style="color:#7c3aed;">비즈</b> — 3개의 독립 AI 시스템이 농장의 결정을 함께합니다.</p>
-      <div style="margin-top:14px;font-size:14px;color:#64748b;">28년의 기록이, 데이터에서 인사이트로 — <b style="color:#0f2740;">이제 AI가 스스로 진단하고 답합니다</b></div>
+<main>
+<header class="pp-hero">
+  <div class="container flex items-center justify-between gap-lg flex-wrap pp-hero-row1">
+    <div class="pp-hero-copy">
+      <span class="pp-hero-eyebrow">피그플랜, AI로 진화하다</span>
+      <h1 class="h1">피그플랜 AI 스위트</h1>
+      <p class="pp-hero-lede">양돈경영관리 표준 시스템 위에, <b class="t-green">인사이트</b> · <b class="pp-orange">톡</b> · <b class="t-purple">비즈</b> — 3개의 독립 AI 시스템이 농장의 결정을 함께합니다.</p>
+      <div class="pp-hero-note">31년의 기록이, 데이터에서 인사이트로 — <b>이제 AI가 스스로 진단하고 답합니다</b></div>
     </div>
-    <svg viewBox="0 0 330 240" width="330" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="피그플랜 표준 시스템 위에 인사이트·톡·비즈 세 AI 시스템이 올라가 있는 그림" style="flex:none;">
-      <rect x="24" y="150" width="282" height="66" rx="14" fill="#123056"/>
-      <rect x="42" y="166" width="246" height="16" rx="8" fill="#17408f"/>
-      <text x="165" y="204" text-anchor="middle" font-size="13" font-weight="800" fill="#8fd3ff">피그플랜 — 표준 시스템</text>
-      <rect x="24" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
-      <rect x="24" y="52" width="86" height="22" rx="11" fill="#16a34a"/>
-      <text x="67" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">인사이트</text>
-      <rect x="38" y="84" width="58" height="38" rx="6" fill="#f0fdf4" stroke="#86efac"/>
-      <path d="M38 84 l29 20 29 -20" fill="none" stroke="#16a34a" stroke-width="1.8"/>
-      <rect x="122" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#ea580c" stroke-width="2"/>
-      <rect x="122" y="52" width="86" height="22" rx="11" fill="#ea580c"/>
-      <text x="165" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">톡</text>
-      <rect x="140" y="84" width="52" height="20" rx="9" fill="#fff7ed" stroke="#fed7aa"/>
-      <rect x="134" y="108" width="46" height="18" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
-      <path d="M140 126 l-6 9 16 -9 z" fill="#fff7ed" stroke="#fed7aa"/>
-      <rect x="220" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/>
-      <rect x="220" y="52" width="86" height="22" rx="11" fill="#7c3aed"/>
-      <text x="263" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">비즈</text>
-      <g fill="#a78bfa"><rect x="238" y="106" width="9" height="16"/><rect x="252" y="98" width="9" height="24"/><rect x="266" y="90" width="9" height="32"/><rect x="280" y="102" width="9" height="20"/></g>
-      <g stroke="#bfd3f8" stroke-width="1.6" stroke-dasharray="4 4"><line x1="67" y1="134" x2="67" y2="150"/><line x1="165" y1="134" x2="165" y2="150"/><line x1="263" y1="134" x2="263" y2="150"/></g>
-      <text x="165" y="34" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="2" fill="#94a3b8">3 AI SYSTEMS</text>
-    </svg>
+    <div class="pp-hero-figure">
+      <svg viewBox="0 0 330 240" width="330" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="피그플랜 표준 시스템 위에 인사이트·톡·비즈 세 AI 시스템이 올라가 있는 그림">
+        <rect x="24" y="150" width="282" height="66" rx="14" fill="#123056"/>
+        <rect x="42" y="166" width="246" height="16" rx="8" fill="#17408f"/>
+        <text x="165" y="204" text-anchor="middle" font-size="13" font-weight="800" fill="#8fd3ff">피그플랜 — 표준 시스템</text>
+        <rect x="24" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+        <rect x="24" y="52" width="86" height="22" rx="11" fill="#16a34a"/>
+        <text x="67" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">인사이트</text>
+        <rect x="38" y="84" width="58" height="38" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+        <path d="M38 84 l29 20 29 -20" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+        <rect x="122" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#ea580c" stroke-width="2"/>
+        <rect x="122" y="52" width="86" height="22" rx="11" fill="#ea580c"/>
+        <text x="165" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">톡</text>
+        <rect x="140" y="84" width="52" height="20" rx="9" fill="#fff7ed" stroke="#fed7aa"/>
+        <rect x="134" y="108" width="46" height="18" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+        <path d="M140 126 l-6 9 16 -9 z" fill="#fff7ed" stroke="#fed7aa"/>
+        <rect x="220" y="52" width="86" height="82" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/>
+        <rect x="220" y="52" width="86" height="22" rx="11" fill="#7c3aed"/>
+        <text x="263" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#ffffff">비즈</text>
+        <g fill="#a78bfa"><rect x="238" y="106" width="9" height="16"/><rect x="252" y="98" width="9" height="24"/><rect x="266" y="90" width="9" height="32"/><rect x="280" y="102" width="9" height="20"/></g>
+        <g stroke="#bfd3f8" stroke-width="1.6" stroke-dasharray="4 4"><line x1="67" y1="134" x2="67" y2="150"/><line x1="165" y1="134" x2="165" y2="150"/><line x1="263" y1="134" x2="263" y2="150"/></g>
+        <text x="165" y="34" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="2" fill="#64748b">3 AI SYSTEMS</text>
+      </svg>
+    </div>
   </div>
-  <div style="max-width:1160px;margin:0 auto;padding:0 28px 44px;display:flex;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:12px;font-weight:700;color:#0f2740;background:#ffffff;border:1px solid #e2e8f0;border-radius:999px;padding:6px 14px;">PIGPLAN AI SUITE — 피그플랜 + 인사이트 · 톡 · 비즈 · 악시오</span>
-    <span style="font-size:12px;font-weight:700;color:#2563eb;background:#eff6ff;border:1px solid #bfd3f8;border-radius:999px;padding:6px 14px;">피그플랜 — 표준 시스템 · 단독 구매</span>
-    <span style="font-size:12px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;border-radius:999px;padding:6px 14px;">AI 3종 — 1개부터 전체까지 · 함께 도입할수록 할인</span>
+  <div class="container chips pp-hero-row2">
+    <span class="chip">PIGPLAN AI SUITE — 피그플랜 + 인사이트 · 톡 · 비즈 · 악시오</span>
+    <span class="chip chip-blue">피그플랜 — 표준 시스템 · 단독 구매</span>
+    <span class="chip chip-green">AI 3종 — 1개부터 전체까지 · 함께 도입할수록 할인</span>
   </div>
 </header>
 
-<sc-if value="{{ showCharts }}" hint-placeholder-val="{{ true }}">
-<section style="background:#f8fafc;border-bottom:1px solid #e2e8f0;">
-  <div style="max-width:1160px;margin:0 auto;padding:64px 28px 60px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#2563eb;text-transform:uppercase;">Market Position · Proven Effect</div>
-    <h2 style="margin:12px 0 0;font-size:28px;font-weight:800;letter-spacing:-.02em;color:#0f2740;">숫자로 보는 피그플랜</h2>
+<section id="stats" class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker t-blue">Market Position · Proven Effect</span>
+      <h2 class="h2 t-navy">숫자로 보는 피그플랜</h2>
+    </div>
 
-    <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-      <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:26px 26px 20px;">
-        <svg viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin:0 auto;"><circle cx="60" cy="60" r="50" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/><path d="M60 60 L60 10 A50 50 0 1 1 17 84 Z" fill="#2563eb"/><circle cx="60" cy="60" r="26" fill="#ffffff"/></svg>
-        <div style="margin-top:14px;text-align:center;font-size:48px;font-weight:800;color:#2563eb;letter-spacing:-.035em;line-height:1;">60.9%</div>
-        <div style="margin-top:10px;text-align:center;font-size:14px;font-weight:800;color:#0f2740;">국내 양돈 전산관리 시스템 점유율</div>
-        <div style="margin-top:4px;text-align:center;font-size:12px;color:#94a3b8;">2위 A사 17.3% — 3배 이상 격차</div>
-        <details style="margin-top:16px;border-top:1px solid #f1f5f9;padding-top:12px;">
-          <summary style="font-size:11.5px;font-weight:800;color:#2563eb;text-align:center;">자세히 보기</summary>
-          <div style="margin-top:12px;display:flex;flex-direction:column;gap:7px;">
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:60px;flex:none;font-size:11.5px;font-weight:800;color:#0f2740;">피그플랜</span><div style="flex:1;height:12px;background:#eff6ff;border-radius:3px;overflow:hidden;"><div style="width:100%;height:100%;background:#2563eb;"></div></div><span style="width:42px;flex:none;font-size:11.5px;font-weight:700;color:#0f2740;text-align:right;">60.9%</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:60px;flex:none;font-size:11.5px;color:#94a3b8;">A사</span><div style="flex:1;height:12px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:28%;height:100%;background:#cbd5e1;"></div></div><span style="width:42px;flex:none;font-size:11.5px;color:#94a3b8;text-align:right;">17.3%</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:60px;flex:none;font-size:11.5px;color:#94a3b8;">B사</span><div style="flex:1;height:12px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:16%;height:100%;background:#d7dfe8;"></div></div><span style="width:42px;flex:none;font-size:11.5px;color:#94a3b8;text-align:right;">9.7%</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:60px;flex:none;font-size:11.5px;color:#94a3b8;">C사</span><div style="flex:1;height:12px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:13%;height:100%;background:#d7dfe8;"></div></div><span style="width:42px;flex:none;font-size:11.5px;color:#94a3b8;text-align:right;">7.9%</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:60px;flex:none;font-size:11.5px;color:#94a3b8;">기타</span><div style="flex:1;height:12px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:7%;height:100%;background:#e2e8f0;"></div></div><span style="width:42px;flex:none;font-size:11.5px;color:#94a3b8;text-align:right;">4.2%</span></div>
+    <div class="grid-3 mt-lg">
+      <div class="card pp-stat-card">
+        <svg class="pp-stat-icon" viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/><path d="M60 60 L60 10 A50 50 0 1 1 17 84 Z" fill="#2563eb"/><circle cx="60" cy="60" r="26" fill="#ffffff"/></svg>
+        <div class="pp-stat-value t-blue">60.9%</div>
+        <div class="pp-stat-title">국내 양돈 전산관리 시스템 점유율</div>
+        <div class="pp-stat-note">2위 A사 17.3% — 3배 이상 격차</div>
+        <details class="pp-detail-toggle">
+          <summary class="t-blue">자세히 보기</summary>
+          <div class="pp-bar-rows">
+            <div class="pp-bar-row"><span class="pp-bar-label pp-strong">피그플랜</span><div class="pp-bar-track"><div class="pp-bar-fill" style="width:100%;background:#2563eb;"></div></div><span class="pp-bar-value pp-strong">60.9%</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">A사</span><div class="pp-bar-track"><div class="pp-bar-fill" style="width:28%;background:#cbd5e1;"></div></div><span class="pp-bar-value pp-dim">17.3%</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">B사</span><div class="pp-bar-track"><div class="pp-bar-fill" style="width:16%;background:#d7dfe8;"></div></div><span class="pp-bar-value pp-dim">9.7%</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">C사</span><div class="pp-bar-track"><div class="pp-bar-fill" style="width:13%;background:#d7dfe8;"></div></div><span class="pp-bar-value pp-dim">7.9%</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">기타</span><div class="pp-bar-track"><div class="pp-bar-fill" style="width:7%;background:#e2e8f0;"></div></div><span class="pp-bar-value pp-dim">4.2%</span></div>
           </div>
-          <div style="margin-top:12px;font-size:10.5px;line-height:1.6;color:#94a3b8;">개체별 전산관리 사용 농가 기준 — 전산사용 농가 1,133호 · 피그플랜 690호 · 민·관 실측 데이터 종합 (타사 익명)</div>
+          <div class="pp-source-note">개체별 전산관리 사용 농가 기준 — 전산사용 농가 1,133호 · 피그플랜 690호 · 민·관 실측 데이터 종합 (타사 익명)</div>
         </details>
       </div>
 
-      <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:26px 26px 20px;">
-        <svg viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin:0 auto;">
+      <div class="card pp-stat-card">
+        <svg class="pp-stat-icon" viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <line x1="14" y1="104" x2="112" y2="104" stroke="#e2e8f0" stroke-width="2"/>
           <rect x="18" y="66" width="14" height="38" rx="3" fill="#bfdbfe"/>
           <rect x="38" y="60" width="14" height="44" rx="3" fill="#93c5fd"/>
@@ -119,227 +279,228 @@ details summary::-webkit-details-marker{display:none;}
           <path d="M25 60 L45 54 L65 50 L85 36 L105 36" fill="none" stroke="#0f2740" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="105" cy="36" r="4.5" fill="#0f2740"/>
         </svg>
-        <div style="margin-top:14px;text-align:center;font-size:48px;font-weight:800;color:#2563eb;letter-spacing:-.035em;line-height:1;">34.6%</div>
-        <div style="margin-top:10px;text-align:center;font-size:14px;font-weight:800;color:#0f2740;">전국 상시모돈 점유율 (2025)</div>
-        <div style="margin-top:4px;text-align:center;font-size:12px;color:#94a3b8;">2021년 31.7% → 매년 상승</div>
-        <details style="margin-top:16px;border-top:1px solid #f1f5f9;padding-top:12px;">
-          <summary style="font-size:11.5px;font-weight:800;color:#2563eb;text-align:center;">자세히 보기</summary>
-          <div style="margin-top:14px;display:flex;align-items:flex-end;gap:12px;height:96px;">
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;"><span style="font-size:10.5px;font-weight:700;color:#64748b;">31.7</span><div style="width:100%;height:52%;background:#bfdbfe;border-radius:4px 4px 0 0;"></div><span style="font-size:10px;color:#94a3b8;">’21</span></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;"><span style="font-size:10.5px;font-weight:700;color:#64748b;">32.5</span><div style="width:100%;height:62%;background:#93c5fd;border-radius:4px 4px 0 0;"></div><span style="font-size:10px;color:#94a3b8;">’22</span></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;"><span style="font-size:10.5px;font-weight:700;color:#64748b;">32.9</span><div style="width:100%;height:67%;background:#60a5fa;border-radius:4px 4px 0 0;"></div><span style="font-size:10px;color:#94a3b8;">’23</span></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;"><span style="font-size:10.5px;font-weight:700;color:#64748b;">34.6</span><div style="width:100%;height:87%;background:#3b82f6;border-radius:4px 4px 0 0;"></div><span style="font-size:10px;color:#94a3b8;">’24</span></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;"><span style="font-size:10.5px;font-weight:800;color:#0f2740;">34.6</span><div style="width:100%;height:87%;background:#2563eb;border-radius:4px 4px 0 0;"></div><span style="font-size:10px;font-weight:700;color:#64748b;">’25</span></div>
+        <div class="pp-stat-value t-blue">34.6%</div>
+        <div class="pp-stat-title">전국 상시모돈 점유율 (2025)</div>
+        <div class="pp-stat-note">2021년 31.7% → 매년 상승</div>
+        <details class="pp-detail-toggle">
+          <summary class="t-blue">자세히 보기</summary>
+          <div class="pp-year-bars">
+            <div class="pp-year-col"><span class="pp-year-value">31.7</span><div class="pp-year-bar" style="height:52%;background:#bfdbfe;"></div><span class="pp-year-tick">’21</span></div>
+            <div class="pp-year-col"><span class="pp-year-value">32.5</span><div class="pp-year-bar" style="height:62%;background:#93c5fd;"></div><span class="pp-year-tick">’22</span></div>
+            <div class="pp-year-col"><span class="pp-year-value">32.9</span><div class="pp-year-bar" style="height:67%;background:#60a5fa;"></div><span class="pp-year-tick">’23</span></div>
+            <div class="pp-year-col"><span class="pp-year-value">34.6</span><div class="pp-year-bar" style="height:87%;background:#3b82f6;"></div><span class="pp-year-tick">’24</span></div>
+            <div class="pp-year-col"><span class="pp-year-value pp-strong">34.6</span><div class="pp-year-bar" style="height:87%;background:#2563eb;"></div><span class="pp-year-tick pp-strong">’25</span></div>
           </div>
-          <div style="margin-top:12px;font-size:10.5px;line-height:1.6;color:#94a3b8;">전국 모돈(통계청) 대비 상시모돈 점유율 · 피그플랜 실측(연중 중단농가 포함 상시모돈수). 전국 모돈 규모 ’21 102.3만두 → ’25 96.7만두. ~’20 온프레미스 구간 제외 · ’26~ AI 스위트로 확대 전망</div>
+          <div class="pp-source-note">전국 모돈(통계청) 대비 상시모돈 점유율 · 피그플랜 실측(연중 중단농가 포함 상시모돈수). 전국 모돈 규모 ’21 102.3만두 → ’25 96.7만두. ~’20 온프레미스 구간 제외 · ’26~ AI 스위트로 확대 전망</div>
         </details>
       </div>
 
-      <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:26px 26px 20px;">
-        <svg viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin:0 auto;">
+      <div class="card pp-stat-card">
+        <svg class="pp-stat-icon" viewBox="0 0 120 120" width="112" height="112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <polygon points="16,58 60,32 104,58" fill="#16a34a"/>
           <rect x="24" y="58" width="72" height="46" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
           <rect x="50" y="78" width="20" height="26" rx="3" fill="#0f2740"/>
           <path d="M96 32 v-14 M89 25 h14" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
           <path d="M78 22 l8 -8 8 8" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div style="margin-top:14px;text-align:center;font-size:48px;font-weight:800;color:#16a34a;letter-spacing:-.035em;line-height:1;">+0.9<span style="font-size:22px;">두</span></div>
-        <div style="margin-top:10px;text-align:center;font-size:14px;font-weight:800;color:#0f2740;">오래 쓸수록 오르는 PSY</div>
-        <div style="margin-top:4px;text-align:center;font-size:12px;color:#94a3b8;">20년 이상 26.1두 vs 1년 이상 25.2두</div>
-        <details style="margin-top:16px;border-top:1px solid #f1f5f9;padding-top:12px;">
-          <summary style="font-size:11.5px;font-weight:800;color:#16a34a;text-align:center;">자세히 보기</summary>
-          <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:62px;flex:none;font-size:11.5px;font-weight:700;color:#475569;">20년 이상</span><div style="flex:1;height:11px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:100%;height:100%;background:#16a34a;"></div></div><span style="width:44px;flex:none;font-size:11.5px;font-weight:800;color:#0f2740;text-align:right;">26.1두</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:62px;flex:none;font-size:11.5px;color:#64748b;">15년 이상</span><div style="flex:1;height:11px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:100%;height:100%;background:#4ade80;"></div></div><span style="width:44px;flex:none;font-size:11.5px;color:#64748b;text-align:right;">26.1</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:62px;flex:none;font-size:11.5px;color:#64748b;">10년 이상</span><div style="flex:1;height:11px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:78%;height:100%;background:#86efac;"></div></div><span style="width:44px;flex:none;font-size:11.5px;color:#64748b;text-align:right;">25.4</span></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="width:62px;flex:none;font-size:11.5px;color:#64748b;">1년 이상</span><div style="flex:1;height:11px;background:#f1f5f9;border-radius:3px;overflow:hidden;"><div style="width:72%;height:100%;background:#bbf7d0;"></div></div><span style="width:44px;flex:none;font-size:11.5px;color:#64748b;text-align:right;">25.2</span></div>
+        <div class="pp-stat-value t-green">+0.9<small>두</small></div>
+        <div class="pp-stat-title">오래 쓸수록 오르는 PSY</div>
+        <div class="pp-stat-note">20년 이상 26.1두 vs 1년 이상 25.2두</div>
+        <details class="pp-detail-toggle">
+          <summary class="t-green">자세히 보기</summary>
+          <div class="pp-psy-rows">
+            <div class="pp-bar-row"><span class="pp-bar-label pp-emph">20년 이상</span><div class="pp-bar-track pp-thin"><div class="pp-bar-fill" style="width:100%;background:#16a34a;"></div></div><span class="pp-bar-value pp-strong">26.1두</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">15년 이상</span><div class="pp-bar-track pp-thin"><div class="pp-bar-fill" style="width:100%;background:#4ade80;"></div></div><span class="pp-bar-value pp-dim">26.1</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">10년 이상</span><div class="pp-bar-track pp-thin"><div class="pp-bar-fill" style="width:78%;background:#86efac;"></div></div><span class="pp-bar-value pp-dim">25.4</span></div>
+            <div class="pp-bar-row"><span class="pp-bar-label pp-dim">1년 이상</span><div class="pp-bar-track pp-thin"><div class="pp-bar-fill" style="width:72%;background:#bbf7d0;"></div></div><span class="pp-bar-value pp-dim">25.2</span></div>
           </div>
-          <div style="margin-top:12px;font-size:10.5px;line-height:1.6;color:#94a3b8;">사용연수별 PSY · 기준 25.2두 (20년↑ 31농가 · 15년↑ 67농가 · 10년↑ 145농가 · 1년↑ 470농가) · 출처: 2025 피그플랜 빅데이터 심층분석 보고서</div>
+          <div class="pp-source-note">사용연수별 PSY · 기준 25.2두 (20년↑ 31농가 · 15년↑ 67농가 · 10년↑ 145농가 · 1년↑ 470농가) · 출처: 2025 피그플랜 빅데이터 심층분석 보고서</div>
         </details>
       </div>
     </div>
   </div>
 </section>
-</sc-if>
 
-<section>
-  <div style="max-width:1160px;margin:0 auto;padding:80px 28px 72px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#2563eb;text-transform:uppercase;">Base System · 표준 시스템</div>
-    <h2 style="margin:12px 0 0;font-size:32px;font-weight:800;letter-spacing:-.02em;color:#0f2740;">피그플랜 <span style="font-size:15px;font-weight:700;color:#94a3b8;letter-spacing:.08em;">PIGPLAN</span></h2>
-    <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:#475569;max-width:700px;">대한민국 최초의 양돈경영관리 시스템. <b>전국 700여 농장을 연결하는 양돈 산업 플랫폼</b> — 농장의 모든 이벤트를 데이터로 남기면, 답이 보입니다.</p>
+<section id="base" class="section">
+  <div class="container">
+    <span class="kicker t-blue">Base System · 표준 시스템</span>
+    <h2 class="h2 t-navy mt-sm">피그플랜 <span class="pp-tag-muted">PIGPLAN</span></h2>
+    <p class="lede">대한민국 최초의 양돈경영관리 시스템. <b>전국 700여 농장을 연결하는 양돈 산업 플랫폼</b> — 농장의 모든 이벤트를 데이터로 남기면, 답이 보입니다.</p>
 
-    <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-      <div style="border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:16px;">
-        <svg viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex:none;"><polygon points="4,22 26,10 48,22" fill="#16a34a"/><rect x="9" y="22" width="34" height="16" rx="2.5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/><rect x="22" y="29" width="8" height="9" rx="1.5" fill="#0f2740"/></svg>
-        <div><div style="font-size:26px;font-weight:800;color:#0f2740;">700<span style="font-size:14px;color:#64748b;">+</span></div><div style="font-size:11.5px;color:#94a3b8;">농장</div></div>
+    <div class="grid-3 mt-lg">
+      <div class="pp-quickstat">
+        <svg class="pp-quickstat-icon" viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="4,22 26,10 48,22" fill="#16a34a"/><rect x="9" y="22" width="34" height="16" rx="2.5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/><rect x="22" y="29" width="8" height="9" rx="1.5" fill="#0f2740"/></svg>
+        <div><div class="pp-quickstat-value">700<span>+</span></div><div class="pp-quickstat-label">농장</div></div>
       </div>
-      <div style="border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:16px;">
-        <svg viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex:none;"><rect x="6" y="14" width="16" height="24" rx="2.5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/><rect x="26" y="8" width="18" height="30" rx="2.5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/><rect x="10" y="20" width="8" height="4" rx="1" fill="#93c5fd"/><rect x="30" y="14" width="10" height="4" rx="1" fill="#93c5fd"/><rect x="30" y="23" width="10" height="4" rx="1" fill="#93c5fd"/></svg>
-        <div><div style="font-size:26px;font-weight:800;color:#0f2740;">30<span style="font-size:14px;color:#64748b;">+</span></div><div style="font-size:11.5px;color:#94a3b8;">업체</div></div>
+      <div class="pp-quickstat">
+        <svg class="pp-quickstat-icon" viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="14" width="16" height="24" rx="2.5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/><rect x="26" y="8" width="18" height="30" rx="2.5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/><rect x="10" y="20" width="8" height="4" rx="1" fill="#93c5fd"/><rect x="30" y="14" width="10" height="4" rx="1" fill="#93c5fd"/><rect x="30" y="23" width="10" height="4" rx="1" fill="#93c5fd"/></svg>
+        <div><div class="pp-quickstat-value">30<span>+</span></div><div class="pp-quickstat-label">업체</div></div>
       </div>
-      <div style="border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:16px;">
-        <svg viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex:none;"><rect x="8" y="6" width="26" height="32" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/><rect x="14" y="6" width="26" height="32" rx="3" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/><rect x="19" y="13" width="14" height="3" rx="1.5" fill="#93c5fd"/><rect x="19" y="21" width="16" height="2.5" rx="1.25" fill="#dbeafe"/><rect x="19" y="28" width="16" height="2.5" rx="1.25" fill="#dbeafe"/></svg>
-        <div><div style="font-size:26px;font-weight:800;color:#0f2740;">500<span style="font-size:14px;color:#64748b;">+</span></div><div style="font-size:11.5px;color:#94a3b8;">생산 · 경영 보고서</div></div>
+      <div class="pp-quickstat">
+        <svg class="pp-quickstat-icon" viewBox="0 0 52 44" width="50" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="6" width="26" height="32" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/><rect x="14" y="6" width="26" height="32" rx="3" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/><rect x="19" y="13" width="14" height="3" rx="1.5" fill="#93c5fd"/><rect x="19" y="21" width="16" height="2.5" rx="1.25" fill="#dbeafe"/><rect x="19" y="28" width="16" height="2.5" rx="1.25" fill="#dbeafe"/></svg>
+        <div><div class="pp-quickstat-value">500<span>+</span></div><div class="pp-quickstat-label">생산 · 경영 보고서</div></div>
       </div>
     </div>
-    <div style="margin-top:10px;font-size:11px;color:#94a3b8;">2026 상반기 기준</div>
+    <div class="pp-note">2026 상반기 기준</div>
 
-    <div style="margin-top:26px;border:1px solid #e2e8f0;border-radius:16px;background:#f8fafc;padding:22px 26px;">
-      <div style="font-size:10.5px;font-weight:700;letter-spacing:.2em;color:#2563eb;text-transform:uppercase;">Since 1995 · 28년의 축적</div>
-      <svg viewBox="0 0 1010 118" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1995년 서울대연구소 최초 개발, 1998년 PC 농가 보급, 2005년 웹·모바일, 2020년 클라우드, 2026년 AI 서비스" style="margin-top:14px;">
-        <line x1="70" y1="34" x2="940" y2="34" stroke="#e2e8f0" stroke-width="2.4"/>
-        <circle cx="100" cy="34" r="8" fill="#94a3b8"/><circle cx="310" cy="34" r="8" fill="#94a3b8"/><circle cx="520" cy="34" r="8" fill="#94a3b8"/><circle cx="720" cy="34" r="8" fill="#60a5fa"/><circle cx="912" cy="34" r="10" fill="#2563eb"/><circle cx="912" cy="34" r="3.4" fill="#ffffff"/>
-        <text x="100" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">1995</text>
-        <text x="100" y="86" text-anchor="middle" font-size="11" fill="#64748b">서울대연구소 최초 개발</text>
-        <text x="310" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">1998</text>
-        <text x="310" y="86" text-anchor="middle" font-size="11" fill="#64748b">농가 보급 (PC)</text>
-        <text x="520" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">2005</text>
-        <text x="520" y="86" text-anchor="middle" font-size="11" fill="#64748b">WEB · MOBILE</text>
-        <text x="720" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">2020</text>
-        <text x="720" y="86" text-anchor="middle" font-size="11" fill="#64748b">클라우드 pigplan.io</text>
-        <text x="912" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#2563eb">2026</text>
-        <text x="912" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">AI 서비스</text>
-      </svg>
+    <div class="pp-timeline-box">
+      <div class="pp-timeline-kicker">Since 1995 · 31년의 축적</div>
+      <div class="art-scroll mt-sm">
+        <svg viewBox="0 0 1010 118" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1995년 서울대연구소 최초 개발, 1998년 PC 농가 보급, 2005년 웹·모바일, 2020년 클라우드, 2026년 AI 서비스">
+          <line x1="70" y1="34" x2="940" y2="34" stroke="#e2e8f0" stroke-width="2.4"/>
+          <circle cx="100" cy="34" r="8" fill="#94a3b8"/><circle cx="310" cy="34" r="8" fill="#94a3b8"/><circle cx="520" cy="34" r="8" fill="#94a3b8"/><circle cx="720" cy="34" r="8" fill="#60a5fa"/><circle cx="912" cy="34" r="10" fill="#2563eb"/><circle cx="912" cy="34" r="3.4" fill="#ffffff"/>
+          <text x="100" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">1995</text>
+          <text x="100" y="86" text-anchor="middle" font-size="11" fill="#64748b">서울대연구소 최초 개발</text>
+          <text x="310" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">1998</text>
+          <text x="310" y="86" text-anchor="middle" font-size="11" fill="#64748b">농가 보급 (PC)</text>
+          <text x="520" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">2005</text>
+          <text x="520" y="86" text-anchor="middle" font-size="11" fill="#64748b">WEB · MOBILE</text>
+          <text x="720" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#0f2740">2020</text>
+          <text x="720" y="86" text-anchor="middle" font-size="11" fill="#64748b">클라우드 pigplan.io</text>
+          <text x="912" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#2563eb">2026</text>
+          <text x="912" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">AI 서비스</text>
+        </svg>
+      </div>
     </div>
 
-    <details style="margin-top:16px;border:1px solid #e2e8f0;border-radius:13px;padding:14px 20px;">
-      <summary style="font-size:13px;font-weight:800;color:#0f2740;display:flex;align-items:center;gap:8px;"><span style="color:#2563eb;">▸</span>표준 시스템 6대 기능 보기</summary>
-      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px;">
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">01</span><span style="font-size:14px;font-weight:700;color:#1e293b;">번식·비육 전 과정 기록</span></div>
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">02</span><span style="font-size:14px;font-weight:700;color:#1e293b;">종돈장 검정돈 관리</span></div>
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">03</span><span style="font-size:14px;font-weight:700;color:#1e293b;">표준 KPI 성적 분석·조회</span></div>
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">04</span><span style="font-size:14px;font-weight:700;color:#1e293b;">전국 비교 벤치마크</span></div>
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">05</span><span style="font-size:14px;font-weight:700;color:#1e293b;">모바일 현장 입력</span></div>
-        <div style="display:flex;align-items:baseline;gap:14px;padding:10px 0;"><span style="flex:none;font-size:12px;font-weight:800;color:#2563eb;">06</span><span style="font-size:14px;font-weight:700;color:#1e293b;">IoT 돈사 환경 모니터링</span></div>
+    <details class="pp-details">
+      <summary><span class="t-blue">▸</span>표준 시스템 6대 기능 보기</summary>
+      <div class="pp-func-grid">
+        <div class="pp-func-row"><span class="pp-func-num">01</span><span class="pp-func-text">번식·비육 전 과정 기록</span></div>
+        <div class="pp-func-row"><span class="pp-func-num">02</span><span class="pp-func-text">종돈장 검정돈 관리</span></div>
+        <div class="pp-func-row"><span class="pp-func-num">03</span><span class="pp-func-text">표준 KPI 성적 분석·조회</span></div>
+        <div class="pp-func-row"><span class="pp-func-num">04</span><span class="pp-func-text">전국 비교 벤치마크</span></div>
+        <div class="pp-func-row pp-last"><span class="pp-func-num">05</span><span class="pp-func-text">모바일 현장 입력</span></div>
+        <div class="pp-func-row pp-last"><span class="pp-func-num">06</span><span class="pp-func-text">IoT 돈사 환경 모니터링</span></div>
       </div>
     </details>
   </div>
 </section>
 
-<section style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
-  <div style="max-width:1160px;margin:0 auto;padding:80px 28px 76px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#2563eb;text-transform:uppercase;">AI Systems</div>
-    <h2 style="margin:12px 0 0;font-size:28px;font-weight:800;letter-spacing:-.02em;color:#0f2740;">3개의 독립 AI 시스템</h2>
-    <p style="margin:10px 0 0;font-size:14px;color:#64748b;">하나의 피그플랜 데이터에서 두 갈래 — 묻고, 경영하고. <b style="color:#0f2740;">묻는 순간 답하고, 마감하면 브리핑합니다.</b></p>
+<section id="ai-systems" class="section section-alt">
+  <div class="container">
+    <span class="kicker t-blue">AI Systems</span>
+    <h2 class="h2 t-navy mt-sm">3개의 독립 AI 시스템</h2>
+    <p class="lede">하나의 피그플랜 데이터에서 두 갈래 — 묻고, 경영하고. <b class="t-navy">묻는 순간 답하고, 마감하면 브리핑합니다.</b></p>
 
-    <div style="margin-top:28px;background:#ffffff;border:2px solid #16a34a;border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(22,163,74,.1);">
-      <div style="background:linear-gradient(90deg,#15803d,#16a34a 60%,#22a856);color:#ffffff;padding:14px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-        <span style="font-size:11px;font-weight:800;letter-spacing:.16em;">SYSTEM 01</span>
-        <span style="font-size:18px;font-weight:800;">피그플랜인사이트</span>
-        <span style="font-size:11.5px;font-weight:700;background:rgba(255,255,255,.2);border-radius:999px;padding:3px 12px;">받아보는 AI</span>
-        <span style="margin-left:auto;font-size:11.5px;font-weight:800;background:#ffffff;color:#16a34a;border-radius:999px;padding:4px 13px;">운영 중 · 연 90만원 (VAT 별도)</span>
+    <div class="pp-sys-card pp-sys-green mt-lg">
+      <div class="pp-sys-head pp-sys-green">
+        <span class="pp-sys-eyebrow">SYSTEM 01</span>
+        <span class="pp-sys-title-lg">피그플랜인사이트</span>
+        <span class="pp-sys-tag">받아보는 AI</span>
+        <span class="pp-sys-status-solid t-green">운영 중 · 연 90만원 (VAT 별도)</span>
       </div>
-      <div style="padding:22px 26px 26px;">
-        <p style="margin:0;font-size:15px;line-height:1.7;color:#475569;max-width:800px;">농장 데이터를 <b style="color:#16a34a;">AI가 진단</b>하고, 약점과 개선 방향까지 제시하는 경영진단 리포트. 매주·매월 자동으로 도착합니다.</p>
-        <svg viewBox="0 0 1010 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="농장 기록과 기상·시세·질병 등 외부 데이터가 AI 진단을 거쳐 카카오톡으로 주간·월간 리포트로 도착합니다" style="margin-top:18px;">
-          <defs><marker id="inG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#16a34a"/></marker></defs>
-          <text x="120" y="26" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="2" fill="#94a3b8">입력</text>
-          <g font-size="10.5" font-weight="700" text-anchor="middle">
-            <rect x="24" y="42" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="68" y="59" fill="#166534">농장 기록</text>
-            <rect x="122" y="42" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="166" y="59" fill="#166534">비육 · 출하</text>
-            <rect x="24" y="76" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="68" y="93" fill="#166534">경영 · 손익</text>
-            <rect x="122" y="76" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="166" y="93" fill="#166534">돈사 IoT</text>
-            <rect x="24" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="53" y="127" fill="#64748b">기상</text>
-            <rect x="90" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="119" y="127" fill="#64748b">시세</text>
-            <rect x="156" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="185" y="127" fill="#64748b">질병</text>
-            <rect x="24" y="144" width="88" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="68" y="161" fill="#64748b">위치 · 지역</text>
-            <rect x="122" y="144" width="88" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="166" y="161" fill="#64748b">뉴스 · 기사</text>
-          </g>
-          <path d="M226 106 H 292" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
-          <line x1="386" y1="44" x2="386" y2="32" stroke="#9fb4cd" stroke-width="2.4"/><circle cx="386" cy="27" r="4.5" fill="#16a34a"/>
-          <rect x="350" y="44" width="72" height="50" rx="21" fill="#f4f7fc" stroke="#c9d5e6" stroke-width="1.5"/>
-          <rect x="364" y="58" width="44" height="22" rx="11" fill="#0f2740"/>
-          <rect x="371" y="64" width="11" height="9" rx="4" fill="#3ddbff"/><rect x="390" y="64" width="11" height="9" rx="4" fill="#3ddbff"/>
-          <rect x="342" y="100" width="88" height="58" rx="18" fill="#f4f7fc" stroke="#c9d5e6" stroke-width="1.5"/>
-          <rect x="362" y="114" width="48" height="30" rx="7" fill="#0f2740"/>
-          <text x="386" y="135" text-anchor="middle" font-size="14" font-weight="800" fill="#7cd6ff">AI</text>
-          <text x="386" y="186" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f2740">AI 진단</text>
-          <text x="386" y="206" text-anchor="middle" font-size="11" fill="#64748b">자동 분석 · 요약 · 손실 금액 환산</text>
-          <path d="M446 106 H 512" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
-          <rect x="530" y="34" width="200" height="146" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-          <rect x="530" y="34" width="200" height="26" rx="13" fill="#f1f5f9"/>
-          <circle cx="548" cy="47" r="4" fill="#cbd5e1"/>
-          <text x="620" y="52" text-anchor="middle" font-size="10" font-weight="800" fill="#94a3b8">카카오톡</text>
-          <rect x="546" y="72" width="150" height="44" rx="12" fill="#f0fdf4" stroke="#86efac"/>
-          <text x="560" y="90" font-size="10.5" font-weight="800" fill="#166534">주간 리포트 도착</text>
-          <rect x="560" y="98" width="86" height="5" rx="2.5" fill="#bbf7d0"/>
-          <rect x="546" y="124" width="150" height="44" rx="12" fill="#f0fdf4" stroke="#86efac"/>
-          <text x="560" y="142" font-size="10.5" font-weight="800" fill="#166534">월간 실적 보고서</text>
-          <rect x="560" y="150" width="70" height="5" rx="2.5" fill="#bbf7d0"/>
-          <text x="630" y="206" text-anchor="middle" font-size="13.5" font-weight="800" fill="#15803d">매주 · 매월 자동 발송</text>
-          <text x="630" y="226" text-anchor="middle" font-size="11" fill="#64748b">카카오톡 한 통 · 3분 안에 파악</text>
-          <path d="M748 106 H 802" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
-          <rect x="818" y="52" width="168" height="110" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.6"/>
-          <text x="902" y="76" text-anchor="middle" font-size="11" font-weight="800" fill="#94a3b8">조치 필요 항목</text>
-          <rect x="836" y="88" width="132" height="20" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="902" y="102" text-anchor="middle" font-size="10" font-weight="700" fill="#b91c1c">개선 — 분만율</text>
-          <rect x="836" y="114" width="132" height="20" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="902" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">관찰 — 이유전폐사</text>
-          <rect x="836" y="140" width="132" height="14" rx="7" fill="#f0fdf4" stroke="#bbf7d0"/><text x="902" y="151" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">양호 — MSY</text>
-          <text x="902" y="192" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f2740">약점 · 개선 리포트</text>
-          <text x="902" y="212" text-anchor="middle" font-size="11" fill="#64748b">KPI 등급 · 전국 비교</text>
-        </svg>
+      <div class="pp-sys-body">
+        <p class="pp-sys-lede max-w-lg">농장 데이터를 <b class="t-green">AI가 진단</b>하고, 약점과 개선 방향까지 제시하는 경영진단 리포트. 매주·매월 자동으로 도착합니다.</p>
+        <div class="art-scroll mt-md">
+          <svg viewBox="0 0 1010 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="농장 기록과 기상·시세·질병 등 외부 데이터가 AI 진단을 거쳐 카카오톡으로 주간·월간 리포트로 도착합니다">
+            <defs><marker id="inG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#16a34a"/></marker></defs>
+            <text x="120" y="26" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="2" fill="#64748b">입력</text>
+            <g font-size="10.5" font-weight="700" text-anchor="middle">
+              <rect x="24" y="42" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="68" y="59" fill="#166534">농장 기록</text>
+              <rect x="122" y="42" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="166" y="59" fill="#166534">비육 · 출하</text>
+              <rect x="24" y="76" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="68" y="93" fill="#166534">경영 · 손익</text>
+              <rect x="122" y="76" width="88" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/><text x="166" y="93" fill="#166534">돈사 IoT</text>
+              <rect x="24" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="53" y="127" fill="#64748b">기상</text>
+              <rect x="90" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="119" y="127" fill="#64748b">시세</text>
+              <rect x="156" y="110" width="58" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="185" y="127" fill="#64748b">질병</text>
+              <rect x="24" y="144" width="88" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="68" y="161" fill="#64748b">위치 · 지역</text>
+              <rect x="122" y="144" width="88" height="26" rx="13" fill="#f8fafc" stroke="#e2e8f0"/><text x="166" y="161" fill="#64748b">뉴스 · 기사</text>
+            </g>
+            <path d="M226 106 H 292" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
+            <line x1="386" y1="44" x2="386" y2="32" stroke="#9fb4cd" stroke-width="2.4"/><circle cx="386" cy="27" r="4.5" fill="#16a34a"/>
+            <rect x="350" y="44" width="72" height="50" rx="21" fill="#f4f7fc" stroke="#c9d5e6" stroke-width="1.5"/>
+            <rect x="364" y="58" width="44" height="22" rx="11" fill="#0f2740"/>
+            <rect x="371" y="64" width="11" height="9" rx="4" fill="#3ddbff"/><rect x="390" y="64" width="11" height="9" rx="4" fill="#3ddbff"/>
+            <rect x="342" y="100" width="88" height="58" rx="18" fill="#f4f7fc" stroke="#c9d5e6" stroke-width="1.5"/>
+            <rect x="362" y="114" width="48" height="30" rx="7" fill="#0f2740"/>
+            <text x="386" y="135" text-anchor="middle" font-size="14" font-weight="800" fill="#7cd6ff">AI</text>
+            <text x="386" y="186" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f2740">AI 진단</text>
+            <text x="386" y="206" text-anchor="middle" font-size="11" fill="#64748b">자동 분석 · 요약 · 손실 금액 환산</text>
+            <path d="M446 106 H 512" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
+            <rect x="530" y="34" width="200" height="146" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+            <rect x="530" y="34" width="200" height="26" rx="13" fill="#f1f5f9"/>
+            <circle cx="548" cy="47" r="4" fill="#cbd5e1"/>
+            <text x="620" y="52" text-anchor="middle" font-size="10" font-weight="800" fill="#64748b">카카오톡</text>
+            <rect x="546" y="72" width="150" height="44" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+            <text x="560" y="90" font-size="10.5" font-weight="800" fill="#166534">주간 리포트 도착</text>
+            <rect x="560" y="98" width="86" height="5" rx="2.5" fill="#bbf7d0"/>
+            <rect x="546" y="124" width="150" height="44" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+            <text x="560" y="142" font-size="10.5" font-weight="800" fill="#166534">월간 실적 보고서</text>
+            <rect x="560" y="150" width="70" height="5" rx="2.5" fill="#bbf7d0"/>
+            <text x="630" y="206" text-anchor="middle" font-size="13.5" font-weight="800" fill="#15803d">매주 · 매월 자동 발송</text>
+            <text x="630" y="226" text-anchor="middle" font-size="11" fill="#64748b">카카오톡 한 통 · 3분 안에 파악</text>
+            <path d="M748 106 H 802" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#inG)"/>
+            <rect x="818" y="52" width="168" height="110" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.6"/>
+            <text x="902" y="76" text-anchor="middle" font-size="11" font-weight="800" fill="#64748b">조치 필요 항목</text>
+            <rect x="836" y="88" width="132" height="20" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="902" y="102" text-anchor="middle" font-size="10" font-weight="700" fill="#b91c1c">개선 — 분만율</text>
+            <rect x="836" y="114" width="132" height="20" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="902" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">관찰 — 이유전폐사</text>
+            <rect x="836" y="140" width="132" height="14" rx="7" fill="#f0fdf4" stroke="#bbf7d0"/><text x="902" y="151" text-anchor="middle" font-size="9.5" font-weight="700" fill="#166534">양호 — MSY</text>
+            <text x="902" y="192" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0f2740">약점 · 개선 리포트</text>
+            <text x="902" y="212" text-anchor="middle" font-size="11" fill="#64748b">KPI 등급 · 전국 비교</text>
+          </svg>
+        </div>
       </div>
     </div>
 
-    <sc-if value="{{ showReportSample }}" hint-placeholder-val="{{ true }}">
-    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1.25fr;gap:20px;align-items:start;">
-      <div style="border:1px solid #e2e8f0;border-radius:16px;padding:20px 22px;background:#ffffff;">
-        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-          <span style="font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#16a34a;text-transform:uppercase;">주간 리포트</span>
-          <span style="font-size:12px;color:#94a3b8;">OO농장 · 15주차</span>
+    <div class="pp-sample-grid">
+      <div class="pp-sample-card">
+        <div class="pp-sample-head">
+          <span class="pp-sample-tag">주간 리포트</span>
+          <span class="pp-sample-meta">OO농장 · 15주차</span>
         </div>
-        <div style="margin-top:14px;display:flex;flex-direction:column;gap:9px;">
-          <div style="display:flex;gap:10px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:11px 14px;"><span style="flex:none;font-size:10.5px;font-weight:800;color:#16a34a;">강점</span><span style="font-size:12.5px;color:#0f2740;">산자수 <b>상위 25%</b></span></div>
-          <div style="display:flex;gap:10px;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:11px 14px;"><span style="flex:none;font-size:10.5px;font-weight:800;color:#dc2626;">약점</span><div><div style="font-size:12.5px;color:#0f2740;">이유전 폐사율 <b>13.2%</b></div><div style="font-size:11px;color:#94a3b8;margin-top:2px;">전주 11.6% ▲1.6%p · 상위 25% 대비 높음</div></div></div>
-          <div style="display:flex;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:11px 14px;"><span style="flex:none;font-size:10.5px;font-weight:800;color:#475569;">AI 진단</span><span style="font-size:12.5px;color:#0f2740;">원인 — 포유 초기 <b>저체중 자돈 관리 미흡</b></span></div>
-          <div style="display:flex;gap:10px;background:#eff6ff;border:1px solid #bfd3f8;border-radius:10px;padding:11px 14px;"><span style="flex:none;font-size:10.5px;font-weight:800;color:#2563eb;">개선</span><span style="font-size:12.5px;color:#0f2740;">저체중 자돈 <b>크로스포스터링</b> · 포유 3~7일 집중 관리</span></div>
+        <div class="pp-sample-rows">
+          <div class="pp-sample-row pp-good"><span class="pp-sample-label t-green">강점</span><span class="pp-sample-text">산자수 <b>상위 25%</b></span></div>
+          <div class="pp-sample-row pp-bad"><span class="pp-sample-label" style="color:#dc2626;">약점</span><div><div class="pp-sample-text">이유전 폐사율 <b>13.2%</b></div><div class="pp-sample-sub">전주 11.6% ▲1.6%p · 상위 25% 대비 높음</div></div></div>
+          <div class="pp-sample-row pp-neutral"><span class="pp-sample-label" style="color:#475569;">AI 진단</span><span class="pp-sample-text">원인 — 포유 초기 <b>저체중 자돈 관리 미흡</b></span></div>
+          <div class="pp-sample-row pp-info"><span class="pp-sample-label t-blue">개선</span><span class="pp-sample-text">저체중 자돈 <b>크로스포스터링</b> · 포유 3~7일 집중 관리</span></div>
         </div>
       </div>
-      <div style="border:1px solid #e2e8f0;border-radius:16px;padding:20px 22px;background:#ffffff;">
-        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-          <span style="font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#16a34a;text-transform:uppercase;">월간 리포트</span>
-          <span style="font-size:14px;font-weight:800;color:#0f2740;">6월 실적 보고서</span>
-          <span style="font-size:12px;color:#94a3b8;">AI 종합진단 · OO농장</span>
+      <div class="pp-sample-card">
+        <div class="pp-sample-head">
+          <span class="pp-sample-tag">월간 리포트</span>
+          <span class="pp-sample-title">6월 실적 보고서</span>
+          <span class="pp-sample-meta">AI 종합진단 · OO농장</span>
         </div>
-        <div style="margin-top:16px;display:grid;grid-template-columns:.8fr 1.2fr;gap:14px;">
-          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:13px;padding:15px 17px;">
-            <div style="font-size:11px;font-weight:700;color:#94a3b8;">종합등급</div>
-            <div style="margin-top:6px;font-size:34px;font-weight:800;color:#0f2740;letter-spacing:-.02em;">C</div>
-            <div style="font-size:13px;color:#64748b;font-weight:700;">3.4 / 7점</div>
-            <div style="margin-top:8px;font-size:12.5px;color:#475569;">전국 상위 <b style="color:#16a34a;">41%</b></div>
+        <div class="pp-report-grid">
+          <div class="pp-report-box">
+            <div class="pp-report-label">종합등급</div>
+            <div class="pp-grade">C</div>
+            <div class="pp-grade-sub">3.4 / 7점</div>
+            <div class="pp-grade-rank">전국 상위 <b class="t-green">41%</b></div>
           </div>
-          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:13px;padding:15px 17px;">
-            <div style="font-size:11px;font-weight:700;color:#94a3b8;">핵심 KPI · 관찰 / 개선 / 양호</div>
-            <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <div style="display:flex;align-items:baseline;gap:7px;"><span style="font-size:11.5px;color:#64748b;">PSY</span><b style="font-size:14px;color:#0f2740;">25.6두</b><span style="font-size:10px;font-weight:800;color:#d97706;background:#fffbeb;border-radius:999px;padding:2px 7px;">관찰</span></div>
-              <div style="display:flex;align-items:baseline;gap:7px;"><span style="font-size:11.5px;color:#64748b;">분만율</span><b style="font-size:14px;color:#0f2740;">84.4%</b><span style="font-size:10px;font-weight:800;color:#dc2626;background:#fef2f2;border-radius:999px;padding:2px 7px;">개선</span></div>
-              <div style="display:flex;align-items:baseline;gap:7px;"><span style="font-size:11.5px;color:#64748b;">이유전폐사</span><b style="font-size:14px;color:#0f2740;">9.0%</b><span style="font-size:10px;font-weight:800;color:#d97706;background:#fffbeb;border-radius:999px;padding:2px 7px;">관찰</span></div>
-              <div style="display:flex;align-items:baseline;gap:7px;"><span style="font-size:11.5px;color:#64748b;">MSY</span><b style="font-size:14px;color:#0f2740;">25.4두</b><span style="font-size:10px;font-weight:800;color:#16a34a;background:#f0fdf4;border-radius:999px;padding:2px 7px;">양호</span></div>
+          <div class="pp-report-box">
+            <div class="pp-report-label">핵심 KPI · 관찰 / 개선 / 양호</div>
+            <div class="pp-kpi-grid">
+              <div class="pp-kpi-item"><span class="pp-kpi-name">PSY</span><b class="pp-kpi-value">25.6두</b><span class="pp-kpi-tag pp-watch">관찰</span></div>
+              <div class="pp-kpi-item"><span class="pp-kpi-name">분만율</span><b class="pp-kpi-value">84.4%</b><span class="pp-kpi-tag pp-improve">개선</span></div>
+              <div class="pp-kpi-item"><span class="pp-kpi-name">이유전폐사</span><b class="pp-kpi-value">9.0%</b><span class="pp-kpi-tag pp-watch">관찰</span></div>
+              <div class="pp-kpi-item"><span class="pp-kpi-name">MSY</span><b class="pp-kpi-value">25.4두</b><span class="pp-kpi-tag pp-good">양호</span></div>
             </div>
           </div>
         </div>
-        <div style="margin-top:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:13px;padding:15px 17px;">
-          <div style="font-size:11px;font-weight:700;color:#94a3b8;">수익 손실 구성 · 합 100%</div>
-          <div style="margin-top:10px;display:flex;height:16px;border-radius:5px;overflow:hidden;">
+        <div class="pp-loss-box">
+          <div class="pp-report-label">수익 손실 구성 · 합 100%</div>
+          <div class="pp-loss-bar">
             <div style="width:47.2%;background:#ef4444;"></div><div style="width:40.3%;background:#f59e0b;"></div><div style="width:7%;background:#94a3b8;"></div><div style="width:5.5%;background:#cbd5e1;"></div>
           </div>
-          <div style="margin-top:9px;font-size:11.5px;line-height:1.6;color:#64748b;">NPD 비생산 <b style="color:#0f2740;">47.2</b> · 포유중 폐사 <b style="color:#0f2740;">40.3</b> · 출하등급 7.0 · 임신사고 5.5</div>
+          <div class="pp-loss-caption">NPD 비생산 <b class="t-navy">47.2</b> · 포유중 폐사 <b class="t-navy">40.3</b> · 출하등급 7.0 · 임신사고 5.5</div>
         </div>
-        <div style="margin-top:12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;padding:12px 16px;font-size:13px;color:#0f2740;"><b style="color:#16a34a;">AI 개선</b> — 최대 손실 <b>NPD 비생산</b> · 재귀지연 관리 · 발정 관찰 강화</div>
+        <div class="pp-improve-note"><b class="t-green">AI 개선</b> — 최대 손실 <b>NPD 비생산</b> · 재귀지연 관리 · 발정 관찰 강화</div>
       </div>
     </div>
-    </sc-if>
 
-    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-      <div style="border:2px solid #ea580c;border-radius:18px;overflow:hidden;background:#ffffff;box-shadow:0 12px 28px rgba(234,88,12,.1);display:flex;flex-direction:column;">
-        <div style="background:linear-gradient(90deg,#c2410c,#ea580c 60%,#f2600f);color:#ffffff;padding:14px 22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:11px;font-weight:800;letter-spacing:.16em;">SYSTEM 02</span>
-          <span style="font-size:17px;font-weight:800;">피그플랜톡</span>
-          <span style="margin-left:auto;font-size:11px;font-weight:800;background:rgba(255,255,255,.22);border-radius:999px;padding:3px 11px;">2026. 4분기 오픈 예정</span>
+    <div class="grid-2 mt-lg">
+      <div class="pp-sys-card pp-sys-orange">
+        <div class="pp-sys-head pp-sys-orange">
+          <span class="pp-sys-eyebrow">SYSTEM 02</span>
+          <span class="pp-sys-title">피그플랜톡</span>
+          <span class="pp-sys-status-ghost">2026. 4분기 오픈 예정</span>
         </div>
-        <div style="padding:20px 22px;display:flex;flex-direction:column;flex:1;">
-          <div style="font-size:13.5px;font-weight:700;color:#ea580c;">물어보는 AI — 인사이트는 도착하고, 톡은 대답합니다</div>
-          <p style="margin:10px 0 0;font-size:14px;line-height:1.65;color:#475569;">메뉴를 찾을 필요 없이, <b>내 농장 데이터에 근거해 답하는</b> 대화형 AI. 물어보면 끝.</p>
-          <svg viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="312번 모돈 상태를 물어보면 AI가 산차와 성적을 답하고, 도태 여부까지 판단해 줍니다" style="margin-top:14px;">
+        <div class="pp-sys-body">
+          <div class="pp-sys-subtitle pp-orange">물어보는 AI — 인사이트는 도착하고, 톡은 대답합니다</div>
+          <p class="pp-sys-lede mt-sm">메뉴를 찾을 필요 없이, <b>내 농장 데이터에 근거해 답하는</b> 대화형 AI. 물어보면 끝.</p>
+          <svg class="mt-md" viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="312번 모돈 상태를 물어보면 AI가 산차와 성적을 답하고, 도태 여부까지 판단해 줍니다">
             <rect x="150" y="6" width="326" height="38" rx="15" fill="#ea580c"/>
             <path d="M452 44 l10 12 -24 -12 z" fill="#ea580c"/>
             <text x="313" y="30" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">312번 모돈 상태 알려줘</text>
@@ -353,29 +514,29 @@ details summary::-webkit-details-marker{display:none;}
             <rect x="4" y="196" width="404" height="66" rx="15" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
             <text x="24" y="222" font-size="12.5" fill="#334155">저산성 · 재귀 지연 · 재발 반복 —</text>
             <text x="24" y="242" font-size="12.5" font-weight="800" fill="#c2410c">도태 후보로 분류됩니다.</text>
-            <text x="24" y="256" font-size="11" fill="#94a3b8">다음 발정 관찰 후 재교배 여부 판단 권장</text>
+            <text x="24" y="256" font-size="11" fill="#64748b">다음 발정 관찰 후 재교배 여부 판단 권장</text>
           </svg>
-          <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:7px;">
-            <span style="font-size:11.5px;font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:999px;padding:4px 11px;">개체단위 분석</span>
-            <span style="font-size:11.5px;font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:999px;padding:4px 11px;">180지표 산정과 수치 분석</span>
-            <span style="font-size:11.5px;font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:999px;padding:4px 11px;">500여종 보고서</span>
-            <span style="font-size:11.5px;font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:999px;padding:4px 11px;">화면별 안내</span>
-            <span style="font-size:11.5px;font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:999px;padding:4px 11px;">모바일용 음성 질의</span>
+          <div class="pp-sys-chips">
+            <span class="pp-chip-orange">개체단위 분석</span>
+            <span class="pp-chip-orange">180지표 산정과 수치 분석</span>
+            <span class="pp-chip-orange">500여종 보고서</span>
+            <span class="pp-chip-orange">화면별 안내</span>
+            <span class="pp-chip-orange">모바일용 음성 질의</span>
           </div>
-          <div style="margin-top:auto;padding-top:14px;font-size:12.5px;font-weight:700;color:#0f2740;">월 정액제 · 토큰 기반 산정 <span style="font-weight:500;color:#94a3b8;">(초과 시 별도 구매)</span></div>
+          <div class="pp-sys-price">월 정액제 · 토큰 기반 산정 <span class="pp-price-note">(초과 시 별도 구매)</span></div>
         </div>
       </div>
 
-      <div style="border:2px solid #7c3aed;border-radius:18px;overflow:hidden;background:#ffffff;box-shadow:0 12px 28px rgba(124,58,237,.1);display:flex;flex-direction:column;">
-        <div style="background:linear-gradient(90deg,#6d28d9,#7c3aed 60%,#8341f4);color:#ffffff;padding:14px 22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:11px;font-weight:800;letter-spacing:.16em;">SYSTEM 03</span>
-          <span style="font-size:17px;font-weight:800;">피그플랜비즈</span>
-          <span style="margin-left:auto;font-size:11px;font-weight:800;background:rgba(255,255,255,.22);border-radius:999px;padding:3px 11px;">2026. 4분기 오픈 예정</span>
+      <div class="pp-sys-card pp-sys-purple">
+        <div class="pp-sys-head pp-sys-purple">
+          <span class="pp-sys-eyebrow">SYSTEM 03</span>
+          <span class="pp-sys-title">피그플랜비즈</span>
+          <span class="pp-sys-status-ghost">2026. 4분기 오픈 예정</span>
         </div>
-        <div style="padding:20px 22px;display:flex;flex-direction:column;flex:1;">
-          <div style="font-size:13.5px;font-weight:700;color:#7c3aed;">경영 AI — 마감하면 브리핑합니다</div>
-          <p style="margin:10px 0 0;font-size:14px;line-height:1.65;color:#475569;">손익·현금·인사·자산·재고 — 농장 경영을 <b>한곳에서</b>. 증감 요인을 <b>AI가 진단·요약</b>합니다.</p>
-          <svg viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="손익·현금흐름·인사·자산·재고를 한 화면에서 보고, AI가 손익 브리핑을 요약합니다" style="margin-top:14px;">
+        <div class="pp-sys-body">
+          <div class="pp-sys-subtitle t-purple">경영 AI — 마감하면 브리핑합니다</div>
+          <p class="pp-sys-lede mt-sm">손익·현금·인사·자산·재고 — 농장 경영을 <b>한곳에서</b>. 증감 요인을 <b>AI가 진단·요약</b>합니다.</p>
+          <svg class="mt-md" viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="손익·현금흐름·인사·자산·재고를 한 화면에서 보고, AI가 손익 브리핑을 요약합니다">
             <rect x="4" y="6" width="472" height="176" rx="14" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.6"/>
             <rect x="4" y="6" width="472" height="28" rx="14" fill="#7c3aed"/>
             <text x="240" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">농장 경영 대시보드</text>
@@ -399,41 +560,41 @@ details summary::-webkit-details-marker{display:none;}
             <text x="92" y="227" font-size="12.5" font-weight="700" fill="#0f2740">"이번 달 사료비 왜 늘었어?"</text>
             <text x="20" y="248" font-size="11.5" fill="#64748b">생산성적(PSY · 출하)과 손익을 연결해 수익 개선 포인트를 제시합니다</text>
           </svg>
-          <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:7px;">
-            <span style="font-size:11.5px;font-weight:700;color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:999px;padding:4px 11px;">축평원 등급 자동 입력</span>
-            <span style="font-size:11.5px;font-weight:700;color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:999px;padding:4px 11px;">리포트 PDF 내보내기</span>
-            <span style="font-size:11.5px;font-weight:700;color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:999px;padding:4px 11px;">농장별 경영 권한 분리</span>
+          <div class="pp-sys-chips">
+            <span class="pp-chip-purple">축평원 등급 자동 입력</span>
+            <span class="pp-chip-purple">리포트 PDF 내보내기</span>
+            <span class="pp-chip-purple">농장별 경영 권한 분리</span>
           </div>
-          <div style="margin-top:auto;padding-top:14px;font-size:12.5px;font-weight:700;color:#0f2740;">연 정액제 · 요금 미정</div>
+          <div class="pp-sys-price">연 정액제 · 요금 미정</div>
         </div>
       </div>
     </div>
 
-    <div style="margin-top:20px;border:1px solid #e2e8f0;background:#ffffff;border-radius:13px;padding:16px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:#475569;">
-      <span style="font-size:10.5px;font-weight:700;letter-spacing:.18em;color:#94a3b8;text-transform:uppercase;flex:none;">외부 데이터 원천</span>
-      <span style="color:#94a3b8;">AI 분석 시 융합 —</span>
-      <span style="display:flex;flex-wrap:wrap;gap:7px;">
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">기상</span>
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">출하</span>
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">질병</span>
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">IoT</span>
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">위치</span>
-        <span style="font-size:12px;font-weight:700;color:#0f2740;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:4px 12px;">시세</span>
+    <div class="pp-source-bar">
+      <span class="pp-source-label">외부 데이터 원천</span>
+      <span class="t-muted-lt">AI 분석 시 융합 —</span>
+      <span class="chips">
+        <span class="chip">기상</span>
+        <span class="chip">출하</span>
+        <span class="chip">질병</span>
+        <span class="chip">IoT</span>
+        <span class="chip">위치</span>
+        <span class="chip">시세</span>
       </span>
     </div>
   </div>
 </section>
 
-<section style="background:#0f2740;color:#ffffff;">
-  <div style="max-width:1160px;margin:0 auto;padding:80px 28px 78px;">
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:.24em;color:#5eead4;text-transform:uppercase;">System 04 · 생태계 확장</span>
-      <span style="font-size:11px;font-weight:700;color:#5eead4;border:1px solid rgba(94,234,212,.4);border-radius:999px;padding:3px 11px;">2027 하반기</span>
+<section id="axio" class="section section-dark">
+  <div class="container">
+    <div class="flex items-center gap-sm flex-wrap">
+      <span class="kicker pp-teal-on-dark">System 04 · 생태계 확장</span>
+      <span class="pp-pill-outline-teal">2027 하반기</span>
     </div>
-    <h2 style="margin:14px 0 0;font-size:32px;font-weight:800;letter-spacing:-.02em;">PIGPLAN AXIO <span style="font-size:15px;font-weight:700;color:rgba(255,255,255,.55);">피그플랜 악시오 · 양돈 생태계 플랫폼</span></h2>
-    <p style="margin:14px 0 0;font-size:15.5px;line-height:1.7;color:rgba(255,255,255,.8);max-width:780px;">피그플랜 AI 스위트를 중심으로, <b style="color:#5eead4;">양돈 생태계가 하나로 연결됩니다.</b> 그 위에서 AI 에이전트가 <b>유관기관 10개 그룹</b> 사이의 업무를 자동 처리합니다.</p>
+    <h2 class="h2 mt-sm">PIGPLAN AXIO <span class="pp-tag-on-dark">피그플랜 악시오 · 양돈 생태계 플랫폼</span></h2>
+    <p class="pp-dark-lede">피그플랜 AI 스위트를 중심으로, <b class="pp-teal-on-dark">양돈 생태계가 하나로 연결됩니다.</b> 그 위에서 AI 에이전트가 <b>유관기관 10개 그룹</b> 사이의 업무를 자동 처리합니다.</p>
 
-    <div style="margin-top:30px;display:flex;justify-content:center;">
+    <div class="flex justify-center mt-lg">
       <svg viewBox="0 0 620 480" width="620" height="480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="가운데 피그플랜 AI 스위트를 중심으로 농장, 수의사, 동물약품, 종축개량, 사료회사, 자재·IoT, 도축장, 축평원, 조합·단체, 컨설턴트 10개 그룹이 원형으로 연결된 생태계">
         <g stroke="rgba(94,234,212,.28)" stroke-width="1.6">
           <line x1="310" y1="240" x2="310" y2="50"/><line x1="310" y1="240" x2="421.7" y2="86.3"/><line x1="310" y1="240" x2="490.7" y2="181.3"/><line x1="310" y1="240" x2="490.7" y2="298.7"/><line x1="310" y1="240" x2="421.7" y2="393.7"/><line x1="310" y1="240" x2="310" y2="430"/><line x1="310" y1="240" x2="198.3" y2="393.7"/><line x1="310" y1="240" x2="129.3" y2="298.7"/><line x1="310" y1="240" x2="129.3" y2="181.3"/><line x1="310" y1="240" x2="198.3" y2="86.3"/>
@@ -458,67 +619,65 @@ details summary::-webkit-details-marker{display:none;}
       </svg>
     </div>
 
-    <div style="margin-top:30px;font-size:11px;font-weight:700;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;">사람 없이 흘러간 OO농장의 하루 — 05:30 → 20:00</div>
-    <svg viewBox="0 0 1010 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="05시 30분 환기팬 이상 자동 A/S 접수, 09시 자재 자동 주문, 11시 질병 사진 수의사 전달, 14시 성적 조합 공유, 17시 급이 데이터 사료회사 공유, 20시 분석 요약 컨설턴트 전달" style="margin-top:16px;">
-      <line x1="70" y1="46" x2="944" y2="46" stroke="rgba(255,255,255,.18)" stroke-width="2.4"/>
-      <g>
-        <circle cx="100" cy="46" r="9" fill="#5eead4"/><text x="100" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">05:30</text>
-        <text x="100" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">환기팬 이상 신호</text>
-        <text x="100" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">IoT 업체 A/S 자동 접수</text>
-      </g>
-      <g>
-        <circle cx="268" cy="46" r="9" fill="#5eead4"/><text x="268" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">09:00</text>
-        <text x="268" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">소모품 재고 임계치</text>
-        <text x="268" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">자재 주문 자동 처리</text>
-      </g>
-      <g>
-        <circle cx="437" cy="46" r="9" fill="#5eead4"/><text x="437" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">11:00</text>
-        <text x="437" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">질병 의심 사진 촬영</text>
-        <text x="437" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">수의사에게 자동 전달</text>
-      </g>
-      <g>
-        <circle cx="606" cy="46" r="9" fill="#5eead4"/><text x="606" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">14:00</text>
-        <text x="606" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">번식 성적 자동 집계</text>
-        <text x="606" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">조합 벤치마크로 공유</text>
-      </g>
-      <g>
-        <circle cx="775" cy="46" r="9" fill="#5eead4"/><text x="775" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">17:00</text>
-        <text x="775" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">급이 데이터 마감</text>
-        <text x="775" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">사료회사에 자동 공유</text>
-      </g>
-      <g>
-        <circle cx="930" cy="46" r="9" fill="#4ade80"/><text x="930" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">20:00</text>
-        <text x="930" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">하루 데이터 요약</text>
-        <text x="930" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#4ade80">컨설턴트에게 전달</text>
-      </g>
-      <rect x="330" y="140" width="350" height="44" rx="22" fill="rgba(94,234,212,.12)" stroke="rgba(94,234,212,.4)" stroke-width="1.5"/>
-      <text x="505" y="168" text-anchor="middle" font-size="15" font-weight="800" fill="#5eead4">사람은 결정만 합니다</text>
-    </svg>
-    <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.14);padding-top:20px;">
-      <span style="font-size:12.5px;color:rgba(255,255,255,.55);">감지 · 접수 · 주문 · 전달은 AI 에이전트가, 승인과 판단만 사람이 합니다.</span>
-      <span style="font-size:12px;color:rgba(255,255,255,.55);"><b style="color:#ffffff;">AXIS</b> 생태계의 축 + <b style="color:#ffffff;">AUTO</b> 스스로 실행 = <b style="color:#5eead4;">AXIO</b></span>
+    <div class="pp-dark-kicker">사람 없이 흘러간 OO농장의 하루 — 05:30 → 20:00</div>
+    <div class="art-scroll mt-md">
+      <svg viewBox="0 0 1010 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="05시 30분 환기팬 이상 자동 A/S 접수, 09시 자재 자동 주문, 11시 질병 사진 수의사 전달, 14시 성적 조합 공유, 17시 급이 데이터 사료회사 공유, 20시 분석 요약 컨설턴트 전달">
+        <line x1="70" y1="46" x2="944" y2="46" stroke="rgba(255,255,255,.18)" stroke-width="2.4"/>
+        <g>
+          <circle cx="100" cy="46" r="9" fill="#5eead4"/><text x="100" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">05:30</text>
+          <text x="100" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">환기팬 이상 신호</text>
+          <text x="100" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">IoT 업체 A/S 자동 접수</text>
+        </g>
+        <g>
+          <circle cx="268" cy="46" r="9" fill="#5eead4"/><text x="268" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">09:00</text>
+          <text x="268" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">소모품 재고 임계치</text>
+          <text x="268" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">자재 주문 자동 처리</text>
+        </g>
+        <g>
+          <circle cx="437" cy="46" r="9" fill="#5eead4"/><text x="437" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">11:00</text>
+          <text x="437" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">질병 의심 사진 촬영</text>
+          <text x="437" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">수의사에게 자동 전달</text>
+        </g>
+        <g>
+          <circle cx="606" cy="46" r="9" fill="#5eead4"/><text x="606" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">14:00</text>
+          <text x="606" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">번식 성적 자동 집계</text>
+          <text x="606" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">조합 벤치마크로 공유</text>
+        </g>
+        <g>
+          <circle cx="775" cy="46" r="9" fill="#5eead4"/><text x="775" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">17:00</text>
+          <text x="775" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">급이 데이터 마감</text>
+          <text x="775" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#5eead4">사료회사에 자동 공유</text>
+        </g>
+        <g>
+          <circle cx="930" cy="46" r="9" fill="#4ade80"/><text x="930" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">20:00</text>
+          <text x="930" y="80" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">하루 데이터 요약</text>
+          <text x="930" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#4ade80">컨설턴트에게 전달</text>
+        </g>
+        <rect x="330" y="140" width="350" height="44" rx="22" fill="rgba(94,234,212,.12)" stroke="rgba(94,234,212,.4)" stroke-width="1.5"/>
+        <text x="505" y="168" text-anchor="middle" font-size="15" font-weight="800" fill="#5eead4">사람은 결정만 합니다</text>
+      </svg>
+    </div>
+    <div class="pp-dark-footer-row">
+      <span class="pp-muted-on-dark">감지 · 접수 · 주문 · 전달은 AI 에이전트가, 승인과 판단만 사람이 합니다.</span>
+      <span class="pp-muted-on-dark pp-small"><b>AXIS</b> 생태계의 축 + <b>AUTO</b> 스스로 실행 = <b class="pp-teal-on-dark">AXIO</b></span>
     </div>
   </div>
 </section>
+</main>
 
-<footer style="border-top:1px solid #e2e8f0;background:#f8fafc;">
-  <div style="max-width:1160px;margin:0 auto;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
-    <span style="font-size:12.5px;color:#94a3b8;"><b style="color:#475569;">피그플랜 AI 스위트</b> — (주) 와이즈레이크</span>
-    <span style="font-size:12.5px;color:#94a3b8;"><a href="index.html" style="color:#64748b;">← 홈으로</a> · <a href="https://wiselake.ai" style="color:#64748b;">wiselake.ai</a></span>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">← 홈으로</a>
+      <a href="/pigos-pigsignal">PigOS · PigSignal</a>
+      <a href="/nanotrans">NanoTrans 보기 →</a>
+    </div>
+    <div class="footer-legal">
+      <span><b>(주)와이즈레이크</b> · 대표이사 진교문 · 사업자등록번호 768-87-02255 · <a href="mailto:wiselake@wiselake.co.kr">wiselake@wiselake.co.kr</a></span>
+      <span>© 2026 WiseLake, Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showCharts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;섹션 표시&quot;},&quot;showReportSample&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;섹션 표시&quot;}}">
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      showCharts: this.props.showCharts ?? true,
-      showReportSample: this.props.showReportSample ?? true,
-    };
-  }
-}
-</script>
 </body>
 </html>
