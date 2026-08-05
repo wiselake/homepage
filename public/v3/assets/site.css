@@ -71,8 +71,8 @@ section[id] { scroll-margin-top: 76px; }
 .h2 { margin: 0; font-size: clamp(24px, 4.5vw, 36px); font-weight: 800; letter-spacing: -.025em; line-height: 1.22; }
 .h3 { margin: 0; font-size: clamp(17px, 2.4vw, 20px); font-weight: 800; letter-spacing: -.01em; }
 .lede { margin: 14px 0 0; font-size: clamp(14.5px, 1.6vw, 16px); line-height: 1.7; color: var(--muted); max-width: 680px; }
-.kicker { display: block; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-.eyebrow-gloss { margin-left: 2px; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: 0; }
+.kicker { display: block; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow-gloss { margin-left: 2px; font-size: 13px; font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: 0; }
 
 /* ---------- nav ---------- */
 .site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -133,7 +133,7 @@ section[id] { scroll-margin-top: 76px; }
 /* ---------- hero ---------- */
 .hero { background: linear-gradient(160deg, var(--navy) 0%, #123056 55%, #17408f 130%); color: #ffffff; }
 .hero-inner { padding-top: clamp(56px, 9vw, 96px); padding-bottom: clamp(30px, 5vw, 48px); }
-.hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: #8fd3ff; border: 1px solid rgba(143,211,255,.4); border-radius: 999px; padding: 5px 14px; }
+.hero-eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: .1em; color: #8fd3ff; border: 1px solid rgba(143,211,255,.4); border-radius: 999px; padding: 5px 14px; }
 .hero h1 { margin: 20px 0 0; }
 .hero-lede { margin-top: 16px; font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.82); max-width: 660px; }
 .hero-badges { margin-top: 22px; }
@@ -168,7 +168,7 @@ section[id] { scroll-margin-top: 76px; }
 .badge-blue { color: var(--blue); background: #ffffff; border-color: #bfdbfe; }
 
 .chips { display: flex; gap: 10px; flex-wrap: wrap; }
-.chip { font-size: 12px; font-weight: 700; border-radius: 999px; padding: 7px 16px; border: 1.5px solid var(--line); background: #ffffff; color: #475569; }
+.chip { font-size: 14px; font-weight: 700; border-radius: 999px; padding: 7px 16px; border: 1.5px solid var(--line); background: #ffffff; color: #475569; }
 .chip-green { color: #15803d; background: var(--green-soft); border-color: #86efac; }
 .chip-blue { color: var(--blue); background: var(--blue-soft); border-color: #bfdbfe; }
 .chip-quicklink { font-weight: 700; color: #475569; }
@@ -178,9 +178,9 @@ section[id] { scroll-margin-top: 76px; }
 .statline { text-align: center; font-size: 12.5px; color: var(--muted); }
 .statline b { color: var(--navy); font-weight: 800; }
 .stat-card { text-align: right; }
-.stat-card .stat-label { font-size: 11.5px; font-weight: 800; color: var(--blue); }
+.stat-card .stat-label { font-size: 13px; font-weight: 800; color: var(--blue); }
 .stat-card .stat-number { margin-top: 4px; font-size: 26px; font-weight: 800; letter-spacing: -.03em; color: var(--blue); }
-.stat-card .stat-note { margin-top: 3px; font-size: 11px; color: var(--muted); }
+.stat-card .stat-note { margin-top: 3px; font-size: 12.5px; color: var(--muted); }
 
 /* ---------- art panel (SVG 인포그래픽 컨테이너) ---------- */
 .art-panel { margin-top: 28px; border: 1px solid var(--line); border-radius: 18px; background: #ffffff; padding: 24px 26px; }
@@ -203,7 +203,7 @@ section[id] { scroll-margin-top: 76px; }
 /* ---------- card ---------- */
 .card { border: 1px solid var(--line); border-radius: 14px; background: #ffffff; padding: 16px 18px 14px; }
 .card-title { font-size: 14px; font-weight: 800; color: var(--navy); }
-.card-desc { margin-top: 6px; font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+.card-desc { margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.6; }
 .card-hl { background: var(--purple-soft); border-color: #ddd6fe; }
 .card-hl .card-title { color: var(--purple); }
 
@@ -245,12 +245,14 @@ section[id] { scroll-margin-top: 76px; }
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); }
 .site-footer .container { padding: 24px 0; }
-.footer-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.footer-links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--muted); margin-bottom: 10px; }
 .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--blue); }
-.footer-legal { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.footer-legal { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
 .footer-legal a { color: var(--muted); }
 .footer-legal b { color: #475569; }
+/* 사업자등록번호처럼 하이픈 포함 숫자가 줄바꿈 시 하이픈에서 끊기는 것을 막는다(375px에서 회귀 확인) */
+.footer-legal .nowrap { white-space: nowrap; }
 
 /* ---------- 강조 컬러 유틸리티 (인라인 color style 대체) ----------
    유틸리티는 항상 마지막에 둔다 — .chip/.chip-quicklink 등 컴포넌트 색 규칙과

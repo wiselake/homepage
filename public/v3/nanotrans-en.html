@@ -46,11 +46,12 @@ gtag('config', 'G-70NWVV9D0S');
 .mt-18 { margin-top: 18px; }
 .mt-24 { margin-top: 24px; }
 
-.hero-tech-meta { margin-top: 18px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; color: rgba(255,255,255,.65); }
-.label-muted { font-size: 11px; font-weight: 700; color: var(--muted); }
-.kicker-muted { color: var(--muted); }
+.hero-tech-meta { margin-top: 18px; font-size: 14px; font-weight: 700; letter-spacing: .06em; color: rgba(255,255,255,.65); }
+.label-muted { font-size: 12.5px; font-weight: 700; color: var(--muted); }
+.kicker-muted { color: var(--muted); font-size: 13px; }
 
 .grid-11-9 { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: stretch; }
+.grid-11-9 > * { min-width: 0; } /* 그리드 아이템의 자동 최소폭이 내부 art-scroll(강제 min-width) 폭으로 팽창해 body가 가로로 밀리는 것을 방지 */
 @media (max-width: 860px) { .grid-11-9 { grid-template-columns: 1fr; } }
 
 .panel-soft { border: 1px solid var(--line); border-radius: 18px; background: var(--bg-soft); padding: 22px 24px; }
@@ -61,7 +62,7 @@ gtag('config', 'G-70NWVV9D0S');
 .icon-card { display: flex; align-items: center; gap: 12px; }
 .icon-card svg { flex: none; }
 .icon-card-title { font-size: 14px; font-weight: 800; color: var(--navy); }
-.icon-card-desc { font-size: 12px; color: var(--muted); }
+.icon-card-desc { font-size: 14px; color: var(--muted); }
 .icon-center { margin: 14px auto 4px; }
 
 .card-top-blue { border-top: 4px solid var(--blue); }
@@ -69,7 +70,7 @@ gtag('config', 'G-70NWVV9D0S');
 .card-top-teal { border-top: 4px solid var(--teal); }
 
 .wallet-title { margin-top: 6px; font-size: 19px; font-weight: 800; }
-.wallet-footnote { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.15); font-size: 12px; color: rgba(255,255,255,.65); }
+.wallet-footnote { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.15); font-size: 14px; color: rgba(255,255,255,.65); }
 .callout-strong { font-size: 14px; font-weight: 800; color: var(--navy); }
 
 .trust-list { display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.55; }
@@ -80,7 +81,7 @@ gtag('config', 'G-70NWVV9D0S');
 .case-card-blue { border: 1.4px solid #bfd3f8; background: var(--blue-soft); }
 .case-card-purple { border: 1.4px solid #ddd6fe; background: var(--purple-soft); }
 .case-card-teal { border: 1.4px solid #99f6e4; background: var(--teal-soft); }
-.case-card-label { font-size: 11.5px; font-weight: 800; }
+.case-card-label { font-size: 13px; font-weight: 800; }
 .case-card-icon { margin: 12px 0 4px; }
 .case-card-title { font-size: 15.5px; font-weight: 800; color: var(--navy); line-height: 1.4; }
 .case-card .card-desc { color: #475569; } /* --muted(#64748b) falls under 4.5:1 on --blue-soft/--purple-soft/--teal-soft backgrounds — using a darker tone for contrast */
@@ -94,7 +95,7 @@ gtag('config', 'G-70NWVV9D0S');
 .detail-stat { background: #ffffff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 17px; }
 .detail-stat-num { font-size: 20px; font-weight: 800; color: var(--navy); }
 .detail-stat-unit { font-size: 12px; color: var(--muted); font-weight: 700; }
-.detail-stat-desc { margin-top: 5px; font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+.detail-stat-desc { margin-top: 5px; font-size: 14px; color: var(--muted); line-height: 1.55; }
 
 .note-box { border: 1.4px solid var(--line); border-radius: 13px; padding: 16px 22px; font-size: 13.5px; line-height: 1.7; color: var(--navy); }
 .note-box-white { background: #ffffff; }
@@ -103,6 +104,11 @@ gtag('config', 'G-70NWVV9D0S');
 .cta-copy { flex: 1 1 340px; min-width: 0; }
 .cta-copy-title { margin-top: 12px; font-size: 18px; font-weight: 800; line-height: 1.5; }
 .cta-copy-desc { margin-top: 12px; font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,.75); }
+
+/* ---------- scroll instead of shrink — keeps SVG diagrams from crushing when the container is narrower than the viewBox ---------- */
+.art-scroll.nt-chat-wrap > svg { min-width: 520px; margin: 0 auto; }
+.art-scroll.nt-split-wrap > svg { min-width: 560px; margin: 0 auto; }
+.art-scroll.nt-wallet-wrap > svg { min-width: 420px; margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -376,7 +382,8 @@ gtag('config', 'G-70NWVV9D0S');
     <div class="grid-11-9 mt-lg">
       <div class="panel-soft">
         <div class="label-muted">AI chat (ChatGPT · Claude)</div>
-        <svg class="mt-sm" viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="In AI chat, finding an article and buying it for 30 won completes payment in half a second and opens the full text">
+        <div class="art-scroll nt-chat-wrap mt-sm">
+        <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="In AI chat, finding an article and buying it for 30 won completes payment in half a second and opens the full text">
           <rect x="150" y="10" width="360" height="42" rx="16" fill="#2563eb"/>
           <path d="M482 52 l10 14 -26 -14 z" fill="#2563eb"/>
           <text x="330" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">"Find yesterday's semiconductor export story"</text>
@@ -402,11 +409,13 @@ gtag('config', 'G-70NWVV9D0S');
           <rect x="28" y="378" width="132" height="12" rx="6" fill="#eff6ff" stroke="#bfd3f8"/>
           <text x="94" y="387" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Source · link to the original</text>
         </svg>
+        </div>
       </div>
       <div class="section-dark panel-dark">
         <div class="kicker t-teal-on-dark">Meanwhile, behind the scenes</div>
         <div class="wallet-title">The payment flows by itself</div>
-        <svg class="mt-16" viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="30 won passes through the x402 USDC rail, splits 70 percent to the creator and 30 percent to NanoTrans, and lands in the creator wallet instantly">
+        <div class="art-scroll nt-wallet-wrap mt-16">
+        <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="30 won passes through the x402 USDC rail, splits 70 percent to the creator and 30 percent to NanoTrans, and lands in the creator wallet instantly">
           <defs><marker id="flT" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#5eead4"/></marker></defs>
           <circle cx="210" cy="34" r="26" fill="rgba(94,234,212,.16)" stroke="#5eead4" stroke-width="2"/>
           <text x="210" y="41" text-anchor="middle" font-size="15" font-weight="800" fill="#5eead4">₩30</text>
@@ -426,6 +435,7 @@ gtag('config', 'G-70NWVV9D0S');
           <text x="82" y="292" font-size="12.5" font-weight="800" letter-spacing="2" fill="#dbe8f7">CREATOR WALLET</text>
           <text x="82" y="311" font-size="11" fill="#8fa8c8">Paid instantly · no settlement date</text>
         </svg>
+        </div>
         <div class="wallet-footnote">Zero fixed cost — a fee only when something sells.</div>
       </div>
     </div>
@@ -477,7 +487,8 @@ gtag('config', 'G-70NWVV9D0S');
     <div class="grid-11-9 mt-md">
       <div class="panel-white-lg">
         <div class="kicker kicker-muted">Revenue Split — charged only when a transaction happens</div>
-        <svg class="mt-16" viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On one sale, 70 percent to the provider and 30 percent to NanoTrans">
+        <div class="art-scroll nt-split-wrap mt-16">
+        <svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On one sale, 70 percent to the provider and 30 percent to NanoTrans">
           <rect x="0" y="34" width="560" height="52" rx="12" fill="#16a34a"/>
           <rect x="392" y="34" width="168" height="52" fill="#94a3b8"/>
           <rect x="546" y="34" width="14" height="52" rx="7" fill="#94a3b8"/>
@@ -487,6 +498,7 @@ gtag('config', 'G-70NWVV9D0S');
           <text x="196" y="116" text-anchor="middle" font-size="12" fill="#64748b">No fixed cost · no prepayment</text>
           <text x="476" y="112" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b">NanoTrans</text>
         </svg>
+        </div>
       </div>
       <div class="section-dark panel-dark-lg">
         <div class="kicker t-teal-on-dark">On-chain Trust</div>
@@ -601,7 +613,7 @@ gtag('config', 'G-70NWVV9D0S');
       <a href="/en/pigos-pigsignal">See PigOS · PigSignal →</a>
     </div>
     <div class="footer-legal">
-      <span><b>WiseLake, Inc.</b> · CEO Kyomoon Jin · Business Reg. 768-87-02255 · <a href="mailto:wiselake@wiselake.ai">wiselake@wiselake.ai</a></span>
+      <span><b>WiseLake, Inc.</b> · CEO Kyomoon Jin · Business Reg. <span class="nowrap">768-87-02255</span> · <a href="mailto:wiselake@wiselake.ai">wiselake@wiselake.ai</a></span>
       <span>© 2026 WiseLake, Inc. All rights reserved.</span>
     </div>
   </div>
