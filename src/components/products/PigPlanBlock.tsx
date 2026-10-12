@@ -22,7 +22,7 @@ const T = {
     axio: { tag: "NEXT · 2027 하반기", text: "피그플랜 AI 스위트를 중심으로, 유관기관 10개 그룹 사이의 업무를 AI 에이전트가 자동으로 처리합니다.", punch: "사람은 결정만 합니다.", nodes: ["농장", "수의사", "약품", "조합", "AI 에이전트", "사료", "축평원", "도축", "IoT"] },
     detail: "자세히 보기",
     call: `전화로 신청 · 데모 ${COMPANY.phone}`,
-    login: "피그플랜 로그인 →",
+    service: "피그플랜 서비스 소개 →",
   },
   en: {
     product: "PRODUCT 02",
@@ -44,7 +44,7 @@ const T = {
     axio: { tag: "NEXT · H2 2027", text: "Built around the PigPlan AI Suite, AI agents handle the work between 10 stakeholder groups automatically.", punch: "People only decide.", nodes: ["Farm", "Vet", "Pharma", "Co-op", "AI agent", "Feed", "Grading", "Packer", "IoT"] },
     detail: "Learn more",
     call: `Call for a demo · ${COMPANY.phoneIntl}`,
-    login: "PigPlan sign in →",
+    service: "PigPlan service overview (Korean) →",
   },
 };
 
@@ -205,8 +205,8 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
           <PhoneIcon />
           {t.call}
         </ButtonLink>
-        <TextLink href={LINKS.pigplanLogin} external>
-          {t.login}
+        <TextLink href={LINKS.pigplanService} external>
+          {t.service}
         </TextLink>
       </div>
     </div>
