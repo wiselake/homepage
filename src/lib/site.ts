@@ -37,6 +37,7 @@ export const COMPANY = {
 
 export const LINKS = {
   pigplanLogin: "https://pigplan.io",
+  pigplanService: "https://pigplan.io/landing/service.do",
   pigos: "https://pigos.io",
   pigosStart: "https://app.pigos.io/onboarding",
   nanotrans: "https://nanotrans.io",

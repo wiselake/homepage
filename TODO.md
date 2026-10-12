@@ -7,14 +7,14 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 - [x] 개인정보처리방침·이용약관 빈칸 채움: 보유 1년, 보호책임자 대표이사, 시행일 2026-10-12 (2026-10-12) — 법무 검토는 별도
 - [x] Resend에서 `wiselake.ai` 도메인 인증 후 Vercel 환경변수 `CONTACT_FROM`·`CONTACT_TO` 설정 (2026-10-12, 도쿄 리전)
 - [x] 프리뷰에서 문의 폼 실발송 테스트 → `wiselake@wiselake.ai` 수신 확인 (2026-10-12)
-- [ ] 병합 후 프로덕션에서 문의 폼 실발송 1회 재확인
+- [x] 프로덕션에서 문의 폼 실발송 확인 (2026-10-12)
 - [x] 대표 영문 표기 Gyomoon Jin 확정 (2026-10-12)
 - [x] 영문 주소 확인: "The H Tower 919"는 건물명 (2026-10-12)
 
 ## 병합 후
 
 - [x] Vercel 도메인 정리: `wiselake.ai`가 Production, `www.wiselake.ai`·`wiselake.co.kr`은 `wiselake.ai`로 308 (2026-10-12)
-- [ ] Google Search Console에 `https://wiselake.ai/sitemap.xml` 재제출 (URL 구조 변경: /pigos-pigsignal, /nanotrans는 제품 사이트로 308)
+- [x] Google Search Console 도메인 속성(wiselake.ai) 추가·홈 색인 요청 (2026-10-12) — sitemap `https://wiselake.ai/sitemap.xml` 제출 확인 (URL 구조 변경: /pigos-pigsignal, /nanotrans는 제품 사이트로 308)
 - [ ] Lighthouse 측정 (모바일·데스크톱)
 
 ## 이후
