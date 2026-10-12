@@ -1,180 +1,87 @@
 @import "tailwindcss";
 
+/*
+ * WiseLake v4 design tokens.
+ * Brand colours come from the logo: wordmark indigo #232B86, W-mark blue #446CD2.
+ * Rule: products are told apart by name, not hue. Orange is reserved for
+ * meaning (loss warning, below benchmark). No green, teal or purple.
+ */
 @theme {
-  /* Colors — clean corporate (light-first: white + ink-navy + brand gold) */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f5f6f8;
-  --color-bg-tertiary: #eef0f3;
-  --color-bg-white: #ffffff;
-  --color-bg-light: #f5f6f8;
-  --color-bg-ink: #0e1726;
-  --color-bg-ink-soft: #16233a;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 
-  --color-text-primary: #15181e;
-  --color-text-secondary: #5b6573;
-  --color-text-dark: #15181e;
-  --color-text-muted: #6b7280;
-  --color-text-on-ink: #ffffff;
-  --color-text-on-ink-muted: #aeb8c6;
+  /* surfaces & text */
+  --color-paper: #f7f6f2;
+  --color-card: #ffffff;
+  --color-linen: #efede7;
+  --color-chip: #f1efe9;
+  --color-wash: #fbfaf7;
+  --color-ink: #1c1b18;
+  --color-ink-2: #4a4842;
+  --color-muted: #6b6962;
+  --color-line: #e4e1da;
+  --color-line-soft: #eceae4;
+  --color-line-strong: #c9c5bb;
 
-  --color-accent: #F5A623;
-  --color-accent-light: #FFBE4F;
-  --color-accent-dark: #946A00;
-  --color-accent-deep: #B07A12;
-  --color-accent-glow: rgba(245, 166, 35, 0.12);
+  /* brand (logo) */
+  --color-brand: #232b86;
+  --color-brand-blue: #446cd2;
+  --color-link: #3a5fc4;
+  --color-brand-tint: #eef1fa;
+  --color-brand-line: #d5dcf2;
+  --color-brand-sky: #9db4ec;
+  --color-night: #161b4f;
+  --color-night-2: #1f2660;
+  --color-night-line: #3a4380;
+  --color-night-text: #b9c3ea;
 
-  --color-border: rgba(15, 23, 34, 0.08);
-  --color-border-strong: rgba(15, 23, 34, 0.14);
-  --color-border-ink: rgba(255, 255, 255, 0.10);
-  --color-border-light: rgba(0, 0, 0, 0.08);
+  /* PigPlan CI blue (used only inside the PigPlan product block) */
+  --color-pigplan: #1769b3;
+  --color-pigplan-tint: #eef4fb;
+  --color-pigplan-soft: #9cc3ea;
+  --color-pigplan-mid: #5e9bd6;
 
-  /* Card surface tokens (clean corporate) */
-  --card-bg: #ffffff;
-  --card-border: rgba(15, 23, 34, 0.09);
-  --card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.05);
-  --card-shadow-hover: 0 2px 4px rgba(16, 24, 40, 0.05), 0 10px 28px rgba(16, 24, 40, 0.09);
+  /* meaning colours */
+  --color-warn: #e08a1e;
+  --color-warn-ink: #9a5b0c;
+  --color-warn-tint: #fff4e5;
+  --color-warn-track: #f2e3c9;
+  --color-alert: #c2410c;
 
-  /* Glass — retained for ink-context surfaces (cards on dark bands) */
-  --glass-blur: 18px;
-  --glass-blur-strong: 22px;
-  --glass-saturate: 160%;
-  --glass-ink-bg: rgba(255, 255, 255, 0.06);
-  --glass-ink-border: rgba(255, 255, 255, 0.12);
-
-  /* Typography */
-  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
-
-  /* Animation */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
-
-  /* Spacing */
-  --section-padding-y: 8rem;
-  --section-padding-x: 1.5rem;
-  --container-max: 1280px;
+  --radius-btn: 6px;
+  --radius-card: 12px;
 }
 
-/* Base styles */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-/* Selection */
-::selection {
-  background: rgba(245, 166, 35, 0.25);
-  color: #15181e;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f0f1f4;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cdd2da;
-  border-radius: 5px;
-  border: 2px solid #f0f1f4;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b3bac4;
-}
-
-/* ── Surface utilities (clean corporate) ──
-   `glass`/`glass-light`/`glass-strong` now render as solid white cards.
-   Class names are kept so existing components migrate without churn. */
-@utility glass {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
-}
-
-@utility glass-strong {
-  background: #ffffff;
-  border: 1px solid var(--color-border-strong);
-  box-shadow: var(--card-shadow);
-}
-
-@utility glass-light {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
-}
-
-@utility glass-accent {
-  background: #fff9ef;
-  border: 1px solid rgba(245, 166, 35, 0.32);
-}
-
-@utility glass-nav {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* Translucent card for use ON ink/dark bands */
-@utility glass-on-ink {
-  background: var(--glass-ink-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-ink-border);
-}
-
-@utility glass-highlight {
-  position: relative;
-  overflow: hidden;
-}
-
-@keyframes amber-line-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.7; }
-}
-
-/* Hide Spline watermark */
-#logo[style*="absolute"],
-[data-spline-watermark],
-a[href*="spline.design"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Partner marquee — slides 1 set of logos out of 4 repeated sets */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% / 4)); }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-brand);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+  }
+  section[id],
+  div[id] {
+    scroll-margin-top: 88px;
+  }
+  ::selection {
+    background: var(--color-brand-line);
   }
 }
