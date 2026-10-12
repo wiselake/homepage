@@ -5,8 +5,9 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 ## main 병합 전
 
 - [ ] 개인정보처리방침·이용약관 초안의 빈칸([...]) 채우기 및 검토 — `src/content/legal.tsx`
-- [ ] Resend에서 `wiselake.ai` 도메인 인증 후 Vercel 환경변수 `CONTACT_FROM` 설정 (미설정 시 테스트 발신자라 계정 소유자 주소로만 발송됨)
-- [ ] 프리뷰/프로덕션에서 문의 폼 실발송 1회 테스트 → `wiselake@wiselake.ai` 수신 확인
+- [x] Resend에서 `wiselake.ai` 도메인 인증 후 Vercel 환경변수 `CONTACT_FROM`·`CONTACT_TO` 설정 (2026-10-12, 도쿄 리전)
+- [x] 프리뷰에서 문의 폼 실발송 테스트 → `wiselake@wiselake.ai` 수신 확인 (2026-10-12)
+- [ ] 병합 후 프로덕션에서 문의 폼 실발송 1회 재확인
 - [ ] 대표 영문 표기 확정 — `src/lib/site.ts` `COMPANY.ceo.en`
 - [ ] 영문 주소 표기 확인 — `src/lib/site.ts` `COMPANY.address.en`
 
