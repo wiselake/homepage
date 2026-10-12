@@ -4,12 +4,12 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 
 ## main 병합 전
 
-- [ ] 개인정보처리방침·이용약관 초안의 빈칸([...]) 채우기 및 검토 — `src/content/legal.tsx`
+- [x] 개인정보처리방침·이용약관 빈칸 채움: 보유 1년, 보호책임자 대표이사, 시행일 2026-10-12 (2026-10-12) — 법무 검토는 별도
 - [x] Resend에서 `wiselake.ai` 도메인 인증 후 Vercel 환경변수 `CONTACT_FROM`·`CONTACT_TO` 설정 (2026-10-12, 도쿄 리전)
 - [x] 프리뷰에서 문의 폼 실발송 테스트 → `wiselake@wiselake.ai` 수신 확인 (2026-10-12)
 - [ ] 병합 후 프로덕션에서 문의 폼 실발송 1회 재확인
-- [ ] 대표 영문 표기 확정 — `src/lib/site.ts` `COMPANY.ceo.en`
-- [ ] 영문 주소 표기 확인 — `src/lib/site.ts` `COMPANY.address.en`
+- [x] 대표 영문 표기 Gyomoon Jin 확정 (2026-10-12)
+- [x] 영문 주소 확인: "The H Tower 919"는 건물명 (2026-10-12)
 
 ## 병합 후
 

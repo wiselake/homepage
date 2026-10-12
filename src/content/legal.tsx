@@ -1,10 +1,11 @@
 import { COMPANY } from "@/lib/site";
 
 /*
- * DRAFT — needs legal review before merge to main.
- * Bracketed items ([...]) are facts the company has not decided yet.
  * Processors listed are the services this codebase actually uses.
+ * Set EFFECTIVE_DATE to the day the policy goes live on wiselake.ai.
  */
+
+export const EFFECTIVE_DATE = { ko: "2026년 10월 12일", en: "October 12, 2026" };
 
 export function PrivacyKo() {
   return (
@@ -35,7 +36,7 @@ export function PrivacyKo() {
         </tbody>
       </table>
       <h2>2. 보유 및 이용 기간</h2>
-      <p>문의 정보는 회신을 마친 날부터 [보유 기간] 동안 보관한 뒤 지체 없이 파기합니다. 다른 법령에 따라 보관해야 하는 경우에는 그 기간 동안 보관합니다.</p>
+      <p>문의 정보는 회신을 마친 날부터 1년 동안 보관한 뒤 지체 없이 파기합니다. 다른 법령에 따라 보관해야 하는 경우에는 그 기간 동안 보관합니다.</p>
       <h2>3. 처리 위탁과 국외 이전</h2>
       <table>
         <thead>
@@ -76,13 +77,15 @@ export function PrivacyKo() {
       <p>보유 기간이 끝난 개인정보는 복구할 수 없는 방법으로 삭제합니다.</p>
       <h2>7. 개인정보 보호책임자</h2>
       <ul>
-        <li>성명·직책: [개인정보 보호책임자]</li>
+        <li>
+          성명·직책: {COMPANY.ceo.ko} · 대표이사
+        </li>
         <li>
           연락처: {COMPANY.email} · {COMPANY.phone}
         </li>
       </ul>
       <h2>8. 방침의 변경</h2>
-      <p>이 방침은 [시행일]부터 적용됩니다. 내용이 바뀌면 이 페이지에 알립니다.</p>
+      <p>이 방침은 {EFFECTIVE_DATE.ko}부터 적용됩니다. 내용이 바뀌면 이 페이지에 알립니다.</p>
     </>
   );
 }
@@ -99,7 +102,7 @@ export function PrivacyEn() {
         <li>Automatically: access logs, IP address, browser details and cookies — for security, visit statistics and remembering your language.</li>
       </ul>
       <h2>2. How long we keep it</h2>
-      <p>Inquiry data is kept for [retention period] after we reply, then deleted, unless the law requires longer.</p>
+      <p>Inquiry data is kept for one year after we reply, then deleted, unless the law requires longer.</p>
       <h2>3. Service providers and transfers abroad</h2>
       <ul>
         <li>Resend, Inc. (USA) — sends inquiry emails.</li>
@@ -112,10 +115,10 @@ export function PrivacyEn() {
       <p>You may ask to see, correct, delete or stop the processing of your information at any time.</p>
       <h2>6. Contact</h2>
       <p>
-        Privacy officer: [name and title] · {COMPANY.email} · {COMPANY.phoneIntl}
+        Privacy officer: {COMPANY.ceo.en}, CEO · {COMPANY.email} · {COMPANY.phoneIntl}
       </p>
       <h2>7. Changes</h2>
-      <p>This policy applies from [effective date]. We will post any changes on this page.</p>
+      <p>This policy applies from {EFFECTIVE_DATE.en}. We will post any changes on this page.</p>
     </>
   );
 }
@@ -134,7 +137,7 @@ export function TermsKo() {
       <h2>5. 정보의 정확성</h2>
       <p>회사는 사이트의 정보를 정확하게 유지하려 노력하지만, 출시 일정과 가격 등은 사전 안내 없이 바뀔 수 있습니다.</p>
       <h2>6. 준거법</h2>
-      <p>이 약관은 대한민국 법률에 따릅니다. 이 약관은 [시행일]부터 적용됩니다.</p>
+      <p>이 약관은 대한민국 법률에 따릅니다. 이 약관은 {EFFECTIVE_DATE.ko}부터 적용됩니다.</p>
     </>
   );
 }
@@ -153,7 +156,7 @@ export function TermsEn() {
       <h2>5. Accuracy</h2>
       <p>Launch dates and prices may change without notice.</p>
       <h2>6. Governing law</h2>
-      <p>These terms are governed by the laws of the Republic of Korea and apply from [effective date].</p>
+      <p>These terms are governed by the laws of the Republic of Korea and apply from {EFFECTIVE_DATE.en}.</p>
     </>
   );
 }
