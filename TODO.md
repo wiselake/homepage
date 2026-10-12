@@ -13,7 +13,7 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 
 ## 병합 후
 
-- [ ] **Vercel primary 도메인을 apex로 변경** — 현재 primary가 `www.wiselake.ai`라 `wiselake.ai`가 www로 307 리다이렉트됨. canonical·hreflang·sitemap은 `https://wiselake.ai` 기준. Settings → Domains에서 `wiselake.ai`를 Primary로 지정.
+- [x] Vercel 도메인 정리: `wiselake.ai`가 Production, `www.wiselake.ai`·`wiselake.co.kr`은 `wiselake.ai`로 308 (2026-10-12)
 - [ ] Google Search Console에 `https://wiselake.ai/sitemap.xml` 재제출 (URL 구조 변경: /pigos-pigsignal, /nanotrans는 제품 사이트로 308)
 - [ ] Lighthouse 측정 (모바일·데스크톱)
 
