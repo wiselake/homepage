@@ -29,7 +29,8 @@ export function pageMetadata(
       description,
       siteName: "WiseLake",
       locale: locale === "ko" ? "ko_KR" : "en_US",
-      // Page-level openGraph replaces the file-convention image, so name it explicitly.
+      // Static file in public/ (not the app/ file convention, which resolves above both root
+      // layouts without a metadataBase and warns at build time), so every page names it here.
       images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "WISELAKE" }],
     },
     twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image.png"] },
