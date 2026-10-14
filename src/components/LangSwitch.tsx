@@ -12,8 +12,9 @@ export default function LangSwitch({ locale, touch = false }: { locale: Locale; 
   };
   const current = locale === "ko" ? "KR" : "EN";
   const target = locale === "ko" ? "EN" : "KR";
-  // `touch` widens the link to a 44px target for the mobile menu.
-  const link = `text-muted hover:text-ink${touch ? " inline-flex min-h-11 min-w-11 items-center justify-center" : ""}`;
+  // `touch` (mobile menu) grows the link's tap area to at least 44px with an ::after overlay,
+  // so the visible "KR · EN" spacing stays the same as everywhere else.
+  const link = `text-muted hover:text-ink${touch ? " relative after:absolute after:-inset-3.5" : ""}`;
   return (
     <span className="text-[14px] text-muted">
       {locale === "ko" ? (
