@@ -45,7 +45,7 @@ const T = {
   },
 };
 
-const field = "min-h-[46px] rounded-[8px] border border-line-strong bg-card px-3.5 font-[inherit] text-ink";
+const field = "w-full min-h-[46px] rounded-[8px] border border-line-strong bg-card px-3.5 font-[inherit] text-ink";
 
 export default function ContactForm({ locale }: { locale: Locale }) {
   const t = T[locale];
@@ -111,7 +111,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
         if (!startedAt.current) startedAt.current = Date.now();
       }}
       noValidate
-      className="grid gap-[18px] rounded-[12px] border border-line bg-card p-8 text-[15px]"
+      className="grid grid-cols-1 gap-[18px] rounded-[12px] border border-line bg-card p-8 text-[15px]"
     >
       <div>
         <h3 className="m-0 text-[19px] font-bold">{t.title}</h3>
