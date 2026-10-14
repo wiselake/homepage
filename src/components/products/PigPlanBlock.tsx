@@ -63,10 +63,10 @@ function CardHead({ name, badge }: { name: string; badge: React.ReactNode }) {
   );
 }
 
-function CardTitle({ title, sub }: { title: string; sub: string }) {
+function CardTitle({ title, sub, as: Tag }: { title: string; sub: string; as: "h2" | "h4" }) {
   return (
     <div>
-      <h4 className="m-0 text-[24px] font-bold tracking-[-0.02em]">{title}</h4>
+      <Tag className="m-0 text-[24px] font-bold tracking-[-0.02em]">{title}</Tag>
       <p className="m-0 mt-1 text-[15px] text-ink-2">{sub}</p>
     </div>
   );
@@ -74,9 +74,11 @@ function CardTitle({ title, sub }: { title: string; sub: string }) {
 
 const pill = "rounded-[6px] border-[1.5px] border-pigplan bg-card px-3 py-0.5 text-[13px] font-bold text-pigplan";
 
-export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }: { locale: Locale; headingLevel?: 2 | 3; productLabel?: string }) {
+/** headingLevel 1: the block is the /pigplan page title; 3: a section inside the home page. Card titles sit one level below. */
+export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }: { locale: Locale; headingLevel?: 1 | 3; productLabel?: string }) {
   const t = T[locale];
-  const H = headingLevel === 2 ? "h2" : "h3";
+  const H = headingLevel === 1 ? "h1" : "h3";
+  const card = headingLevel === 1 ? "h2" : "h4";
   const soonBadge = <Badge tone="dev">{t.soon}</Badge>;
 
   return (
@@ -108,7 +110,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))]">
           <Card>
             <CardHead name={t.insight.name} badge={<Badge tone="pigplanLive">{t.live}</Badge>} />
-            <CardTitle title={t.insight.title} sub={t.insight.sub} />
+            <CardTitle title={t.insight.title} sub={t.insight.sub} as={card} />
             <div aria-hidden="true" className="flex h-[132px] items-center justify-center gap-[18px] rounded-[10px] bg-pigplan-tint">
               <div className="grid gap-2">
                 <span className={pill}>{t.insight.weekly}</span>
@@ -135,7 +137,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
 
           <Card>
             <CardHead name={t.talk.name} badge={soonBadge} />
-            <CardTitle title={t.talk.title} sub={t.talk.sub} />
+            <CardTitle title={t.talk.title} sub={t.talk.sub} as={card} />
             <div aria-hidden="true" className="flex h-[132px] flex-col justify-center gap-2.5 rounded-[10px] bg-pigplan-tint px-6">
               <div className="self-end rounded-[12px_12px_2px_12px] bg-pigplan px-3.5 py-1.5 text-[13px] font-semibold text-white">{t.talk.q}</div>
               <div className="flex items-center gap-2 self-start rounded-[12px_12px_12px_2px] border-[1.5px] border-pigplan bg-card px-3 py-1.5 text-[13px]">
@@ -148,7 +150,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
 
           <Card last>
             <CardHead name={t.biz.name} badge={soonBadge} />
-            <CardTitle title={t.biz.title} sub={t.biz.sub} />
+            <CardTitle title={t.biz.title} sub={t.biz.sub} as={card} />
             <div aria-hidden="true" className="flex h-[132px] items-center justify-center gap-[18px] rounded-[10px] bg-pigplan-tint">
               <span className={pill}>{t.biz.close}</span>
               <svg width="84" height="80" viewBox="0 0 84 80" fill="none">

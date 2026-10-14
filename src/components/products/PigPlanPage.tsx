@@ -78,7 +78,7 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
   return (
     <>
       <section className="mx-auto max-w-[1200px] px-6 pt-[clamp(48px,7vw,96px)]">
-        <PigPlanBlock locale={locale} headingLevel={2} productLabel="PIGPLAN AI SUITE" />
+        <PigPlanBlock locale={locale} headingLevel={1} productLabel="PIGPLAN AI SUITE" />
       </section>
 
       <section className="mx-auto max-w-[1200px] px-6 pt-[clamp(72px,9vw,120px)]">
