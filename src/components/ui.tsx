@@ -31,28 +31,35 @@ export function ButtonLink({
   variant = "primary",
   external,
   size = "md",
+  className = "",
 }: {
   href: string;
   children: ReactNode;
   variant?: keyof typeof btn;
   external?: boolean;
   size?: "md" | "lg";
+  className?: string;
 }) {
   const sizing = size === "lg" ? "min-h-12 px-[22px] text-[17px]" : "min-h-11 px-[18px] text-[15px]";
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
-      className={`inline-flex items-center gap-2 rounded-[6px] font-semibold transition-colors ${sizing} ${btn[variant]}`}
+      className={`inline-flex items-center gap-2 rounded-[6px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
     >
       {children}
     </a>
   );
 }
 
+/** Text link. An ::after overlay makes the tap area at least 44px tall without changing the layout. */
 export function TextLink({ href, children, external }: { href: string; children: ReactNode; external?: boolean }) {
   return (
-    <a href={href} {...(external ? { target: "_blank", rel: "noopener" } : {})} className="text-[15px] font-semibold">
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener" } : {})}
+      className="relative text-[15px] font-semibold after:absolute after:inset-x-0 after:-inset-y-2.5"
+    >
       {children}
     </a>
   );
