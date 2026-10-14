@@ -22,5 +22,6 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 
 - [x] 모바일 헤더 정리: `md` 미만은 로고·문의하기·메뉴 버튼 한 줄 + 펼침 메뉴, 360px 가로 스크롤 해소 (2026-10-14)
 - [x] 커스텀 404: 국문 기본, `/en/…`은 영문, 404 상태 코드·noindex. 빌드 시 metadataBase 경고 해소 (2026-10-14)
+- [x] 서비스명 표기 통일: 피그플랜 인사이트·톡·비즈 / 피그플랜 AI 스위트 (PigPlan Insight·Talk·Biz / PigPlan AI Suite) (2026-10-14)
 - [ ] /pigplan 보강 — 인사이트 리포트 예시, 톡 대화 예시 (v3 `public/v3/pigplan.html`은 git history에 있음)
 - [ ] 로고 SVG 원본 확보 시 PNG 교체
