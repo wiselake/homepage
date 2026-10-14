@@ -155,7 +155,10 @@ export default function ContactForm({ locale }: { locale: Locale }) {
       <label className="flex items-start gap-2.5 text-[14px] text-ink-2">
         <input name="consent" type="checkbox" required className="mt-1 h-[18px] w-[18px] flex-none accent-brand" />
         <span>
-          {t.consent} <a href={localePath(locale, "/privacy")}>{t.policy}</a>
+          {t.consent}{" "}
+          <a href={localePath(locale, "/privacy")} className="underline underline-offset-2">
+            {t.policy}
+          </a>
         </span>
       </label>
       <div className="flex flex-wrap items-center justify-between gap-3">

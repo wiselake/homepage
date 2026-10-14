@@ -25,6 +25,9 @@
   /* brand (logo) */
   --color-brand: #232b86;
   --color-brand-blue: #446cd2;
+  /* small text in the logo blue: same hue/saturation, 3% darker (5.1:1 on paper, 5.5:1 on white).
+     #446cd2 stays for the logo, backgrounds and large type. */
+  --color-brand-blue-text: #3862cf;
   --color-link: #3a5fc4;
   --color-brand-tint: #eef1fa;
   --color-brand-line: #d5dcf2;

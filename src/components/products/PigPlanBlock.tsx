@@ -172,14 +172,14 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] items-center gap-4 bg-pigplan px-7 py-6 text-white">
           <div>
-            <div className="text-[12px] font-bold tracking-[0.14em] text-[#d6e6f6]">FOUNDATION</div>
+            <div className="text-[12px] font-bold tracking-[0.14em] text-[#e2edf9]">FOUNDATION</div>
             <div className="mt-1 text-[19px] font-bold">{t.foundation.title}</div>
             <div className="text-[14px] text-[#e2edf8]">{t.foundation.sub}</div>
           </div>
           {t.foundation.items.map(([a, b]) => (
-            <div key={a} className="rounded-[8px] border border-white/30 bg-white/10 px-4 py-3.5">
+            <div key={a} className="rounded-[8px] border border-white/30 bg-white/[0.06] px-4 py-3.5">
               <div className="font-bold">{a}</div>
-              <div className="text-[13px] text-[#e2edf8]">{b}</div>
+              <div className="text-[13px] text-[#f2f7fc]">{b}</div>
             </div>
           ))}
         </div>
