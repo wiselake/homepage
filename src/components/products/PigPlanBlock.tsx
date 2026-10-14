@@ -72,6 +72,7 @@ function CardTitle({ title, sub, as: Tag }: { title: string; sub: string; as: "h
   );
 }
 
+const stackOnMobile = "max-sm:w-full max-sm:justify-center";
 const pill = "rounded-[6px] border-[1.5px] border-pigplan bg-card px-3 py-0.5 text-[13px] font-bold text-pigplan";
 
 /** headingLevel 1: the block is the /pigplan page title; 3: a section inside the home page. Card titles sit one level below. */
@@ -203,9 +204,14 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
         </div>
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-        {headingLevel === 3 && <ButtonLink href={localePath(locale, "/pigplan")}>{t.detail}</ButtonLink>}
-        <ButtonLink href={contactHref(locale, "pigplan")} variant="outline">
+      {/* Below sm (640px) the buttons stack full width; from sm up the row is unchanged. */}
+      <div className="mt-5 flex flex-col items-start gap-y-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+        {headingLevel === 3 && (
+          <ButtonLink href={localePath(locale, "/pigplan")} className={stackOnMobile}>
+            {t.detail}
+          </ButtonLink>
+        )}
+        <ButtonLink href={contactHref(locale, "pigplan")} variant="outline" className={stackOnMobile}>
           {t.call}
         </ButtonLink>
         <TextLink href={LINKS.pigplanService} external>

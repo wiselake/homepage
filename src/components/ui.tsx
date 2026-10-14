@@ -31,19 +31,21 @@ export function ButtonLink({
   variant = "primary",
   external,
   size = "md",
+  className = "",
 }: {
   href: string;
   children: ReactNode;
   variant?: keyof typeof btn;
   external?: boolean;
   size?: "md" | "lg";
+  className?: string;
 }) {
   const sizing = size === "lg" ? "min-h-12 px-[22px] text-[17px]" : "min-h-11 px-[18px] text-[15px]";
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
-      className={`inline-flex items-center gap-2 rounded-[6px] font-semibold transition-colors ${sizing} ${btn[variant]}`}
+      className={`inline-flex items-center gap-2 rounded-[6px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
     >
       {children}
     </a>
