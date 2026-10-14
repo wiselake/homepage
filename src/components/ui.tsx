@@ -52,9 +52,14 @@ export function ButtonLink({
   );
 }
 
+/** Text link. An ::after overlay makes the tap area at least 44px tall without changing the layout. */
 export function TextLink({ href, children, external }: { href: string; children: ReactNode; external?: boolean }) {
   return (
-    <a href={href} {...(external ? { target: "_blank", rel: "noopener" } : {})} className="text-[15px] font-semibold">
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener" } : {})}
+      className="relative text-[15px] font-semibold after:absolute after:inset-x-0 after:-inset-y-2.5"
+    >
       {children}
     </a>
   );
