@@ -4,6 +4,9 @@ import { COMPANY, GA_ID, LINKS, SITE_URL, localePath, type Locale } from "@/lib/
 import LangSwitch from "./LangSwitch";
 import MobileMenu from "./MobileMenu";
 
+const PRETENDARD_CSS =
+  "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css";
+
 const NAV = {
   ko: [
     { label: "축산 AI", hash: "#livestock" },
@@ -57,10 +60,19 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
       {/* App Router root layout: a plain <head> is correct here; the rule targets the Pages Router. */}
       {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        {/* Pretendard loads without blocking first paint: open both jsDelivr connections early
+            (the stylesheet is fetched without CORS, the font files with it), then add the stylesheet
+            from an inline script (next/script would wait for the Next runtime). Text first renders in the metric-matched fallbacks in globals.css. */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="${PRETENDARD_CSS}";document.head.appendChild(l)})()`,
+          }}
         />
+        <noscript>
+          <link rel="stylesheet" href={PRETENDARD_CSS} />
+        </noscript>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd()) }} />
       </head>
       <body>
@@ -72,7 +84,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
           <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-8">
             <a href={home} aria-label={t.home} className="mr-auto flex items-center md:mr-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/wiselake_logo.png" alt="WISELAKE" width={108} height={30} className="block h-[30px] w-auto" />
+              <img src="/wiselake_logo.png" alt="WISELAKE" width={108} height={30} className="block h-[30px] w-auto aspect-[466/130]" />
             </a>
             <nav aria-label={t.menu} className="hidden flex-auto flex-wrap gap-x-6 text-[15px] md:flex">
               {navItems.map((n) => (
@@ -102,7 +114,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
           <div className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-12 gap-y-8 px-6 py-12 text-[14px] leading-[1.8] text-ink-2">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/wiselake_logo.png" alt="WISELAKE" width={94} height={26} className="block h-[26px] w-auto" />
+              <img src="/wiselake_logo.png" alt="WISELAKE" width={94} height={26} className="block h-[26px] w-auto aspect-[466/130]" />
               <p className="mt-4">
                 {COMPANY.short[locale]} · {t.ceo} {COMPANY.ceo[locale]}
                 <br />
