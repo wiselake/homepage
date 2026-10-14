@@ -62,11 +62,12 @@ export function Eyebrow({ children, className = "text-link" }: { children: React
   return <p className={`m-0 text-[13px] font-bold uppercase tracking-[0.1em] ${className}`}>{children}</p>;
 }
 
-export function SectionTitle({ children, className = "" }: { children: ReactNode; className?: string }) {
+/** Section heading. `as="h1"` when it is the page title; the look stays the same. */
+export function SectionTitle({ children, className = "", as: Tag = "h2" }: { children: ReactNode; className?: string; as?: "h1" | "h2" }) {
   return (
-    <h2 className={`m-0 text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.2] tracking-[-0.03em] ${className}`}>
+    <Tag className={`m-0 text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.2] tracking-[-0.03em] ${className}`}>
       {children}
-    </h2>
+    </Tag>
   );
 }
 

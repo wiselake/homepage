@@ -233,7 +233,8 @@ const NW = {
   en: { title: "News", all: "All news →", press: "Covered by", via: "" },
 };
 
-export function NewsCard({ locale, item }: { locale: Locale; item: (typeof NEWS)[number] }) {
+export function NewsCard({ locale, item, headingLevel = 3 }: { locale: Locale; item: (typeof NEWS)[number]; headingLevel?: 2 | 3 }) {
+  const H = headingLevel === 2 ? "h2" : "h3";
   const t = NW[locale];
   const product = item.product === "pigos" ? "PigOS" : item.product === "pigplan" ? (locale === "ko" ? "피그플랜" : "PigPlan") : item.product === "nanotrans" ? "NanoTrans" : locale === "ko" ? "회사" : "Company";
   const outlets = item.outlets.map((o) => o.name).join(" · ");
@@ -242,7 +243,7 @@ export function NewsCard({ locale, item }: { locale: Locale; item: (typeof NEWS)
       <div className="text-[13px] text-muted">
         <time dateTime={item.date}>{formatNewsDate(item, locale)}</time> · {product}
       </div>
-      <h3 className="m-0 mt-2.5 text-[19px] font-bold leading-[1.4]">{item.title[locale]}</h3>
+      <H className="m-0 mt-2.5 text-[19px] font-bold leading-[1.4]">{item.title[locale]}</H>
       <p className="m-0 mt-2 text-[15px] text-ink-2">{item.summary[locale]}</p>
       <div className="mt-3.5 text-[13px] text-muted">
         {outlets}
