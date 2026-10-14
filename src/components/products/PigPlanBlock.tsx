@@ -1,5 +1,5 @@
-import { COMPANY, LINKS, localePath, type Locale } from "@/lib/site";
-import { Badge, ButtonLink, PhoneIcon, TextLink } from "../ui";
+import { LINKS, contactHref, localePath, type Locale } from "@/lib/site";
+import { Badge, ButtonLink, TextLink } from "../ui";
 
 const T = {
   ko: {
@@ -15,13 +15,13 @@ const T = {
     more: "피그플랜 AI 스위트 자세히 보기 →",
     suiteTag: "하나의 데이터 · 세 가지 AI · 하나의 계정",
     soon: "2027년 1월 오픈 예정",
-    insight: { name: "피그플랜 인사이트", title: "받아보는 AI", sub: "주간·월간 리포트가 카카오톡으로 도착합니다", weekly: "주간", monthly: "월간", price: "연 90만원", vat: "· VAT 별도", apply: "전화로 신청 →" },
+    insight: { name: "피그플랜 인사이트", title: "받아보는 AI", sub: "주간·월간 리포트가 카카오톡으로 도착합니다", weekly: "주간", monthly: "월간", price: "연 90만원", vat: "· VAT 별도", apply: "신청 문의 →" },
     talk: { name: "피그플랜 톡", title: "물어보는 AI", sub: "내 농장 데이터로 물어보면 바로 답합니다", q: "312번 모돈, 도태할까?", a: "재귀 지연 · 재발 반복, 도태 후보", plan: "월 정액제" },
     biz: { name: "피그플랜 비즈", title: "경영 AI", sub: "마감하면 손익을 브리핑합니다", close: "마감", plan: "연 정액제" },
     foundation: { title: "피그플랜 표준 시스템", sub: "세 AI가 같은 원천 데이터를 씁니다", items: [["생산 기록", "교배 · 분만 · 이유 · 출하"], ["경영 기록", "사료 · 매출 · 비용"], ["보고서 500여 종", "PDF · XLS · HWP"]] },
     axio: { tag: "NEXT · 2027 하반기", text: "피그플랜 AI 스위트를 중심으로, 유관기관 10개 그룹 사이의 업무를 AI 에이전트가 자동으로 처리합니다.", punch: "사람은 결정만 합니다.", nodes: ["농장", "수의사", "약품", "조합", "AI 에이전트", "사료", "축평원", "도축", "IoT"] },
     detail: "자세히 보기",
-    call: `전화로 신청 · 데모 ${COMPANY.phone}`,
+    call: "도입 · 데모 문의",
     service: "피그플랜 서비스 소개 →",
   },
   en: {
@@ -37,13 +37,13 @@ const T = {
     more: "Explore the PigPlan AI Suite →",
     suiteTag: "One data source · three AIs · one account",
     soon: "Opens January 2027",
-    insight: { name: "PigPlan Insight", title: "AI that reports", sub: "Weekly and monthly reports, delivered over KakaoTalk", weekly: "Weekly", monthly: "Monthly", price: "KRW 900,000 / year", vat: "· excl. VAT", apply: "Apply by phone →" },
+    insight: { name: "PigPlan Insight", title: "AI that reports", sub: "Weekly and monthly reports, delivered over KakaoTalk", weekly: "Weekly", monthly: "Monthly", price: "KRW 900,000 / year", vat: "· excl. VAT", apply: "Ask about Insight →" },
     talk: { name: "PigPlan Talk", title: "AI you ask", sub: "Ask about your own farm data and get an answer", q: "Sow #312 — cull her?", a: "Late return, repeat services: cull candidate", plan: "Monthly plan" },
     biz: { name: "PigPlan Biz", title: "AI for the business", sub: "Close the books, get a P&L briefing", close: "Close", plan: "Annual plan" },
     foundation: { title: "PigPlan standard system", sub: "All three AIs share one source of data", items: [["Production records", "Mating · farrowing · weaning · shipping"], ["Finance records", "Feed · sales · costs"], ["~500 reports", "PDF · XLS · HWP"]] },
     axio: { tag: "NEXT · H2 2027", text: "Built around the PigPlan AI Suite, AI agents handle the work between 10 stakeholder groups automatically.", punch: "People only decide.", nodes: ["Farm", "Vet", "Pharma", "Co-op", "AI agent", "Feed", "Grading", "Packer", "IoT"] },
     detail: "Learn more",
-    call: `Call for a demo · ${COMPANY.phoneIntl}`,
+    call: "Ask about a demo",
     service: "PigPlan service overview (Korean) →",
   },
 };
@@ -125,7 +125,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
               <span>
                 <b>{t.insight.price}</b> <span className="text-muted">{t.insight.vat}</span>
               </span>
-              <a href={`tel:${COMPANY.phoneIntl}`} className="font-bold text-pigplan">
+              <a href={contactHref(locale, "pigplan")} className="font-bold text-pigplan">
                 {t.insight.apply}
               </a>
             </div>
@@ -201,8 +201,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
 
       <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
         {headingLevel === 3 && <ButtonLink href={localePath(locale, "/pigplan")}>{t.detail}</ButtonLink>}
-        <ButtonLink href={`tel:${COMPANY.phoneIntl}`} variant="outline">
-          <PhoneIcon />
+        <ButtonLink href={contactHref(locale, "pigplan")} variant="outline">
           {t.call}
         </ButtonLink>
         <TextLink href={LINKS.pigplanService} external>

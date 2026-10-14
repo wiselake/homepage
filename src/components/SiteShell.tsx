@@ -17,8 +17,8 @@ const NAV = {
 };
 
 const T = {
-  ko: { news: "소식", contact: "문의하기", products: "제품", info: "안내", privacy: "개인정보처리방침", terms: "이용약관", home: "와이즈레이크 홈", menu: "주 메뉴", tel: "대표전화", reg: "사업자등록번호", ceo: "대표이사" },
-  en: { news: "News", contact: "Contact", products: "Products", info: "Legal", privacy: "Privacy policy", terms: "Terms of use", home: "WiseLake home", menu: "Main menu", tel: "Tel", reg: "Business reg. no.", ceo: "CEO" },
+  ko: { news: "소식", contact: "문의하기", products: "제품", info: "안내", privacy: "개인정보처리방침", terms: "이용약관", home: "와이즈레이크 홈", menu: "주 메뉴", reg: "사업자등록번호", ceo: "대표이사" },
+  en: { news: "News", contact: "Contact", products: "Products", info: "Legal", privacy: "Privacy policy", terms: "Terms of use", home: "WiseLake home", menu: "Main menu", reg: "Business reg. no.", ceo: "CEO" },
 };
 
 function orgJsonLd() {
@@ -30,7 +30,6 @@ function orgJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/wiselake_logo.png`,
     email: COMPANY.email,
-    telephone: COMPANY.phoneIntl,
     foundingDate: "2022-01-28",
     address: {
       "@type": "PostalAddress",
@@ -106,7 +105,6 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
                 <br />
                 {COMPANY.address[locale]}
                 <br />
-                {t.tel} <a href={`tel:${COMPANY.phoneIntl}`}>{COMPANY.phone}</a> ·{" "}
                 <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
               </p>
             </div>

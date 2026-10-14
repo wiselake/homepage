@@ -12,7 +12,7 @@
 
 - Name: WiseLake, Inc. (주식회사 와이즈레이크), founded January 28, 2022; PigPlan first built at a Seoul National University lab in 1995.
 - Address: Suite 505 (5F), The H Tower 919, 80 Beolmal-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea
-- Contact: wiselake@wiselake.ai · +82-31-431-3414
+- Contact: wiselake@wiselake.ai (email only)
 
 ## Pages
 
