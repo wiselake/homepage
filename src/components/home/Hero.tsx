@@ -47,7 +47,7 @@ const NUMBERS = {
     ["60.9%", "Share of Korea's pig-farm record systems"],
     ["690", "Korean farms on PigPlan"],
     ["1995", "PigPlan first built at a Seoul National University lab"],
-    ["7 languages", "Supported by PigOS for farms abroad"],
+    ["7", "Languages PigOS supports for farms abroad"],
   ],
 };
 
