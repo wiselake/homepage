@@ -13,6 +13,7 @@ const T = {
       </>
     ),
     more: "피그플랜 AI 스위트 자세히 보기 →",
+    suite: "피그플랜 AI 스위트",
     suiteTag: "하나의 데이터 · 세 가지 AI · 하나의 계정",
     soon: "2027년 1월 오픈 예정",
     insight: { name: "피그플랜 인사이트", title: "받아보는 AI", sub: "주간·월간 리포트가 카카오톡으로 도착합니다", weekly: "주간", monthly: "월간", price: "연 90만원", vat: "· VAT 별도", apply: "신청 문의 →" },
@@ -35,6 +36,7 @@ const T = {
       </>
     ),
     more: "Explore the PigPlan AI Suite →",
+    suite: "PigPlan AI Suite",
     suiteTag: "One data source · three AIs · one account",
     soon: "Opens January 2027",
     insight: { name: "PigPlan Insight", title: "AI that reports", sub: "Weekly and monthly reports, delivered over KakaoTalk", weekly: "Weekly", monthly: "Monthly", price: "KRW 900,000 / year", vat: "· excl. VAT", apply: "Ask about Insight →" },
@@ -98,7 +100,7 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
             <span aria-hidden="true" className="inline-flex h-7 w-7 items-center justify-center rounded-[6px] bg-pigplan text-[14px] text-white">
               P
             </span>
-            PigPlan AI Suite
+            {t.suite}
           </div>
           <span className="text-[14px] text-muted">{t.suiteTag}</span>
         </div>
