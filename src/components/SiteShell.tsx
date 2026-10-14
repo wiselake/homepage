@@ -2,6 +2,7 @@ import Script from "next/script";
 import type { ReactNode } from "react";
 import { COMPANY, GA_ID, LINKS, SITE_URL, localePath, type Locale } from "@/lib/site";
 import LangSwitch from "./LangSwitch";
+import MobileMenu from "./MobileMenu";
 
 const NAV = {
   ko: [
@@ -46,6 +47,10 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
   const t = T[locale];
   const home = localePath(locale, "/");
   const homeAnchor = (hash: string) => `${home}${hash}`;
+  const navItems = [
+    ...NAV[locale].map((n) => ({ label: n.label, href: homeAnchor(n.hash) })),
+    { label: t.news, href: localePath(locale, "/news") },
+  ];
 
   return (
     <html lang={locale}>
@@ -64,29 +69,29 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
         </a>
 
         <header className="sticky top-0 z-20 border-b border-line bg-paper/95 backdrop-blur">
-          <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-8 gap-y-2 px-6 py-3.5">
-            <a href={home} aria-label={t.home} className="flex items-center">
+          <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-8">
+            <a href={home} aria-label={t.home} className="mr-auto flex items-center md:mr-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/wiselake_logo.png" alt="WISELAKE" width={108} height={30} className="block h-[30px] w-auto" />
             </a>
-            <nav aria-label={t.menu} className="flex flex-auto flex-wrap gap-x-6 text-[15px]">
-              {NAV[locale].map((n) => (
-                <a key={n.hash} href={homeAnchor(n.hash)} className="py-2.5 text-ink hover:text-brand">
+            <nav aria-label={t.menu} className="hidden flex-auto flex-wrap gap-x-6 text-[15px] md:flex">
+              {navItems.map((n) => (
+                <a key={n.href} href={n.href} className="py-2.5 text-ink hover:text-brand">
                   {n.label}
                 </a>
               ))}
-              <a href={localePath(locale, "/news")} className="py-2.5 text-ink hover:text-brand">
-                {t.news}
-              </a>
             </nav>
             <div className="flex items-center gap-4">
-              <LangSwitch locale={locale} />
+              <span className="hidden md:inline">
+                <LangSwitch locale={locale} />
+              </span>
               <a
                 href={homeAnchor("#contact")}
-                className="inline-flex min-h-11 items-center rounded-[6px] bg-brand px-[18px] text-[15px] font-semibold text-white hover:bg-night hover:text-white"
+                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[6px] bg-brand px-[18px] text-[15px] font-semibold text-white hover:bg-night hover:text-white"
               >
                 {t.contact}
               </a>
+              <MobileMenu locale={locale} items={navItems} label={t.menu} />
             </div>
           </div>
         </header>
