@@ -45,6 +45,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  experimental: {
+    // Custom 404 across the two root layouts: src/app/global-not-found.tsx
+    globalNotFound: true,
+  },
   async redirects() {
     return [
       ...retired.map(([source, destination]) => ({ source, destination, permanent: true })),
