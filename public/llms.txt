@@ -4,7 +4,7 @@
 
 ## Products
 
-- [PigPlan AI Suite](https://wiselake.ai/pigplan): Korea's standard pig-farm management system (60.9% share of farm record systems, 700+ farms, since 1995) with three AIs: PigPlan Insight (live, AI reports), PigPlan Talk (AI you ask, opening January 2027) and PigPlan Biz (management AI, opening January 2027). Korea only.
+- [PigPlan AI Suite](https://wiselake.ai/pigplan): Korea's standard pig-farm management system (60.9% share of farm record systems, 690 farms, since 1995) with three AIs: PigPlan Insight (live, AI reports), PigPlan Talk (AI you ask, opening January 2027) and PigPlan Biz (management AI, opening January 2027). Korea only.
 - [PigOS](https://pigos.io): AI early-warning farm OS for pig farms outside Korea. Records are judged against country-level KPI benchmarks the moment they are entered. Core is free; 7 languages; USA, China, Southeast Asia, Latin America.
 - [NanoTrans](https://nanotrans.io): Index (measure AI citations), Edge (decide how each AI bot gets access), Market (trade content and data). In development, piloting with a Korean news publisher. Agent Paywall WordPress plugin is live.
 

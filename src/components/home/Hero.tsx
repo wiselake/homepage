@@ -30,16 +30,22 @@ const T = {
   },
 };
 
+/** Source note for the farm count (same basis as the /pigplan share chart). */
+const NUMBERS_NOTE = {
+  ko: "농장 수: 개체별 전산관리 사용 농가 1,133호 중 피그플랜 사용 농가(민·관 실측 자료 종합)",
+  en: "Farm count: PigPlan users among 1,133 farms using individual-animal record software (combined public and private survey data)",
+};
+
 const NUMBERS = {
   ko: [
     ["60.9%", "국내 양돈 전산관리 시스템 점유율"],
-    ["700여 곳", "피그플랜을 쓰는 국내 농장"],
+    ["690곳", "피그플랜을 쓰는 국내 농장"],
     ["1995", "서울대 연구소에서 피그플랜 최초 개발"],
     ["7개 언어", "해외 농가용 PigOS 지원 언어"],
   ],
   en: [
     ["60.9%", "Share of Korea's pig-farm record systems"],
-    ["700+", "Korean farms on PigPlan"],
+    ["690", "Korean farms on PigPlan"],
     ["1995", "PigPlan first built at a Seoul National University lab"],
     ["7 languages", "Supported by PigOS for farms abroad"],
   ],
@@ -98,6 +104,7 @@ export function NumberBand({ locale }: { locale: Locale }) {
           </div>
         ))}
       </dl>
+      <p className="mx-auto m-0 max-w-[1200px] px-6 pb-8 text-[13px] text-night-text">{NUMBERS_NOTE[locale]}</p>
     </section>
   );
 }
