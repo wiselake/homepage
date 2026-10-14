@@ -16,7 +16,7 @@ v4는 v3 정적 사이트를 대체하는 Next.js App Router 재구축이다. �
 
 - [x] Vercel 도메인 정리: `wiselake.ai`가 Production, `www.wiselake.ai`·`wiselake.co.kr`은 `wiselake.ai`로 308 (2026-10-12)
 - [x] Google Search Console 도메인 속성(wiselake.ai) 추가·홈 색인 요청 (2026-10-12) — sitemap `https://wiselake.ai/sitemap.xml` 제출 확인 (URL 구조 변경: /pigos-pigsignal, /nanotrans는 제품 사이트로 308)
-- [ ] Lighthouse 측정 (모바일·데스크톱)
+- [x] Lighthouse 측정·개선 (모바일·데스크톱, /, /en, /pigplan, /news): Performance 99–100, Accessibility·Best Practices·SEO 100, CLS 0.003 이하 — Pretendard 비차단 로드·대체 글꼴 보정(PR #14), 대비·링크 밑줄·링크 문구(PR #15) (2026-10-14)
 
 ## 이후
 
