@@ -81,7 +81,7 @@ export function PrivacyKo() {
           성명·직책: {COMPANY.ceo.ko} · 대표이사
         </li>
         <li>
-          연락처: {COMPANY.email} · {COMPANY.phone}
+          연락처: {COMPANY.email}
         </li>
       </ul>
       <h2>8. 방침의 변경</h2>
@@ -115,7 +115,7 @@ export function PrivacyEn() {
       <p>You may ask to see, correct, delete or stop the processing of your information at any time.</p>
       <h2>6. Contact</h2>
       <p>
-        Privacy officer: {COMPANY.ceo.en}, CEO · {COMPANY.email} · {COMPANY.phoneIntl}
+        Privacy officer: {COMPANY.ceo.en}, CEO · {COMPANY.email}
       </p>
       <h2>7. Changes</h2>
       <p>This policy applies from {EFFECTIVE_DATE.en}. We will post any changes on this page.</p>

@@ -25,15 +25,18 @@ export const COMPANY = {
   founded: { ko: "2022년 1월 28일", en: "January 28, 2022" },
   bizRegNo: "768-87-02255",
   email: "wiselake@wiselake.ai",
-  phone: "031-431-3414",
-  phoneIntl: "+82-31-431-3414",
-  hours: { ko: "09:00–12:00, 13:00–17:00", en: "09:00–12:00 and 13:00–17:00 KST" },
   // "더에이치타워 919" / "The H Tower 919" is the building name.
   address: {
     ko: "경기 안양시 동안구 벌말로 80 더에이치타워 919, 5층 505호",
     en: "Suite 505 (5F), The H Tower 919, 80 Beolmal-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",
   },
 } as const;
+
+/** Contact form anchor, optionally preselecting an inquiry type (see ContactForm). */
+export function contactHref(locale: Locale, inquiry?: string): string {
+  const home = localePath(locale, "/");
+  return inquiry ? `${home}?inquiry=${inquiry}#contact-form` : `${home}#contact-form`;
+}
 
 export const LINKS = {
   pigplanLogin: "https://pigplan.io",

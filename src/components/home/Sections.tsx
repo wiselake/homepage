@@ -283,19 +283,19 @@ export function News({ locale }: { locale: Locale }) {
 const CT = {
   ko: {
     title: "무엇을 도와드릴까요?",
-    lede: "목적에 맞는 창구로 바로 연결해 드립니다.",
+    lede: `모든 문의는 메일로 받습니다. 아래 폼을 쓰시거나 ${COMPANY.email}로 직접 보내 주세요.`,
     routes: [
-      { title: "피그플랜 도입 · 데모", sub: `대표전화 ${COMPANY.phone} · ${COMPANY.hours.ko}`, href: `tel:${COMPANY.phoneIntl}` },
-      { title: "PigOS 해외 유통 · 제휴", sub: "해외 농가와 거래하는 사료·동물약품·컨설팅 기업", href: "#contact-form" },
+      { title: "피그플랜 도입 · 데모", sub: "문의 폼에서 “피그플랜 도입·데모”를 골라 보내 주세요", href: "?inquiry=pigplan#contact-form" },
+      { title: "PigOS 해외 유통 · 제휴", sub: "해외 농가와 거래하는 사료·동물약품·컨설팅 기업", href: "?inquiry=pigos-partner#contact-form" },
       { title: "NanoTrans", sub: "nanotrans.io 문의 페이지", href: LINKS.nanotransContact },
     ],
   },
   en: {
     title: "How can we help?",
-    lede: "We'll route you to the right team.",
+    lede: `We take all inquiries by email. Use the form or write to ${COMPANY.email}.`,
     routes: [
       { title: "PigOS for your farm", sub: "Start free on pigos.io", href: LINKS.pigosStart },
-      { title: "PigOS distribution partners", sub: "Feed, animal-health and consulting companies serving farms abroad", href: "#contact-form" },
+      { title: "PigOS distribution partners", sub: "Feed, animal-health and consulting companies serving farms abroad", href: "?inquiry=pigos-partner#contact-form" },
       { title: "NanoTrans", sub: "nanotrans.io contact page", href: LINKS.nanotransContact },
     ],
   },

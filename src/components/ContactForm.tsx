@@ -1,18 +1,18 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CONTACT_TYPES } from "@/lib/contact";
 import { localePath, type Locale } from "@/lib/site";
 
 const T = {
   ko: {
-    title: "투자 · 제휴 · 언론 · 기타 문의",
-    hint: "PigOS 해외 유통·제휴는 문의 유형에서 “PigOS 해외 제휴”를 골라 주세요.",
+    title: "메일 문의",
+    hint: "피그플랜 도입·데모, PigOS 해외 제휴, 투자·제휴·언론 문의를 받습니다. 보내신 내용은 wiselake@wiselake.ai로 전달됩니다.",
     name: "성함",
     org: "소속",
     email: "이메일",
     type: "문의 유형",
-    types: { investment: "투자", partnership: "제휴", "pigos-partner": "PigOS 해외 제휴", press: "언론", other: "기타" },
+    types: { pigplan: "피그플랜 도입·데모", investment: "투자", partnership: "제휴", "pigos-partner": "PigOS 해외 제휴", press: "언론", other: "기타" },
     message: "문의 내용",
     consent: "개인정보 수집·이용에 동의합니다. (성함, 소속, 이메일, 문의 내용 · 문의 회신 목적)",
     policy: "개인정보처리방침",
@@ -25,13 +25,13 @@ const T = {
     fail: "전송에 실패했습니다. wiselake@wiselake.ai로 메일을 보내 주세요.",
   },
   en: {
-    title: "Investment, partnership, press or other",
-    hint: "For PigOS distribution, choose “PigOS distribution partner” as the inquiry type.",
+    title: "Email us",
+    hint: "PigPlan demos, PigOS distribution, investment, partnership and press. Messages go to wiselake@wiselake.ai.",
     name: "Name",
     org: "Organisation",
     email: "Email",
     type: "Inquiry type",
-    types: { investment: "Investment", partnership: "Partnership", "pigos-partner": "PigOS distribution partner", press: "Press", other: "Other" },
+    types: { pigplan: "PigPlan adoption & demo (Korea)", investment: "Investment", partnership: "Partnership", "pigos-partner": "PigOS distribution partner", press: "Press", other: "Other" },
     message: "Message",
     consent: "I agree to the collection and use of my name, organisation, email and message to answer this inquiry.",
     policy: "Privacy policy",
@@ -52,6 +52,14 @@ export default function ContactForm({ locale }: { locale: Locale }) {
   const startedAt = useRef<number>(0);
   const [state, setState] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [msg, setMsg] = useState("");
+  const typeRef = useRef<HTMLSelectElement>(null);
+  const defaultType = locale === "ko" ? "pigplan" : "pigos-partner";
+
+  // Links such as "/?inquiry=pigplan#contact-form" preselect the inquiry type.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("inquiry");
+    if (q && typeRef.current && (CONTACT_TYPES as readonly string[]).includes(q)) typeRef.current.value = q;
+  }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -125,7 +133,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
       </label>
       <label className="grid gap-1.5">
         <span className="font-semibold">{t.type}</span>
-        <select name="type" defaultValue="investment" className={field}>
+        <select ref={typeRef} name="type" defaultValue={defaultType} className={field}>
           {CONTACT_TYPES.map((k) => (
             <option key={k} value={k}>
               {t.types[k]}
