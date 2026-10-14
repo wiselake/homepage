@@ -55,3 +55,6 @@ CLAUDE.md
 .env.*
 !.env.example
 .dev.vars
+
+# written by `next dev` (Next.js agent rules)
+AGENTS.md

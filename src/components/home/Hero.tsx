@@ -50,7 +50,7 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] items-end gap-14 px-6 pb-[clamp(48px,7vw,96px)] pt-[clamp(56px,9vw,120px)]">
       <div>
-        <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-blue">{t.eyebrow}</p>
+        <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-blue-text">{t.eyebrow}</p>
         <h1 className="m-0 text-[clamp(38px,5.6vw,68px)] font-bold leading-[1.12] tracking-[-0.035em]">
           {t.title[0]}
           <br />

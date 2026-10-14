@@ -21,7 +21,7 @@ const T = {
     biz: { name: "피그플랜 비즈", title: "경영 AI", sub: "마감하면 손익을 브리핑합니다", close: "마감", plan: "연 정액제" },
     foundation: { title: "피그플랜 표준 시스템", sub: "세 AI가 같은 원천 데이터를 씁니다", items: [["생산 기록", "교배 · 분만 · 이유 · 출하"], ["경영 기록", "사료 · 매출 · 비용"], ["보고서 500여 종", "PDF · XLS · HWP"]] },
     axio: { tag: "NEXT · 2027 하반기", text: "피그플랜 AI 스위트를 중심으로, 유관기관 10개 그룹 사이의 업무를 AI 에이전트가 자동으로 처리합니다.", punch: "사람은 결정만 합니다.", nodes: ["농장", "수의사", "약품", "조합", "AI 에이전트", "사료", "축평원", "도축", "IoT"] },
-    detail: "자세히 보기",
+    detail: "피그플랜 AI 스위트 자세히 보기",
     call: "도입 · 데모 문의",
     service: "피그플랜 서비스 소개 →",
   },
@@ -44,7 +44,7 @@ const T = {
     biz: { name: "PigPlan Biz", title: "AI for the business", sub: "Close the books, get a P&L briefing", close: "Close", plan: "Annual plan" },
     foundation: { title: "PigPlan standard system", sub: "All three AIs share one source of data", items: [["Production records", "Mating · farrowing · weaning · shipping"], ["Finance records", "Feed · sales · costs"], ["~500 reports", "PDF · XLS · HWP"]] },
     axio: { tag: "NEXT · H2 2027", text: "Built around the PigPlan AI Suite, AI agents handle the work between 10 stakeholder groups automatically.", punch: "People only decide.", nodes: ["Farm", "Vet", "Pharma", "Co-op", "AI agent", "Feed", "Grading", "Packer", "IoT"] },
-    detail: "Learn more",
+    detail: "Explore the PigPlan AI Suite",
     call: "Ask about a demo",
     service: "PigPlan service overview (Korean) →",
   },
@@ -172,14 +172,14 @@ export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }:
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] items-center gap-4 bg-pigplan px-7 py-6 text-white">
           <div>
-            <div className="text-[12px] font-bold tracking-[0.14em] text-[#d6e6f6]">FOUNDATION</div>
+            <div className="text-[12px] font-bold tracking-[0.14em] text-[#e2edf9]">FOUNDATION</div>
             <div className="mt-1 text-[19px] font-bold">{t.foundation.title}</div>
             <div className="text-[14px] text-[#e2edf8]">{t.foundation.sub}</div>
           </div>
           {t.foundation.items.map(([a, b]) => (
-            <div key={a} className="rounded-[8px] border border-white/30 bg-white/10 px-4 py-3.5">
+            <div key={a} className="rounded-[8px] border border-white/30 bg-white/[0.06] px-4 py-3.5">
               <div className="font-bold">{a}</div>
-              <div className="text-[13px] text-[#e2edf8]">{b}</div>
+              <div className="text-[13px] text-[#f2f7fc]">{b}</div>
             </div>
           ))}
         </div>
