@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { CONTACT_TYPES, CONTACT_TYPE_LABELS_KO, type ContactType } from "@/lib/contact";
+import { CONTACT_TYPE_LABELS_KO, toContactType } from "@/lib/contact";
 
 /*
  * Contact form → email via Resend.
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
   const company = str(body.company, 200);
   const email = str(body.email, 200);
   const message = str(body.message, 5000);
-  const type = (CONTACT_TYPES as readonly string[]).includes(String(body.type)) ? (body.type as ContactType) : "other";
+  const type = toContactType(body.type) ?? "other";
   const locale = body.locale === "en" ? "en" : "ko";
 
   if (!name || !email || !message || body.consent !== true || !EMAIL_RE.test(email)) {

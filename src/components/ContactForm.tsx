@@ -1,47 +1,43 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { CONTACT_TYPES } from "@/lib/contact";
-import { localePath, type Locale } from "@/lib/site";
+import { CONTACT_TYPES, toContactType } from "@/lib/contact";
+import { COMPANY, localePath, type Locale } from "@/lib/site";
 
 const T = {
   ko: {
-    title: "메일 문의",
-    hint: "피그플랜 도입·데모, PigOS 해외 제휴, 투자·제휴·언론 문의를 받습니다. 보내신 내용은 wiselake@wiselake.ai로 전달됩니다.",
-    name: "성함",
-    org: "소속",
+    title: "문의하기",
+    name: "이름",
+    org: "회사·기관명",
     email: "이메일",
     type: "문의 유형",
-    types: { pigplan: "피그플랜 도입·데모", investment: "투자", partnership: "제휴", "pigos-partner": "PigOS 해외 제휴", press: "언론", other: "기타" },
+    types: { demo: "서비스 도입·데모", partnership: "사업 제휴", "investment-press": "투자·언론", other: "기타 문의" },
     message: "문의 내용",
-    consent: "개인정보 수집·이용에 동의합니다. (성함, 소속, 이메일, 문의 내용 · 문의 회신 목적)",
+    consent: "개인정보 수집·이용에 동의합니다. (이름, 회사·기관명, 이메일, 문의 내용 · 문의 회신 목적)",
     policy: "개인정보처리방침",
-    reply: "영업일 기준 2일 안에 회신드립니다.",
-    submit: "문의 보내기",
+    submit: "문의 보내기 →",
     sending: "보내는 중입니다…",
-    ok: "문의가 접수되었습니다. 영업일 기준 2일 안에 회신드립니다.",
-    invalid: "성함, 이메일, 문의 내용을 입력하고 개인정보 수집·이용에 동의해 주세요.",
+    ok: "문의가 접수되었습니다. 확인 후 담당자가 안내해 드립니다.",
+    invalid: "이름, 이메일, 문의 내용을 입력하고 개인정보 수집·이용에 동의해 주세요.",
     busy: "잠시 후 다시 시도해 주세요.",
-    fail: "전송에 실패했습니다. wiselake@wiselake.ai로 메일을 보내 주세요.",
+    fail: `전송에 실패했습니다. ${COMPANY.email}로 메일을 보내 주세요.`,
   },
   en: {
-    title: "Email us",
-    hint: "PigPlan demos, PigOS distribution, investment, partnership and press. Messages go to wiselake@wiselake.ai.",
+    title: "Send us a message",
     name: "Name",
-    org: "Organisation",
+    org: "Company / Organization",
     email: "Email",
     type: "Inquiry type",
-    types: { pigplan: "PigPlan adoption & demo (Korea)", investment: "Investment", partnership: "Partnership", "pigos-partner": "PigOS distribution partner", press: "Press", other: "Other" },
+    types: { demo: "Product adoption & demo", partnership: "Business partnership", "investment-press": "Investment & press", other: "Other" },
     message: "Message",
-    consent: "I agree to the collection and use of my name, organisation, email and message to answer this inquiry.",
+    consent: "I agree to the collection and use of my name, company or organization, email and message to answer this inquiry.",
     policy: "Privacy policy",
-    reply: "We reply within two business days.",
-    submit: "Send",
+    submit: "Send Inquiry →",
     sending: "Sending…",
-    ok: "Thanks — your message has been sent. We reply within two business days.",
+    ok: "Thanks — your message has been sent. Our team will get back to you.",
     invalid: "Please enter your name, email and message, and tick the consent box.",
     busy: "Please wait a moment and try again.",
-    fail: "Something went wrong. Please email wiselake@wiselake.ai instead.",
+    fail: `Something went wrong. Please email ${COMPANY.email} instead.`,
   },
 };
 
@@ -53,12 +49,12 @@ export default function ContactForm({ locale }: { locale: Locale }) {
   const [state, setState] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [msg, setMsg] = useState("");
   const typeRef = useRef<HTMLSelectElement>(null);
-  const defaultType = locale === "ko" ? "pigplan" : "pigos-partner";
+  const defaultType = locale === "ko" ? "demo" : "partnership";
 
-  // Links such as "/?inquiry=pigplan#contact-form" preselect the inquiry type.
+  // Links such as "/?inquiry=demo#contact-form" preselect the inquiry type (older keys are mapped).
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("inquiry");
-    if (q && typeRef.current && (CONTACT_TYPES as readonly string[]).includes(q)) typeRef.current.value = q;
+    const q = toContactType(new URLSearchParams(window.location.search).get("inquiry"));
+    if (q && typeRef.current) typeRef.current.value = q;
   }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -111,11 +107,10 @@ export default function ContactForm({ locale }: { locale: Locale }) {
         if (!startedAt.current) startedAt.current = Date.now();
       }}
       noValidate
-      className="grid grid-cols-1 gap-[18px] rounded-[12px] border border-line bg-card p-8 text-[15px]"
+      className="grid grid-cols-1 gap-[18px] rounded-[16px] border border-line bg-card p-[clamp(24px,4vw,40px)] text-[16px] shadow-[0_1px_2px_rgba(21,37,75,0.04),0_12px_32px_-12px_rgba(21,37,75,0.12)]"
     >
       <div>
-        <h3 className="m-0 text-[19px] font-bold">{t.title}</h3>
-        <p className="m-0 mt-1 text-[14px] text-muted">{t.hint}</p>
+        <h3 className="m-0 text-[20px] font-bold">{t.title}</h3>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,180px),1fr))] gap-[18px]">
         <label className="grid gap-1.5">
@@ -152,7 +147,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
-      <label className="flex items-start gap-2.5 text-[14px] text-ink-2">
+      <label className="flex items-start gap-2.5 text-[15px] text-ink-2">
         <input name="consent" type="checkbox" required className="mt-1 h-[18px] w-[18px] flex-none accent-brand" />
         <span>
           {t.consent}{" "}
@@ -161,17 +156,16 @@ export default function ContactForm({ locale }: { locale: Locale }) {
           </a>
         </span>
       </label>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="text-[14px] text-muted">{t.reply}</span>
+      <div className="flex justify-end">
         <button
           type="submit"
           disabled={state === "sending"}
-          className="min-h-12 cursor-pointer rounded-[6px] bg-brand px-6 font-semibold text-white hover:bg-night disabled:cursor-wait disabled:opacity-70"
+          className="min-h-12 cursor-pointer rounded-[8px] bg-brand px-6 font-semibold text-white hover:bg-brand-dark disabled:cursor-wait disabled:opacity-70 max-sm:w-full"
         >
           {t.submit}
         </button>
       </div>
-      <p role="status" aria-live="polite" className={`m-0 min-h-[1.5em] text-[14px] ${state === "error" ? "text-alert" : state === "ok" ? "text-brand" : "text-muted"}`}>
+      <p role="status" aria-live="polite" className={`m-0 min-h-[1.5em] text-[15px] ${state === "error" ? "text-alert" : state === "ok" ? "text-brand" : "text-muted"}`}>
         {msg}
       </p>
     </form>

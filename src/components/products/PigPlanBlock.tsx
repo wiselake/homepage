@@ -1,222 +1,243 @@
-import { LINKS, contactHref, localePath, type Locale } from "@/lib/site";
-import { Badge, ButtonLink, TextLink } from "../ui";
+import { LINKS, type Locale } from "@/lib/site";
+import { ArrowIcon, Badge, ButtonLink, Eyebrow } from "../ui";
 
+/*
+ * Domestic product line (2026-10-20 meeting): PigPlan (40%) and PigPlan AI (60%) in one
+ * brand section. PigPlan Biz is an add-on inside PigPlan, not a separate product. The former
+ * suite names (AI Suite, Insight, AXIO, Enterprise) and the chat product name are not shown.
+ *
+ * Status per pigplan.io/landing/service.do on 2026-10-20: PigPlan core and Android/iOS apps live;
+ * weekly and monthly reports (with national comparison) live; asking in chat and Biz open
+ * Dec 2026. Numbers in the screen example are illustrative, taken from the PigPlan intro deck.
+ */
 const T = {
   ko: {
-    product: "PRODUCT 01",
-    region: "국내",
-    live: "운영 중",
-    title: "피그플랜, AI로 진화하다",
-    lede: (
-      <>
-        양돈경영관리 표준 시스템 피그플랜 위에, <b className="text-ink">인사이트 · 톡 · 비즈</b> 세 가지 AI가 농장의 결정을 함께합니다.
-      </>
-    ),
-    more: "피그플랜 AI 스위트 자세히 보기 →",
-    suite: "피그플랜 AI 스위트",
-    suiteTag: "하나의 데이터 · 세 가지 AI · 하나의 계정",
-    soon: "2027년 1월 오픈 예정",
-    insight: { name: "피그플랜 인사이트", title: "받아보는 AI", sub: "주간·월간 리포트가 카카오톡으로 도착합니다", weekly: "주간", monthly: "월간", price: "연 90만원", vat: "· VAT 별도", apply: "신청 문의 →" },
-    talk: { name: "피그플랜 톡", title: "물어보는 AI", sub: "내 농장 데이터로 물어보면 바로 답합니다", q: "312번 모돈, 도태할까?", a: "재귀 지연 · 재발 반복, 도태 후보", plan: "월 정액제" },
-    biz: { name: "피그플랜 비즈", title: "경영 AI", sub: "마감하면 손익을 브리핑합니다", close: "마감", plan: "연 정액제" },
-    foundation: { title: "피그플랜 표준 시스템", sub: "세 AI가 같은 원천 데이터를 씁니다", items: [["생산 기록", "교배 · 분만 · 이유 · 출하"], ["경영 기록", "사료 · 매출 · 비용"], ["보고서 500여 종", "PDF · XLS · HWP"]] },
-    axio: { tag: "NEXT · 2027 하반기", text: "피그플랜 AI 스위트를 중심으로, 유관기관 10개 그룹 사이의 업무를 AI 에이전트가 자동으로 처리합니다.", punch: "사람은 결정만 합니다.", nodes: ["농장", "수의사", "약품", "조합", "AI 에이전트", "사료", "축평원", "도축", "IoT"] },
-    detail: "피그플랜 AI 스위트 자세히 보기",
-    call: "도입 · 데모 문의",
-    service: "피그플랜 서비스 소개 →",
+    eyebrow: "PigPlan · PigPlan AI",
+    title: "피그플랜, AI로 진화하다.",
+    sub: ["30년 이상 축적된 양돈 기록 위에,", "농장의 위험을 발견하고 더 나은 결정을 돕는 AI를 더합니다."],
+    plan: {
+      name: "PigPlan",
+      title: "정확한 기록, 체계적인 농장관리",
+      badge: "운영 중",
+      features: [
+        { text: "번식·비육·출하관리" },
+        { text: "생산성 분석과 성적 비교" },
+        { text: "농장별 보고서" },
+        { text: "경영관리 및 PigPlan Biz 애드온", note: "Biz 12월 오픈" },
+        { text: "웹·모바일 농장관리", note: "Android · iOS" },
+      ],
+      foot: "농장의 기록부터 경영관리까지.",
+    },
+    ai: {
+      name: "PigPlan AI",
+      title: "농장의 위험을 먼저 발견하는 AI",
+      sub: ["놓친 기록과 관리 대상을 찾고,", "궁금한 성적은 대화로 바로 확인하세요."],
+      demo: {
+        label: "화면 예시 · 수치는 가상",
+        alertTag: "주간 보고서",
+        alertTitle: "이유전 폐사율 16.1%",
+        alertText: "전년 대비 +5.1%p · 분만사 점검이 필요합니다",
+        kpis: [
+          ["PSY", "25.6두"],
+          ["NPD", "48.8일"],
+          ["관리대상", "23두"],
+        ],
+        q: "이번 달 분만율 알려줘",
+        a: "2026년 6월 기준 분만율 82.4%입니다.",
+        chatTag: "12월 오픈 예정",
+      },
+      values: [
+        { n: "①", title: "먼저 발견하는 AI", items: ["주요 성적의 이상 징후", "관리 대상 개체", "누락된 기록", "미처리 작업"] },
+        { n: "②", title: "물어보면 답하는 AI", items: ["자연어 질문", "농장 실적 조회", "전월·전년 성적 비교", "보고서 확인과 설명"] },
+        { n: "③", title: "관리까지 연결하는 AI", items: ["위험 탐지 알림", "추천 질문", "관련 농장 현황 확인", "후속 작업 안내"] },
+      ],
+    },
+    cta: "피그플랜 서비스 자세히 보기",
   },
   en: {
-    product: "PRODUCT 02",
-    region: "Korea only",
-    live: "Live",
-    title: "PigPlan, evolved with AI",
-    lede: (
-      <>
-        On top of PigPlan, Korea&apos;s standard pig-farm management system, <b className="text-ink">Insight · Talk · Biz</b> — three AIs that help every farm decision.
-      </>
-    ),
-    more: "Explore the PigPlan AI Suite →",
-    suite: "PigPlan AI Suite",
-    suiteTag: "One data source · three AIs · one account",
-    soon: "Opens January 2027",
-    insight: { name: "PigPlan Insight", title: "AI that reports", sub: "Weekly and monthly reports, delivered over KakaoTalk", weekly: "Weekly", monthly: "Monthly", price: "KRW 900,000 / year", vat: "· excl. VAT", apply: "Ask about Insight →" },
-    talk: { name: "PigPlan Talk", title: "AI you ask", sub: "Ask about your own farm data and get an answer", q: "Sow #312 — cull her?", a: "Late return, repeat services: cull candidate", plan: "Monthly plan" },
-    biz: { name: "PigPlan Biz", title: "AI for the business", sub: "Close the books, get a P&L briefing", close: "Close", plan: "Annual plan" },
-    foundation: { title: "PigPlan standard system", sub: "All three AIs share one source of data", items: [["Production records", "Mating · farrowing · weaning · shipping"], ["Finance records", "Feed · sales · costs"], ["~500 reports", "PDF · XLS · HWP"]] },
-    axio: { tag: "NEXT · H2 2027", text: "Built around the PigPlan AI Suite, AI agents handle the work between 10 stakeholder groups automatically.", punch: "People only decide.", nodes: ["Farm", "Vet", "Pharma", "Co-op", "AI agent", "Feed", "Grading", "Packer", "IoT"] },
-    detail: "Explore the PigPlan AI Suite",
-    call: "Ask about a demo",
-    service: "PigPlan service overview (Korean) →",
+    eyebrow: "PigPlan · PigPlan AI",
+    title: "PigPlan, Evolving with AI.",
+    sub: ["On more than 30 years of pig-farm records,", "we add AI that spots farm risks and supports better decisions."],
+    plan: {
+      name: "PigPlan",
+      title: "Accurate Records, Organized Farm Management",
+      badge: "Live",
+      features: [
+        { text: "Breeding, finishing and shipment management" },
+        { text: "Productivity analysis and benchmarking" },
+        { text: "Farm-level reports" },
+        { text: "Business management with the PigPlan Biz add-on", note: "Biz opens Dec" },
+        { text: "Web and mobile farm management", note: "Android · iOS" },
+      ],
+      foot: "From farm records to business management.",
+    },
+    ai: {
+      name: "PigPlan AI",
+      title: "AI That Finds Farm Risks First",
+      sub: ["Find missed records and animals that need attention,", "and ask about your farm's performance in plain language."],
+      demo: {
+        label: "Screen example · illustrative numbers",
+        alertTag: "Weekly report",
+        alertTitle: "Pre-wean mortality 16.1%",
+        alertText: "+5.1 pts vs last year · check the farrowing rooms",
+        kpis: [
+          ["PSY", "25.6"],
+          ["NPD", "48.8 d"],
+          ["Flagged sows", "23"],
+        ],
+        q: "What's this month's farrowing rate?",
+        a: "Farrowing rate was 82.4% for June 2026.",
+        chatTag: "Opens December",
+      },
+      values: [
+        { n: "①", title: "AI that finds issues first", items: ["Anomalies in key KPIs", "Animals that need attention", "Missing records", "Open tasks"] },
+        { n: "②", title: "AI that answers", items: ["Plain-language questions", "Farm results lookup", "Month-over-month and year-over-year comparison", "Report lookup and explanation"] },
+        { n: "③", title: "AI that leads to action", items: ["Risk alerts", "Suggested questions", "Related farm status", "Follow-up task guidance"] },
+      ],
+    },
+    cta: "Explore the PigPlan service",
   },
 };
 
-function Card({ children, last }: { children: React.ReactNode; last?: boolean }) {
-  return <div className={`flex flex-col gap-4 border-b border-line-soft p-7 ${last ? "" : "min-[880px]:border-r"}`}>{children}</div>;
-}
-
-function CardHead({ name, badge }: { name: string; badge: React.ReactNode }) {
+function Check() {
   return (
-    <div className="flex items-center justify-between gap-3">
-      <span className="text-[14px] font-bold text-pigplan">{name}</span>
-      {badge}
-    </div>
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" className="mt-[4px] flex-none text-brand">
+      <path d="M4 9.5l3 3 7-7" />
+    </svg>
   );
 }
 
-function CardTitle({ title, sub, as: Tag }: { title: string; sub: string; as: "h2" | "h4" }) {
+function Spark() {
   return (
-    <div>
-      <Tag className="m-0 text-[24px] font-bold tracking-[-0.02em]">{title}</Tag>
-      <p className="m-0 mt-1 text-[15px] text-ink-2">{sub}</p>
-    </div>
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9L12 2.5zM19 15l.9 2.6 2.6.9-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9L19 15z" />
+    </svg>
   );
 }
 
-const stackOnMobile = "max-sm:w-full max-sm:justify-center";
-const pill = "rounded-[6px] border-[1.5px] border-pigplan bg-card px-3 py-0.5 text-[13px] font-bold text-pigplan";
+/** Illustrative PigPlan AI screens: a weekly-report alert (live) and a chat answer (opens Dec 2026). */
+function AiDemo({ d }: { d: (typeof T)["ko"]["ai"]["demo"] }) {
+  return (
+    <figure className="m-0">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="rounded-[14px] bg-white p-5 text-ink">
+          <div className="flex items-center justify-between gap-2 text-[13px] font-semibold">
+            <span className="inline-flex items-center gap-1.5 text-alert">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 1.5l7 12.5H1L8 1.5zm-.75 4.5v4h1.5V6h-1.5zm0 5.25v1.5h1.5v-1.5h-1.5z" />
+              </svg>
+              {d.alertTag}
+            </span>
+          </div>
+          <p className="m-0 mt-2 text-[18px] font-bold leading-[1.3]">{d.alertTitle}</p>
+          <p className="m-0 mt-1 text-[14px] text-ink-2">{d.alertText}</p>
+          <dl className="m-0 mt-4 grid grid-cols-3 gap-2 border-t border-line-soft pt-3">
+            {d.kpis.map(([k, v]) => (
+              <div key={k} className="flex flex-col-reverse">
+                <dt className="text-[12px] text-muted">{k}</dt>
+                <dd className="m-0 text-[16px] font-bold tabular-nums">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="flex flex-col gap-2.5 rounded-[14px] border border-night-line bg-night-2 p-5">
+          <span className="self-start rounded-full border border-ai-night/40 px-2.5 py-0.5 text-[12px] font-semibold text-ai-night">{d.chatTag}</span>
+          <p className="m-0 self-end rounded-[14px] rounded-br-[4px] bg-brand px-3.5 py-2 text-[15px] text-white">{d.q}</p>
+          <p className="m-0 flex items-start gap-2 self-start rounded-[14px] rounded-bl-[4px] bg-white px-3.5 py-2 text-[15px] text-ink">
+            <span aria-hidden="true" className="mt-[3px] text-ai-text">
+              <Spark />
+            </span>
+            {d.a}
+          </p>
+        </div>
+      </div>
+      <figcaption className="mt-2 text-[13px] text-night-text">{d.label}</figcaption>
+    </figure>
+  );
+}
 
-/** headingLevel 1: the block is the /pigplan page title; 3: a section inside the home page. Card titles sit one level below. */
-export default function PigPlanBlock({ locale, headingLevel = 3, productLabel }: { locale: Locale; headingLevel?: 1 | 3; productLabel?: string }) {
+/** headingLevel 1: the block is the /pigplan page title; 2: a product section on the home page. Panel titles sit one level below. */
+export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Locale; headingLevel?: 1 | 2 }) {
   const t = T[locale];
-  const H = headingLevel === 1 ? "h1" : "h3";
-  const card = headingLevel === 1 ? "h2" : "h4";
-  const soonBadge = <Badge tone="dev">{t.soon}</Badge>;
+  const H = headingLevel === 1 ? "h1" : "h2";
+  const PanelH = headingLevel === 1 ? "h2" : "h3";
 
   return (
     <div id="pigplan">
-      <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
-        <div className="max-w-[720px]">
-          <p className="m-0 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] font-bold">
-            <span className="tracking-[0.14em] text-pigplan">{productLabel ?? t.product}</span>
-            <Badge tone="neutral">{t.region}</Badge>
-            <Badge tone="pigplan">{t.live}</Badge>
-          </p>
-          <H className="m-0 mt-3.5 text-[clamp(26px,2.8vw,34px)] font-bold leading-[1.25] tracking-[-0.03em]">{t.title}</H>
-          <p className="m-0 mt-3 text-ink-2">{t.lede}</p>
-        </div>
-        {headingLevel === 3 && <TextLink href={localePath(locale, "/pigplan")}>{t.more}</TextLink>}
+      <div className="max-w-[820px]">
+        <Eyebrow>{t.eyebrow}</Eyebrow>
+        <H className="m-0 mt-4 text-[clamp(32px,4.4vw,54px)] font-bold leading-[1.15] tracking-[-0.04em]">{t.title}</H>
+        <p className="m-0 mt-5 text-[clamp(18px,1.9vw,22px)] font-semibold leading-[1.55] tracking-[-0.015em] text-ink-2">
+          {t.sub[0]}
+          <br className="max-sm:hidden" /> {t.sub[1]}
+        </p>
       </div>
 
-      <div className="mt-7 overflow-hidden rounded-[12px] border border-line bg-card">
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-line-soft px-7 py-4">
-          <div className="flex items-center gap-2.5 font-bold">
-            <span aria-hidden="true" className="inline-flex h-7 w-7 items-center justify-center rounded-[6px] bg-pigplan text-[14px] text-white">
-              P
-            </span>
-            {t.suite}
+      {/* One brand section: PigPlan (foundation, 40%) + PigPlan AI (60%). */}
+      <div className="mt-12 grid grid-cols-1 overflow-hidden rounded-[24px] border border-line bg-card shadow-[0_1px_2px_rgba(21,37,75,0.04),0_32px_64px_-32px_rgba(21,37,75,0.25)] min-[1000px]:grid-cols-[minmax(0,4fr)_minmax(0,6fr)]">
+        <article className="flex flex-col p-[clamp(28px,3.5vw,44px)]">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-[15px] font-bold tracking-[0.04em] text-brand">{t.plan.name}</span>
+            <Badge tone="live">{t.plan.badge}</Badge>
           </div>
-          <span className="text-[14px] text-muted">{t.suiteTag}</span>
-        </div>
-
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))]">
-          <Card>
-            <CardHead name={t.insight.name} badge={<Badge tone="pigplanLive">{t.live}</Badge>} />
-            <CardTitle title={t.insight.title} sub={t.insight.sub} as={card} />
-            <div aria-hidden="true" className="flex h-[132px] items-center justify-center gap-[18px] rounded-[10px] bg-pigplan-tint">
-              <div className="grid gap-2">
-                <span className={pill}>{t.insight.weekly}</span>
-                <span className={pill}>{t.insight.monthly}</span>
-              </div>
-              <svg width="70" height="84" viewBox="0 0 70 84" fill="none">
-                <path d="M4 42h18" stroke="#1769b3" strokeWidth="2" strokeDasharray="4 4" />
-                <path d="M20 37l6 5-6 5" stroke="#1769b3" strokeWidth="2" />
-                <rect x="32" y="6" width="34" height="46" rx="4" fill="#fff" stroke="#1769b3" strokeWidth="2.5" />
-                <path d="M38 18h22M38 26h22M38 34h14" stroke="#9cc3ea" strokeWidth="3" />
-                <circle cx="62" cy="54" r="8" fill="#1769b3" />
-                <path d="M58 54l3 3 5-5" stroke="#fff" strokeWidth="2" />
-              </svg>
-            </div>
-            <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-line-soft pt-3.5 text-[15px]">
-              <span>
-                <b>{t.insight.price}</b> <span className="text-muted">{t.insight.vat}</span>
-              </span>
-              <a href={contactHref(locale, "pigplan")} className="font-bold text-pigplan">
-                {t.insight.apply}
-              </a>
-            </div>
-          </Card>
-
-          <Card>
-            <CardHead name={t.talk.name} badge={soonBadge} />
-            <CardTitle title={t.talk.title} sub={t.talk.sub} as={card} />
-            <div aria-hidden="true" className="flex h-[132px] flex-col justify-center gap-2.5 rounded-[10px] bg-pigplan-tint px-6">
-              <div className="self-end rounded-[12px_12px_2px_12px] bg-pigplan px-3.5 py-1.5 text-[13px] font-semibold text-white">{t.talk.q}</div>
-              <div className="flex items-center gap-2 self-start rounded-[12px_12px_12px_2px] border-[1.5px] border-pigplan bg-card px-3 py-1.5 text-[13px]">
-                <span className="rounded bg-pigplan px-1.5 text-[11px] font-bold text-white">AI</span>
-                {t.talk.a}
-              </div>
-            </div>
-            <div className="mt-auto border-t border-line-soft pt-3.5 text-[15px] font-bold">{t.talk.plan}</div>
-          </Card>
-
-          <Card last>
-            <CardHead name={t.biz.name} badge={soonBadge} />
-            <CardTitle title={t.biz.title} sub={t.biz.sub} as={card} />
-            <div aria-hidden="true" className="flex h-[132px] items-center justify-center gap-[18px] rounded-[10px] bg-pigplan-tint">
-              <span className={pill}>{t.biz.close}</span>
-              <svg width="84" height="80" viewBox="0 0 84 80" fill="none">
-                <path d="M2 40h16" stroke="#1769b3" strokeWidth="2" strokeDasharray="4 4" />
-                <path d="M16 35l6 5-6 5" stroke="#1769b3" strokeWidth="2" />
-                <rect x="28" y="12" width="50" height="58" rx="4" fill="#fff" stroke="#1769b3" strokeWidth="2.5" />
-                <rect x="36" y="48" width="8" height="14" fill="#9cc3ea" />
-                <rect x="48" y="40" width="8" height="22" fill="#5e9bd6" />
-                <rect x="60" y="28" width="8" height="34" fill="#1769b3" />
-                <circle cx="76" cy="12" r="9" fill="#1769b3" />
-                <text x="76" y="16" textAnchor="middle" fontSize="11" fontWeight="700" fill="#fff">
-                  ₩
-                </text>
-              </svg>
-            </div>
-            <div className="mt-auto border-t border-line-soft pt-3.5 text-[15px] font-bold">{t.biz.plan}</div>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] items-center gap-4 bg-pigplan px-7 py-6 text-white">
-          <div>
-            <div className="text-[12px] font-bold tracking-[0.14em] text-[#e2edf9]">FOUNDATION</div>
-            <div className="mt-1 text-[19px] font-bold">{t.foundation.title}</div>
-            <div className="text-[14px] text-[#e2edf8]">{t.foundation.sub}</div>
-          </div>
-          {t.foundation.items.map(([a, b]) => (
-            <div key={a} className="rounded-[8px] border border-white/30 bg-white/[0.06] px-4 py-3.5">
-              <div className="font-bold">{a}</div>
-              <div className="text-[13px] text-[#f2f7fc]">{b}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center gap-8 bg-night px-7 py-9 text-white">
-          <div>
-            <p className="m-0 flex flex-wrap items-center gap-2.5">
-              <span className="rounded-[6px] border border-dashed border-brand-sky px-2 py-0.5 text-[12px] font-bold text-brand-sky">{t.axio.tag}</span>
-              <span className="font-bold tracking-[0.06em]">PIGPLAN AXIO</span>
-            </p>
-            <p className="m-0 mt-3.5 text-[16px] text-[#d2d7f0]">{t.axio.text}</p>
-            <p className="m-0 mt-2.5 font-bold text-brand-sky">{t.axio.punch}</p>
-          </div>
-          <ul aria-label="AXIO" className="m-0 grid w-full max-w-[360px] list-none grid-cols-3 gap-2.5 justify-self-center p-0 text-center text-[14px]">
-            {t.axio.nodes.map((n, i) => (
-              <li key={n} className={i === 4 ? "rounded-[8px] bg-brand-blue px-1 py-2 font-bold" : "rounded-[8px] border border-night-line bg-night-2 px-1 py-2"}>
-                {n}
+          <PanelH className="m-0 mt-4 text-[clamp(22px,2.2vw,27px)] font-bold leading-[1.3] tracking-[-0.025em]">
+            {t.plan.name} <span className="text-muted">—</span> {t.plan.title}
+          </PanelH>
+          <p className="m-0 mt-2 text-[17px] text-ink-2">{t.plan.foot}</p>
+          <ul className="m-0 mt-6 grid list-none gap-3 border-t border-line-soft p-0 pt-6 text-[17px]">
+            {t.plan.features.map((f) => (
+              <li key={f.text} className="flex gap-2.5">
+                <Check />
+                <span>
+                  {f.text}
+                  {f.note && <span className="ml-2 whitespace-nowrap text-[14px] text-muted">{f.note}</span>}
+                </span>
               </li>
             ))}
           </ul>
-        </div>
+        </article>
+
+        <article className="relative flex flex-col gap-7 overflow-hidden bg-night p-[clamp(28px,3.5vw,44px)] text-white">
+          <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(18,166,160,0.30),transparent_70%)]" />
+          <div className="relative">
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-ai text-night">
+                <Spark />
+              </span>
+              <span className="text-[15px] font-bold tracking-[0.04em] text-ai-night">{t.ai.name}</span>
+            </div>
+            <PanelH className="m-0 mt-4 text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.25] tracking-[-0.03em]">
+              {t.ai.name} <span className="text-night-text">—</span> {t.ai.title}
+            </PanelH>
+            <p className="m-0 mt-3 text-[18px] font-semibold leading-[1.5] text-white">
+              {t.ai.sub[0]}
+              <br className="max-sm:hidden" /> {t.ai.sub[1]}
+            </p>
+          </div>
+
+          <div className="relative">
+            <AiDemo d={t.ai.demo} />
+          </div>
+
+          <ol className="relative m-0 grid list-none gap-3 p-0">
+            {t.ai.values.map((v) => (
+              <li key={v.title} className="rounded-[14px] border border-night-line p-5">
+                <p className="m-0 text-[17px] font-bold">
+                  <span className="mr-1.5 text-ai-night">{v.n}</span>
+                  {v.title}
+                </p>
+                <p className="m-0 mt-2 text-[15px] text-night-text">{v.items.join(" · ")}</p>
+              </li>
+            ))}
+          </ol>
+        </article>
       </div>
 
-      {/* Below sm (640px) the buttons stack full width; from sm up the row is unchanged. */}
-      <div className="mt-5 flex flex-col items-start gap-y-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
-        {headingLevel === 3 && (
-          <ButtonLink href={localePath(locale, "/pigplan")} className={stackOnMobile}>
-            {t.detail}
-          </ButtonLink>
-        )}
-        <ButtonLink href={contactHref(locale, "pigplan")} variant="outline" className={stackOnMobile}>
-          {t.call}
+      <div className="mt-8">
+        <ButtonLink href={LINKS.pigplanService} external size="lg" className="max-sm:w-full">
+          {t.cta}
+          <ArrowIcon />
         </ButtonLink>
-        <TextLink href={LINKS.pigplanService} external>
-          {t.service}
-        </TextLink>
       </div>
     </div>
   );

@@ -1,110 +1,121 @@
 import type { Locale } from "@/lib/site";
-import { ArrowIcon, Badge, ButtonLink } from "../ui";
+import { Badge, ButtonLink } from "../ui";
 
 const T = {
   ko: {
     eyebrow: "WiseLake · Data Moves. Value Follows.",
-    title: ["쌓인 데이터가,", "AI 시대의 가치가 됩니다"],
-    lede: "와이즈레이크는 31년의 양돈 데이터로 농장의 손실을 미리 알리고, AI가 읽어 가는 콘텐츠의 가치를 측정해 거래하게 합니다.",
-    ctaA: "축산 AI 보기",
-    ctaB: "콘텐츠 가치 보기",
-    statusTitle: "제품 현황 · 2026년 10월",
+    title: "데이터가 AI 시대의 가치가 됩니다.",
+    sub: ["현장의 데이터를 더 나은 의사결정으로.", "AI 기술을 새로운 가치로 연결합니다."],
+    ctaA: "양돈 AI 알아보기",
+    ctaB: "콘텐츠 가치 알아보기",
+    indexTitle: "와이즈레이크의 제품",
     rows: [
-      { name: "피그플랜 AI 스위트", sub: "국내 양돈 농가 · 이 사이트", badge: "운영 중", tone: "live" as const },
-      { name: "PigOS", sub: "해외 양돈 농가 · pigos.io", badge: "운영 중", tone: "live" as const },
-      { name: "NanoTrans", sub: "언론사·콘텐츠 기업 · nanotrans.io", badge: "개발 중 · 파일럿", tone: "dev" as const },
+      { n: "국내", name: "PigPlan + PigPlan AI", sub: "양돈 농장관리와 양돈 전문 AI", href: "#pigplan", badge: "운영 중", tone: "live" as const },
+      { n: "글로벌", name: "PigOS", sub: "세계의 양돈농장을 위한 운영 플랫폼", href: "#pigos", badge: "운영 중", tone: "live" as const },
+      { n: "콘텐츠 가치", name: "NanoTrans", sub: "AI 시대 콘텐츠 가치 기술", href: "#nanotrans", badge: "개발 중", tone: "dev" as const },
     ],
   },
   en: {
     eyebrow: "WiseLake · Data Moves. Value Follows.",
-    title: ["Accumulated data,", "turned into value for the AI era"],
-    lede: "WiseLake uses 31 years of pig-farm data to warn farms of losses early, and measures the value of content that AI reads so it can be traded.",
-    ctaA: "Livestock AI",
-    ctaB: "Content value",
-    statusTitle: "Product status · October 2026",
+    title: "Turning Data into Value in the AI Era.",
+    sub: ["Field data, turned into better decisions.", "AI technology, connected to new value."],
+    ctaA: "Explore Swine AI",
+    ctaB: "Explore Content Value",
+    indexTitle: "Our products",
     rows: [
-      { name: "PigOS", sub: "Pig farms outside Korea · pigos.io", badge: "Live", tone: "live" as const },
-      { name: "PigPlan AI Suite", sub: "Pig farms in Korea", badge: "Live", tone: "live" as const },
-      { name: "NanoTrans", sub: "Publishers · nanotrans.io", badge: "In development · pilot", tone: "dev" as const },
+      { n: "Korea", name: "PigPlan + PigPlan AI", sub: "Farm management and AI for pig farms", href: "#pigplan", badge: "Live", tone: "live" as const },
+      { n: "Global", name: "PigOS", sub: "Operating platform for pig farms worldwide", href: "#pigos", badge: "Live", tone: "live" as const },
+      { n: "Content value", name: "NanoTrans", sub: "Content value in the AI era", href: "#nanotrans", badge: "In development", tone: "dev" as const },
     ],
   },
-};
-
-/** Source note for the farm count (same basis as the /pigplan share chart). */
-const NUMBERS_NOTE = {
-  ko: "농장 수: 개체별 전산관리 사용 농가 1,133호 중 피그플랜 사용 농가(민·관 실측 자료 종합)",
-  en: "Farm count: PigPlan users among 1,133 farms using individual-animal record software (combined public and private survey data)",
-};
-
-const NUMBERS = {
-  ko: [
-    ["60.9%", "국내 양돈 전산관리 시스템 점유율"],
-    ["690곳", "피그플랜을 쓰는 국내 농장"],
-    ["1995", "서울대 연구소에서 피그플랜 최초 개발"],
-    ["7개 언어", "해외 농가용 PigOS 지원 언어"],
-  ],
-  en: [
-    ["60.9%", "Share of Korea's pig-farm record systems"],
-    ["690", "Korean farms on PigPlan"],
-    ["1995", "PigPlan first built at a Seoul National University lab"],
-    ["7", "Languages PigOS supports for farms abroad"],
-  ],
 };
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = T[locale];
   return (
-    <section className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] items-end gap-14 px-6 pb-[clamp(48px,7vw,96px)] pt-[clamp(56px,9vw,120px)]">
-      <div>
-        <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-blue-text">{t.eyebrow}</p>
-        <h1 className="m-0 text-[clamp(38px,5.6vw,68px)] font-bold leading-[1.12] tracking-[-0.035em]">
-          {t.title[0]}
-          <br />
-          {t.title[1]}
-        </h1>
-        <p className="mt-7 max-w-[560px] text-[clamp(17px,1.6vw,19px)] text-ink-2">{t.lede}</p>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <ButtonLink href="#livestock" size="lg">
-            {t.ctaA}
-            <ArrowIcon />
-          </ButtonLink>
-          <ButtonLink href="#content" size="lg" variant="outlineBrand">
-            {t.ctaB}
-          </ButtonLink>
+    <section className="relative overflow-hidden">
+      {/* Soft brand glow behind the headline; decorative only. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_12%_0%,rgba(23,107,193,0.10),transparent_70%),radial-gradient(40%_50%_at_95%_20%,rgba(18,166,160,0.08),transparent_70%)]"
+      />
+      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-x-16 gap-y-12 px-6 pb-[clamp(64px,8vw,112px)] pt-[clamp(56px,9vw,128px)] min-[1000px]:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
+        <div>
+          <p className="m-0 text-[14px] font-bold uppercase tracking-[0.14em] text-brand">{t.eyebrow}</p>
+          <h1 className="m-0 mt-6 text-[clamp(40px,6vw,72px)] font-bold leading-[1.1] tracking-[-0.04em] text-ink">{t.title}</h1>
+          <p className="m-0 mt-7 text-[clamp(19px,2vw,24px)] font-semibold leading-[1.5] tracking-[-0.015em] text-ink-2">
+            {t.sub[0]}
+            <br />
+            {t.sub[1]}
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <ButtonLink href="#livestock" size="lg" className="max-sm:w-full">
+              {t.ctaA}
+            </ButtonLink>
+            <ButtonLink href="#content" size="lg" variant="outline" className="max-sm:w-full">
+              {t.ctaB}
+            </ButtonLink>
+          </div>
         </div>
-      </div>
-      <div className="rounded-[12px] border border-line bg-card px-6 py-2">
-        <p className="mb-1 mt-4 text-[12px] font-semibold uppercase tracking-[0.1em] text-muted">{t.statusTitle}</p>
-        <dl className="m-0 text-[15px]">
-          {t.rows.map((r, i) => (
-            <div key={r.name} className={`flex items-center justify-between gap-4 py-4 ${i < t.rows.length - 1 ? "border-b border-line-soft" : ""}`}>
-              <dt>
-                <span className="block font-semibold">{r.name}</span>
-                <span className="block text-[14px] text-muted">{r.sub}</span>
-              </dt>
-              <dd className="m-0">
-                <Badge tone={r.tone}>{r.badge}</Badge>
-              </dd>
-            </div>
-          ))}
-        </dl>
+
+        <nav aria-label={t.indexTitle} className="rounded-[20px] border border-line bg-card/90 p-2 shadow-[0_1px_2px_rgba(21,37,75,0.04),0_24px_48px_-24px_rgba(21,37,75,0.18)] backdrop-blur">
+          <p className="m-0 px-5 pb-1 pt-4 text-[14px] font-semibold text-muted">{t.indexTitle}</p>
+          <ul className="m-0 list-none p-0">
+            {t.rows.map((r) => (
+              <li key={r.n}>
+                <a href={r.href} className="flex items-center gap-4 rounded-[14px] px-5 py-[18px] text-ink hover:bg-paper hover:text-ink">
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[13px] font-bold uppercase tracking-[0.08em] text-brand">{r.n}</span>
+                    <span className="block text-[18px] font-bold leading-[1.35]">{r.name}</span>
+                    <span className="block text-[15px] text-muted">{r.sub}</span>
+                  </span>
+                  <Badge tone={r.tone}>{r.badge}</Badge>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </section>
   );
 }
 
-export function NumberBand({ locale }: { locale: Locale }) {
+const TRUST = {
+  ko: {
+    title: "현장에서 시작한 기술, 데이터로 쌓아온 신뢰",
+    items: [
+      ["30년 이상", "피그플랜 기술·서비스 역사"],
+      ["약 700개 농가", "피그플랜 이용 농가"],
+      ["1995년", "피그플랜 개발의 시작"],
+    ],
+  },
+  en: {
+    title: "Built on Decades of Pig-Farming Experience",
+    items: [
+      ["30+ Years", "PigPlan technology heritage"],
+      ["About 700 Farms", "Farms using PigPlan"],
+      ["Since 1995", "PigPlan origins"],
+    ],
+  },
+};
+
+export function TrustBand({ locale }: { locale: Locale }) {
+  const t = TRUST[locale];
   return (
-    <section aria-label={locale === "ko" ? "주요 수치" : "Key figures"} className="bg-night text-white">
-      <dl className="mx-auto m-0 grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-x-6 gap-y-8 min-[700px]:gap-x-10 px-6 py-12">
-        {NUMBERS[locale].map(([v, l]) => (
-          <div key={v} className="flex flex-col-reverse">
-            <dt className="mt-2 text-[14px] text-night-text">{l}</dt>
-            <dd className="m-0 text-[clamp(36px,4vw,48px)] font-bold leading-[1.1] tracking-[-0.03em]">{v}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="mx-auto m-0 max-w-[1200px] px-6 pb-8 text-[13px] text-night-text">{NUMBERS_NOTE[locale]}</p>
+    <section aria-labelledby="trust-title" className="bg-night text-white">
+      <div className="mx-auto max-w-[1200px] px-6 py-[clamp(56px,7vw,88px)]">
+        <h2 id="trust-title" className="m-0 text-[clamp(22px,2.6vw,30px)] font-bold tracking-[-0.025em]">
+          {t.title}
+        </h2>
+        <dl className="m-0 mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-3">
+          {t.items.map(([v, l]) => (
+            <div key={v} className="flex flex-col-reverse border-t border-night-line pt-6">
+              <dt className="mt-2 text-[16px] text-night-text">{l}</dt>
+              <dd className="m-0 text-[clamp(34px,4vw,48px)] font-bold leading-[1.1] tracking-[-0.03em]">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </section>
   );
 }

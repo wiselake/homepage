@@ -64,7 +64,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-01-01",
     monthOnly: true,
     product: "pigplan",
-    title: { ko: "AI 경영 리포트 피그플랜 인사이트 정식 출시", en: "PigPlan Insight, the AI management report, launches" },
+    title: { ko: "피그플랜 AI 경영 리포트 정식 출시", en: "PigPlan's AI management report launches" },
     summary: {
       ko: "주간·월간·분기 리포트를 카카오톡으로 받아보는 구독 서비스를 시작했습니다.",
       en: "A subscription that delivers weekly, monthly and quarterly farm reports over KakaoTalk.",
@@ -116,8 +116,8 @@ export const NEWS: NewsItem[] = [
     product: "company",
     title: { ko: "와이즈레이크, 2021 피그플랜 빅데이터 발표", en: "WiseLake presents its 2021 PigPlan big-data report" },
     summary: {
-      ko: "이지팜 피그컬처 사업부에서 분사한 와이즈레이크가 첫 보고회를 열었습니다. 평균 PSY 24.2두.",
-      en: "WiseLake's first report after its spin-off from EZFarm's PigCulture division. Average PSY 24.2.",
+      ko: "와이즈레이크가 2021년 피그플랜 빅데이터 분석 결과를 발표했습니다. 평균 PSY 24.2두.",
+      en: "WiseLake presented its analysis of 2021 PigPlan big data. Average PSY 24.2.",
     },
     outlets: [{ name: "데일리벳", url: "https://www.dailyvet.co.kr/?p=165912" }],
   },

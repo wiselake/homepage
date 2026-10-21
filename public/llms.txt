@@ -1,16 +1,16 @@
 # WiseLake (와이즈레이크)
 
-> WiseLake, Inc. is a Korean company that turns accumulated data into value for the AI era. It runs two lines of business: livestock AI for pig farms, and NanoTrans, which measures and trades the value of content that AI reads.
+> WiseLake, Inc. (㈜와이즈레이크) is a Korean technology company — Data Moves. Value Follows. It builds AI for pig farms and global data and content technology: PigPlan and PigPlan AI in Korea, PigOS worldwide, and NanoTrans for content value in the AI era.
 
 ## Products
 
-- [PigPlan AI Suite](https://wiselake.ai/pigplan): Korea's standard pig-farm management system (60.9% share of farm record systems, 690 farms, since 1995) with three AIs: PigPlan Insight (live, AI reports), PigPlan Talk (AI you ask, opening January 2027) and PigPlan Biz (management AI, opening January 2027). Korea only.
-- [PigOS](https://pigos.io): AI early-warning farm OS for pig farms outside Korea. Records are judged against country-level KPI benchmarks the moment they are entered. Core is free; 7 languages; USA, China, Southeast Asia, Latin America.
-- [NanoTrans](https://nanotrans.io): Index (measure AI citations), Edge (decide how each AI bot gets access), Market (trade content and data). In development, piloting with a Korean news publisher. Agent Paywall WordPress plugin is live.
+- [PigPlan and PigPlan AI](https://wiselake.ai/pigplan): PigPlan is a pig-farm management system for Korean farms (technology since 1995, about 700 farms; web, Android and iOS). PigPlan Biz is a business-management add-on (opens December 2026). PigPlan AI is AI for pig farms: weekly and monthly reports with nationwide comparison are live; chat questions open December 2026. Service page: https://pigplan.io/landing/service.do. Korea only.
+- [PigOS](https://pigos.io): Operating platform for pig farms worldwide — farm records, performance analytics, country benchmarks and early warnings. Core is free; 7 languages.
+- [NanoTrans](https://nanotrans.io): Technology that measures how AI uses content, lets content owners manage access and usage policies, and develops content value exchange models. In development, piloting with a Korean IT and business news publisher.
 
 ## Company
 
-- Name: WiseLake, Inc. (주식회사 와이즈레이크), founded January 28, 2022; PigPlan first built at a Seoul National University lab in 1995.
+- Name: WiseLake, Inc. (㈜와이즈레이크), founded January 28, 2022. PigPlan's technology began in 1995.
 - Address: Suite 505 (5F), The H Tower 919, 80 Beolmal-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea
 - Contact: wiselake@wiselake.ai (email only)
 
@@ -18,4 +18,5 @@
 
 - [Home (Korean)](https://wiselake.ai/)
 - [Home (English)](https://wiselake.ai/en)
+- [PigPlan and PigPlan AI](https://wiselake.ai/pigplan)
 - [News](https://wiselake.ai/news)

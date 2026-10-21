@@ -9,19 +9,19 @@ const PRETENDARD_CSS =
 
 const NAV = {
   ko: [
-    { label: "축산 AI", hash: "#livestock" },
+    { label: "양돈 AI", hash: "#livestock" },
     { label: "콘텐츠 가치", hash: "#content" },
-    { label: "회사", hash: "#company" },
+    { label: "회사소개", hash: "#company" },
   ],
   en: [
-    { label: "Livestock AI", hash: "#livestock" },
-    { label: "Content value", hash: "#content" },
+    { label: "Swine AI", hash: "#livestock" },
+    { label: "Content Value", hash: "#content" },
     { label: "Company", hash: "#company" },
   ],
 };
 
 const T = {
-  ko: { news: "소식", contact: "문의하기", products: "제품", info: "안내", privacy: "개인정보처리방침", terms: "이용약관", home: "와이즈레이크 홈", menu: "주 메뉴", reg: "사업자등록번호", ceo: "대표이사" },
+  ko: { news: "소식", contact: "문의", products: "제품", info: "안내", privacy: "개인정보처리방침", terms: "이용약관", home: "와이즈레이크 홈", menu: "주 메뉴", reg: "사업자등록번호", ceo: "대표이사" },
   en: { news: "News", contact: "Contact", products: "Products", info: "Legal", privacy: "Privacy policy", terms: "Terms of use", home: "WiseLake home", menu: "Main menu", reg: "Business reg. no.", ceo: "CEO" },
 };
 
@@ -80,13 +80,13 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
           {locale === "ko" ? "본문으로 건너뛰기" : "Skip to content"}
         </a>
 
-        <header className="sticky top-0 z-20 border-b border-line bg-paper/95 backdrop-blur">
-          <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-8">
+        <header className="sticky top-0 z-20 border-b border-line bg-paper/90 backdrop-blur">
+          <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-10">
             <a href={home} aria-label={t.home} className="mr-auto flex items-center md:mr-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/wiselake_logo.png" alt="WISELAKE" width={108} height={30} className="block h-[30px] w-auto aspect-[466/130]" />
             </a>
-            <nav aria-label={t.menu} className="hidden flex-auto flex-wrap gap-x-6 text-[15px] md:flex">
+            <nav aria-label={t.menu} className="hidden flex-auto flex-wrap gap-x-8 text-[16px] font-medium md:flex">
               {navItems.map((n) => (
                 <a key={n.href} href={n.href} className="py-2.5 text-ink hover:text-brand">
                   {n.label}
@@ -99,7 +99,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
               </span>
               <a
                 href={homeAnchor("#contact")}
-                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[6px] bg-brand px-[18px] text-[15px] font-semibold text-white hover:bg-night hover:text-white"
+                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-brand px-5 text-[16px] font-semibold text-white hover:bg-brand-dark hover:text-white"
               >
                 {t.contact}
               </a>
@@ -111,11 +111,12 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
         <main id="main">{children}</main>
 
         <footer className="border-t border-line bg-linen">
-          <div className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-12 gap-y-8 px-6 py-12 text-[14px] leading-[1.8] text-ink-2">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-12 gap-y-10 px-6 py-14 text-[15px] leading-[1.8] text-ink-2 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/wiselake_logo.png" alt="WISELAKE" width={94} height={26} className="block h-[26px] w-auto aspect-[466/130]" />
-              <p className="mt-4">
+              <p className="m-0 mt-3 font-semibold text-ink">Data Moves. Value Follows.</p>
+              <p className="m-0 mt-4">
                 {COMPANY.short[locale]} · {t.ceo} {COMPANY.ceo[locale]}
                 <br />
                 {t.reg} {COMPANY.bizRegNo}
@@ -126,25 +127,25 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
               </p>
             </div>
             <div>
-              <p className="font-bold text-ink">{t.products}</p>
-              <p className="mt-2 grid gap-0.5">
-                <a href={localePath(locale, "/pigplan")}>{locale === "ko" ? "피그플랜 AI 스위트" : "PigPlan AI Suite"}</a>
-                <a href={LINKS.pigos}>PigOS · pigos.io</a>
-                <a href={locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans}>NanoTrans · nanotrans.io</a>
+              <p className="m-0 font-bold text-ink">{t.products}</p>
+              <p className="m-0 mt-2 grid gap-0.5">
+                <a href={localePath(locale, "/pigplan")}>{locale === "ko" ? "피그플랜 · PigPlan AI" : "PigPlan · PigPlan AI"}</a>
+                <a href={LINKS.pigos}>PigOS</a>
+                <a href={locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans}>NanoTrans</a>
               </p>
             </div>
             <div>
-              <p className="font-bold text-ink">{t.info}</p>
-              <p className="mt-2 grid gap-0.5">
+              <p className="m-0 font-bold text-ink">{t.info}</p>
+              <p className="m-0 mt-2 grid gap-0.5">
+                <a href={localePath(locale, "/terms")}>{t.terms}</a>
                 <a href={localePath(locale, "/privacy")}>
                   <b>{t.privacy}</b>
                 </a>
-                <a href={localePath(locale, "/terms")}>{t.terms}</a>
                 <LangSwitch locale={locale} />
               </p>
             </div>
           </div>
-          <div className="mx-auto max-w-[1200px] px-6 pb-8 text-[13px] text-muted">© 2026 WiseLake, Inc. All rights reserved.</div>
+          <div className="mx-auto max-w-[1200px] border-t border-line px-6 py-6 text-[14px] text-muted">© 2026 WiseLake, Inc. All rights reserved.</div>
         </footer>
 
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

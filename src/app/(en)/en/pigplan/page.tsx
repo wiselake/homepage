@@ -4,8 +4,8 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(
   "en",
   "/pigplan",
-  "PigPlan AI Suite — Korea's standard pig-farm system, with AI | WiseLake",
-  "PigPlan holds a 60.9% share of Korea's pig-farm record systems. Insight, Talk and Biz add three AIs on top of the same farm data.",
+  "PigPlan & PigPlan AI — Pig-farm management with AI | WiseLake",
+  "PigPlan, the pig-farm management system first built in 1995, and PigPlan AI, AI for pig farms that helps identify risks and understand performance.",
 );
 
 export default function Page() {

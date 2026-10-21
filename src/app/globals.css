@@ -108,53 +108,47 @@
 }
 
 /*
- * WiseLake v4 design tokens.
- * Brand colours come from the logo: wordmark indigo #232B86, W-mark blue #446CD2.
- * Rule: products are told apart by name, not hue. Orange is reserved for
- * meaning (loss warning, below benchmark). No green, teal or purple.
+ * WiseLake design tokens (2026-10-20 brand refresh).
+ * Brand Blue #176BC1 · Deep Navy #15254B · Background #F5F8FC · AI Accent #12A6A0.
+ * The same blue and Pretendard are used on the PigPlan service page (pigplan.io).
+ * AI Accent is 3.0:1 on white, so it is for icons, rules and large type only;
+ * small teal text uses --color-ai-text (5.6:1 on white).
  */
 @theme {
   --font-sans: "Pretendard Variable", Pretendard, "Pretendard Fallback Arial", "Pretendard Fallback Roboto", "Pretendard Fallback DejaVu", "Pretendard Fallback Noto", "Pretendard Fallback WenQuanYi", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 
   /* surfaces & text */
-  --color-paper: #f7f6f2;
+  --color-paper: #f5f8fc;
   --color-card: #ffffff;
-  --color-linen: #efede7;
-  --color-chip: #f1efe9;
-  --color-wash: #fbfaf7;
-  --color-ink: #1c1b18;
-  --color-ink-2: #4a4842;
-  --color-muted: #6b6962;
-  --color-line: #e4e1da;
-  --color-line-soft: #eceae4;
-  --color-line-strong: #c9c5bb;
+  --color-linen: #edf2f8;
+  --color-chip: #eaf0f7;
+  --color-wash: #f9fbfe;
+  --color-ink: #15254b;
+  --color-ink-2: #3f4b66;
+  --color-muted: #5a6680;
+  --color-line: #dce4ef;
+  --color-line-soft: #e8edf5;
+  --color-line-strong: #b9c5d8;
 
-  /* brand (logo) */
-  --color-brand: #232b86;
-  --color-brand-blue: #446cd2;
-  /* small text in the logo blue: same hue/saturation, 3% darker (5.1:1 on paper, 5.5:1 on white).
-     #446cd2 stays for the logo, backgrounds and large type. */
-  --color-brand-blue-text: #3862cf;
-  --color-link: #3a5fc4;
-  --color-brand-tint: #eef1fa;
-  --color-brand-line: #d5dcf2;
-  --color-brand-sky: #9db4ec;
-  --color-night: #161b4f;
-  --color-night-2: #1f2660;
-  --color-night-line: #3a4380;
-  --color-night-text: #b9c3ea;
+  /* brand */
+  --color-brand: #176bc1;
+  --color-brand-dark: #1259a3;
+  --color-link: #176bc1;
+  --color-brand-tint: #eaf2fb;
+  --color-brand-line: #cfe0f3;
+  --color-brand-soft: #9cc3ea;
+  --color-night: #15254b;
+  --color-night-2: #1e3263;
+  --color-night-line: #34487a;
+  --color-night-text: #b8c4de;
 
-  /* PigPlan CI blue (used only inside the PigPlan product block) */
-  --color-pigplan: #1769b3;
-  --color-pigplan-tint: #eef4fb;
-  --color-pigplan-soft: #9cc3ea;
-  --color-pigplan-mid: #5e9bd6;
+  /* AI accent */
+  --color-ai: #12a6a0;
+  --color-ai-text: #0b7470;
+  --color-ai-tint: #e7f6f5;
+  --color-ai-night: #5fd1cb;
 
   /* meaning colours */
-  --color-warn: #e08a1e;
-  --color-warn-ink: #9a5b0c;
-  --color-warn-tint: #fff4e5;
-  --color-warn-track: #f2e3c9;
   --color-alert: #c2410c;
 
   --radius-btn: 6px;
@@ -181,7 +175,7 @@
     text-decoration: none;
   }
   a:hover {
-    color: var(--color-brand);
+    color: var(--color-brand-dark);
   }
   :focus-visible {
     outline: 2px solid var(--color-link);
