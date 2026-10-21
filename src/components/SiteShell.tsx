@@ -80,7 +80,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
           {locale === "ko" ? "본문으로 건너뛰기" : "Skip to content"}
         </a>
 
-        <header className="sticky top-0 z-20 border-b border-line bg-paper/90 backdrop-blur">
+        <header className="sticky top-0 z-20 border-b border-line bg-white/95 backdrop-blur">
           <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-10">
             <a href={home} aria-label={t.home} className="mr-auto flex items-center md:mr-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -99,7 +99,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
               </span>
               <a
                 href={homeAnchor("#contact")}
-                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-brand px-5 text-[16px] font-semibold text-white hover:bg-brand-dark hover:text-white"
+                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[2px] bg-night px-5 text-[15px] font-semibold text-white hover:bg-brand hover:text-white"
               >
                 {t.contact}
               </a>
@@ -110,7 +110,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
 
         <main id="main">{children}</main>
 
-        <footer className="border-t border-line bg-linen">
+        <footer className="border-t border-ink bg-white">
           <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-12 gap-y-10 px-6 py-14 text-[15px] leading-[1.8] text-ink-2 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}

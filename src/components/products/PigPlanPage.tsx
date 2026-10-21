@@ -33,9 +33,9 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
       <section className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-x-16 gap-y-12 px-6 py-[clamp(72px,9vw,120px)]">
         <div>
           <h2 className="m-0 text-[24px] font-bold">{t.functionsTitle}</h2>
-          <ol className="m-0 mt-6 grid list-none grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3 p-0">
+          <ol className="m-0 mt-6 grid list-none grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-8 border-t border-ink p-0">
             {t.functions.map((f, i) => (
-              <li key={f} className="rounded-[12px] border border-line bg-card px-5 py-4">
+              <li key={f} className="border-b border-line py-4">
                 <span className="mr-2 font-bold text-brand">{String(i + 1).padStart(2, "0")}</span>
                 {f}
               </li>
@@ -44,7 +44,7 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
         </div>
         <div>
           <h2 className="m-0 text-[24px] font-bold">{t.historyTitle}</h2>
-          <ol className="m-0 mt-6 list-none border-t border-line p-0">
+          <ol className="m-0 mt-6 list-none border-t border-ink p-0">
             {t.history.map(([y, e]) => (
               <li key={y} className="grid grid-cols-[72px_1fr] gap-4 border-b border-line py-3.5">
                 <b className="text-brand">{y}</b>

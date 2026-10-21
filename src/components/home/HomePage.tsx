@@ -11,7 +11,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <TrustBand locale={locale} />
 
       {/* Swine AI: PigPlan · PigPlan AI, then PigOS. The #livestock anchor is kept for existing links. */}
-      <section id="livestock" className="mx-auto max-w-[1200px] px-6 py-[clamp(80px,10vw,136px)]">
+      <section id="livestock" className="mx-auto max-w-[1200px] px-6 py-[clamp(60px,10vw,136px)]">
         <PigPlanBlock locale={locale} />
       </section>
       <PigOSBlock locale={locale} />

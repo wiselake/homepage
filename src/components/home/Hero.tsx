@@ -1,5 +1,5 @@
 import type { Locale } from "@/lib/site";
-import { Badge, ButtonLink } from "../ui";
+import { ArrowIcon, ButtonLink, TextLink } from "../ui";
 
 const T = {
   ko: {
@@ -10,9 +10,9 @@ const T = {
     ctaB: "콘텐츠 가치 알아보기",
     indexTitle: "와이즈레이크의 제품",
     rows: [
-      { n: "국내", name: "PigPlan + PigPlan AI", sub: "양돈 농장관리와 양돈 전문 AI", href: "#pigplan", badge: "운영 중", tone: "live" as const },
-      { n: "글로벌", name: "PigOS", sub: "세계의 양돈농장을 위한 운영 플랫폼", href: "#pigos", badge: "운영 중", tone: "live" as const },
-      { n: "콘텐츠 가치", name: "NanoTrans", sub: "AI 시대 콘텐츠 가치 기술", href: "#nanotrans", badge: "개발 중", tone: "dev" as const },
+      { n: "국내", name: "PigPlan + PigPlan AI", sub: "양돈 농장관리와 양돈 전문 AI", href: "#pigplan" },
+      { n: "글로벌", name: "PigOS", sub: "세계의 양돈농장을 위한 운영 플랫폼", href: "#pigos" },
+      { n: "콘텐츠 가치", name: "NanoTrans", sub: "AI 시대 콘텐츠 가치 기술", href: "#nanotrans" },
     ],
   },
   en: {
@@ -23,9 +23,9 @@ const T = {
     ctaB: "Explore Content Value",
     indexTitle: "Our products",
     rows: [
-      { n: "Korea", name: "PigPlan + PigPlan AI", sub: "Farm management and AI for pig farms", href: "#pigplan", badge: "Live", tone: "live" as const },
-      { n: "Global", name: "PigOS", sub: "Operating platform for pig farms worldwide", href: "#pigos", badge: "Live", tone: "live" as const },
-      { n: "Content value", name: "NanoTrans", sub: "Content value in the AI era", href: "#nanotrans", badge: "In development", tone: "dev" as const },
+      { n: "Korea", name: "PigPlan + PigPlan AI", sub: "Farm management and AI for pig farms", href: "#pigplan" },
+      { n: "Global", name: "PigOS", sub: "Operating platform for pig farms worldwide", href: "#pigos" },
+      { n: "Content value", name: "NanoTrans", sub: "Content value in the AI era", href: "#nanotrans" },
     ],
   },
 };
@@ -33,49 +33,46 @@ const T = {
 export function Hero({ locale }: { locale: Locale }) {
   const t = T[locale];
   return (
-    <section className="relative overflow-hidden">
-      {/* Soft brand glow behind the headline; decorative only. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_12%_0%,rgba(23,107,193,0.10),transparent_70%),radial-gradient(40%_50%_at_95%_20%,rgba(18,166,160,0.08),transparent_70%)]"
-      />
-      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-x-16 gap-y-12 px-6 pb-[clamp(64px,8vw,112px)] pt-[clamp(56px,9vw,128px)] min-[1000px]:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-        <div>
-          <p className="m-0 text-[14px] font-bold uppercase tracking-[0.14em] text-brand">{t.eyebrow}</p>
-          <h1 className="m-0 mt-6 text-[clamp(40px,6vw,72px)] font-bold leading-[1.1] tracking-[-0.04em] text-ink">{t.title}</h1>
-          <p className="m-0 mt-7 text-[clamp(19px,2vw,24px)] font-semibold leading-[1.5] tracking-[-0.015em] text-ink-2">
-            {t.sub[0]}
-            <br />
-            {t.sub[1]}
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <ButtonLink href="#livestock" size="lg" className="max-sm:w-full">
-              {t.ctaA}
-            </ButtonLink>
-            <ButtonLink href="#content" size="lg" variant="outline" className="max-sm:w-full">
-              {t.ctaB}
-            </ButtonLink>
-          </div>
+    <section>
+      <div className="mx-auto max-w-[1200px] px-6 pb-[clamp(56px,7vw,96px)] pt-[clamp(72px,11vw,168px)]">
+        <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">{t.eyebrow}</p>
+        <h1 className="m-0 mt-8 max-w-[1040px] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">{t.title}</h1>
+        <p className="m-0 mt-9 max-w-[680px] text-[clamp(19px,1.9vw,24px)] leading-[1.55] tracking-[-0.015em] text-ink-2">
+          {t.sub[0]}
+          <br />
+          {t.sub[1]}
+        </p>
+        <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
+          <ButtonLink href="#livestock" size="lg" className="max-sm:w-full">
+            {t.ctaA}
+            <ArrowIcon down />
+          </ButtonLink>
+          <TextLink href="#content">
+            {t.ctaB}
+            <ArrowIcon down />
+          </TextLink>
         </div>
-
-        <nav aria-label={t.indexTitle} className="rounded-[20px] border border-line bg-card/90 p-2 shadow-[0_1px_2px_rgba(21,37,75,0.04),0_24px_48px_-24px_rgba(21,37,75,0.18)] backdrop-blur">
-          <p className="m-0 px-5 pb-1 pt-4 text-[14px] font-semibold text-muted">{t.indexTitle}</p>
-          <ul className="m-0 list-none p-0">
-            {t.rows.map((r) => (
-              <li key={r.n}>
-                <a href={r.href} className="flex items-center gap-4 rounded-[14px] px-5 py-[18px] text-ink hover:bg-paper hover:text-ink">
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-[13px] font-bold uppercase tracking-[0.08em] text-brand">{r.n}</span>
-                    <span className="block text-[18px] font-bold leading-[1.35]">{r.name}</span>
-                    <span className="block text-[15px] text-muted">{r.sub}</span>
-                  </span>
-                  <Badge tone={r.tone}>{r.badge}</Badge>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
+
+      {/* Product index: quieter than the headline, a ruled three-column table of contents. */}
+      <nav aria-label={t.indexTitle} className="mx-auto max-w-[1200px] px-6 pb-[clamp(48px,6vw,80px)]">
+        <ol className="m-0 grid list-none grid-cols-1 border-t border-line p-0 md:grid-cols-3">
+          {t.rows.map((r) => (
+            <li key={r.name} className="border-b border-line md:border-b-0 md:border-l md:px-7 md:first:border-l-0 md:first:pl-0">
+              <a href={r.href} className="group flex h-full items-start justify-between gap-4 py-6 text-ink hover:text-ink">
+                <span>
+                  <span className="block text-[13px] font-semibold uppercase tracking-[0.12em] text-muted">{r.n}</span>
+                  <span className="mt-2 block text-[19px] font-semibold tracking-[-0.01em]">{r.name}</span>
+                  <span className="mt-1 block text-[15px] text-muted">{r.sub}</span>
+                </span>
+                <span aria-hidden="true" className="mt-7 text-muted transition-transform group-hover:translate-y-0.5 group-hover:text-brand">
+                  <ArrowIcon down />
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
     </section>
   );
 }

@@ -6,6 +6,7 @@ import { ArrowIcon } from "../ui";
  * country benchmarks, anomaly alerts) is free and live; AI credit plans are "in the works",
  * so AI analysis is not listed as a feature here. PigOS is its own global product — it is not
  * described as running on Korean PigPlan data. The image is a capture of the pigos.io English hero.
+ * Draft B keeps this draft-A layout for PigOS (chosen 2026-10-21); the facts line is English in both locales.
  */
 const T = {
   ko: {
@@ -18,7 +19,7 @@ const T = {
       ["Country Benchmarks", "국가별 성적 기준"],
       ["Early Warnings", "운영 위험 조기경보"],
     ],
-    facts: "7개 언어 · 기본 기능 무료 · Android · iOS 앱",
+    facts: "7 languages · Free Core plan · Android & iOS apps",
     imgAlt: "PigOS 영문 랜딩 페이지 — 기록을 입력하면 국가별 기준으로 손실 위험을 알리는 대시보드",
   },
   en: {
@@ -43,7 +44,10 @@ export default function PigOSBlock({ locale }: { locale: Locale }) {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_85%_30%,rgba(18,166,160,0.18),transparent_70%),radial-gradient(40%_50%_at_0%_100%,rgba(23,107,193,0.25),transparent_70%)]" />
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-x-16 gap-y-12 px-6 py-[clamp(80px,10vw,136px)] min-[1000px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
         <div>
-          <p className="m-0 text-[14px] font-bold uppercase tracking-[0.12em] text-ai-night">{t.eyebrow}</p>
+          <p className="m-0 text-[14px] font-bold uppercase tracking-[0.12em] text-ai-night">
+            <span className="mr-4 tabular-nums">02</span>
+            {t.eyebrow}
+          </p>
           <h2 className="m-0 mt-4 text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.2] tracking-[-0.035em]">
             {t.title}
           </h2>
@@ -57,7 +61,7 @@ export default function PigOSBlock({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-          <p className="m-0 mt-6 text-[15px] text-night-text">{t.facts}</p>
+          <p lang="en" className="m-0 mt-6 text-[15px] text-night-text">{t.facts}</p>
           <a
             href={LINKS.pigos}
             target="_blank"
