@@ -5,7 +5,9 @@ import { ArrowIcon } from "../ui";
  * Facts checked on pigos.io on 2026-10-20 (iOS app: App Store, 2026-09-23): 7 UI languages; Core (records, KPI dashboard,
  * country benchmarks, anomaly alerts) is free and live; AI credit plans are "in the works",
  * so AI analysis is not listed as a feature here. PigOS is its own global product — it is not
- * described as running on Korean PigPlan data. The image is a capture of the pigos.io English hero.
+ * described as running on Korean PigPlan data. The image shows the real PigOS iOS app dashboard
+ * from the App Store listing, large and cropped; the pigos.io hero capture was dropped because it
+ * still says "iOS coming soon" (checked 2026-10-21).
  * Draft B keeps this draft-A layout for PigOS (chosen 2026-10-21); the facts line is English in both locales.
  */
 const T = {
@@ -20,7 +22,7 @@ const T = {
       ["Early Warnings", "운영 위험 조기경보"],
     ],
     facts: "7 languages · Free Core plan · Android & iOS apps",
-    imgAlt: "PigOS 영문 랜딩 페이지 — 기록을 입력하면 국가별 기준으로 손실 위험을 알리는 대시보드",
+    imgAlt: "PigOS iOS 앱 대시보드 화면 — PSY·NPD·분만율, 목표 대비 경보, 국가 기준 비교",
   },
   en: {
     eyebrow: "PigOS · Global Swine OS",
@@ -33,7 +35,7 @@ const T = {
       ["Early Warnings", "Operational risks, flagged early"],
     ],
     facts: "7 languages · Free Core plan · Android & iOS apps",
-    imgAlt: "PigOS landing page — a dashboard that flags loss risk against country benchmarks as records are entered",
+    imgAlt: "PigOS iOS app dashboard — PSY, NPD and farrowing rate, alerts against targets and national benchmarks",
   },
 };
 
@@ -77,10 +79,10 @@ export default function PigOSBlock({ locale }: { locale: Locale }) {
         <a href={LINKS.pigos} target="_blank" rel="noopener" className="group block rounded-[20px] border border-night-line bg-night-2/60 p-2 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/pigos-landing.jpg"
+            src="/images/b/pigos-app-screens.jpg"
             alt={t.imgAlt}
-            width={1280}
-            height={800}
+            width={1860}
+            height={1650}
             loading="lazy"
             decoding="async"
             className="block h-auto w-full rounded-[14px] transition-opacity group-hover:opacity-95"

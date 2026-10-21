@@ -13,6 +13,22 @@ export type NewsItem = {
 /** Newest first. Every item links to the published article it is based on. */
 export const NEWS: NewsItem[] = [
   {
+    date: "2026-10-08",
+    product: "pigos",
+    title: { ko: "PigOS iOS 앱 출시", en: "PigOS launches on iPhone" },
+    summary: {
+      ko: "Android에 이어 App Store에 출시했습니다. 돈사에서 교배·분만·이유를 기록하고, 이표 스캔과 음성 입력, KPI 경보와 국가 평균 비교를 휴대폰에서 확인합니다.",
+      en: "Following Android, PigOS is on the App Store: record matings, farrowings and weanings in the barn with ear-tag scanning and voice notes, and see KPI alerts and national benchmarks on the phone.",
+    },
+    outlets: [
+      { name: "3tres3", url: "https://www.3tres3.com/en/company_news/wiselake-brings-ai-assisted-pigos-to-iphone_22903/" },
+      {
+        name: "Farmers Review Africa",
+        url: "https://farmersreviewafrica.com/wiselake-maker-of-koreas-no-1-pig-farm-erp-pigplan-brings-ai-assisted-pigos-to-iphone/",
+      },
+    ],
+  },
+  {
     date: "2026-07-20",
     product: "pigos",
     title: { ko: "PigOS Android 앱 출시", en: "PigOS launches its Android app" },
@@ -123,15 +139,12 @@ export const NEWS: NewsItem[] = [
   },
 ];
 
-export const PRESS_OUTLETS = [
-  { name: "3tres3", url: NEWS[1].outlets[0].url },
-  { name: "National Hog Farmer", url: NEWS[1].outlets[1].url },
-  { name: "Pork Business", url: NEWS[1].outlets[2].url },
-  { name: "Feed & Additive", url: NEWS[0].outlets[0].url },
-  { name: "한돈뉴스", url: NEWS[2].outlets[0].url },
-  { name: "축산경제신문", url: NEWS[4].outlets[0].url },
-  { name: "데일리벳", url: NEWS[8].outlets[0].url },
-];
+/** Outlet list for "Covered by", each linking to its newest article in NEWS (looked up by name, not position). */
+export const PRESS_OUTLETS = ["3tres3", "National Hog Farmer", "Pork Business", "Feed & Additive", "Farmers Review Africa", "한돈뉴스", "축산경제신문", "데일리벳"].map((name) => {
+  const article = NEWS.flatMap((n) => n.outlets).find((o) => o.name === name);
+  if (!article) throw new Error(`PRESS_OUTLETS: no article for ${name}`);
+  return article;
+});
 
 export function formatNewsDate(item: NewsItem, locale: Locale): string {
   const [y, m, d] = item.date.split("-").map(Number);

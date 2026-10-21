@@ -4,8 +4,8 @@ import { ArrowIcon, ButtonLink, TextLink } from "../ui";
 const T = {
   ko: {
     eyebrow: "WiseLake · Data Moves. Value Follows.",
-    title: "데이터가 AI 시대의 가치가 됩니다.",
-    sub: ["현장의 데이터를 더 나은 의사결정으로.", "AI 기술을 새로운 가치로 연결합니다."],
+    title: ["쌓인 데이터가,", "AI 시대의 가치가 됩니다."],
+    sub: ["양돈 현장의 기록을 더 나은 운영 판단으로 연결하고,", "AI 시대 콘텐츠의 가치를 측정하는 기술을 개발합니다."],
     ctaA: "양돈 AI 알아보기",
     ctaB: "콘텐츠 가치 알아보기",
     indexTitle: "와이즈레이크의 제품",
@@ -17,8 +17,8 @@ const T = {
   },
   en: {
     eyebrow: "WiseLake · Data Moves. Value Follows.",
-    title: "Turning Data into Value in the AI Era.",
-    sub: ["Field data, turned into better decisions.", "AI technology, connected to new value."],
+    title: ["Accumulated Data,", "Turned into Value for the AI Era."],
+    sub: ["We turn pig-farm records into better operating decisions,", "and build technology to measure the value of content in the AI era."],
     ctaA: "Explore Swine AI",
     ctaB: "Explore Content Value",
     indexTitle: "Our products",
@@ -36,7 +36,11 @@ export function Hero({ locale }: { locale: Locale }) {
     <section>
       <div className="mx-auto max-w-[1200px] px-6 pb-[clamp(56px,7vw,96px)] pt-[clamp(72px,11vw,168px)]">
         <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">{t.eyebrow}</p>
-        <h1 className="m-0 mt-8 max-w-[1040px] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">{t.title}</h1>
+        <h1 className="m-0 mt-8 max-w-[1040px] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">
+          {t.title[0]}
+          <br />
+          {t.title[1]}
+        </h1>
         <p className="m-0 mt-9 max-w-[680px] text-[clamp(19px,1.9vw,24px)] leading-[1.55] tracking-[-0.015em] text-ink-2">
           {t.sub[0]}
           <br />

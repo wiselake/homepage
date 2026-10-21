@@ -9,9 +9,9 @@ import { ArrowIcon, ButtonLink, SectionLabel } from "../ui";
  * Status per pigplan.io/landing/service.do on 2026-10-20: PigPlan core and Android/iOS apps live;
  * weekly and monthly reports (with national comparison) live; asking in chat and Biz open Dec 2026.
  *
- * Images: the mobile image (public/images/b/pigplan-mobile.png) is a clean redraw of two real
- * PigPlan app screens (menu, sow card detail) from the App Store listing, with the same labels and
- * sample values (requested 2026-10-21; the cropped store screenshots read poorly).
+ * Images: pigplan-web-mobile.png is an illustrative web dashboard (layout of the real PigPlan main
+ * dashboard per the intro deck: flagged sows, shipment forecast, key productivity factors) with the
+ * real app menu screen, captioned as an example (requested 2026-10-21 until real captures exist).
  * REPORT_IMAGE is an illustrative weekly report (requested 2026-10-21 until a real capture exists):
  * real report structure, sample numbers from the PigPlan intro deck, placeholder farm name, and a
  * visible "illustrative" caption. Set it to null to show the image-needed slot instead.
@@ -35,8 +35,8 @@ const T = {
         { text: "경영관리 및 PigPlan Biz 애드온", note: "Biz 12월 오픈" },
         { text: "웹·모바일 농장관리", note: "Android · iOS" },
       ],
-      mobileAlt: "피그플랜 모바일 앱 메뉴 화면과 모돈카드 상세 화면",
-      caption: "피그플랜 모바일 앱 — 메뉴 · 모돈카드 상세",
+      mobileAlt: "피그플랜 웹 대시보드(상시모돈·PSY·분만율·비생산일수, 관리 대상 모돈, 출하 예측)와 모바일 앱 메뉴 화면 예시",
+      caption: "피그플랜 웹·모바일 화면 예시 · 수치는 가상",
     },
     ai: {
       name: "PigPlan AI",
@@ -69,8 +69,8 @@ const T = {
         { text: "Business management with the PigPlan Biz add-on", note: "Biz opens Dec" },
         { text: "Web and mobile farm management", note: "Android · iOS" },
       ],
-      mobileAlt: "PigPlan mobile app menu and sow card detail screens",
-      caption: "PigPlan mobile app — menu · sow card detail",
+      mobileAlt: "Example of the PigPlan web dashboard (sows, PSY, farrowing rate, non-productive days, flagged sows, shipment forecast) with the mobile app menu",
+      caption: "PigPlan web and mobile example · illustrative data",
     },
     ai: {
       name: "PigPlan AI",
@@ -125,9 +125,9 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
             ))}
           </ul>
           <figure className="m-0 mt-10">
-            <div className="bg-paper px-[6%] pt-[6%]">
+            <div className="bg-paper pl-[5%] pt-[5%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/b/pigplan-mobile.png" alt={t.plan.mobileAlt} width={2000} height={1640} loading="lazy" decoding="async" className="block h-auto w-full" />
+              <img src="/images/b/pigplan-web-mobile.png" alt={t.plan.mobileAlt} width={2400} height={1520} loading="lazy" decoding="async" className="block h-auto w-full" />
             </div>
             <figcaption className="mt-3 text-[13px] text-muted">{t.plan.caption}</figcaption>
           </figure>

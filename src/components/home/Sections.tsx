@@ -6,34 +6,70 @@ import { ArrowIcon, ButtonLink, SectionLabel, SectionTitle, TextLink } from "../
 /* ---------------------------------------------------------------- NanoTrans (content value) */
 
 /*
- * Status per area follows nanotrans.io on 2026-10-20: Index (measure) and Edge (control) in
- * development, Market (trade) in preparation, a pilot with a Korean IT/business publisher.
- * No launch dates, settlement or revenue claims.
+ * Core points from nanotrans.io/ko (2026-10-21): headline, the problem, why now (with its cited
+ * sources) and the measure → decide → trade approach. Status per nanotrans.io: Index and Edge in
+ * development, Market in preparation, a pilot with a Korean IT/business publisher. Wording keeps
+ * the product in development (no launch dates, settlement or revenue claims). Bot-classification
+ * detail stays on nanotrans.io.
  */
 const NT = {
   ko: {
     n: "03",
     eyebrow: "NanoTrans · Content Value",
-    title: ["NanoTrans —", "AI 시대, 콘텐츠의 가치를 연결합니다."],
-    body: ["AI가 활용하는 콘텐츠의 가치를 측정하고,", "접근과 활용 조건을 관리하는 기술을 개발합니다."],
-    areas: [
-      { name: "콘텐츠 활용 측정", status: "개발 중" },
-      { name: "접근 및 활용 정책 관리", status: "개발 중" },
-      { name: "콘텐츠 가치 거래 모델", status: "준비 중" },
+    title: ["NanoTrans —", "AI가 읽은 만큼, 콘텐츠의 가치를 셉니다."],
+    body: ["AI는 매일 기사와 콘텐츠를 가져가 답변을 만듭니다. NanoTrans는 그 소비를 측정하고,", "AI 봇의 접근을 매체가 정하고, 기사를 정당한 값에 거래할 수 있도록 개발하고 있습니다."],
+    problem: {
+      label: "문제",
+      title: "AI는 기사를 읽지만, 매체의 숫자에는 남지 않습니다.",
+      items: ["AI 봇 트래픽은 서버 비용으로만 남습니다.", "AI 답변 속 인용은 어디에도 집계되지 않습니다.", "어떤 봇을 막고 열지 판단할 근거가 없습니다."],
+    },
+    now: {
+      label: "왜 지금인가",
+      stat: "51%",
+      statText: "2024년 전체 웹 트래픽 중 자동화(봇) 트래픽 비중",
+      statSource: { name: "Imperva 2025 Bad Bot Report", url: "https://www.imperva.com/blog/2025-imperva-bad-bot-report-how-ai-is-supercharging-the-bot-threat/" },
+      deal: "AP·파이낸셜타임스 등 해외 주요 언론사는 이미 AI 기업과 콘텐츠 라이선스 계약을 맺었습니다.",
+      dealSources: [
+        { name: "Axios — AP·OpenAI (2023)", url: "https://www.axios.com/2023/07/13/ap-openai-news-sharing-tech-deal" },
+        { name: "OpenAI — Financial Times (2024)", url: "https://openai.com/index/content-partnership-with-financial-times/" },
+      ],
+    },
+    steps: [
+      { verb: "측정", name: "NanoTrans Index", status: "개발 중" },
+      { verb: "결정", name: "NanoTrans Edge", status: "개발 중" },
+      { verb: "거래", name: "NanoTrans Market", status: "준비 중" },
     ],
+    stepsLabel: "해법",
     pilot: "국내 IT·경제 전문 매체와 파일럿을 진행하고 있습니다.",
     cta: "NanoTrans 알아보기",
   },
   en: {
     n: "03",
     eyebrow: "NanoTrans · Content Value",
-    title: ["NanoTrans —", "Connecting Content Value in the AI Era"],
-    body: ["Technology to measure the value of content AI uses,", "and to manage how it is accessed and used."],
-    areas: [
-      { name: "Content usage measurement", status: "In development" },
-      { name: "Access and usage policy", status: "In development" },
-      { name: "Content value exchange", status: "In preparation" },
+    title: ["NanoTrans —", "Counting Content Value by What AI Reads."],
+    body: ["AI takes articles and content every day to write its answers. NanoTrans is being built to measure that use,", "let publishers decide how AI bots get access, and trade articles at a fair price."],
+    problem: {
+      label: "The problem",
+      title: "AI reads the articles, but none of it shows up in the publisher's numbers.",
+      items: ["AI bot traffic shows up only as server cost.", "Citations inside AI answers are counted nowhere.", "There is no basis for deciding which bots to block or allow."],
+    },
+    now: {
+      label: "Why now",
+      stat: "51%",
+      statText: "Share of all web traffic that was automated (bots) in 2024",
+      statSource: { name: "Imperva 2025 Bad Bot Report", url: "https://www.imperva.com/blog/2025-imperva-bad-bot-report-how-ai-is-supercharging-the-bot-threat/" },
+      deal: "Major publishers such as AP and the Financial Times have already signed content licensing deals with AI companies.",
+      dealSources: [
+        { name: "Axios — AP·OpenAI (2023)", url: "https://www.axios.com/2023/07/13/ap-openai-news-sharing-tech-deal" },
+        { name: "OpenAI — Financial Times (2024)", url: "https://openai.com/index/content-partnership-with-financial-times/" },
+      ],
+    },
+    steps: [
+      { verb: "Measure", name: "NanoTrans Index", status: "In development" },
+      { verb: "Decide", name: "NanoTrans Edge", status: "In development" },
+      { verb: "Trade", name: "NanoTrans Market", status: "In preparation" },
     ],
+    stepsLabel: "Approach",
     pilot: "Piloting with a Korean IT and business news publisher.",
     cta: "Explore NanoTrans",
   },
@@ -42,6 +78,7 @@ const NT = {
 export function ContentValue({ locale }: { locale: Locale }) {
   const t = NT[locale];
   const href = locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans;
+  const label = "m-0 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted";
   return (
     <section id="content">
       <div id="nanotrans" className="mx-auto max-w-[1200px] px-6 py-[clamp(48px,6vw,88px)]">
@@ -52,23 +89,65 @@ export function ContentValue({ locale }: { locale: Locale }) {
             <br />
             {t.title[1]}
           </SectionTitle>
-          <p className="m-0 mt-6 text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
+          <p className="m-0 mt-6 max-w-[900px] text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
             {t.body[0]}
-            <br className="max-sm:hidden" /> {t.body[1]}
+            <br className="max-lg:hidden" /> {t.body[1]}
           </p>
         </div>
 
-        <ol className="m-0 mt-12 grid list-none grid-cols-1 border-t border-line p-0 md:grid-cols-3">
-          {t.areas.map((a, i) => (
-            <li key={a.name} className="border-b border-line py-7 md:border-b-0 md:border-l md:px-7 md:first:border-l-0 md:first:pl-0">
-              <span className="text-[14px] font-semibold tabular-nums text-ai-text">0{i + 1}</span>
-              <h3 className="m-0 mt-3 text-[clamp(20px,1.9vw,23px)] font-bold tracking-[-0.02em]">{a.name}</h3>
-              <p className="m-0 mt-1 text-[15px] text-muted">{a.status}</p>
-            </li>
-          ))}
-        </ol>
+        {/* Problem and why now, side by side on a rule. */}
+        <div className="mt-12 grid grid-cols-1 border-t border-ink lg:grid-cols-2">
+          <div className="border-b border-line py-8 lg:border-b-0 lg:border-r lg:pr-12">
+            <p className={label}>{t.problem.label}</p>
+            <h3 className="m-0 mt-3 text-balance text-[clamp(20px,2vw,24px)] font-bold leading-[1.4] tracking-[-0.02em]">{t.problem.title}</h3>
+            <ul className="m-0 mt-5 list-none p-0">
+              {t.problem.items.map((it) => (
+                <li key={it} className="border-t border-line py-3 text-[16px] text-ink-2">
+                  {it}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="py-8 lg:pl-12">
+            <p className={label}>{t.now.label}</p>
+            <p className="m-0 mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span className="text-[clamp(44px,5vw,64px)] font-bold leading-none tracking-[-0.04em] text-brand">{t.now.stat}</span>
+              <span className="text-[16px] text-ink-2">{t.now.statText}</span>
+            </p>
+            <a href={t.now.statSource.url} target="_blank" rel="noopener" className="mt-2 inline-block text-[13px] text-muted underline underline-offset-2 hover:text-ink">
+              {t.now.statSource.name}
+            </a>
+            <p className="m-0 mt-6 border-t border-line pt-5 text-[16px] leading-[1.6] text-ink-2">{t.now.deal}</p>
+            <p className="m-0 mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">
+              {t.now.dealSources.map((d) => (
+                <a key={d.url} href={d.url} target="_blank" rel="noopener" className="text-muted underline underline-offset-2 hover:text-ink">
+                  {d.name}
+                </a>
+              ))}
+            </p>
+          </div>
+        </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-line pt-8">
+        {/* Approach as one ruled line: measure → decide → trade, each with its real status. */}
+        <div className="border-t border-line py-6">
+          <p className={label}>{t.stepsLabel}</p>
+          <ol className="m-0 mt-4 flex list-none flex-wrap items-baseline gap-x-6 gap-y-3 p-0">
+            {t.steps.map((st, i) => (
+              <li key={st.name} className="flex items-baseline gap-x-3">
+                {i > 0 && (
+                  <span aria-hidden="true" className="text-muted">
+                    →
+                  </span>
+                )}
+                <span className="text-[clamp(18px,1.8vw,21px)] font-bold">{st.verb}</span>
+                <span className="text-[16px] text-ink-2">{st.name}</span>
+                <span className="text-[14px] text-muted">{st.status}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-line pt-8">
           <p className="m-0 text-[16px] text-ink-2">{t.pilot}</p>
           <ButtonLink href={href} external size="lg" className="max-sm:w-full">
             {t.cta}
