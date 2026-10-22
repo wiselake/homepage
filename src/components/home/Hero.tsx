@@ -10,7 +10,7 @@ const T = {
     ctaB: "콘텐츠 가치 알아보기",
     indexTitle: "와이즈레이크의 제품",
     rows: [
-      { n: "국내", name: "PigPlan + PigPlan AI", sub: "양돈 농장관리와 양돈 전문 AI", href: "#pigplan" },
+      { n: "국내", name: "PigPlan + PigPlan AI", sub: "농장 기록·경영관리부터 양돈 전문 AI 분석까지", href: "#pigplan" },
       { n: "글로벌", name: "PigOS", sub: "세계의 양돈농장을 위한 운영 플랫폼", href: "#pigos" },
       { n: "콘텐츠 가치", name: "NanoTrans", sub: "AI 시대 콘텐츠 가치 기술", href: "#nanotrans" },
     ],
@@ -23,7 +23,7 @@ const T = {
     ctaB: "Explore Content Value",
     indexTitle: "Our products",
     rows: [
-      { n: "Korea", name: "PigPlan + PigPlan AI", sub: "Farm management and AI for pig farms", href: "#pigplan" },
+      { n: "Korea", name: "PigPlan + PigPlan AI", sub: "From farm records and business management to AI analysis for pig farms", href: "#pigplan" },
       { n: "Global", name: "PigOS", sub: "Operating platform for pig farms worldwide", href: "#pigos" },
       { n: "Content value", name: "NanoTrans", sub: "Content value in the AI era", href: "#nanotrans" },
     ],
@@ -35,7 +35,7 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <section>
       <div className="mx-auto max-w-[1200px] px-6 pb-[clamp(56px,7vw,96px)] pt-[clamp(72px,11vw,168px)]">
-        <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">{t.eyebrow}</p>
+        <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-brand">{t.eyebrow}</p>
         <h1 className="m-0 mt-8 max-w-[1040px] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">
           {t.title[0]}
           <br />
@@ -58,20 +58,21 @@ export function Hero({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      {/* Product index: quieter than the headline, a ruled three-column table of contents. */}
+      {/* Product portfolio: three ruled columns under the headline. Each whole column links to its
+          section below; hover/focus turns only the name and arrow brand blue (no background change). */}
       <nav aria-label={t.indexTitle} className="mx-auto max-w-[1200px] px-6 pb-[clamp(48px,6vw,80px)]">
         <ol className="m-0 grid list-none grid-cols-1 border-t border-line p-0 md:grid-cols-3">
           {t.rows.map((r) => (
-            <li key={r.name} className="border-b border-line md:border-b-0 md:border-l md:px-7 md:first:border-l-0 md:first:pl-0">
-              <a href={r.href} className="group flex h-full items-start justify-between gap-4 py-6 text-ink hover:text-ink">
-                <span>
-                  <span className="block text-[13px] font-semibold uppercase tracking-[0.12em] text-muted">{r.n}</span>
-                  <span className="mt-2 block text-[19px] font-semibold tracking-[-0.01em]">{r.name}</span>
-                  <span className="mt-1 block text-[15px] text-muted">{r.sub}</span>
+            <li key={r.name} className="border-b border-line md:border-b-0 md:border-l md:first:border-l-0">
+              <a href={r.href} className="group block h-full py-7 text-ink hover:text-ink md:px-8 md:[li:first-child>&]:pl-0">
+                <span className="block text-[14px] font-semibold uppercase tracking-[0.1em] text-muted">{r.n}</span>
+                <span className="mt-3 block text-[clamp(21px,1.75vw,24px)] font-bold leading-[1.3] tracking-[-0.02em] transition-colors group-hover:text-brand group-focus-visible:text-brand">
+                  {r.name}
+                  <span aria-hidden="true" className="ml-2.5 inline-block align-[-0.08em] text-muted transition group-hover:translate-y-0.5 group-hover:text-brand group-focus-visible:text-brand">
+                    <ArrowIcon down />
+                  </span>
                 </span>
-                <span aria-hidden="true" className="mt-7 text-muted transition-transform group-hover:translate-y-0.5 group-hover:text-brand">
-                  <ArrowIcon down />
-                </span>
+                <span className="mt-2 block text-[16px] leading-[1.55] text-ink-2">{r.sub}</span>
               </a>
             </li>
           ))}

@@ -11,10 +11,11 @@ import { ArrowIcon, ButtonLink, SectionLabel } from "../ui";
  *
  * Images: pigplan-web-mobile.png is an illustrative web dashboard (layout of the real PigPlan main
  * dashboard per the intro deck: flagged sows, shipment forecast, key productivity factors) with the
- * real app menu screen, captioned as an example (requested 2026-10-21 until real captures exist).
+ * real app menu screen (requested 2026-10-21 until real captures exist).
  * REPORT_IMAGE is an illustrative weekly report (requested 2026-10-21 until a real capture exists):
- * real report structure, sample numbers from the PigPlan intro deck, placeholder farm name, and a
- * visible "illustrative" caption. Set it to null to show the image-needed slot instead.
+ * real report structure, sample numbers from the PigPlan intro deck, placeholder farm name. No
+ * visible caption (dropped 2026-10-21): the images already say "OO농장 (예시)" and the alt text
+ * says "예시". Set it to null to show the image-needed slot instead.
  */
 const REPORT_IMAGE: string | null = "/images/b/pigplan-ai-weekly-report.jpg";
 
@@ -36,7 +37,6 @@ const T = {
         { text: "웹·모바일 농장관리", note: "Android · iOS" },
       ],
       mobileAlt: "피그플랜 웹 대시보드(상시모돈·PSY·분만율·비생산일수, 관리 대상 모돈, 출하 예측)와 모바일 앱 메뉴 화면 예시",
-      caption: "피그플랜 웹·모바일 화면 예시 · 수치는 가상",
     },
     ai: {
       name: "PigPlan AI",
@@ -48,7 +48,6 @@ const T = {
         { title: "관리까지 연결하는 AI", items: ["위험 탐지 알림", "추천 질문", "관련 농장 현황 확인", "후속 작업 안내"] },
       ],
       reportAlt: "PigPlan AI 주간 보고서 화면 예시 — 핵심 지표, AI 분석 요약, 관리 대상 모돈, 이번 주 작업",
-      reportCaption: "주간 보고서 화면 예시 · 수치는 가상",
       reportNeeded: ["이미지 확보 필요 — 주간 보고서 실제 화면", "권장 1600×1000px · 농장명 등 식별 정보 마스킹"],
     },
     cta: "피그플랜 서비스 자세히 보기",
@@ -70,7 +69,6 @@ const T = {
         { text: "Web and mobile farm management", note: "Android · iOS" },
       ],
       mobileAlt: "Example of the PigPlan web dashboard (sows, PSY, farrowing rate, non-productive days, flagged sows, shipment forecast) with the mobile app menu",
-      caption: "PigPlan web and mobile example · illustrative data",
     },
     ai: {
       name: "PigPlan AI",
@@ -82,7 +80,6 @@ const T = {
         { title: "AI that leads to action", items: ["Risk alerts", "Suggested questions", "Related farm status", "Follow-up task guidance"] },
       ],
       reportAlt: "PigPlan AI weekly report example — key KPIs, AI summary, flagged sows and this week's tasks",
-      reportCaption: "Weekly report example · illustrative data",
       reportNeeded: ["Image needed — actual weekly report screen", "1600×1000px recommended · mask farm names"],
     },
     cta: "Explore the PigPlan service",
@@ -99,7 +96,8 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
 
   return (
     <div id="pigplan">
-      <SectionLabel n={t.n}>{t.eyebrow}</SectionLabel>
+      {/* Section number only on the home page, where 01–03 run in sequence; /pigplan has a single section. */}
+      <SectionLabel n={headingLevel === 2 ? t.n : undefined}>{t.eyebrow}</SectionLabel>
       <div className="mt-10 grid grid-cols-1 items-end gap-x-16 gap-y-6 min-[1000px]:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <H className="m-0 text-[clamp(34px,5vw,64px)] font-bold leading-[1.1] tracking-[-0.045em]">{t.title}</H>
         <p className="m-0 text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
@@ -125,15 +123,14 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
             ))}
           </ul>
           <figure className="m-0 mt-10">
-            <div className="bg-paper pl-[5%] pt-[5%]">
+            <div className="overflow-hidden rounded-[8px] bg-paper pl-[5%] pt-[5%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/b/pigplan-web-mobile.png" alt={t.plan.mobileAlt} width={2400} height={1520} loading="lazy" decoding="async" className="block h-auto w-full" />
             </div>
-            <figcaption className="mt-3 text-[13px] text-muted">{t.plan.caption}</figcaption>
           </figure>
         </article>
 
-        <article className="flex flex-col bg-night px-[clamp(24px,4vw,56px)] py-[clamp(36px,4vw,56px)] text-white">
+        <article className="flex flex-col rounded-[8px] bg-night px-[clamp(24px,4vw,56px)] py-[clamp(36px,4vw,56px)] text-white">
           <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-ai-night">{t.ai.name}</p>
           <PanelH className="m-0 mt-4 text-[clamp(28px,3vw,40px)] font-bold leading-[1.22] tracking-[-0.035em]">
             {t.ai.name} — {t.ai.title}
@@ -168,7 +165,6 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
                 <span>{t.ai.reportNeeded[1]}</span>
               </div>
             )}
-            {REPORT_IMAGE && <figcaption className="mt-3 text-[13px] text-night-text">{t.ai.reportCaption}</figcaption>}
           </figure>
         </article>
       </div>

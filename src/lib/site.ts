@@ -26,7 +26,7 @@ export const COMPANY = {
   bizRegNo: "768-87-02255",
   email: "wiselake@wiselake.ai",
   // "더에이치타워919" / "The H Tower 919" is the building name. Lot-number address: 관양동 919.
-  // 2026-10-20 meeting wording; check against the business registration before release.
+  // 2026-10-20 meeting wording, confirmed 2026-10-22.
   address: {
     ko: "경기도 안양시 동안구 벌말로 80, 더에이치타워919 505호",
     en: "Suite 505 (5F), The H Tower 919, 80 Beolmal-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",

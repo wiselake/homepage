@@ -139,13 +139,6 @@ export const NEWS: NewsItem[] = [
   },
 ];
 
-/** Outlet list for "Covered by", each linking to its newest article in NEWS (looked up by name, not position). */
-export const PRESS_OUTLETS = ["3tres3", "National Hog Farmer", "Pork Business", "Feed & Additive", "Farmers Review Africa", "한돈뉴스", "축산경제신문", "데일리벳"].map((name) => {
-  const article = NEWS.flatMap((n) => n.outlets).find((o) => o.name === name);
-  if (!article) throw new Error(`PRESS_OUTLETS: no article for ${name}`);
-  return article;
-});
-
 export function formatNewsDate(item: NewsItem, locale: Locale): string {
   const [y, m, d] = item.date.split("-").map(Number);
   if (locale === "ko") return item.monthOnly ? `${y}년 ${m}월` : `${y}년 ${m}월 ${d}일`;

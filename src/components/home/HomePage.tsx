@@ -17,8 +17,8 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <PigOSBlock locale={locale} />
 
       <ContentValue locale={locale} />
-      <Company locale={locale} />
       <News locale={locale} />
+      <Company locale={locale} />
       <Contact locale={locale} />
     </>
   );

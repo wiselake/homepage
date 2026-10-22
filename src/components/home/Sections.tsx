@@ -1,4 +1,4 @@
-import { NEWS, PRESS_OUTLETS, formatNewsDate, sortedNews } from "@/content/news";
+import { NEWS, formatNewsDate, sortedNews } from "@/content/news";
 import { COMPANY, LINKS, localePath, type Locale } from "@/lib/site";
 import ContactForm from "../ContactForm";
 import { ArrowIcon, ButtonLink, SectionLabel, SectionTitle, TextLink } from "../ui";
@@ -78,7 +78,7 @@ const NT = {
 export function ContentValue({ locale }: { locale: Locale }) {
   const t = NT[locale];
   const href = locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans;
-  const label = "m-0 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted";
+  const label = "m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-muted";
   return (
     <section id="content">
       <div id="nanotrans" className="mx-auto max-w-[1200px] px-6 py-[clamp(48px,6vw,88px)]">
@@ -135,8 +135,8 @@ export function ContentValue({ locale }: { locale: Locale }) {
             {t.steps.map((st, i) => (
               <li key={st.name} className="flex items-baseline gap-x-3">
                 {i > 0 && (
-                  <span aria-hidden="true" className="text-muted">
-                    →
+                  <span aria-hidden="true" className="self-center text-muted">
+                    <ArrowIcon />
                   </span>
                 )}
                 <span className="text-[clamp(18px,1.8vw,21px)] font-bold">{st.verb}</span>
@@ -195,14 +195,14 @@ const CO = {
 
 export function Company({ locale }: { locale: Locale }) {
   const t = CO[locale];
-  // Draft-A layout with type about 2px larger (chosen 2026-10-21).
+  // Draft-A layout with type about 2px larger (chosen 2026-10-21); the shared section label since 2026-10-22.
   return (
-    <section id="company" className="bg-paper">
+    <section id="company">
       <div className="mx-auto max-w-[1200px] px-6 py-[clamp(64px,9vw,128px)]">
         <div className="grid grid-cols-1 gap-x-16 gap-y-12 min-[1000px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>
-            <p className="m-0 text-[16px] font-bold uppercase tracking-[0.12em] text-brand">{t.eyebrow}</p>
-            <h2 className="m-0 mt-4 text-balance text-[clamp(32px,4vw,50px)] font-bold leading-[1.18] tracking-[-0.035em]">
+            <SectionLabel>{t.eyebrow}</SectionLabel>
+            <h2 className="m-0 mt-8 text-balance text-[clamp(32px,4vw,50px)] font-bold leading-[1.18] tracking-[-0.035em]">
               {t.title[0]}
               <br />
               {t.title[1]}
@@ -222,7 +222,7 @@ export function Company({ locale }: { locale: Locale }) {
           </ol>
         </div>
 
-        <dl className="m-0 mt-14 grid grid-cols-1 gap-x-10 gap-y-5 rounded-[20px] border border-line bg-card p-[clamp(24px,3.5vw,40px)] text-[18px] sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="m-0 mt-14 grid grid-cols-1 gap-x-10 gap-y-5 rounded-[8px] border border-line bg-card p-[clamp(24px,3.5vw,40px)] text-[18px] sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <dt className="text-muted">{t.rows.name}</dt>
             <dd className="m-0 mt-1 font-semibold">{COMPANY.short[locale]}</dd>
@@ -254,8 +254,8 @@ export function Company({ locale }: { locale: Locale }) {
 /* ---------------------------------------------------------------- news */
 
 const NW = {
-  ko: { title: "소식", all: "전체 보기", press: "보도된 곳", via: "보도" },
-  en: { title: "News", all: "All news", press: "Covered by", via: "" },
+  ko: { title: "소식", all: "전체 보기", via: "보도" },
+  en: { title: "News", all: "All news", via: "" },
 };
 
 /** One news item as a ruled row: date · product · title (· summary) · outlet. */
@@ -291,13 +291,13 @@ function productLabel(item: (typeof NEWS)[number], locale: Locale) {
   return item.product === "pigos" ? "PigOS" : item.product === "pigplan" ? (locale === "ko" ? "피그플랜" : "PigPlan") : item.product === "nanotrans" ? "NanoTrans" : locale === "ko" ? "회사" : "Company";
 }
 
-/** Home news: the newest item as a lead story, the next three as a short list (option C, 2026-10-21). */
+/** Home news: the newest item as a lead story, the next three as a short list (option C, 2026-10-21); every item names its outlets under the title (2026-10-22). */
 export function News({ locale }: { locale: Locale }) {
   const t = NW[locale];
   const [lead, ...rest] = sortedNews().slice(0, 4);
   const outlets = (n: (typeof NEWS)[number]) => n.outlets.map((o) => o.name).join(" · ") + (t.via ? ` ${t.via}` : "");
   return (
-    <section id="news">
+    <section id="news" className="bg-paper">
       <div className="mx-auto max-w-[1200px] px-6 py-[clamp(60px,8vw,112px)]">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <SectionTitle>{t.title}</SectionTitle>
@@ -328,20 +328,13 @@ export function News({ locale }: { locale: Locale }) {
                     <span className="font-semibold text-brand-dark">{productLabel(n, locale)}</span>
                   </p>
                   <h3 className="m-0 mt-2 text-[18px] font-semibold leading-[1.45] group-hover:underline group-hover:underline-offset-4">{n.title[locale]}</h3>
+                  <p className="m-0 mt-2 text-[14px] text-muted">{outlets(n)}</p>
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-line pt-6 text-[15px]">
-          <span className="text-muted">{t.press}</span>
-          {PRESS_OUTLETS.map((o) => (
-            <a key={o.name} href={o.url} target="_blank" rel="noopener" className="font-semibold text-ink-2 hover:text-ink">
-              {o.name}
-            </a>
-          ))}
-        </div>
       </div>
     </section>
   );

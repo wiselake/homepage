@@ -99,7 +99,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
               </span>
               <a
                 href={homeAnchor("#contact")}
-                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[2px] bg-night px-5 text-[15px] font-semibold text-white hover:bg-brand hover:text-white"
+                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-night px-5 text-[15px] font-semibold text-white hover:bg-brand hover:text-white"
               >
                 {t.contact}
               </a>

@@ -1,14 +1,16 @@
 import { LINKS, type Locale } from "@/lib/site";
-import { ArrowIcon } from "../ui";
+import { ArrowIcon, SectionLabel } from "../ui";
 
 /*
  * Facts checked on pigos.io on 2026-10-20 (iOS app: App Store, 2026-09-23): 7 UI languages; Core (records, KPI dashboard,
  * country benchmarks, anomaly alerts) is free and live; AI credit plans are "in the works",
  * so AI analysis is not listed as a feature here. PigOS is its own global product — it is not
- * described as running on Korean PigPlan data. The image shows the real PigOS iOS app dashboard
- * from the App Store listing, large and cropped; the pigos.io hero capture was dropped because it
+ * described as running on Korean PigPlan data. The image pairs a real PigOS web dashboard capture
+ * (provided 2026-10-21; user, e-mail and farm names masked as "Sample Farm" / "Demo User") with the
+ * real iOS app dashboard screenshot; the pigos.io hero capture was dropped because it
  * still says "iOS coming soon" (checked 2026-10-21).
  * Draft B keeps this draft-A layout for PigOS (chosen 2026-10-21); the facts line is English in both locales.
+ * Since 2026-10-22 it shares the site-wide tone: flat navy (no glow), the shared section label and button.
  */
 const T = {
   ko: {
@@ -22,7 +24,7 @@ const T = {
       ["Early Warnings", "운영 위험 조기경보"],
     ],
     facts: "7 languages · Free Core plan · Android & iOS apps",
-    imgAlt: "PigOS iOS 앱 대시보드 화면 — PSY·NPD·분만율, 목표 대비 경보, 국가 기준 비교",
+    imgAlt: "PigOS 웹 대시보드와 iOS 앱 — PSY·NPD·분만율, 목표 대비 경보, 국가 기준 비교",
   },
   en: {
     eyebrow: "PigOS · Global Swine OS",
@@ -35,22 +37,23 @@ const T = {
       ["Early Warnings", "Operational risks, flagged early"],
     ],
     facts: "7 languages · Free Core plan · Android & iOS apps",
-    imgAlt: "PigOS iOS app dashboard — PSY, NPD and farrowing rate, alerts against targets and national benchmarks",
+    imgAlt: "PigOS web dashboard and iOS app — PSY, NPD and farrowing rate, alerts against targets and national benchmarks",
   },
 };
 
 export default function PigOSBlock({ locale }: { locale: Locale }) {
   const t = T[locale];
   return (
-    <section id="pigos" className="relative overflow-hidden bg-[#0e1a38] text-white">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_85%_30%,rgba(18,166,160,0.18),transparent_70%),radial-gradient(40%_50%_at_0%_100%,rgba(23,107,193,0.25),transparent_70%)]" />
-      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-x-16 gap-y-12 px-6 py-[clamp(80px,10vw,136px)] min-[1000px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <section id="pigos" className="bg-night text-white">
+      {/* Text left, product visual right (draft-A layout). The visual is a web capture with the phone
+          overlapping its bottom-right, navy window chrome and a bottom fade so it blends into the section;
+          it stays inside the container like the other sections (2026-10-21). */}
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-x-14 gap-y-12 px-6 py-[clamp(80px,10vw,136px)] min-[1000px]:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div>
-          <p className="m-0 text-[14px] font-bold uppercase tracking-[0.12em] text-ai-night">
-            <span className="mr-4 tabular-nums">02</span>
+          <SectionLabel n="02" onNight>
             {t.eyebrow}
-          </p>
-          <h2 className="m-0 mt-4 text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.2] tracking-[-0.035em]">
+          </SectionLabel>
+          <h2 className="m-0 mt-8 text-[clamp(30px,3.4vw,40px)] font-bold leading-[1.2] tracking-[-0.035em]">
             {t.title}
           </h2>
           <p className="m-0 mt-5 text-[18px] text-night-text">{t.body}</p>
@@ -69,24 +72,27 @@ export default function PigOSBlock({ locale }: { locale: Locale }) {
             target="_blank"
             rel="noopener"
             lang="en"
-            className="mt-9 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[8px] bg-white px-6 text-[17px] font-semibold text-night hover:bg-brand-tint hover:text-night max-sm:w-full"
+            className="mt-9 inline-flex min-h-[56px] items-center justify-center gap-3 rounded-[8px] bg-white px-7 text-[17px] font-semibold text-night transition-colors hover:bg-brand-tint hover:text-night max-sm:w-full"
           >
             Explore PigOS
             <ArrowIcon />
           </a>
         </div>
 
-        <a href={LINKS.pigos} target="_blank" rel="noopener" className="group block rounded-[20px] border border-night-line bg-night-2/60 p-2 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/b/pigos-app-screens.jpg"
-            alt={t.imgAlt}
-            width={1860}
-            height={1650}
-            loading="lazy"
-            decoding="async"
-            className="block h-auto w-full rounded-[14px] transition-opacity group-hover:opacity-95"
-          />
+        <a href={LINKS.pigos} target="_blank" rel="noopener" className="group block">
+          {/* Phones get the large single-phone dashboard; the web + mobile visual is unreadable that small. */}
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/images/b/pigos-app-mobile.jpg" width={1860} height={1650} />
+            <img
+              src="/images/b/pigos-web-mobile.png"
+              alt={t.imgAlt}
+              width={1520}
+              height={1240}
+              loading="lazy"
+              decoding="async"
+              className="block h-auto w-full transition-opacity group-hover:opacity-95 max-md:rounded-[8px]"
+            />
+          </picture>
         </a>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CONTACT_TYPES, toContactType } from "@/lib/contact";
 import { COMPANY, localePath, type Locale } from "@/lib/site";
+import { ArrowIcon } from "./ui";
 
 const T = {
   ko: {
@@ -15,7 +16,7 @@ const T = {
     message: "문의 내용",
     consent: "개인정보 수집·이용에 동의합니다. (이름, 회사·기관명, 이메일, 문의 내용 · 문의 회신 목적)",
     policy: "개인정보처리방침",
-    submit: "문의 보내기 →",
+    submit: "문의 보내기",
     sending: "보내는 중입니다…",
     ok: "문의가 접수되었습니다. 확인 후 담당자가 안내해 드립니다.",
     invalid: "이름, 이메일, 문의 내용을 입력하고 개인정보 수집·이용에 동의해 주세요.",
@@ -32,7 +33,7 @@ const T = {
     message: "Message",
     consent: "I agree to the collection and use of my name, company or organization, email and message to answer this inquiry.",
     policy: "Privacy policy",
-    submit: "Send Inquiry →",
+    submit: "Send Inquiry",
     sending: "Sending…",
     ok: "Thanks — your message has been sent. Our team will get back to you.",
     invalid: "Please enter your name, email and message, and tick the consent box.",
@@ -107,7 +108,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
         if (!startedAt.current) startedAt.current = Date.now();
       }}
       noValidate
-      className="grid grid-cols-1 gap-[18px] rounded-[16px] border border-line bg-card p-[clamp(24px,4vw,40px)] text-[16px] shadow-[0_1px_2px_rgba(21,37,75,0.04),0_12px_32px_-12px_rgba(21,37,75,0.12)]"
+      className="grid grid-cols-1 gap-[18px] rounded-[8px] border border-line bg-card p-[clamp(24px,4vw,40px)] text-[16px]"
     >
       <div>
         <h3 className="m-0 text-[20px] font-bold">{t.title}</h3>
@@ -160,9 +161,12 @@ export default function ContactForm({ locale }: { locale: Locale }) {
         <button
           type="submit"
           disabled={state === "sending"}
-          className="min-h-12 cursor-pointer rounded-[8px] bg-brand px-6 font-semibold text-white hover:bg-brand-dark disabled:cursor-wait disabled:opacity-70 max-sm:w-full"
+          className="min-h-[56px] cursor-pointer rounded-[8px] bg-night px-7 text-[17px] font-semibold text-white transition-colors hover:bg-brand disabled:cursor-wait disabled:opacity-70 max-sm:w-full"
         >
-          {t.submit}
+          <span className="inline-flex items-center gap-3">
+            {t.submit}
+            <ArrowIcon />
+          </span>
         </button>
       </div>
       <p role="status" aria-live="polite" className={`m-0 min-h-[1.5em] text-[15px] ${state === "error" ? "text-alert" : state === "ok" ? "text-brand" : "text-muted"}`}>

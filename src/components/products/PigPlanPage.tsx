@@ -1,4 +1,5 @@
 import { localePath, type Locale } from "@/lib/site";
+import { ArrowIcon } from "../ui";
 import PigPlanBlock from "./PigPlanBlock";
 
 /*
@@ -11,14 +12,14 @@ const T = {
     functions: ["번식·비육 전 과정 기록", "종돈장 검정돈 관리", "표준 KPI 성적 분석·조회", "전국 비교 벤치마크", "모바일 현장 입력", "IoT 돈사 환경 모니터링"],
     historyTitle: "Since 1995",
     history: [["1995", "피그플랜 기술 개발 시작"], ["2005", "웹·모바일 서비스 출시"], ["2020", "클라우드 서비스 개시"], ["2022", "㈜와이즈레이크 설립"], ["2026", "PigPlan AI 확장"]],
-    overseas: "해외 농가라면 PigOS를 이용해 주세요 →",
+    overseas: "해외 농가라면 PigOS를 이용해 주세요",
   },
   en: {
     functionsTitle: "Core PigPlan functions",
     functions: ["Breeding-to-finishing records", "Nucleus herd performance testing", "Standard KPI analysis", "Nationwide benchmarks", "Mobile entry in the barn", "IoT barn monitoring"],
     historyTitle: "Since 1995",
     history: [["1995", "PigPlan technology development begins"], ["2005", "Web and mobile service launches"], ["2020", "Cloud service launches"], ["2022", "WiseLake, Inc. is founded"], ["2026", "PigPlan AI expands"]],
-    overseas: "Farming outside Korea? Use PigOS →",
+    overseas: "Farming outside Korea? Use PigOS",
   },
 };
 
@@ -53,8 +54,9 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
             ))}
           </ol>
           <p className="mt-6">
-            <a href={`${localePath(locale, "/")}#pigos`} className="font-semibold">
+            <a href={`${localePath(locale, "/")}#pigos`} className="inline-flex items-center gap-2 font-semibold">
               {t.overseas}
+              <ArrowIcon />
             </a>
           </p>
         </div>

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /*
- * Draft B design language: corporate and editorial. Square corners, no shadows or pills,
+ * Draft B design language: corporate and editorial. One 8px corner radius (unified 2026-10-22), no shadows or pills,
  * thin rules and a strict grid; weight comes from type size and real product imagery.
  */
 
@@ -31,7 +31,7 @@ export function ButtonLink({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
-      className={`inline-flex items-center justify-center gap-3 rounded-[2px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-3 rounded-[8px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
     >
       {children}
     </a>

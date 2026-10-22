@@ -47,7 +47,7 @@ export default function MobileMenu({ locale, items, label }: { locale: Locale; i
     >
       <summary
         aria-label={label}
-        className="-mr-2.5 flex size-11 cursor-pointer list-none items-center justify-center rounded-[2px] text-ink hover:text-brand [&::-webkit-details-marker]:hidden"
+        className="-mr-2.5 flex size-11 cursor-pointer list-none items-center justify-center rounded-[8px] text-ink hover:text-brand [&::-webkit-details-marker]:hidden"
       >
         <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path className="group-open:hidden" d="M4 7h16M4 12h16M4 17h16" />
