@@ -20,14 +20,15 @@ export function counterpartPath(pathname: string): { locale: Locale; href: strin
 
 export const COMPANY = {
   name: { ko: "주식회사 와이즈레이크", en: "WiseLake, Inc." },
-  short: { ko: "(주)와이즈레이크", en: "WiseLake, Inc." },
+  short: { ko: "㈜와이즈레이크", en: "WiseLake, Inc." },
   ceo: { ko: "진교문", en: "Gyomoon Jin" },
   founded: { ko: "2022년 1월 28일", en: "January 28, 2022" },
   bizRegNo: "768-87-02255",
   email: "wiselake@wiselake.ai",
-  // "더에이치타워 919" / "The H Tower 919" is the building name.
+  // "더에이치타워919" / "The H Tower 919" is the building name. Lot-number address: 관양동 919.
+  // 2026-10-20 meeting wording, confirmed 2026-10-22.
   address: {
-    ko: "경기 안양시 동안구 벌말로 80 더에이치타워 919, 5층 505호",
+    ko: "경기도 안양시 동안구 벌말로 80, 더에이치타워919 505호",
     en: "Suite 505 (5F), The H Tower 919, 80 Beolmal-ro, Dongan-gu, Anyang-si, Gyeonggi-do, Republic of Korea",
   },
 } as const;
@@ -42,9 +43,6 @@ export const LINKS = {
   pigplanLogin: "https://pigplan.io",
   pigplanService: "https://pigplan.io/landing/service.do",
   pigos: "https://pigos.io",
-  pigosStart: "https://app.pigos.io/onboarding",
   nanotrans: "https://nanotrans.io",
   nanotransKo: "https://nanotrans.io/ko/",
-  nanotransContact: "https://nanotrans.io/contact/#inquiry",
-  agentPaywall: "https://wordpress.org/plugins/nanotrans-agent-paywall/",
 } as const;

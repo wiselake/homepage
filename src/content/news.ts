@@ -13,6 +13,22 @@ export type NewsItem = {
 /** Newest first. Every item links to the published article it is based on. */
 export const NEWS: NewsItem[] = [
   {
+    date: "2026-10-08",
+    product: "pigos",
+    title: { ko: "PigOS iOS 앱 출시", en: "PigOS launches on iPhone" },
+    summary: {
+      ko: "Android에 이어 App Store에 출시했습니다. 돈사에서 교배·분만·이유를 기록하고, 이표 스캔과 음성 입력, KPI 경보와 국가 평균 비교를 휴대폰에서 확인합니다.",
+      en: "Following Android, PigOS is on the App Store: record matings, farrowings and weanings in the barn with ear-tag scanning and voice notes, and see KPI alerts and national benchmarks on the phone.",
+    },
+    outlets: [
+      { name: "3tres3", url: "https://www.3tres3.com/en/company_news/wiselake-brings-ai-assisted-pigos-to-iphone_22903/" },
+      {
+        name: "Farmers Review Africa",
+        url: "https://farmersreviewafrica.com/wiselake-maker-of-koreas-no-1-pig-farm-erp-pigplan-brings-ai-assisted-pigos-to-iphone/",
+      },
+    ],
+  },
+  {
     date: "2026-07-20",
     product: "pigos",
     title: { ko: "PigOS Android 앱 출시", en: "PigOS launches its Android app" },
@@ -64,7 +80,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-01-01",
     monthOnly: true,
     product: "pigplan",
-    title: { ko: "AI 경영 리포트 피그플랜 인사이트 정식 출시", en: "PigPlan Insight, the AI management report, launches" },
+    title: { ko: "피그플랜 AI 경영 리포트 정식 출시", en: "PigPlan's AI management report launches" },
     summary: {
       ko: "주간·월간·분기 리포트를 카카오톡으로 받아보는 구독 서비스를 시작했습니다.",
       en: "A subscription that delivers weekly, monthly and quarterly farm reports over KakaoTalk.",
@@ -116,21 +132,11 @@ export const NEWS: NewsItem[] = [
     product: "company",
     title: { ko: "와이즈레이크, 2021 피그플랜 빅데이터 발표", en: "WiseLake presents its 2021 PigPlan big-data report" },
     summary: {
-      ko: "이지팜 피그컬처 사업부에서 분사한 와이즈레이크가 첫 보고회를 열었습니다. 평균 PSY 24.2두.",
-      en: "WiseLake's first report after its spin-off from EZFarm's PigCulture division. Average PSY 24.2.",
+      ko: "와이즈레이크가 2021년 피그플랜 빅데이터 분석 결과를 발표했습니다. 평균 PSY 24.2두.",
+      en: "WiseLake presented its analysis of 2021 PigPlan big data. Average PSY 24.2.",
     },
     outlets: [{ name: "데일리벳", url: "https://www.dailyvet.co.kr/?p=165912" }],
   },
-];
-
-export const PRESS_OUTLETS = [
-  { name: "3tres3", url: NEWS[1].outlets[0].url },
-  { name: "National Hog Farmer", url: NEWS[1].outlets[1].url },
-  { name: "Pork Business", url: NEWS[1].outlets[2].url },
-  { name: "Feed & Additive", url: NEWS[0].outlets[0].url },
-  { name: "한돈뉴스", url: NEWS[2].outlets[0].url },
-  { name: "축산경제신문", url: NEWS[4].outlets[0].url },
-  { name: "데일리벳", url: NEWS[8].outlets[0].url },
 ];
 
 export function formatNewsDate(item: NewsItem, locale: Locale): string {

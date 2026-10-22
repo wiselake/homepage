@@ -1,28 +1,14 @@
 import type { ReactNode } from "react";
 
-type BadgeTone = "live" | "dev" | "soon" | "neutral" | "pigplan" | "pigplanLive";
-
-const badgeTone: Record<BadgeTone, string> = {
-  live: "bg-brand-tint text-brand",
-  dev: "border border-line-strong text-ink-2",
-  soon: "border border-dashed border-[#a8a397] text-muted",
-  neutral: "bg-chip text-ink-2",
-  pigplan: "bg-pigplan-tint text-pigplan",
-  pigplanLive: "bg-pigplan text-white",
-};
-
-export function Badge({ tone, children }: { tone: BadgeTone; children: ReactNode }) {
-  return (
-    <span className={`inline-block whitespace-nowrap rounded-[6px] px-2.5 py-0.5 text-[13px] font-semibold ${badgeTone[tone]}`}>
-      {children}
-    </span>
-  );
-}
+/*
+ * Draft B design language: corporate and editorial. One 8px corner radius (unified 2026-10-22), no shadows or pills,
+ * thin rules and a strict grid; weight comes from type size and real product imagery.
+ */
 
 const btn = {
-  primary: "bg-brand text-white hover:bg-night hover:text-white",
-  outline: "border border-line-strong text-ink hover:border-ink hover:text-ink",
-  outlineBrand: "border border-brand text-brand hover:bg-brand-tint hover:text-brand",
+  primary: "bg-night text-white hover:bg-brand hover:text-white",
+  outline: "border border-ink text-ink hover:bg-ink hover:text-white",
+  onNight: "bg-white text-night hover:bg-brand-tint hover:text-night",
 };
 
 export function ButtonLink({
@@ -40,66 +26,53 @@ export function ButtonLink({
   size?: "md" | "lg";
   className?: string;
 }) {
-  const sizing = size === "lg" ? "min-h-12 px-[22px] text-[17px]" : "min-h-11 px-[18px] text-[15px]";
+  const sizing = size === "lg" ? "min-h-[56px] px-7 text-[17px]" : "min-h-12 px-6 text-[16px]";
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
-      className={`inline-flex items-center gap-2 rounded-[6px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-3 rounded-[8px] font-semibold transition-colors ${sizing} ${btn[variant]} ${className}`}
     >
       {children}
     </a>
   );
 }
 
-/** Text link. An ::after overlay makes the tap area at least 44px tall without changing the layout. */
-export function TextLink({ href, children, external }: { href: string; children: ReactNode; external?: boolean }) {
+/** Text link with an arrow. An ::after overlay makes the tap area at least 44px tall without changing the layout. */
+export function TextLink({ href, children, external, className = "" }: { href: string; children: ReactNode; external?: boolean; className?: string }) {
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener" } : {})}
-      className="relative text-[15px] font-semibold after:absolute after:inset-x-0 after:-inset-y-2.5"
+      className={`relative inline-flex items-center gap-2 text-[16px] font-semibold underline-offset-[6px] after:absolute after:inset-x-0 after:-inset-y-2.5 hover:underline ${className}`}
     >
       {children}
     </a>
   );
 }
 
-export function Eyebrow({ children, className = "text-link" }: { children: ReactNode; className?: string }) {
-  return <p className={`m-0 text-[13px] font-bold uppercase tracking-[0.1em] ${className}`}>{children}</p>;
+export function Eyebrow({ children, className = "text-muted" }: { children: ReactNode; className?: string }) {
+  return <p className={`m-0 text-[13px] font-semibold uppercase tracking-[0.16em] ${className}`}>{children}</p>;
+}
+
+/** Section number and label on a full-width rule, e.g. "01 — PigPlan · PigPlan AI". */
+export function SectionLabel({ n, children, onNight = false }: { n?: string; children: ReactNode; onNight?: boolean }) {
+  return (
+    <div className={`flex items-baseline gap-5 border-t pt-5 text-[13px] font-semibold uppercase tracking-[0.16em] ${onNight ? "border-night-line text-night-text" : "border-ink text-ink"}`}>
+      {n && <span className="tabular-nums">{n}</span>}
+      <span>{children}</span>
+    </div>
+  );
 }
 
 /** Section heading. `as="h1"` when it is the page title; the look stays the same. */
 export function SectionTitle({ children, className = "", as: Tag = "h2" }: { children: ReactNode; className?: string; as?: "h1" | "h2" }) {
-  return (
-    <Tag className={`m-0 text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.2] tracking-[-0.03em] ${className}`}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={`m-0 text-balance text-[clamp(32px,4.6vw,58px)] font-bold leading-[1.12] tracking-[-0.04em] ${className}`}>{children}</Tag>;
 }
 
-export function Container({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
+export function ArrowIcon({ down = false }: { down?: boolean }) {
   return (
-    <section id={id} className={`mx-auto max-w-[1200px] px-6 ${className}`}>
-      {children}
-    </section>
-  );
-}
-
-export function CheckItem({ children, color = "#446cd2" }: { children: ReactNode; color?: string }) {
-  return (
-    <li className="flex gap-2.5">
-      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke={color} strokeWidth="1.8" className="mt-[5px] flex-none">
-        <path d="M4 9.5l3 3 7-7" />
-      </svg>
-      <span>{children}</span>
-    </li>
-  );
-}
-
-export function ArrowIcon() {
-  return (
-    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" className={down ? "rotate-90" : undefined}>
       <path d="M3 8h10M9 4l4 4-4 4" />
     </svg>
   );

@@ -4,8 +4,8 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(
   "en",
   "/",
-  "WiseLake — PigOS, PigPlan and NanoTrans",
-  "Accumulated data, turned into value for the AI era. PigOS, an AI early-warning OS for pig farms worldwide; PigPlan, Korea's leading pig-farm management system; and NanoTrans, which measures and trades the value of content AI reads.",
+  "WiseLake | PigPlan AI, PigOS & NanoTrans",
+  "WiseLake builds PigPlan and PigPlan AI for pig farms in Korea, PigOS, an operating platform for pig farms worldwide, and NanoTrans, technology for content value in the AI era.",
 );
 
 export default function Page() {

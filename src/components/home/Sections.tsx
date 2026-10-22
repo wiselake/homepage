@@ -1,155 +1,159 @@
-import { NEWS, PRESS_OUTLETS, formatNewsDate, sortedNews } from "@/content/news";
+import { NEWS, formatNewsDate, sortedNews } from "@/content/news";
 import { COMPANY, LINKS, localePath, type Locale } from "@/lib/site";
 import ContactForm from "../ContactForm";
-import { Badge, ButtonLink, Eyebrow, SectionTitle, TextLink } from "../ui";
+import { ArrowIcon, ButtonLink, SectionLabel, SectionTitle, TextLink } from "../ui";
 
-/* ---------------------------------------------------------------- content value */
+/* ---------------------------------------------------------------- NanoTrans (content value) */
 
+/*
+ * Core points from nanotrans.io/ko (2026-10-21): headline, the problem, why now (with its cited
+ * sources) and the measure → decide → trade approach. Status per nanotrans.io: Index and Edge in
+ * development, Market in preparation, a pilot with a Korean IT/business publisher. Wording keeps
+ * the product in development (no launch dates, settlement or revenue claims). Bot-classification
+ * detail stays on nanotrans.io.
+ */
 const NT = {
   ko: {
-    eyebrow: "사업 라인 2 · 콘텐츠 가치",
-    title: ["AI가 읽는 콘텐츠의 가치를", "측정하고, 거래합니다"],
-    lede: "AI는 매일 기사와 콘텐츠를 가져가 답변을 만듭니다. NanoTrans는 그 소비를 측정하고, 언론사가 AI 봇의 접근을 직접 정하고, 콘텐츠를 정당한 값에 거래할 수 있게 합니다.",
+    n: "03",
+    eyebrow: "NanoTrans · Content Value",
+    title: ["NanoTrans —", "AI가 읽은 만큼, 콘텐츠의 가치를 셉니다."],
+    body: ["AI는 매일 기사와 콘텐츠를 가져가 답변을 만듭니다. NanoTrans는 그 소비를 측정하고,", "AI 봇의 접근을 매체가 정하고, 기사를 정당한 값에 거래할 수 있도록 개발하고 있습니다."],
+    problem: {
+      label: "문제",
+      title: "AI는 기사를 읽지만, 매체의 숫자에는 남지 않습니다.",
+      items: ["AI 봇 트래픽은 서버 비용으로만 남습니다.", "AI 답변 속 인용은 어디에도 집계되지 않습니다.", "어떤 봇을 막고 열지 판단할 근거가 없습니다."],
+    },
+    now: {
+      label: "왜 지금인가",
+      stat: "51%",
+      statText: "2024년 전체 웹 트래픽 중 자동화(봇) 트래픽 비중",
+      statSource: { name: "Imperva 2025 Bad Bot Report", url: "https://www.imperva.com/blog/2025-imperva-bad-bot-report-how-ai-is-supercharging-the-bot-threat/" },
+      deal: "AP·파이낸셜타임스 등 해외 주요 언론사는 이미 AI 기업과 콘텐츠 라이선스 계약을 맺었습니다.",
+      dealSources: [
+        { name: "Axios — AP·OpenAI (2023)", url: "https://www.axios.com/2023/07/13/ap-openai-news-sharing-tech-deal" },
+        { name: "OpenAI — Financial Times (2024)", url: "https://openai.com/index/content-partnership-with-financial-times/" },
+      ],
+    },
     steps: [
-      { n: "01 측정", name: "NanoTrans Index", text: "AI 답변이 내 매체와 기사를 얼마나 인용하는지 측정합니다.", badge: "개발 중", tone: "dev" as const },
-      { n: "02 결정", name: "NanoTrans Edge", text: "사이트 앞에서 AI 봇을 분류하고, 봇마다 허용·과금·차단을 정합니다.", badge: "개발 중 · 파일럿", tone: "dev" as const },
-      { n: "03 거래", name: "NanoTrans Market", text: "콘텐츠와 데이터를 누구나 올려 직접 판매합니다.", badge: "준비 중", tone: "soon" as const },
+      { verb: "측정", name: "NanoTrans Index", status: "개발 중" },
+      { verb: "결정", name: "NanoTrans Edge", status: "개발 중" },
+      { verb: "거래", name: "NanoTrans Market", status: "준비 중" },
     ],
-    plugin: (
-      <>
-        <b className="text-ink">Agent Paywall</b> · 해외·소규모 사이트용 WordPress 플러그인, x402·USDC 결제로 운영 중
-      </>
-    ),
-    pluginLink: "WordPress.org에서 보기 →",
+    stepsLabel: "해법",
     pilot: "국내 IT·경제 전문 매체와 파일럿을 진행하고 있습니다.",
-    more: "nanotrans.io에서 자세히 보기",
-    contact: "도입 문의 →",
+    cta: "NanoTrans 알아보기",
   },
   en: {
-    eyebrow: "Line 2 · Content value",
-    title: ["Measuring and trading the value", "of content that AI reads"],
-    lede: "AI pulls articles and content every day to write its answers. NanoTrans measures that consumption, lets publishers decide how AI bots get access, and lets them sell content at a fair price.",
+    n: "03",
+    eyebrow: "NanoTrans · Content Value",
+    title: ["NanoTrans —", "Counting Content Value by What AI Reads."],
+    body: ["AI takes articles and content every day to write its answers. NanoTrans is being built to measure that use,", "let publishers decide how AI bots get access, and trade articles at a fair price."],
+    problem: {
+      label: "The problem",
+      title: "AI reads the articles, but none of it shows up in the publisher's numbers.",
+      items: ["AI bot traffic shows up only as server cost.", "Citations inside AI answers are counted nowhere.", "There is no basis for deciding which bots to block or allow."],
+    },
+    now: {
+      label: "Why now",
+      stat: "51%",
+      statText: "Share of all web traffic that was automated (bots) in 2024",
+      statSource: { name: "Imperva 2025 Bad Bot Report", url: "https://www.imperva.com/blog/2025-imperva-bad-bot-report-how-ai-is-supercharging-the-bot-threat/" },
+      deal: "Major publishers such as AP and the Financial Times have already signed content licensing deals with AI companies.",
+      dealSources: [
+        { name: "Axios — AP·OpenAI (2023)", url: "https://www.axios.com/2023/07/13/ap-openai-news-sharing-tech-deal" },
+        { name: "OpenAI — Financial Times (2024)", url: "https://openai.com/index/content-partnership-with-financial-times/" },
+      ],
+    },
     steps: [
-      { n: "01 Measure", name: "NanoTrans Index", text: "Measures how often AI answers cite your publication and articles.", badge: "In development", tone: "dev" as const },
-      { n: "02 Decide", name: "NanoTrans Edge", text: "Classifies AI bots in front of your site; allow, charge or block each one.", badge: "In development · pilot", tone: "dev" as const },
-      { n: "03 Trade", name: "NanoTrans Market", text: "Anyone can upload content and data and sell it directly.", badge: "In preparation", tone: "soon" as const },
+      { verb: "Measure", name: "NanoTrans Index", status: "In development" },
+      { verb: "Decide", name: "NanoTrans Edge", status: "In development" },
+      { verb: "Trade", name: "NanoTrans Market", status: "In preparation" },
     ],
-    plugin: (
-      <>
-        <b className="text-ink">Agent Paywall</b> · WordPress plugin for small and international sites, live with x402 · USDC payments
-      </>
-    ),
-    pluginLink: "View on WordPress.org →",
+    stepsLabel: "Approach",
     pilot: "Piloting with a Korean IT and business news publisher.",
-    more: "Learn more at nanotrans.io",
-    contact: "Talk to us →",
+    cta: "Explore NanoTrans",
   },
 };
 
 export function ContentValue({ locale }: { locale: Locale }) {
   const t = NT[locale];
+  const href = locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans;
+  const label = "m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-muted";
   return (
-    <section id="content" className="mx-auto max-w-[1200px] px-6 pt-[clamp(72px,9vw,128px)]">
-      <Eyebrow className="flex items-center gap-2.5 text-link">
-        <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-brand-blue" />
-        {t.eyebrow}
-      </Eyebrow>
-      <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-end gap-x-14 gap-y-6">
-        <SectionTitle>
-          {t.title[0]}
-          <br />
-          {t.title[1]}
-        </SectionTitle>
-        <p className="m-0 text-ink-2">{t.lede}</p>
-      </div>
-
-      <div className="mt-12 overflow-hidden rounded-[12px] border border-line bg-card">
-        <ol className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] p-0">
-          {t.steps.map((s, i) => (
-            <li key={s.name} className={`border-b border-line-soft p-8 ${i < 2 ? "min-[900px]:border-r" : ""}`}>
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-[13px] font-bold tracking-[0.08em] text-link">{s.n}</span>
-                <Badge tone={s.tone}>{s.badge}</Badge>
-              </div>
-              <h3 className="m-0 mt-4 text-[21px] font-bold tracking-[-0.01em]">{s.name}</h3>
-              <p className="m-0 mt-2 text-[15px] text-ink-2">{s.text}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 bg-wash px-8 py-5 text-[15px]">
-          <span className="text-ink-2">{t.plugin}</span>
-          <TextLink href={LINKS.agentPaywall} external>
-            {t.pluginLink}
-          </TextLink>
+    <section id="content">
+      <div id="nanotrans" className="mx-auto max-w-[1200px] px-6 py-[clamp(48px,6vw,88px)]">
+        <SectionLabel n={t.n}>{t.eyebrow}</SectionLabel>
+        <div className="mt-10">
+          <SectionTitle>
+            {t.title[0]}
+            <br />
+            {t.title[1]}
+          </SectionTitle>
+          <p className="m-0 mt-6 max-w-[900px] text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
+            {t.body[0]}
+            <br className="max-lg:hidden" /> {t.body[1]}
+          </p>
         </div>
-      </div>
 
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
-        <p className="m-0 text-[15px] text-ink-2">{t.pilot}</p>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-          <ButtonLink href={locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans} external>
-            {t.more}
+        {/* Problem and why now, side by side on a rule. */}
+        <div className="mt-12 grid grid-cols-1 border-t border-ink lg:grid-cols-2">
+          <div className="border-b border-line py-8 lg:border-b-0 lg:border-r lg:pr-12">
+            <p className={label}>{t.problem.label}</p>
+            <h3 className="m-0 mt-3 text-balance text-[clamp(20px,2vw,24px)] font-bold leading-[1.4] tracking-[-0.02em]">{t.problem.title}</h3>
+            <ul className="m-0 mt-5 list-none p-0">
+              {t.problem.items.map((it) => (
+                <li key={it} className="border-t border-line py-3 text-[16px] text-ink-2">
+                  {it}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="py-8 lg:pl-12">
+            <p className={label}>{t.now.label}</p>
+            <p className="m-0 mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span className="text-[clamp(44px,5vw,64px)] font-bold leading-none tracking-[-0.04em] text-brand">{t.now.stat}</span>
+              <span className="text-[16px] text-ink-2">{t.now.statText}</span>
+            </p>
+            <a href={t.now.statSource.url} target="_blank" rel="noopener" className="mt-2 inline-block text-[13px] text-muted underline underline-offset-2 hover:text-ink">
+              {t.now.statSource.name}
+            </a>
+            <p className="m-0 mt-6 border-t border-line pt-5 text-[16px] leading-[1.6] text-ink-2">{t.now.deal}</p>
+            <p className="m-0 mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">
+              {t.now.dealSources.map((d) => (
+                <a key={d.url} href={d.url} target="_blank" rel="noopener" className="text-muted underline underline-offset-2 hover:text-ink">
+                  {d.name}
+                </a>
+              ))}
+            </p>
+          </div>
+        </div>
+
+        {/* Approach as one ruled line: measure → decide → trade, each with its real status. */}
+        <div className="border-t border-line py-6">
+          <p className={label}>{t.stepsLabel}</p>
+          <ol className="m-0 mt-4 flex list-none flex-wrap items-baseline gap-x-6 gap-y-3 p-0">
+            {t.steps.map((st, i) => (
+              <li key={st.name} className="flex items-baseline gap-x-3">
+                {i > 0 && (
+                  <span aria-hidden="true" className="self-center text-muted">
+                    <ArrowIcon />
+                  </span>
+                )}
+                <span className="text-[clamp(18px,1.8vw,21px)] font-bold">{st.verb}</span>
+                <span className="text-[16px] text-ink-2">{st.name}</span>
+                <span className="text-[14px] text-muted">{st.status}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-line pt-8">
+          <p className="m-0 text-[16px] text-ink-2">{t.pilot}</p>
+          <ButtonLink href={href} external size="lg" className="max-sm:w-full">
+            {t.cta}
+            <ArrowIcon />
           </ButtonLink>
-          <TextLink href={LINKS.nanotransContact} external>
-            {t.contact}
-          </TextLink>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------------------------------------------------------- bridge */
-
-const BR = {
-  ko: {
-    soon: "준비 중",
-    eyebrow: "두 사업을 잇는 연결고리",
-    title: "농장의 기록이, 농장의 수익이 됩니다",
-    text: "동의한 농장의 기록만, 어느 농장인지 알 수 없는 익명 통계로 묶어 NanoTrans Market에서 판매합니다. 판매 수익은 참여한 농장에 돌아갑니다. 피그플랜 국내 농가부터 시작해 PigOS 농가로 넓혀 갑니다.",
-    steps: [
-      ["기록", "피그플랜에 평소처럼 기록합니다"],
-      ["동의", "참여 여부는 농장이 정합니다"],
-      ["익명 집계", "지역·규모 단위 통계로만 만듭니다"],
-      ["판매와 환원", "사료·금융·연구 기관이 구매하고, 수익은 참여 농장에 나눕니다"],
-    ],
-  },
-  en: {
-    soon: "In preparation",
-    eyebrow: "What connects the two",
-    title: "Farm records that earn for the farm",
-    text: "Only records from farms that opt in are pooled into anonymous statistics — no farm can be identified — and sold on NanoTrans Market. Revenue goes back to the participating farms. It starts with PigPlan farms in Korea and expands to PigOS farms.",
-    steps: [
-      ["Record", "Farms keep recording in PigPlan as usual"],
-      ["Opt in", "Each farm decides whether to take part"],
-      ["Anonymise", "Only regional and size-band statistics are produced"],
-      ["Sell and share", "Feed, finance and research buyers pay; revenue goes to the farms"],
-    ],
-  },
-};
-
-export function Bridge({ locale }: { locale: Locale }) {
-  const t = BR[locale];
-  return (
-    <section className="mx-auto max-w-[1200px] px-6 pt-[clamp(72px,9vw,128px)]">
-      <div className="rounded-[12px] bg-brand-tint p-[clamp(32px,5vw,56px)]">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-[6px] border border-dashed border-[#6e7fb8] bg-card px-2.5 py-0.5 text-[13px] font-semibold text-brand">{t.soon}</span>
-          <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-brand">{t.eyebrow}</span>
-        </div>
-        <SectionTitle className="mt-4 text-night">{t.title}</SectionTitle>
-        <p className="m-0 mt-4 max-w-[720px] text-[#2e3566]">{t.text}</p>
-        <ol className="m-0 mt-10 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-3 p-0">
-          {t.steps.map(([a, b], i) => (
-            <li key={a} className="rounded-[10px] bg-card p-6">
-              <div aria-hidden="true" className="text-[32px] font-bold leading-none text-brand-blue">
-                {i + 1}
-              </div>
-              <div className="mt-3.5 font-bold">{a}</div>
-              <div className="mt-1 text-[15px] text-ink-2">{b}</div>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );
@@ -157,69 +161,90 @@ export function Bridge({ locale }: { locale: Locale }) {
 
 /* ---------------------------------------------------------------- company */
 
+/*
+ * 1995 is when PigPlan's technology began, not the company's founding (WiseLake, Inc. 2022).
+ * Web/mobile 2005 and cloud 2020 confirmed on 2026-10-21. The EZFarm spin-off line and the
+ * NanoTrans year are left out until corporate records / the product owner confirm them.
+ */
 const CO = {
   ko: {
-    eyebrow: "회사",
-    title: ["1995년 서울대 연구소에서", "시작했습니다"],
+    eyebrow: "회사소개",
+    title: ["1995년의 기술에서,", "AI 시대의 서비스로."],
     history: [
-      ["1995", "서울대 연구소에서 피그플랜 최초 개발"],
-      ["1998", "농가 보급 시작"],
-      ["2020", "클라우드 전환 (pigplan.io)"],
-      ["2022", "이지팜 피그컬처 사업부에서 분사, 주식회사 와이즈레이크 설립"],
-      ["2026", "해외용 PigOS 출시(7월) · 피그플랜 AI 서비스 · NanoTrans"],
+      ["1995", "피그플랜 기술 개발 시작"],
+      ["2005", "피그플랜 웹·모바일 서비스 출시"],
+      ["2020", "피그플랜 클라우드 서비스 개시"],
+      ["2022", "㈜와이즈레이크 설립"],
+      ["2026", "PigOS 글로벌 출시 · PigPlan AI 확장"],
     ],
-    rows: { name: "상호", ceo: "대표", founded: "설립", products: "제품" },
-    products: ["피그플랜 · 국내 · 이 사이트", "PigOS · 해외 · pigos.io", "NanoTrans · nanotrans.io"],
+    rows: { name: "상호", ceo: "대표", founded: "법인 설립", address: "주소", email: "이메일" },
   },
   en: {
     eyebrow: "Company",
-    title: ["It started in 1995,", "at a Seoul National University lab"],
+    title: ["From PigPlan's Beginnings in 1995", "to the AI Era."],
     history: [
-      ["1995", "PigPlan first built at a Seoul National University lab"],
-      ["1998", "Rolled out to farms"],
-      ["2020", "Moved to the cloud (pigplan.io)"],
-      ["2022", "Spun off from EZFarm's PigCulture division as WiseLake, Inc."],
-      ["2026", "PigOS for farms abroad (July) · PigPlan AI services · NanoTrans"],
+      ["1995", "PigPlan technology development begins"],
+      ["2005", "PigPlan web and mobile service launches"],
+      ["2020", "PigPlan cloud service launches"],
+      ["2022", "WiseLake, Inc. is founded"],
+      ["2026", "PigOS launches globally · PigPlan AI expands"],
     ],
-    rows: { name: "Company", ceo: "CEO", founded: "Founded", products: "Products" },
-    products: ["PigPlan · Korea", "PigOS · worldwide · pigos.io", "NanoTrans · nanotrans.io"],
+    rows: { name: "Company", ceo: "CEO", founded: "Incorporated", address: "Address", email: "Email" },
   },
 };
 
 export function Company({ locale }: { locale: Locale }) {
   const t = CO[locale];
+  // Draft-A layout with type about 2px larger (chosen 2026-10-21); the shared section label since 2026-10-22.
   return (
-    <section id="company" className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-x-16 gap-y-12 px-6 pt-[clamp(72px,9vw,128px)]">
-      <div>
-        <Eyebrow className="text-muted">{t.eyebrow}</Eyebrow>
-        <SectionTitle className="mt-4">
-          {t.title[0]}
-          <br />
-          {t.title[1]}
-        </SectionTitle>
-        <ol className="m-0 mt-9 list-none border-t border-line p-0">
-          {t.history.map(([y, e]) => (
-            <li key={y} className="grid grid-cols-[72px_1fr] gap-4 border-b border-line py-3.5">
-              <b className="text-brand">{y}</b>
-              <span>{e}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="self-end rounded-[12px] border border-line bg-card p-8">
-        <dl className="m-0 grid grid-cols-[96px_1fr] gap-x-4 gap-y-3.5 text-[15px]">
-          <dt className="text-muted">{t.rows.name}</dt>
-          <dd className="m-0">{COMPANY.name[locale]}</dd>
-          <dt className="text-muted">{t.rows.ceo}</dt>
-          <dd className="m-0">{COMPANY.ceo[locale]}</dd>
-          <dt className="text-muted">{t.rows.founded}</dt>
-          <dd className="m-0">{COMPANY.founded[locale]}</dd>
-          <dt className="text-muted">{t.rows.products}</dt>
-          <dd className="m-0 grid gap-1.5">
-            <a href={localePath(locale, "/pigplan")}>{t.products[0]}</a>
-            <a href={LINKS.pigos}>{t.products[1]}</a>
-            <a href={locale === "ko" ? LINKS.nanotransKo : LINKS.nanotrans}>{t.products[2]}</a>
-          </dd>
+    <section id="company">
+      <div className="mx-auto max-w-[1200px] px-6 py-[clamp(64px,9vw,128px)]">
+        <div className="grid grid-cols-1 gap-x-16 gap-y-12 min-[1000px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div>
+            <SectionLabel>{t.eyebrow}</SectionLabel>
+            <h2 className="m-0 mt-8 text-balance text-[clamp(32px,4vw,50px)] font-bold leading-[1.18] tracking-[-0.035em]">
+              {t.title[0]}
+              <br />
+              {t.title[1]}
+            </h2>
+          </div>
+          <ol className="m-0 list-none self-end p-0">
+            {t.history.map(([y, e], i) => (
+              <li key={e} className="relative grid grid-cols-[96px_1fr] gap-4 pb-7 last:pb-0">
+                {i < t.history.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[5px] top-[20px] w-px bg-line" />}
+                <span className="flex items-center gap-4 text-[20px] font-bold tabular-nums text-brand">
+                  <span aria-hidden="true" className="h-[11px] w-[11px] flex-none rounded-full border-2 border-brand bg-paper" />
+                  {y}
+                </span>
+                <span className="text-[19px] text-ink">{e}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <dl className="m-0 mt-14 grid grid-cols-1 gap-x-10 gap-y-5 rounded-[8px] border border-line bg-card p-[clamp(24px,3.5vw,40px)] text-[18px] sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <dt className="text-muted">{t.rows.name}</dt>
+            <dd className="m-0 mt-1 font-semibold">{COMPANY.short[locale]}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">{t.rows.ceo}</dt>
+            <dd className="m-0 mt-1 font-semibold">{COMPANY.ceo[locale]}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">{t.rows.founded}</dt>
+            <dd className="m-0 mt-1 font-semibold">{COMPANY.founded[locale]}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">{t.rows.email}</dt>
+            <dd className="m-0 mt-1 font-semibold">
+              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+            </dd>
+          </div>
+          <div className="sm:col-span-2 lg:col-span-4">
+            <dt className="text-muted">{t.rows.address}</dt>
+            <dd className="m-0 mt-1 font-semibold">{COMPANY.address[locale]}</dd>
+          </div>
         </dl>
       </div>
     </section>
@@ -229,51 +254,87 @@ export function Company({ locale }: { locale: Locale }) {
 /* ---------------------------------------------------------------- news */
 
 const NW = {
-  ko: { title: "소식", all: "전체 보기 →", press: "보도된 곳", via: "보도" },
-  en: { title: "News", all: "All news →", press: "Covered by", via: "" },
+  ko: { title: "소식", all: "전체 보기", via: "보도" },
+  en: { title: "News", all: "All news", via: "" },
 };
 
-export function NewsCard({ locale, item, headingLevel = 3 }: { locale: Locale; item: (typeof NEWS)[number]; headingLevel?: 2 | 3 }) {
+/** One news item as a ruled row: date · product · title (· summary) · outlet. */
+export function NewsCard({ locale, item, headingLevel = 3, summary = true }: { locale: Locale; item: (typeof NEWS)[number]; headingLevel?: 2 | 3; summary?: boolean }) {
   const H = headingLevel === 2 ? "h2" : "h3";
   const t = NW[locale];
-  const product = item.product === "pigos" ? "PigOS" : item.product === "pigplan" ? (locale === "ko" ? "피그플랜" : "PigPlan") : item.product === "nanotrans" ? "NanoTrans" : locale === "ko" ? "회사" : "Company";
+  const product = productLabel(item, locale);
   const outlets = item.outlets.map((o) => o.name).join(" · ");
   return (
-    <a href={item.outlets[0].url} target="_blank" rel="noopener" className="block rounded-[12px] border border-line bg-card p-7 text-ink hover:border-line-strong hover:text-ink">
-      <div className="text-[13px] text-muted">
-        <time dateTime={item.date}>{formatNewsDate(item, locale)}</time> · {product}
-      </div>
-      <H className="m-0 mt-2.5 text-[19px] font-bold leading-[1.4]">{item.title[locale]}</H>
-      <p className="m-0 mt-2 text-[15px] text-ink-2">{item.summary[locale]}</p>
-      <div className="mt-3.5 text-[13px] text-muted">
+    <a
+      href={item.outlets[0].url}
+      target="_blank"
+      rel="noopener"
+      className="group grid grid-cols-1 gap-x-8 gap-y-1 border-b border-line py-6 text-ink hover:text-ink md:grid-cols-[150px_110px_1fr_auto] md:items-baseline"
+    >
+      <time dateTime={item.date} className="text-[15px] tabular-nums text-muted">
+        {formatNewsDate(item, locale)}
+      </time>
+      <span className="text-[14px] font-semibold uppercase tracking-[0.08em] text-brand-dark">{product}</span>
+      <span>
+        <H className="m-0 text-[clamp(17px,1.6vw,19px)] font-semibold leading-[1.45] group-hover:underline group-hover:underline-offset-4">{item.title[locale]}</H>
+        {summary && <p className="m-0 mt-1.5 text-[15px] text-ink-2">{item.summary[locale]}</p>}
+      </span>
+      <span className="text-[14px] text-muted md:text-right">
         {outlets}
         {t.via ? ` ${t.via}` : ""}
-      </div>
+      </span>
     </a>
   );
 }
 
+function productLabel(item: (typeof NEWS)[number], locale: Locale) {
+  return item.product === "pigos" ? "PigOS" : item.product === "pigplan" ? (locale === "ko" ? "피그플랜" : "PigPlan") : item.product === "nanotrans" ? "NanoTrans" : locale === "ko" ? "회사" : "Company";
+}
+
+/** Home news: the newest item as a lead story, the next three as a short list (option C, 2026-10-21); every item names its outlets under the title (2026-10-22). */
 export function News({ locale }: { locale: Locale }) {
   const t = NW[locale];
-  const items = sortedNews().slice(0, 4);
+  const [lead, ...rest] = sortedNews().slice(0, 4);
+  const outlets = (n: (typeof NEWS)[number]) => n.outlets.map((o) => o.name).join(" · ") + (t.via ? ` ${t.via}` : "");
   return (
-    <section id="news" className="mx-auto max-w-[1200px] px-6 pt-[clamp(72px,9vw,128px)]">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <SectionTitle>{t.title}</SectionTitle>
-        <TextLink href={localePath(locale, "/news")}>{t.all}</TextLink>
-      </div>
-      <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-5">
-        {items.map((n) => (
-          <NewsCard key={n.date + n.title.ko} locale={locale} item={n} />
-        ))}
-      </div>
-      <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-2 border-y border-line py-4 text-[14px]">
-        <span className="font-semibold text-muted">{t.press}</span>
-        {PRESS_OUTLETS.map((o) => (
-          <a key={o.name} href={o.url} target="_blank" rel="noopener" className="font-semibold text-ink-2 hover:text-ink">
-            {o.name}
+    <section id="news" className="bg-paper">
+      <div className="mx-auto max-w-[1200px] px-6 py-[clamp(60px,8vw,112px)]">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <SectionTitle>{t.title}</SectionTitle>
+          <TextLink href={localePath(locale, "/news")}>
+            {t.all}
+            <ArrowIcon />
+          </TextLink>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 border-t border-ink lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+          <a href={lead.outlets[0].url} target="_blank" rel="noopener" className="group block border-b border-line py-8 text-ink hover:text-ink lg:border-b-0 lg:border-r lg:pr-12">
+            <p className="m-0 text-[15px] text-muted">
+              <time dateTime={lead.date}>{formatNewsDate(lead, locale)}</time>
+              <span className="mx-2">·</span>
+              <span className="font-semibold text-brand-dark">{productLabel(lead, locale)}</span>
+            </p>
+            <h3 className="m-0 mt-4 text-balance text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.3] tracking-[-0.025em] group-hover:underline group-hover:underline-offset-[6px]">{lead.title[locale]}</h3>
+            <p className="m-0 mt-4 text-[17px] leading-[1.65] text-ink-2">{lead.summary[locale]}</p>
+            <p className="m-0 mt-6 text-[15px] text-muted">{outlets(lead)}</p>
           </a>
-        ))}
+          <ul className="m-0 list-none p-0 lg:pl-12">
+            {rest.map((n) => (
+              <li key={n.date + n.title.ko} className="border-b border-line last:border-b-0">
+                <a href={n.outlets[0].url} target="_blank" rel="noopener" className="group block py-6 text-ink hover:text-ink">
+                  <p className="m-0 text-[14px] text-muted">
+                    <time dateTime={n.date}>{formatNewsDate(n, locale)}</time>
+                    <span className="mx-2">·</span>
+                    <span className="font-semibold text-brand-dark">{productLabel(n, locale)}</span>
+                  </p>
+                  <h3 className="m-0 mt-2 text-[18px] font-semibold leading-[1.45] group-hover:underline group-hover:underline-offset-4">{n.title[locale]}</h3>
+                  <p className="m-0 mt-2 text-[14px] text-muted">{outlets(n)}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
     </section>
   );
@@ -284,52 +345,41 @@ export function News({ locale }: { locale: Locale }) {
 const CT = {
   ko: {
     title: "무엇을 도와드릴까요?",
-    lede: `모든 문의는 메일로 받습니다. 아래 폼을 쓰시거나 ${COMPANY.email}로 직접 보내 주세요.`,
-    routes: [
-      { title: "피그플랜 도입 · 데모", sub: "문의 폼에서 “피그플랜 도입·데모”를 골라 보내 주세요", href: "?inquiry=pigplan#contact-form" },
-      { title: "PigOS 해외 유통 · 제휴", sub: "해외 농가와 거래하는 사료·동물약품·컨설팅 기업", href: "?inquiry=pigos-partner#contact-form" },
-      { title: "NanoTrans", sub: "nanotrans.io 문의 페이지", href: LINKS.nanotransContact },
-    ],
+    body: ["서비스 도입, 기술 협력, 사업 제휴 등 궁금한 사항을 남겨 주세요."],
+    mail: "메일로 직접 보내셔도 됩니다",
   },
   en: {
     title: "How can we help?",
-    lede: `We take all inquiries by email. Use the form or write to ${COMPANY.email}.`,
-    routes: [
-      { title: "PigOS for your farm", sub: "Start free on pigos.io", href: LINKS.pigosStart },
-      { title: "PigOS distribution partners", sub: "Feed, animal-health and consulting companies serving farms abroad", href: "?inquiry=pigos-partner#contact-form" },
-      { title: "NanoTrans", sub: "nanotrans.io contact page", href: LINKS.nanotransContact },
-    ],
+    body: ["Questions about our products, technology or partnerships? Send us a message."],
+    mail: "Or email us directly",
   },
 };
 
+/** Draft-A layout (chosen 2026-10-21): title and email on the left, the form card on the right. */
 export function Contact({ locale }: { locale: Locale }) {
   const t = CT[locale];
   return (
-    <section id="contact" className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-x-16 gap-y-12 px-6 py-[clamp(72px,9vw,128px)]">
-      <div>
-        <SectionTitle>{t.title}</SectionTitle>
-        <p className="m-0 mt-4 text-ink-2">{t.lede}</p>
-        <div className="mt-8 grid gap-3">
-          {t.routes.map((r) => (
-            <a
-              key={r.title}
-              href={r.href}
-              {...(r.href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}
-              className="flex items-center justify-between gap-4 rounded-[10px] border border-line bg-card px-5 py-[18px] text-ink hover:border-line-strong hover:text-ink"
-            >
-              <span>
-                <b>{r.title}</b>
-                <br />
-                <span className="text-[14px] text-muted">{r.sub}</span>
-              </span>
-              <span aria-hidden="true" className="text-link">
-                →
-              </span>
+    <section id="contact" className="bg-paper">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-16 gap-y-12 px-6 py-[clamp(64px,9vw,128px)] min-[1000px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+        <div>
+          <h2 className="m-0 text-balance text-[clamp(30px,4vw,48px)] font-bold leading-[1.18] tracking-[-0.035em]">{t.title}</h2>
+          <div className="mt-6 grid gap-1 text-[17px] text-ink-2">
+            {t.body.map((p) => (
+              <p key={p} className="m-0">
+                {p}
+              </p>
+            ))}
+          </div>
+          <p className="m-0 mt-8 text-[16px] text-muted">
+            {t.mail}
+            <br />
+            <a href={`mailto:${COMPANY.email}`} className="text-[18px] font-semibold">
+              {COMPANY.email}
             </a>
-          ))}
+          </p>
         </div>
+        <ContactForm locale={locale} />
       </div>
-      <ContactForm locale={locale} />
     </section>
   );
 }

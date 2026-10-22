@@ -4,8 +4,8 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(
   "ko",
   "/pigplan",
-  "피그플랜 AI 스위트 — 양돈경영관리 표준 시스템과 AI | 와이즈레이크",
-  "국내 양돈 전산관리 점유율 60.9%, 690개 농장이 쓰는 표준 시스템 피그플랜 위에 인사이트·톡·비즈 세 가지 AI가 농장의 결정을 함께합니다.",
+  "피그플랜 · PigPlan AI — 양돈 농장관리와 AI | 와이즈레이크",
+  "1995년에 시작한 양돈 농장관리 시스템 피그플랜과 양돈 전문 AI PigPlan AI. 생산·사양·경영 기록 위에서 위험을 발견하고 성적을 이해하도록 돕습니다.",
 );
 
 export default function Page() {
