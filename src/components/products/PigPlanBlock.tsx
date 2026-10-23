@@ -16,6 +16,7 @@ import { ArrowIcon, ButtonLink, SectionLabel } from "../ui";
  * real report structure, sample numbers from the PigPlan intro deck, placeholder farm name. No
  * visible caption (dropped 2026-10-21): the images already say "OO농장 (예시)" and the alt text
  * says "예시". Set it to null to show the image-needed slot instead.
+ * Indigo draft 2026-10-23: the PigPlan AI card is light (surface + tint border), not navy.
  */
 const REPORT_IMAGE: string | null = "/images/b/pigplan-ai-weekly-report.jpg";
 
@@ -27,7 +28,8 @@ const T = {
     sub: ["30년 이상 축적된 양돈 기록 위에,", "농장의 위험을 발견하고 더 나은 결정을 돕는 AI를 더합니다."],
     plan: {
       name: "PigPlan",
-      title: "정확한 기록, 체계적인 농장관리",
+      // Two lines on every screen: "PigPlan — 정확한 기록," / "체계적인 농장관리" (2026-10-23).
+      title: ["정확한 기록,", "체계적인 농장관리"],
       foot: "농장의 기록부터 경영관리까지.",
       features: [
         { text: "번식·비육·출하관리" },
@@ -59,7 +61,7 @@ const T = {
     sub: ["On more than 30 years of pig-farm records,", "we add AI that spots farm risks and supports better decisions."],
     plan: {
       name: "PigPlan",
-      title: "Accurate Records, Organized Farm Management",
+      title: ["Accurate Records,", "Organized Farm Management"],
       foot: "From farm records to business management.",
       features: [
         { text: "Breeding, finishing and shipment management" },
@@ -100,7 +102,7 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
       <SectionLabel n={headingLevel === 2 ? t.n : undefined}>{t.eyebrow}</SectionLabel>
       <div className="mt-10 grid grid-cols-1 items-end gap-x-16 gap-y-6 min-[1000px]:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <H className="m-0 text-[clamp(34px,5vw,64px)] font-bold leading-[1.1] tracking-[-0.045em]">{t.title}</H>
-        <p className="m-0 text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
+        <p className="m-0 text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-body">
           {t.sub[0]}
           <br className="max-sm:hidden" /> {t.sub[1]}
         </p>
@@ -109,11 +111,13 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
       {/* One brand section: PigPlan (foundation, 40%) + PigPlan AI (60%). */}
       <div className="mt-14 grid grid-cols-1 border-t border-line min-[1000px]:grid-cols-[minmax(0,4fr)_minmax(0,6fr)]">
         <article className="flex flex-col pb-12 pt-10 min-[1000px]:pr-12">
-          <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-brand">{t.plan.name}</p>
+          <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">{t.plan.name}</p>
           <PanelH className="m-0 mt-4 text-[clamp(24px,2.3vw,30px)] font-bold leading-[1.3] tracking-[-0.03em]">
-            {t.plan.name} — {t.plan.title}
+            {t.plan.name} — {t.plan.title[0]}
+            <br />
+            {t.plan.title[1]}
           </PanelH>
-          <p className="m-0 mt-3 text-[17px] text-ink-2">{t.plan.foot}</p>
+          <p className="m-0 mt-3 text-[17px] text-body">{t.plan.foot}</p>
           <ul className="m-0 mt-8 list-none border-t border-line p-0">
             {t.plan.features.map((f) => (
               <li key={f.text} className="flex items-baseline justify-between gap-4 border-b border-line py-3.5 text-[16px]">
@@ -123,33 +127,33 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
             ))}
           </ul>
           <figure className="m-0 mt-10">
-            <div className="overflow-hidden rounded-[8px] bg-paper pl-[5%] pt-[5%]">
+            <div className="overflow-hidden rounded-[8px] bg-surface pl-[5%] pt-[5%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/b/pigplan-web-mobile.png" alt={t.plan.mobileAlt} width={2400} height={1520} loading="lazy" decoding="async" className="block h-auto w-full" />
             </div>
           </figure>
         </article>
 
-        <article className="flex flex-col rounded-[8px] bg-night px-[clamp(24px,4vw,56px)] py-[clamp(36px,4vw,56px)] text-white">
-          <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-ai-night">{t.ai.name}</p>
+        <article className="flex flex-col rounded-[8px] border border-tint bg-surface px-[clamp(24px,4vw,56px)] py-[clamp(36px,4vw,56px)] text-ink">
+          <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">{t.ai.name}</p>
           <PanelH className="m-0 mt-4 text-[clamp(28px,3vw,40px)] font-bold leading-[1.22] tracking-[-0.035em]">
             {t.ai.name} — {t.ai.title}
           </PanelH>
-          <p className="m-0 mt-4 text-[18px] leading-[1.6] text-night-text">
+          <p className="m-0 mt-4 text-[18px] leading-[1.6] text-body">
             {t.ai.sub[0]}
             <br className="max-sm:hidden" /> {t.ai.sub[1]}
           </p>
 
-          <ol className="m-0 mt-10 list-none border-t border-night-line p-0">
+          <ol className="m-0 mt-10 list-none border-t border-tint p-0">
             {(t.ai.values as Value[]).map((v, i) => (
-              <li key={v.title} className="grid grid-cols-[44px_1fr] gap-x-2 border-b border-night-line py-6">
-                <span className="pt-1 text-[14px] font-semibold tabular-nums text-ai-night">0{i + 1}</span>
+              <li key={v.title} className="grid grid-cols-[44px_1fr] gap-x-2 border-b border-tint py-6">
+                <span className="pt-1 text-[14px] font-semibold tabular-nums text-accent">0{i + 1}</span>
                 <div>
                   <p className="m-0 flex flex-wrap items-baseline gap-x-3 text-[clamp(20px,2vw,24px)] font-bold tracking-[-0.02em]">
                     {v.title}
-                    {v.note && <span className="text-[14px] font-medium tracking-normal text-night-text">{v.note}</span>}
+                    {v.note && <span className="text-[14px] font-medium tracking-normal text-body">{v.note}</span>}
                   </p>
-                  <p className="m-0 mt-2 text-[15px] text-night-text">{v.items.join(" · ")}</p>
+                  <p className="m-0 mt-2 text-[15px] text-body">{v.items.join(" · ")}</p>
                 </div>
               </li>
             ))}
@@ -160,8 +164,8 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
               // eslint-disable-next-line @next/next/no-img-element
               <img src={REPORT_IMAGE} alt={t.ai.reportAlt} width={2400} height={1500} loading="lazy" decoding="async" className="block h-auto w-full" />
             ) : (
-              <div className="flex aspect-[16/9] flex-col items-center justify-center gap-1 border border-dashed border-night-line px-6 text-center text-[14px] text-night-text">
-                <span className="font-semibold text-white">{t.ai.reportNeeded[0]}</span>
+              <div className="flex aspect-[16/9] flex-col items-center justify-center gap-1 border border-dashed border-tint px-6 text-center text-[14px] text-body">
+                <span className="font-semibold text-ink">{t.ai.reportNeeded[0]}</span>
                 <span>{t.ai.reportNeeded[1]}</span>
               </div>
             )}

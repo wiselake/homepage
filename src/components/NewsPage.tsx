@@ -8,7 +8,7 @@ export default function NewsPage({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-[clamp(56px,8vw,112px)]">
       <SectionTitle as="h1">{locale === "ko" ? "소식" : "News"}</SectionTitle>
-      <p className="m-0 mt-5 max-w-[640px] text-[18px] text-ink-2">
+      <p className="m-0 mt-5 max-w-[640px] text-[18px] text-body">
         {locale === "ko" ? "와이즈레이크와 제품에 관한 보도를 모았습니다. 각 항목은 원문 기사로 연결됩니다." : "Coverage of WiseLake and its products. Each item links to the original article."}
       </p>
       <div className="mt-12 border-t border-ink">

@@ -47,7 +47,7 @@ export default function MobileMenu({ locale, items, label }: { locale: Locale; i
     >
       <summary
         aria-label={label}
-        className="-mr-2.5 flex size-11 cursor-pointer list-none items-center justify-center rounded-[8px] text-ink hover:text-brand [&::-webkit-details-marker]:hidden"
+        className="-mr-2.5 flex size-11 cursor-pointer list-none items-center justify-center rounded-[8px] text-ink hover:text-accent [&::-webkit-details-marker]:hidden"
       >
         <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path className="group-open:hidden" d="M4 7h16M4 12h16M4 17h16" />
@@ -57,7 +57,7 @@ export default function MobileMenu({ locale, items, label }: { locale: Locale; i
       <div className="absolute inset-x-0 top-full border-b border-line bg-white px-6 pb-4 pt-2">
         <nav aria-label={label} className="grid text-[16px]">
           {items.map((n) => (
-            <a key={n.href} href={n.href} className="flex min-h-11 items-center border-b border-line-soft text-ink hover:text-brand">
+            <a key={n.href} href={n.href} className="flex min-h-11 items-center border-b border-line text-ink hover:text-accent">
               {n.label}
             </a>
           ))}

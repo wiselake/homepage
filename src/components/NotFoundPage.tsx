@@ -24,7 +24,7 @@ export default function NotFoundPage({ locale }: { locale: Locale }) {
     <section className="mx-auto max-w-[1200px] px-6 py-[clamp(72px,10vw,144px)]">
       <Eyebrow>404</Eyebrow>
       <h1 className="m-0 mt-3 text-[clamp(30px,4vw,40px)] font-bold tracking-[-0.03em]">{t.title}</h1>
-      <p className="m-0 mt-4 max-w-[560px] text-ink-2">{t.body}</p>
+      <p className="m-0 mt-4 max-w-[560px] text-body">{t.body}</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <ButtonLink href={localePath(locale, "/")}>{t.home}</ButtonLink>
         <ButtonLink href={contactHref(locale)} variant="outline">

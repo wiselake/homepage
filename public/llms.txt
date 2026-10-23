@@ -4,7 +4,7 @@
 
 ## Products
 
-- [PigPlan and PigPlan AI](https://wiselake.ai/pigplan): PigPlan is a pig-farm management system for Korean farms (technology since 1995, about 700 farms; web, Android and iOS). PigPlan Biz is a business-management add-on (opens December 2026). PigPlan AI is AI for pig farms: weekly and monthly reports with nationwide comparison are live; chat questions open December 2026. Service page: https://pigplan.io/landing/service.do. Korea only.
+- [PigPlan and PigPlan AI](https://wiselake.ai/pigplan): PigPlan is a pig-farm management system for Korean farms (technology since 1995, 700 farms; web, Android and iOS). PigPlan Biz is a business-management add-on (opens December 2026). PigPlan AI is AI for pig farms: weekly and monthly reports with nationwide comparison are live; chat questions open December 2026. Service page: https://pigplan.io/landing/service.do. Korea only.
 - [PigOS](https://pigos.io): Operating platform for pig farms worldwide — farm records, performance analytics, country benchmarks and early warnings. Core is free; 7 languages; Android and iOS apps (iOS since October 2026).
 - [NanoTrans](https://nanotrans.io): Technology that measures how AI uses content, lets content owners manage access and usage policies, and develops content value exchange models. In development, piloting with a Korean IT and business news publisher.
 

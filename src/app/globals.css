@@ -108,45 +108,39 @@
 }
 
 /*
- * WiseLake design tokens (2026-10-20 brand refresh).
- * Brand Blue #176BC1 · Deep Navy #15254B · Background #F5F8FC · AI Accent #12A6A0.
- * The same blue and Pretendard are used on the PigPlan service page (pigplan.io).
- * AI Accent is 3.0:1 on white, so it is for icons, rules and large type only;
- * small teal text uses --color-ai-text (5.6:1 on white).
+ * WiseLake design tokens — "Midnight Indigo · 밝은 톤" (2026-10-23 draft).
+ * No dark sections: dark ink (#111233) is only a button fill. Indigo accent (#4F46E5) is for small
+ * things only — eyebrows, labels, links, numbers, rules — never a large area. It is 6.3:1 on white
+ * and 5.9:1 on --color-surface, so it passes at body size. --color-accent-soft (#A5B4FC) fails as
+ * text on light backgrounds: decorative dots only.
+ * One exception to "no dark sections" (2026-10-23, option B): PigOS is the single dark section, a
+ * clear pause mid-page. On it the indigo is only 2.9:1, so numbers and focus rings use accent-soft
+ * (9.1:1) and its button is accent-soft with ink text. The trust band sits on --color-tint with
+ * --color-tint-line rules.
+ * Accent details (2026-10-23): the hero's "AI 시대의 가치" and main button are the only large indigo;
+ * the market labels are tint chips; PigOS features carry a short accent-soft mark.
  */
 @theme {
   --font-sans: "Pretendard Variable", Pretendard, "Pretendard Fallback Arial", "Pretendard Fallback Roboto", "Pretendard Fallback DejaVu", "Pretendard Fallback Noto", "Pretendard Fallback WenQuanYi", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 
-  /* surfaces & text */
-  --color-paper: #f5f8fc;
-  --color-card: #ffffff;
-  --color-linen: #edf2f8;
-  --color-chip: #eaf0f7;
-  --color-wash: #f9fbfe;
-  --color-ink: #15254b;
-  --color-ink-2: #3f4b66;
+  --color-ink: #111233; /* headings, strong text, dark rules */
+  --color-primary: #111233; /* dark button fill (white text) */
+  --color-primary-hover: #262863; /* dark button hover, so only the hero button is ever filled indigo */
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca; /* link and button hover */
+  --color-accent-soft: #a5b4fc; /* decorative dots only, never text */
+  --color-tint: #e0e7ff; /* rules and borders on the light sections; the trust band background */
+  --color-tint-line: #c7d2fe; /* rules on the tint band */
+  --color-surface: #f6f7fe; /* light section background */
+  --color-night: #111233; /* the one dark section (PigOS) */
+  --color-night-sub: #a9b0cf; /* secondary text on night (8.5:1) */
+  --color-night-line: #3a3d72; /* rules on night */
+  --color-body: #4a5672;
   --color-muted: #5a6680;
-  --color-line: #dce4ef;
-  --color-line-soft: #e8edf5;
-  --color-line-strong: #b9c5d8;
-
-  /* brand */
-  --color-brand: #176bc1;
-  --color-brand-dark: #1259a3;
-  --color-link: #176bc1;
-  --color-brand-tint: #eaf2fb;
-  --color-brand-line: #cfe0f3;
-  --color-brand-soft: #9cc3ea;
-  --color-night: #15254b;
-  --color-night-2: #1e3263;
-  --color-night-line: #34487a;
-  --color-night-text: #b8c4de;
-
-  /* AI accent */
-  --color-ai: #12a6a0;
-  --color-ai-text: #0b7470;
-  --color-ai-tint: #e7f6f5;
-  --color-ai-night: #5fd1cb;
+  --color-line: #e6eaf0; /* rules on white */
+  --color-divider: #dce3ec; /* news list rules */
+  --color-input-border: #cbd3e0;
+  --color-card: #ffffff;
 
   /* meaning colours */
   --color-alert: #c2410c;
@@ -171,21 +165,24 @@
     -webkit-font-smoothing: antialiased;
   }
   a {
-    color: var(--color-link);
+    color: var(--color-accent);
     text-decoration: none;
   }
   a:hover {
-    color: var(--color-brand-dark);
+    color: var(--color-accent-hover);
   }
   :focus-visible {
-    outline: 2px solid var(--color-link);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+  }
+  .bg-night :focus-visible {
+    outline-color: var(--color-accent-soft);
   }
   section[id],
   div[id] {
     scroll-margin-top: 88px;
   }
   ::selection {
-    background: var(--color-brand-line);
+    background: var(--color-tint);
   }
 }

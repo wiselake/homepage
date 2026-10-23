@@ -37,7 +37,7 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
           <ol className="m-0 mt-6 grid list-none grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-8 border-t border-ink p-0">
             {t.functions.map((f, i) => (
               <li key={f} className="border-b border-line py-4">
-                <span className="mr-2 font-bold text-brand">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mr-2 font-bold text-accent">{String(i + 1).padStart(2, "0")}</span>
                 {f}
               </li>
             ))}
@@ -48,7 +48,7 @@ export default function PigPlanPage({ locale }: { locale: Locale }) {
           <ol className="m-0 mt-6 list-none border-t border-ink p-0">
             {t.history.map(([y, e]) => (
               <li key={y} className="grid grid-cols-[72px_1fr] gap-4 border-b border-line py-3.5">
-                <b className="text-brand">{y}</b>
+                <b className="text-accent">{y}</b>
                 <span>{e}</span>
               </li>
             ))}

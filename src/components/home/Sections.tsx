@@ -89,7 +89,7 @@ export function ContentValue({ locale }: { locale: Locale }) {
             <br />
             {t.title[1]}
           </SectionTitle>
-          <p className="m-0 mt-6 max-w-[900px] text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-ink-2">
+          <p className="m-0 mt-6 max-w-[900px] text-[clamp(17px,1.6vw,20px)] leading-[1.6] text-body">
             {t.body[0]}
             <br className="max-lg:hidden" /> {t.body[1]}
           </p>
@@ -102,7 +102,7 @@ export function ContentValue({ locale }: { locale: Locale }) {
             <h3 className="m-0 mt-3 text-balance text-[clamp(20px,2vw,24px)] font-bold leading-[1.4] tracking-[-0.02em]">{t.problem.title}</h3>
             <ul className="m-0 mt-5 list-none p-0">
               {t.problem.items.map((it) => (
-                <li key={it} className="border-t border-line py-3 text-[16px] text-ink-2">
+                <li key={it} className="border-t border-line py-3 text-[16px] text-body">
                   {it}
                 </li>
               ))}
@@ -111,16 +111,16 @@ export function ContentValue({ locale }: { locale: Locale }) {
           <div className="py-8 lg:pl-12">
             <p className={label}>{t.now.label}</p>
             <p className="m-0 mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-              <span className="text-[clamp(44px,5vw,64px)] font-bold leading-none tracking-[-0.04em] text-brand">{t.now.stat}</span>
-              <span className="text-[16px] text-ink-2">{t.now.statText}</span>
+              <span className="text-[clamp(44px,5vw,64px)] font-bold leading-none tracking-[-0.04em] text-accent">{t.now.stat}</span>
+              <span className="text-[16px] text-body">{t.now.statText}</span>
             </p>
-            <a href={t.now.statSource.url} target="_blank" rel="noopener" className="mt-2 inline-block text-[13px] text-muted underline underline-offset-2 hover:text-ink">
+            <a href={t.now.statSource.url} target="_blank" rel="noopener" className="mt-2 inline-block text-[13px] text-accent underline underline-offset-2 hover:text-accent-hover">
               {t.now.statSource.name}
             </a>
-            <p className="m-0 mt-6 border-t border-line pt-5 text-[16px] leading-[1.6] text-ink-2">{t.now.deal}</p>
+            <p className="m-0 mt-6 border-t border-line pt-5 text-[16px] leading-[1.6] text-body">{t.now.deal}</p>
             <p className="m-0 mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">
               {t.now.dealSources.map((d) => (
-                <a key={d.url} href={d.url} target="_blank" rel="noopener" className="text-muted underline underline-offset-2 hover:text-ink">
+                <a key={d.url} href={d.url} target="_blank" rel="noopener" className="text-accent underline underline-offset-2 hover:text-accent-hover">
                   {d.name}
                 </a>
               ))}
@@ -135,12 +135,12 @@ export function ContentValue({ locale }: { locale: Locale }) {
             {t.steps.map((st, i) => (
               <li key={st.name} className="flex items-baseline gap-x-3">
                 {i > 0 && (
-                  <span aria-hidden="true" className="self-center text-muted">
+                  <span aria-hidden="true" className="self-center text-accent">
                     <ArrowIcon />
                   </span>
                 )}
                 <span className="text-[clamp(18px,1.8vw,21px)] font-bold">{st.verb}</span>
-                <span className="text-[16px] text-ink-2">{st.name}</span>
+                <span className="text-[16px] text-body">{st.name}</span>
                 <span className="text-[14px] text-muted">{st.status}</span>
               </li>
             ))}
@@ -148,7 +148,7 @@ export function ContentValue({ locale }: { locale: Locale }) {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-line pt-8">
-          <p className="m-0 text-[16px] text-ink-2">{t.pilot}</p>
+          <p className="m-0 text-[16px] text-body">{t.pilot}</p>
           <ButtonLink href={href} external size="lg" className="max-sm:w-full">
             {t.cta}
             <ArrowIcon />
@@ -177,7 +177,7 @@ const CO = {
       ["2022", "㈜와이즈레이크 설립"],
       ["2026", "PigOS 글로벌 출시 · PigPlan AI 확장"],
     ],
-    rows: { name: "상호", ceo: "대표", founded: "법인 설립", address: "주소", email: "이메일" },
+    rows: { name: "상호", ceo: "대표이사", founded: "법인 설립", address: "주소", email: "이메일" },
   },
   en: {
     eyebrow: "Company",
@@ -211,9 +211,9 @@ export function Company({ locale }: { locale: Locale }) {
           <ol className="m-0 list-none self-end p-0">
             {t.history.map(([y, e], i) => (
               <li key={e} className="relative grid grid-cols-[96px_1fr] gap-4 pb-7 last:pb-0">
-                {i < t.history.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[5px] top-[20px] w-px bg-line" />}
-                <span className="flex items-center gap-4 text-[20px] font-bold tabular-nums text-brand">
-                  <span aria-hidden="true" className="h-[11px] w-[11px] flex-none rounded-full border-2 border-brand bg-paper" />
+                {i < t.history.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[4.5px] top-[20px] w-0.5 bg-tint" />}
+                <span className="flex items-center gap-4 text-[20px] font-bold tabular-nums text-accent">
+                  <span aria-hidden="true" className="h-[11px] w-[11px] flex-none rounded-full border-2 border-accent bg-card" />
                   {y}
                 </span>
                 <span className="text-[19px] text-ink">{e}</span>
@@ -274,10 +274,10 @@ export function NewsCard({ locale, item, headingLevel = 3, summary = true }: { l
       <time dateTime={item.date} className="text-[15px] tabular-nums text-muted">
         {formatNewsDate(item, locale)}
       </time>
-      <span className="text-[14px] font-semibold uppercase tracking-[0.08em] text-brand-dark">{product}</span>
+      <span className="text-[14px] font-semibold uppercase tracking-[0.08em] text-accent">{product}</span>
       <span>
         <H className="m-0 text-[clamp(17px,1.6vw,19px)] font-semibold leading-[1.45] group-hover:underline group-hover:underline-offset-4">{item.title[locale]}</H>
-        {summary && <p className="m-0 mt-1.5 text-[15px] text-ink-2">{item.summary[locale]}</p>}
+        {summary && <p className="m-0 mt-1.5 text-[15px] text-body">{item.summary[locale]}</p>}
       </span>
       <span className="text-[14px] text-muted md:text-right">
         {outlets}
@@ -297,7 +297,7 @@ export function News({ locale }: { locale: Locale }) {
   const [lead, ...rest] = sortedNews().slice(0, 4);
   const outlets = (n: (typeof NEWS)[number]) => n.outlets.map((o) => o.name).join(" · ") + (t.via ? ` ${t.via}` : "");
   return (
-    <section id="news" className="bg-paper">
+    <section id="news" className="bg-surface">
       <div className="mx-auto max-w-[1200px] px-6 py-[clamp(60px,8vw,112px)]">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <SectionTitle>{t.title}</SectionTitle>
@@ -308,24 +308,24 @@ export function News({ locale }: { locale: Locale }) {
         </div>
 
         <div className="mt-10 grid grid-cols-1 border-t border-ink lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-          <a href={lead.outlets[0].url} target="_blank" rel="noopener" className="group block border-b border-line py-8 text-ink hover:text-ink lg:border-b-0 lg:border-r lg:pr-12">
+          <a href={lead.outlets[0].url} target="_blank" rel="noopener" className="group block border-b border-divider py-8 text-ink hover:text-ink lg:border-b-0 lg:border-r lg:pr-12">
             <p className="m-0 text-[15px] text-muted">
               <time dateTime={lead.date}>{formatNewsDate(lead, locale)}</time>
               <span className="mx-2">·</span>
-              <span className="font-semibold text-brand-dark">{productLabel(lead, locale)}</span>
+              <span className="font-semibold text-accent">{productLabel(lead, locale)}</span>
             </p>
             <h3 className="m-0 mt-4 text-balance text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.3] tracking-[-0.025em] group-hover:underline group-hover:underline-offset-[6px]">{lead.title[locale]}</h3>
-            <p className="m-0 mt-4 text-[17px] leading-[1.65] text-ink-2">{lead.summary[locale]}</p>
+            <p className="m-0 mt-4 text-[17px] leading-[1.65] text-body">{lead.summary[locale]}</p>
             <p className="m-0 mt-6 text-[15px] text-muted">{outlets(lead)}</p>
           </a>
           <ul className="m-0 list-none p-0 lg:pl-12">
             {rest.map((n) => (
-              <li key={n.date + n.title.ko} className="border-b border-line last:border-b-0">
+              <li key={n.date + n.title.ko} className="border-b border-divider last:border-b-0">
                 <a href={n.outlets[0].url} target="_blank" rel="noopener" className="group block py-6 text-ink hover:text-ink">
                   <p className="m-0 text-[14px] text-muted">
                     <time dateTime={n.date}>{formatNewsDate(n, locale)}</time>
                     <span className="mx-2">·</span>
-                    <span className="font-semibold text-brand-dark">{productLabel(n, locale)}</span>
+                    <span className="font-semibold text-accent">{productLabel(n, locale)}</span>
                   </p>
                   <h3 className="m-0 mt-2 text-[18px] font-semibold leading-[1.45] group-hover:underline group-hover:underline-offset-4">{n.title[locale]}</h3>
                   <p className="m-0 mt-2 text-[14px] text-muted">{outlets(n)}</p>
@@ -359,11 +359,11 @@ const CT = {
 export function Contact({ locale }: { locale: Locale }) {
   const t = CT[locale];
   return (
-    <section id="contact" className="bg-paper">
+    <section id="contact" className="bg-surface">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-16 gap-y-12 px-6 py-[clamp(64px,9vw,128px)] min-[1000px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
         <div>
           <h2 className="m-0 text-balance text-[clamp(30px,4vw,48px)] font-bold leading-[1.18] tracking-[-0.035em]">{t.title}</h2>
-          <div className="mt-6 grid gap-1 text-[17px] text-ink-2">
+          <div className="mt-6 grid gap-1 text-[17px] text-body">
             {t.body.map((p) => (
               <p key={p} className="m-0">
                 {p}
