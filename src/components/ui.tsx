@@ -3,12 +3,14 @@ import type { ReactNode } from "react";
 /*
  * Draft B design language: corporate and editorial. One 8px corner radius (unified 2026-10-22), no shadows or pills,
  * thin rules and a strict grid; weight comes from type size and real product imagery.
+ * Colour (2026-10-23 indigo draft): every section is light; the dark ink is only a button fill.
  */
 
 const btn = {
-  primary: "bg-night text-white hover:bg-brand hover:text-white",
-  outline: "border border-ink text-ink hover:bg-ink hover:text-white",
-  onNight: "bg-white text-night hover:bg-brand-tint hover:text-night",
+  primary: "bg-primary text-white hover:bg-primary-hover hover:text-white",
+  outline: "border border-ink text-ink hover:bg-primary hover:text-white",
+  // The one indigo-filled button on the page: the hero's main action.
+  accent: "bg-accent text-white hover:bg-accent-hover hover:text-white",
 };
 
 export function ButtonLink({
@@ -55,11 +57,11 @@ export function Eyebrow({ children, className = "text-muted" }: { children: Reac
   return <p className={`m-0 text-[13px] font-semibold uppercase tracking-[0.16em] ${className}`}>{children}</p>;
 }
 
-/** Section number and label on a full-width rule, e.g. "01 — PigPlan · PigPlan AI". */
+/** Section number and label on a full-width rule, e.g. "01 — PigPlan · PigPlan AI". `onNight`: for the dark PigOS section. */
 export function SectionLabel({ n, children, onNight = false }: { n?: string; children: ReactNode; onNight?: boolean }) {
   return (
-    <div className={`flex items-baseline gap-5 border-t pt-5 text-[13px] font-semibold uppercase tracking-[0.16em] ${onNight ? "border-night-line text-night-text" : "border-ink text-ink"}`}>
-      {n && <span className="tabular-nums">{n}</span>}
+    <div className={`flex items-baseline gap-5 border-t pt-5 text-[13px] font-semibold uppercase tracking-[0.16em] ${onNight ? "border-night-line text-night-sub" : "border-ink text-ink"}`}>
+      {n && <span className={`tabular-nums ${onNight ? "text-accent-soft" : "text-accent"}`}>{n}</span>}
       <span>{children}</span>
     </div>
   );

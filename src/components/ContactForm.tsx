@@ -42,7 +42,8 @@ const T = {
   },
 };
 
-const field = "w-full min-h-[46px] rounded-[8px] border border-line-strong bg-card px-3.5 font-[inherit] text-ink";
+// Focus: indigo border plus a 3px indigo ring at 25% in place of the global outline (2026-10-23 draft).
+const field = "w-full min-h-[46px] rounded-[8px] border border-input-border bg-card px-3.5 font-[inherit] text-ink focus:border-accent focus:outline-none focus:ring-[3px] focus:ring-accent/25";
 
 export default function ContactForm({ locale }: { locale: Locale }) {
   const t = T[locale];
@@ -148,8 +149,8 @@ export default function ContactForm({ locale }: { locale: Locale }) {
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
-      <label className="flex items-start gap-2.5 text-[15px] text-ink-2">
-        <input name="consent" type="checkbox" required className="mt-1 h-[18px] w-[18px] flex-none accent-brand" />
+      <label className="flex items-start gap-2.5 text-[15px] text-body">
+        <input name="consent" type="checkbox" required className="mt-1 h-[18px] w-[18px] flex-none accent-accent" />
         <span>
           {t.consent}{" "}
           <a href={localePath(locale, "/privacy")} className="underline underline-offset-2">
@@ -161,7 +162,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
         <button
           type="submit"
           disabled={state === "sending"}
-          className="min-h-[56px] cursor-pointer rounded-[8px] bg-night px-7 text-[17px] font-semibold text-white transition-colors hover:bg-brand disabled:cursor-wait disabled:opacity-70 max-sm:w-full"
+          className="min-h-[56px] cursor-pointer rounded-[8px] bg-primary px-7 text-[17px] font-semibold text-white transition-colors hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70 max-sm:w-full"
         >
           <span className="inline-flex items-center gap-3">
             {t.submit}
@@ -169,7 +170,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
           </span>
         </button>
       </div>
-      <p role="status" aria-live="polite" className={`m-0 min-h-[1.5em] text-[15px] ${state === "error" ? "text-alert" : state === "ok" ? "text-brand" : "text-muted"}`}>
+      <p role="status" aria-live="polite" className={`m-0 min-h-[1.5em] text-[15px] ${state === "error" ? "text-alert" : state === "ok" ? "text-accent" : "text-muted"}`}>
         {msg}
       </p>
     </form>

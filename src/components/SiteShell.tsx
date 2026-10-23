@@ -83,12 +83,15 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
         <header className="sticky top-0 z-20 border-b border-line bg-white/95 backdrop-blur">
           <div className="mx-auto flex max-w-[1200px] items-center gap-x-4 px-6 py-3.5 md:gap-x-10">
             <a href={home} aria-label={t.home} className="mr-auto flex items-center md:mr-0">
+              {/* TODO(indigo draft 2026-10-23): the brief wants a logo mark of an ink (#111233) square with an
+                  accent-soft (#A5B4FC) dot. The current logo file is the blue "W WISELAKE" raster with no such
+                  mark; swap in the new logo (SVG preferred) once it exists. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/wiselake_logo.png" alt="WISELAKE" width={108} height={30} className="block h-[30px] w-auto aspect-[466/130]" />
             </a>
             <nav aria-label={t.menu} className="hidden flex-auto flex-wrap gap-x-8 text-[16px] font-medium md:flex">
               {navItems.map((n) => (
-                <a key={n.href} href={n.href} className="py-2.5 text-ink hover:text-brand">
+                <a key={n.href} href={n.href} className="py-2.5 text-ink hover:text-accent">
                   {n.label}
                 </a>
               ))}
@@ -99,7 +102,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
               </span>
               <a
                 href={homeAnchor("#contact")}
-                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-night px-5 text-[15px] font-semibold text-white hover:bg-brand hover:text-white"
+                className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-[8px] bg-primary px-5 text-[15px] font-semibold text-white hover:bg-primary-hover hover:text-white"
               >
                 {t.contact}
               </a>
@@ -110,8 +113,8 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
 
         <main id="main">{children}</main>
 
-        <footer className="border-t border-ink bg-white">
-          <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-12 gap-y-10 px-6 py-14 text-[15px] leading-[1.8] text-ink-2 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
+        <footer className="border-t border-line bg-white">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-x-12 gap-y-10 px-6 py-14 text-[15px] leading-[1.8] text-body md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/wiselake_logo.png" alt="WISELAKE" width={94} height={26} className="block h-[26px] w-auto aspect-[466/130]" />
