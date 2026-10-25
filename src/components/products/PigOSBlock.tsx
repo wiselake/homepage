@@ -1,4 +1,5 @@
 import { LINKS, type Locale } from "@/lib/site";
+import { Reveal } from "../motion";
 import { ArrowIcon, SectionLabel } from "../ui";
 
 /*
@@ -120,20 +121,22 @@ export default function PigOSBlock({ locale }: { locale: Locale }) {
             </a>
           </div>
 
-          <a href={LINKS.pigos} target="_blank" rel="noopener" className="group block">
-            {/* Phones get the large single-phone dashboard; the web + mobile visual is unreadable that small. */}
-            <picture>
-              <source media="(max-width: 767px)" srcSet="/images/b/pigos-app-mobile.png" width={1860} height={1650} />
-              <img
-                src="/images/b/pigos-web-mobile.png"
-                alt={t.imgAlt}
-                width={1520}
-                height={1240}
-                loading="lazy"
-                decoding="async"
-                className="block h-auto w-full transition-opacity group-hover:opacity-95 max-md:rounded-[8px]"
-              />
-            </picture>
+          <a href={LINKS.pigos} target="_blank" rel="noopener" className="group block transition-opacity hover:opacity-95">
+            {/* Wider screens: the web capture with the phone layered on top. The two layers come from the same
+                render (stacked they match the former single image pixel for pixel), so only the phone rises
+                into place as the section scrolls in. Phones get the large single-phone dashboard instead. */}
+            <div className="relative max-md:hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/b/pigos-web.png" alt={t.imgAlt} width={1520} height={1240} loading="lazy" decoding="async" className="block h-auto w-full" />
+              <Reveal className="absolute inset-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/b/pigos-phone.png" alt="" width={1520} height={1240} loading="lazy" decoding="async" className="block h-auto w-full" />
+              </Reveal>
+            </div>
+            <Reveal className="md:hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/b/pigos-app-mobile.png" alt={t.imgAlt} width={1860} height={1650} loading="lazy" decoding="async" className="block h-auto w-full rounded-[8px]" />
+            </Reveal>
           </a>
         </div>
       </div>
