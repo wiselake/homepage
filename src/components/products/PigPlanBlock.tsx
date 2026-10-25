@@ -1,4 +1,5 @@
 import { LINKS, type Locale } from "@/lib/site";
+import { Reveal } from "../motion";
 import { ArrowIcon, ButtonLink, SectionLabel } from "../ui";
 
 /*
@@ -161,8 +162,10 @@ export default function PigPlanBlock({ locale, headingLevel = 2 }: { locale: Loc
 
           <figure className="m-0 mt-10">
             {REPORT_IMAGE ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={REPORT_IMAGE} alt={t.ai.reportAlt} width={2400} height={1500} loading="lazy" decoding="async" className="block h-auto w-full" />
+              <Reveal lift="sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={REPORT_IMAGE} alt={t.ai.reportAlt} width={2400} height={1500} loading="lazy" decoding="async" className="block h-auto w-full" />
+              </Reveal>
             ) : (
               <div className="flex aspect-[16/9] flex-col items-center justify-center gap-1 border border-dashed border-tint px-6 text-center text-[14px] text-body">
                 <span className="font-semibold text-ink">{t.ai.reportNeeded[0]}</span>

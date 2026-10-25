@@ -1,5 +1,7 @@
 import { NEWS, formatNewsDate, sortedNews } from "@/content/news";
+import type { CSSProperties } from "react";
 import { COMPANY, LINKS, localePath, type Locale } from "@/lib/site";
+import { InView } from "../motion";
 import ContactForm from "../ContactForm";
 import { ArrowIcon, ButtonLink, SectionLabel, SectionTitle, TextLink } from "../ui";
 
@@ -131,9 +133,9 @@ export function ContentValue({ locale }: { locale: Locale }) {
         {/* Approach as one ruled line: measure → decide → trade, each with its real status. */}
         <div className="border-t border-line py-6">
           <p className={label}>{t.stepsLabel}</p>
-          <ol className="m-0 mt-4 flex list-none flex-wrap items-baseline gap-x-6 gap-y-3 p-0">
+          <InView as="ol" className="m-0 mt-4 flex list-none flex-wrap items-baseline gap-x-6 gap-y-3 p-0 [--d:260ms]" threshold={0.6}>
             {t.steps.map((st, i) => (
-              <li key={st.name} className="flex items-baseline gap-x-3">
+              <li key={st.name} className="seq-item flex items-baseline gap-x-3" style={{ "--i": i } as CSSProperties}>
                 {i > 0 && (
                   <span aria-hidden="true" className="self-center text-accent">
                     <ArrowIcon />
@@ -144,7 +146,7 @@ export function ContentValue({ locale }: { locale: Locale }) {
                 <span className="text-[14px] text-muted">{st.status}</span>
               </li>
             ))}
-          </ol>
+          </InView>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-line pt-8">
@@ -208,10 +210,10 @@ export function Company({ locale }: { locale: Locale }) {
               {t.title[1]}
             </h2>
           </div>
-          <ol className="m-0 list-none self-end p-0">
+          <InView as="ol" className="m-0 list-none self-end p-0 [--d:160ms]" threshold={0.35}>
             {t.history.map(([y, e], i) => (
-              <li key={e} className="relative grid grid-cols-[96px_1fr] gap-4 pb-7 last:pb-0">
-                {i < t.history.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[4.5px] top-[20px] w-0.5 bg-tint" />}
+              <li key={e} className="seq-item relative grid grid-cols-[96px_1fr] gap-4 pb-7 last:pb-0" style={{ "--i": i } as CSSProperties}>
+                {i < t.history.length - 1 && <span aria-hidden="true" className="draw-y absolute bottom-0 left-[4.5px] top-[20px] w-0.5 origin-top bg-tint" style={{ "--i": i + 1 } as CSSProperties} />}
                 <span className="flex items-center gap-4 text-[20px] font-bold tabular-nums text-accent">
                   <span aria-hidden="true" className="h-[11px] w-[11px] flex-none rounded-full border-2 border-accent bg-card" />
                   {y}
@@ -219,7 +221,7 @@ export function Company({ locale }: { locale: Locale }) {
                 <span className="text-[19px] text-ink">{e}</span>
               </li>
             ))}
-          </ol>
+          </InView>
         </div>
 
         <dl className="m-0 mt-14 grid grid-cols-1 gap-x-10 gap-y-5 rounded-[8px] border border-line bg-card p-[clamp(24px,3.5vw,40px)] text-[18px] sm:grid-cols-2 lg:grid-cols-4">

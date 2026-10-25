@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/site";
+import { CountUp, InView } from "../motion";
 import { ArrowIcon, ButtonLink, TextLink } from "../ui";
 
 const T = {
@@ -36,20 +37,21 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <section>
       <div className="mx-auto max-w-[1200px] px-6 pb-[clamp(56px,7vw,96px)] pt-[clamp(72px,11vw,168px)]">
-        <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">{t.eyebrow}</p>
-        <h1 className="m-0 mt-8 max-w-[1040px] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">
+        {/* Entrance: eyebrow, headline, sub and buttons rise in turn (none with reduced motion). */}
+        <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent motion-safe:animate-rise">{t.eyebrow}</p>
+        <h1 className="m-0 mt-8 max-w-[1040px] motion-safe:animate-rise motion-safe:[animation-delay:90ms] text-balance text-[clamp(42px,7.4vw,100px)] font-bold leading-[1.06] tracking-[-0.05em] text-ink">
           {t.title[0]}
           <br />
           {t.title[1][0]}
           <span className="text-accent">{t.title[1][1]}</span>
           {t.title[1][2]}
         </h1>
-        <p className="m-0 mt-9 max-w-[680px] text-[clamp(19px,1.9vw,24px)] leading-[1.55] tracking-[-0.015em] text-body">
+        <p className="m-0 mt-9 max-w-[680px] motion-safe:animate-rise motion-safe:[animation-delay:220ms] text-[clamp(19px,1.9vw,24px)] leading-[1.55] tracking-[-0.015em] text-body">
           {t.sub[0]}
           <br />
           {t.sub[1]}
         </p>
-        <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
+        <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5 motion-safe:animate-rise motion-safe:[animation-delay:340ms]">
           <ButtonLink href="#livestock" variant="accent" size="lg" className="max-sm:w-full">
             {t.ctaA}
             <ArrowIcon down />
@@ -113,15 +115,17 @@ export function TrustBand({ locale }: { locale: Locale }) {
         <h2 id="trust-title" className="m-0 text-[clamp(22px,2.6vw,30px)] font-bold tracking-[-0.025em]">
           {t.title}
         </h2>
-        <dl className="m-0 mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-3">
+        <InView as="dl" className="m-0 mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-3" threshold={0.5}>
           {/* Only the first figure is indigo, on a 2px indigo rule; the others are ink on a 1px tint-line rule. */}
           {t.items.map(([v, l], i) => (
-            <div key={v} className={`flex flex-col-reverse ${i === 0 ? "border-t-2 border-accent pt-[23px]" : "border-t border-tint-line pt-6"}`}>
+            <div key={v} className="relative flex flex-col-reverse border-t border-tint-line pt-6">
+              {i === 0 && <span aria-hidden="true" className="draw-x absolute -top-px left-0 h-0.5 w-full origin-left bg-accent" />}
               <dt className="mt-2 text-[16px] text-body">{l}</dt>
-              <dd className={`m-0 text-[clamp(34px,4vw,48px)] font-bold leading-[1.1] tracking-[-0.03em] ${i === 0 ? "text-accent" : ""}`}>{v}</dd>
+              {/* The year is a date, not a quantity, so it does not count up. */}
+              <dd className={`m-0 text-[clamp(34px,4vw,48px)] font-bold leading-[1.1] tracking-[-0.03em] ${i === 0 ? "text-accent" : ""}`}>{v.includes("1995") ? v : <CountUp value={v} />}</dd>
             </div>
           ))}
-        </dl>
+        </InView>
       </div>
     </section>
   );
